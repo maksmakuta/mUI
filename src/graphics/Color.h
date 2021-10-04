@@ -15,9 +15,9 @@ public:
     Color(float r,float g,float b);
     Color(float r,float g,float b,float a);
 
-    Color(const std::string& hex);
+    explicit Color(const std::string& hex);
 
-    void print(int s = 2);
+    void print(int s = 2,bool i = false);
 
     void setR(int r);
     void setG(int g);
@@ -50,6 +50,8 @@ public:
 private:
     void initI(  int r,  int g,  int b,  int a);
     void initF(float r,float g,float b,float a);
+
+    int code(char c);
 };
 
 

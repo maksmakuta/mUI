@@ -1,7 +1,7 @@
 #include "src/graphics/Color.h"
 
 int main() {
-    Color c(0.1f,0.225f,0.995f,0.5f);
-    c.print(3);
+    Color c("#fffa8810");
+    c.print();
     return 0;
 }
