@@ -1,7 +1,7 @@
-#include "src/window/Window.h"
+#include "src/graphics/Color.h"
 
 int main() {
-    Window w(640,480,"Hello Window");
-    w.draw();
+    Color c(0.1f,0.225f,0.995f,0.5f);
+    c.print(3);
     return 0;
 }

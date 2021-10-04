@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.0)
-project(tt)
+project(mUI)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(OpenGL_GL_PREFERENCE GLVND)
 
 find_package(OpenGL REQUIRED)
 if (OPENGL_FOUND)
@@ -23,4 +25,4 @@ if (GLEW_FOUND)
     link_libraries(     ${GLEW_LIBRARIES})
 endif()
 
-add_executable(tt main.cpp src/window/Window.cpp src/window/Window.h)
+add_executable(mUI main.cpp src/window/Window.cpp src/window/Window.h src/graphics/Color.cpp src/graphics/Color.h)
