@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <<<<<<< 3849b5f2a93baeb983cb94d39c55ed655d448e25
 #include <iostream>
 
@@ -6,5 +7,8 @@ int main() {
 =======
 int main() {
 >>>>>>> [0.0.1a] init
+=======
+int main() {
+>>>>>>> dev
     return 0;
 }
