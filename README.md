@@ -1,11 +1,6 @@
-# tt
+# mUI
 
-Play Tetris game in your terminal
-
-## Features
-
-- Fully terminal
-- Custom terminal UI (TUI)
+GUI toolkit in Material Design style
 
 ## Author
 
