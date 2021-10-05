@@ -62,6 +62,16 @@ float Color::getGf(){return this->g;}
 float Color::getBf(){return this->b;}
 float Color::getAf(){return this->a;}
 
+int Color::getRi()const{return (int)(this->r * 255.0f);}
+int Color::getGi()const{return (int)(this->g * 255.0f);}
+int Color::getBi()const{return (int)(this->b * 255.0f);}
+int Color::getAi()const{return (int)(this->a * 255.0f);}
+
+float Color::getRf()const{return this->r;}
+float Color::getGf()const{return this->g;}
+float Color::getBf()const{return this->b;}
+float Color::getAf()const{return this->a;}
+
 /*
     Color operator +(const Color&);
     Color operator -(const Color&);

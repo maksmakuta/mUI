@@ -1,7 +1,9 @@
+#include "src/window/Window.h"
 #include "src/graphics/Color.h"
 
 int main() {
-    Color c("#fffa8810");
-    c.print();
+    Window w(800,600,"Test");
+    w.setBG(new Color("#954624"));
+    w.draw();
     return 0;
 }

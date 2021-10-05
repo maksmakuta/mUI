@@ -34,10 +34,20 @@ public:
     int getBi();
     int getAi();
 
+    int getRi()const;
+    int getGi()const;
+    int getBi()const;
+    int getAi()const;
+
     float getRf();
     float getGf();
     float getBf();
     float getAf();
+
+    float getRf() const;
+    float getGf() const;
+    float getBf() const;
+    float getAf() const;
 /*
     Color operator +(const Color&);
     Color operator -(const Color&);

@@ -1,20 +1,23 @@
 #include "Window.h"
+#include "../graphics/driver/GL3Driver.h"
 
 Window::Window() : Window(640,480,"Test"){}
 
-Window::Window(int _w,int _h,const char* _t){
+Window::Window(i32 _w,i32 _h,const char* _t){
     prepare();
     init(_w,_h,_t);
 }
 
-void Window::prepare(){
+fun Window::prepare(){
     if(!glfwInit()) error("GLFWInit()");
 
     //glfwInitHint(GLFW_VERSION_MAJOR,3);
     //glfwInitHint(GLFW_VERSION_MINOR,3);
+
+    this->drv = new GL3Driver();
 }
 
-void Window::init(int _w,int _h,const char* _t){
+fun Window::init(i32 _w,i32 _h,const char* _t){
     win = glfwCreateWindow(_w,_h,_t,null,null);
     if(!win) error("window");
 
@@ -23,22 +26,35 @@ void Window::init(int _w,int _h,const char* _t){
     glfwSwapInterval(1);
 }
 
-void Window::resize(int w,int h){
+fun Window::resize(i32 w,i32 h){
     glfwSetWindowSize(win,w,h);
 }
 
-void Window::remove(int x,int y){
+fun Window::remove(i32 x,i32 y){
     glfwSetWindowPos(win,x,y);
 }
 
-void Window::draw(){
+
+fun Window::setBG(Color *c){
+    if(c != null)
+        this->bg = c;
+}
+
+fun Window::draw(){
     while(!glfwWindowShouldClose(win)){
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        if(drv != null){
+            if(bg != null)
+                drv->clearColor(bg);
+        }
+
         glfwSwapBuffers(win);
         glfwPollEvents();
     }
 }
 
-void Window::error(const char* t){
+fun Window::error(const char* t){
     printf("%s\n",t);
     if(win != null){
         glfwTerminate();
