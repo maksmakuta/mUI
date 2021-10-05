@@ -60,7 +60,7 @@ Shader Shader::loadFromFile(const str& vPath,const str& fPath){
 void Shader::check(GLuint shader, GLuint type){
     GLuint success;
     GLchar infoLog[1024];
-    if (type != 1)
+    if (type != 0)
     {
         glGetShaderiv(shader, GL_COMPILE_STATUS, reinterpret_cast<GLint *>(&success));
         if (!success)

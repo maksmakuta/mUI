@@ -25,4 +25,4 @@ if (GLEW_FOUND)
     link_libraries(     ${GLEW_LIBRARIES})
 endif()
 
-add_executable(mUI main.cpp src/window/Window.cpp src/window/Window.h src/graphics/Color.cpp src/graphics/Color.h src/graphics/GDriver.h src/graphics/Shader.cpp src/graphics/Shader.h src/sTypes.h src/graphics/driver/GL3Driver.cpp src/graphics/driver/GL3Driver.h)
+add_executable(mUI main.cpp src/window/Window.cpp src/window/Window.h src/graphics/Color.cpp src/graphics/Color.h src/graphics/GDriver.h src/graphics/Shader.cpp src/graphics/Shader.h src/sTypes.h)

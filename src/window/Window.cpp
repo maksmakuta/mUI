@@ -1,5 +1,4 @@
 #include "Window.h"
-#include "../graphics/driver/GL3Driver.h"
 
 Window::Window() : Window(640,480,"Test"){}
 
@@ -11,10 +10,8 @@ Window::Window(i32 _w,i32 _h,const char* _t){
 fun Window::prepare(){
     if(!glfwInit()) error("GLFWInit()");
 
-    //glfwInitHint(GLFW_VERSION_MAJOR,3);
-    //glfwInitHint(GLFW_VERSION_MINOR,3);
-
-    this->drv = new GL3Driver();
+    glfwInitHint(GLFW_VERSION_MAJOR,3);
+    glfwInitHint(GLFW_VERSION_MINOR,3);
 }
 
 fun Window::init(i32 _w,i32 _h,const char* _t){
@@ -22,8 +19,11 @@ fun Window::init(i32 _w,i32 _h,const char* _t){
     if(!win) error("window");
 
     glfwMakeContextCurrent(win);
+    glewExperimental = GL_TRUE;
     if(glewInit() != GLEW_OK) error("glew");
     glfwSwapInterval(1);
+
+    glViewport(0,0,_w,_h);
 }
 
 fun Window::resize(i32 w,i32 h){
@@ -43,10 +43,15 @@ fun Window::setBG(Color *c){
 fun Window::draw(){
     while(!glfwWindowShouldClose(win)){
         glClear(GL_COLOR_BUFFER_BIT);
-
+        int w,h;
+        glfwGetWindowSize(win,&w,&h);
         if(drv != null){
+
+            drv->viewport(w,h);
+
             if(bg != null)
                 drv->clearColor(bg);
+
         }
 
         glfwSwapBuffers(win);

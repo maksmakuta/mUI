@@ -13,6 +13,8 @@ public:
     virtual fun drawRoundRect(f32 x,f32 y,f32 w,f32 h,f32 r) = 0;
     virtual fun drawRoundRect(f32 x,f32 y,f32 w,f32 h,f32 tl,f32 tr,f32 bl,f32 br) = 0;
 
+    virtual fun viewport(i32 w,i32 h) = 0;
+
     virtual fun color(Color *c) = 0;
     virtual fun clearColor(Color* c) = 0;
 };
