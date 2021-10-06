@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 project(mUI)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(OpenGL_GL_PREFERENCE GLVND)
@@ -25,4 +25,15 @@ if (GLEW_FOUND)
     link_libraries(     ${GLEW_LIBRARIES})
 endif()
 
-add_executable(mUI main.cpp src/window/Window.cpp src/window/Window.h src/graphics/Color.cpp src/graphics/Color.h src/graphics/GDriver.h src/graphics/Shader.cpp src/graphics/Shader.h src/sTypes.h)
+find_package(glm REQUIRED)
+if (GLM_FOUND)
+    include_directories(${GLM_INCLUDE_DIRS})
+    link_libraries(     ${GLM_LIBRARIES})
+endif()
+
+add_executable(mUI main.cpp
+        src/window/Window.cpp src/window/Window.h
+        src/graphics/Color.cpp src/graphics/Color.h
+        src/graphics/GDriver.h
+        src/graphics/Shader.cpp src/graphics/Shader.h
+        src/sTypes.h)

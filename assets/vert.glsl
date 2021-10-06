@@ -1,4 +1,4 @@
-#version 330
+#version 330 core
 
 uniform vec2 viewport;
 in vec2 pos;

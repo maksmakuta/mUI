@@ -5,6 +5,8 @@
 #include <GL/glew.h>
 #include <string>
 
+#include <glm/glm.hpp>
+
 class Shader {
 private:
     GLuint program = 0;
@@ -40,6 +42,26 @@ public:
     }
     inline fun setVec4(const  str& name, f32 x, f32 y, f32 z, f32 w) const {
         glUniform4f(glGetUniformLocation(program, name.c_str()), x, y, z, w);
+    }
+
+    inline fun setVec2(const str& name, const glm::vec2 &value) const{
+        glUniform2fv(glGetUniformLocation(program, name.c_str()), 1, &value[0]);
+    }
+    inline fun setVec3(const str& name, const glm::vec3 &value) const{
+        glUniform3fv(glGetUniformLocation(program, name.c_str()), 1, &value[0]);
+    }
+    inline fun setVec4(const str& name, const glm::vec4 &value) const{
+        glUniform4fv(glGetUniformLocation(program, name.c_str()), 1, &value[0]);
+    }
+
+    inline fun setMat2(const str& name, const glm::mat2 &mat) const{
+        glUniformMatrix2fv(glGetUniformLocation(program, name.c_str()), 1, GL_FALSE, &mat[0][0]);
+    }
+    inline fun setMat3(const str& name, const glm::mat3 &mat) const{
+        glUniformMatrix3fv(glGetUniformLocation(program, name.c_str()), 1, GL_FALSE, &mat[0][0]);
+    }
+    inline fun setMat4(const str& name, const glm::mat4 &mat) const{
+        glUniformMatrix4fv(glGetUniformLocation(program, name.c_str()), 1, GL_FALSE, &mat[0][0]);
     }
 };
 

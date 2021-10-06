@@ -1,5 +1,14 @@
 #include "Window.h"
 
+fun onResize(GLFWwindow*, i32 w,i32 h){
+    glViewport( 0, 0, w,  h );
+    glMatrixMode( GL_PROJECTION );
+    glLoadIdentity();
+    glOrtho(0,0,w,h,-1,1);
+    glMatrixMode( GL_MODELVIEW );
+    glLoadIdentity();
+}
+
 Window::Window() : Window(640,480,"Test"){}
 
 Window::Window(i32 _w,i32 _h,const char* _t){
@@ -23,7 +32,8 @@ fun Window::init(i32 _w,i32 _h,const char* _t){
     if(glewInit() != GLEW_OK) error("glew");
     glfwSwapInterval(1);
 
-    glViewport(0,0,_w,_h);
+    glfwSetWindowSizeCallback(win,onResize);
+    onResize(win,_w,_h);
 }
 
 fun Window::resize(i32 w,i32 h){
@@ -33,7 +43,6 @@ fun Window::resize(i32 w,i32 h){
 fun Window::remove(i32 x,i32 y){
     glfwSetWindowPos(win,x,y);
 }
-
 
 fun Window::setBG(Color *c){
     if(c != null)
