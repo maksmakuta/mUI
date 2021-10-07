@@ -21,6 +21,8 @@ fun Window::prepare(){
 
     glfwInitHint(GLFW_VERSION_MAJOR,3);
     glfwInitHint(GLFW_VERSION_MINOR,3);
+    glfwInitHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
+
 }
 
 fun Window::init(i32 _w,i32 _h,const char* _t){
@@ -52,16 +54,10 @@ fun Window::setBG(Color *c){
 fun Window::draw(){
     while(!glfwWindowShouldClose(win)){
         glClear(GL_COLOR_BUFFER_BIT);
-        int w,h;
-        glfwGetWindowSize(win,&w,&h);
-        if(drv != null){
 
-            drv->viewport(w,h);
+        if(bg != null)
+            glClearColor(bg->getRf(),bg->getGf(),bg->getBf(),bg->getAf());
 
-            if(bg != null)
-                drv->clearColor(bg);
-
-        }
 
         glfwSwapBuffers(win);
         glfwPollEvents();

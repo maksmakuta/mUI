@@ -16,6 +16,8 @@ public:
 
     Shader() = delete; // no default constructor
 
+    static Shader def();
+
     static Shader load(const str& v,const str& f);
     static Shader loadFromFile(const str& vPath,const str& fPath);
     static fun check(GLuint shader, GLuint type);

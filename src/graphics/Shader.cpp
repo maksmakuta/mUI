@@ -5,6 +5,10 @@
 #include <iostream>
 
 
+Shader Shader::def(){
+    return Shader::loadFromFile("../assets/vert.glsl","../assets/frag.glsl");
+}
+
 Shader::Shader(GLuint p){
     if(p != 0)
         this->push(p);

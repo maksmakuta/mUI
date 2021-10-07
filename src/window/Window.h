@@ -3,7 +3,6 @@
 
 #include "../sTypes.h"
 #include "../graphics/Color.h"
-#include "../graphics/GDriver.h"
 #include <cstdlib>
 #include <cstdio>
 #include <GL/glew.h>
@@ -14,7 +13,6 @@ class Window {
 private:
     GLFWwindow* win;
     Color *bg = null;
-    GDriver *drv = null;
 public:
     Window();
     Window(i32 _w,i32 _h,const char* _t);

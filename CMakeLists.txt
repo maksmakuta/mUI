@@ -34,6 +34,5 @@ endif()
 add_executable(mUI main.cpp
         src/window/Window.cpp src/window/Window.h
         src/graphics/Color.cpp src/graphics/Color.h
-        src/graphics/GDriver.h
-        src/graphics/Shader.cpp src/graphics/Shader.h
-        src/sTypes.h)
+        src/sTypes.h
+        src/graphics/Shader.cpp src/graphics/Shader.h src/graphics/Canvas.cpp src/graphics/Canvas.h)
