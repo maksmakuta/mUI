@@ -1,6 +1,7 @@
 #ifndef MUI_CANVAS_H
 #define MUI_CANVAS_H
 
+#include <glm/gtc/matrix_transform.hpp>
 #include "../sTypes.h"
 #include "Shader.h"
 #include "Color.h"
@@ -10,6 +11,7 @@ struct Context{
     Color c = Color();
     u32 VAO = 0,VBO = 0,EBO = 0;
     u32 TextureID = 0;
+    glm::mat4 proj = glm::mat4();
 };
 
 class Canvas {
@@ -17,7 +19,7 @@ private:
     Context c;
 public:
 
-    Canvas();
+    Canvas(i32 w,i32 h);
 
     fun color(Color c);
 
@@ -35,6 +37,7 @@ private:
 
     fun vertex();
 
+    fun renderer(f32 *commands,i32 size);
 };
 
 
