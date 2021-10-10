@@ -1,16 +1,15 @@
 #version 330 core
-
 layout (location = 0) in vec2 Position;
-layout (location = 1) in vec2 UV;
-layout (location = 2) in vec4 Color;
+layout (location = 1) in vec3 Color;
+layout (location = 2) in vec2 TexP;
 
-uniform mat4 ProjMtx;
+uniform mat4 mat;
 
-out vec2 Frag_UV;
-out vec4 Frag_Color;
+out vec3 fColor;
+out vec2 fTex;
 
 void main(){
-    Frag_UV = UV;
-    Frag_Color = Color;
-    gl_Position = ProjMtx * vec4(Position.xy,0,1);
+    gl_Position = mat * vec4(Position,0,1);
+    fColor = Color;
+    fTex = TexP;
 }

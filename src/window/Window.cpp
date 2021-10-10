@@ -21,7 +21,7 @@ fun Window::prepare(){
 
     glfwInitHint(GLFW_VERSION_MAJOR,3);
     glfwInitHint(GLFW_VERSION_MINOR,3);
-    glfwInitHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
+    //glfwInitHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
 
 }
 
@@ -36,6 +36,8 @@ fun Window::init(i32 _w,i32 _h,const char* _t){
 
     glfwSetWindowSizeCallback(win,onResize);
     onResize(win,_w,_h);
+    if(mCanvas == null)
+       this->mCanvas = new Canvas(_w,_h);
 }
 
 fun Window::resize(i32 w,i32 h){
@@ -52,17 +54,38 @@ fun Window::setBG(Color *c){
 }
 
 fun Window::draw(){
-    while(!glfwWindowShouldClose(win)){
+
+    while(!glfwWindowShouldClose(win) && mCanvas != null){
         glClear(GL_COLOR_BUFFER_BIT);
 
         if(bg != null)
             glClearColor(bg->getRf(),bg->getGf(),bg->getBf(),bg->getAf());
 
 
+        mCanvas->color(Color("#f00"));
+        mCanvas->drawPoint(0.f,0.f);
+
         glfwSwapBuffers(win);
         glfwPollEvents();
     }
 }
+
+fun Window::draw(const std::function<fun(Canvas*)>& f){
+
+    while(!glfwWindowShouldClose(win) && mCanvas != null){
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        if(bg != null)
+            glClearColor(bg->getRf(),bg->getGf(),bg->getBf(),bg->getAf());
+
+        f(mCanvas);
+
+        glfwSwapBuffers(win);
+        glfwPollEvents();
+    }
+}
+
+
 
 fun Window::error(const char* t){
     printf("%s\n",t);

@@ -1,15 +1,16 @@
 #version 330 core
 
-in vec2 Frag_UV;
-in vec4 Frag_Color;
+uniform bool tex;
+uniform sampler2D texID;
 
-uniform sampler2D Texture;
+in vec3 fColor;
+in vec2 fTex;
 
-out vec4 Out_Color;
+out vec4 FragColor;
 
 void main(){
-    if(Frag_UV == vec2(0.0))
-        Out_Color = Frag_Color;
+    if(!tex)
+        FragColor = vec4(fColor,1.0);
     else
-        Out_Color = Frag_Color * texture(Texture, Frag_UV.st);
+        FragColor = texture(texID,fTex);
 }

@@ -72,6 +72,11 @@ float Color::getGf()const{return this->g;}
 float Color::getBf()const{return this->b;}
 float Color::getAf()const{return this->a;}
 
+
+glm::vec4 Color::toVec4(){
+    return {this->getRf(),this->getGf(),this->getBf(),this->getAf()};
+}
+
 /*
     Color operator +(const Color&);
     Color operator -(const Color&);

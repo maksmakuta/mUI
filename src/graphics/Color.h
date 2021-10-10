@@ -2,6 +2,7 @@
 #define TT_COLOR_H
 
 #include <string>
+#include <glm/vec4.hpp>
 
 class Color {
 private:
@@ -48,6 +49,8 @@ public:
     float getGf() const;
     float getBf() const;
     float getAf() const;
+
+    glm::vec4 toVec4();
 /*
     Color operator +(const Color&);
     Color operator -(const Color&);
