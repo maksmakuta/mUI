@@ -20,9 +20,12 @@ fun Window::prepare(){
     if(!glfwInit()) error("GLFWInit()");
 
     glfwInitHint(GLFW_VERSION_MAJOR,3);
-    glfwInitHint(GLFW_VERSION_MINOR,3);
+    glfwInitHint(GLFW_VERSION_MINOR,2);
     glfwInitHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_SAMPLES, 4);
+
+    c = nvgCreateGL3(NVG_ANTIALIAS | NVG_STENCIL_STROKES);
+    if(!c) error("nanoVG");
 
 }
 
@@ -34,10 +37,6 @@ fun Window::init(i32 _w,i32 _h,const char* _t){
     glewExperimental = GL_TRUE;
     if(glewInit() != GLEW_OK) error("glew");
     glfwSwapInterval(1);
-
-    glEnable(GL_MULTISAMPLE);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     glfwSetWindowSizeCallback(win,onResize);
     onResize(win,_w,_h);
@@ -52,46 +51,49 @@ fun Window::remove(i32 x,i32 y){
     glfwSetWindowPos(win,x,y);
 }
 
-fun Window::setBG(Color *c){
-    if(c != null)
-        this->bg = c;
-}
-
 fun Window::draw(){
 
     while(!glfwWindowShouldClose(win)){
-        glClear(GL_COLOR_BUFFER_BIT);
+        double mx, my, t, dt;
+        int winWidth, winHeight;
+        int fbWidth, fbHeight;
+        float pxRatio;
 
-        if(bg != null)
-            glClearColor(bg->getRf(),bg->getGf(),bg->getBf(),bg->getAf());
+        t = glfwGetTime();
+        dt = t - prevt;
+        prevt = t;
 
+        glfwGetCursorPos(win, &mx, &my);
+        glfwGetWindowSize(win, &winWidth, &winHeight);
+        glfwGetFramebufferSize(win, &fbWidth, &fbHeight);
+
+        pxRatio = (float)fbWidth / (float)winWidth;
+
+        glViewport(0, 0, fbWidth, fbHeight);
+        glClearColor(0,0,0,0);
+        glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT|GL_STENCIL_BUFFER_BIT);
+
+        nvgBeginFrame(c, winWidth, winHeight, pxRatio);
+
+        //renderDemo(c, mx,my, winWidth,winHeight, t, blowup, &data);
+
+        nvgEndFrame(c);
+        cpuTime = glfwGetTime() - t;
 
         glfwSwapBuffers(win);
         glfwPollEvents();
     }
 }
-/*
-fun Window::draw(const std::function<fun(Canvas*)>& f){
 
-    while(!glfwWindowShouldClose(win) && mCanvas != null){
-        glClear(GL_COLOR_BUFFER_BIT);
-
-        if(bg != null)
-            glClearColor(bg->getRf(),bg->getGf(),bg->getBf(),bg->getAf());
-
-        f(mCanvas);
-
-        glfwSwapBuffers(win);
-        glfwPollEvents();
-    }
-}
-
-*/
 
 fun Window::error(const char* t){
     printf("%s\n",t);
     if(win != null){
+        if(c != null){
+            nvgDeleteGL3(c);
+        }
         glfwTerminate();
         exit(EXIT_FAILURE);
+
     }
 }

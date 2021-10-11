@@ -2,27 +2,28 @@
 #define TT_WINDOW_H
 
 #include "../sTypes.h"
-#include "../graphics/Color.h"
 #include <cstdlib>
 #include <cstdio>
 #include <GL/glew.h>
-#define GLFW_INCLUDE_NONE
+#define GLFW_INCLUDE_GLEXT
 #include <GLFW/glfw3.h>
-#include <functional>
+
+#include "../graphics/nanovg.h"
+#define NANOVG_GL3_IMPLEMENTATION
+#include "../graphics/nanovg_gl.h"
 
 class Window {
 private:
     GLFWwindow* win;
-    Color *bg = null;
+    NVGcontext* c = null;
+    double prevt = 0, cpuTime = 0;
 public:
     Window();
     Window(i32 _w,i32 _h,const char* _t);
 
     fun resize(i32 w,i32 h);
     fun remove(i32 x,i32 y);
-    fun setBG(Color*);
     fun draw();
-    //fun draw(const std::function<fun(Canvas*)>& s);
 
 private:
     fun prepare();

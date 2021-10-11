@@ -33,6 +33,11 @@ endif()
 
 add_executable(mUI main.cpp
         src/window/Window.cpp src/window/Window.h
-        src/graphics/Color.cpp src/graphics/Color.h
         src/sTypes.h
-        src/graphics/Shader.cpp src/graphics/Shader.h)
+        src/graphics/fontstash.h
+        src/graphics/nanovg.c
+        src/graphics/nanovg.h
+        src/graphics/nanovg_gl.h
+        src/graphics/nanovg_gl_utils.h
+        src/graphics/stb_image.h
+        src/graphics/stb_truetype.h)
