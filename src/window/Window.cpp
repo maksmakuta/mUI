@@ -4,7 +4,7 @@ fun onResize(GLFWwindow*, i32 w,i32 h){
     glViewport( 0, 0, w,  h );
     glMatrixMode( GL_PROJECTION );
     glLoadIdentity();
-    glOrtho(0,0,w,h,-1,1);
+    glOrtho(0,w,h,0,-1,1);
     glMatrixMode( GL_MODELVIEW );
     glLoadIdentity();
 }
@@ -21,7 +21,8 @@ fun Window::prepare(){
 
     glfwInitHint(GLFW_VERSION_MAJOR,3);
     glfwInitHint(GLFW_VERSION_MINOR,3);
-    //glfwInitHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
+    glfwInitHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
+    glfwWindowHint(GLFW_SAMPLES, 4);
 
 }
 
@@ -34,10 +35,13 @@ fun Window::init(i32 _w,i32 _h,const char* _t){
     if(glewInit() != GLEW_OK) error("glew");
     glfwSwapInterval(1);
 
+    glEnable(GL_MULTISAMPLE);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
     glfwSetWindowSizeCallback(win,onResize);
     onResize(win,_w,_h);
-    if(mCanvas == null)
-       this->mCanvas = new Canvas(_w,_h);
+
 }
 
 fun Window::resize(i32 w,i32 h){
@@ -55,21 +59,18 @@ fun Window::setBG(Color *c){
 
 fun Window::draw(){
 
-    while(!glfwWindowShouldClose(win) && mCanvas != null){
+    while(!glfwWindowShouldClose(win)){
         glClear(GL_COLOR_BUFFER_BIT);
 
         if(bg != null)
             glClearColor(bg->getRf(),bg->getGf(),bg->getBf(),bg->getAf());
 
 
-        mCanvas->color(Color("#f00"));
-        mCanvas->drawPoint(0.f,0.f);
-
         glfwSwapBuffers(win);
         glfwPollEvents();
     }
 }
-
+/*
 fun Window::draw(const std::function<fun(Canvas*)>& f){
 
     while(!glfwWindowShouldClose(win) && mCanvas != null){
@@ -85,7 +86,7 @@ fun Window::draw(const std::function<fun(Canvas*)>& f){
     }
 }
 
-
+*/
 
 fun Window::error(const char* t){
     printf("%s\n",t);

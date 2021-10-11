@@ -3,7 +3,6 @@
 
 #include "../sTypes.h"
 #include "../graphics/Color.h"
-#include "../graphics/Canvas.h"
 #include <cstdlib>
 #include <cstdio>
 #include <GL/glew.h>
@@ -14,7 +13,6 @@
 class Window {
 private:
     GLFWwindow* win;
-    Canvas *mCanvas = null;
     Color *bg = null;
 public:
     Window();
@@ -24,7 +22,7 @@ public:
     fun remove(i32 x,i32 y);
     fun setBG(Color*);
     fun draw();
-    fun draw(const std::function<fun(Canvas*)>& s);
+    //fun draw(const std::function<fun(Canvas*)>& s);
 
 private:
     fun prepare();
