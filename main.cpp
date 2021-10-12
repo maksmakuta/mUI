@@ -12,14 +12,16 @@ public:
     }
 
     fun onDraw(Canvas *c) override{
-        c->Rect(x,y,w,h);
+
+        c->color("#ffaa66");
+        c->drawRect(x,y,w,h);
     }
 };
 
 class MainActivity : public Activity{
 public:
     MainActivity() : Activity(){
-        this->setLayout(new RectView(0,0,10,10));
+        this->setLayout(new RectView(0,0,150,60));
     }
 };
 

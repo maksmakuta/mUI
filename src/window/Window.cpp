@@ -45,6 +45,11 @@ fun Window::init(i32 _w,i32 _h,const char* _t){
 
 }
 
+
+fun Window::setBG(const char* h){
+    this->bg = ColorUtils::color(h);
+}
+
 fun Window::resize(i32 w,i32 h){
     glfwSetWindowSize(win,w,h);
 }
@@ -72,15 +77,17 @@ fun Window::draw(View* layout){
         pxRatio = (float)fbWidth / (float)winWidth;
 
         glViewport(0, 0, fbWidth, fbHeight);
-        glClearColor(0,0,0,0);
+        //glClearColor(0,0,0,0);
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT|GL_STENCIL_BUFFER_BIT);
         if(this->c != null){
             this->c->beginFrame( (f32)winWidth, (f32)winHeight, pxRatio);
-                if(layout != null)
+
+            glClearColor(this->bg.r,this->bg.g,this->bg.b,this->bg.a);
+
+            if(layout != null)
                     layout->onDraw(this->c);
             this->c->endFrame();
         }
-        cpuTime = glfwGetTime() - t;
 
         glfwSwapBuffers(win);
         glfwPollEvents();
