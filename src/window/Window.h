@@ -7,6 +7,8 @@
 #include "../graphics/Canvas.h"
 #include "../sTypes.h"
 
+#include "../view/View.h"
+
 
 class Window {
 private:
@@ -19,7 +21,7 @@ public:
 
     fun resize(i32 w,i32 h);
     fun remove(i32 x,i32 y);
-    fun draw();
+    fun draw(View* v);
 
 private:
     fun prepare();

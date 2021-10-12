@@ -53,7 +53,7 @@ fun Window::remove(i32 x,i32 y){
     glfwSetWindowPos(win,x,y);
 }
 
-fun Window::draw(){
+fun Window::draw(View* layout){
 
     while(!glfwWindowShouldClose(win)){
         f64 mx, my, t, dt;
@@ -76,7 +76,8 @@ fun Window::draw(){
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT|GL_STENCIL_BUFFER_BIT);
         if(this->c != null){
             this->c->beginFrame( (f32)winWidth, (f32)winHeight, pxRatio);
-            //TODO draw views ...
+                if(layout != null)
+                    layout->onDraw(this->c);
             this->c->endFrame();
         }
         cpuTime = glfwGetTime() - t;

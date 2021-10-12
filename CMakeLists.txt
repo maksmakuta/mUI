@@ -35,4 +35,4 @@ add_executable(mUI main.cpp
         src/graphics/nanovg/nanovg_gl.h
         src/graphics/nanovg/nanovg_gl_utils.h
         src/graphics/nanovg/stb_image.h
-        src/graphics/nanovg/stb_truetype.h src/graphics/Canvas.cpp src/graphics/Canvas.h)
+        src/graphics/nanovg/stb_truetype.h src/graphics/Canvas.cpp src/graphics/Canvas.h src/view/View.cpp src/view/View.h src/app/Application.cpp src/app/Application.h src/app/Activity.cpp src/app/Activity.h)
