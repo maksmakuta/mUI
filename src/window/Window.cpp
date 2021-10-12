@@ -1,5 +1,8 @@
 #include "Window.h"
 
+#include <cstdlib>
+#include <cstdio>
+
 fun onResize(GLFWwindow*, i32 w,i32 h){
     glViewport( 0, 0, w,  h );
     glMatrixMode( GL_PROJECTION );
@@ -24,9 +27,6 @@ fun Window::prepare(){
     glfwInitHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_SAMPLES, 4);
 
-    c = nvgCreateGL3(NVG_ANTIALIAS | NVG_STENCIL_STROKES);
-    if(!c) error("nanoVG");
-
 }
 
 fun Window::init(i32 _w,i32 _h,const char* _t){
@@ -37,6 +37,8 @@ fun Window::init(i32 _w,i32 _h,const char* _t){
     glewExperimental = GL_TRUE;
     if(glewInit() != GLEW_OK) error("glew");
     glfwSwapInterval(1);
+
+    this->c = new Canvas();
 
     glfwSetWindowSizeCallback(win,onResize);
     onResize(win,_w,_h);
@@ -54,10 +56,10 @@ fun Window::remove(i32 x,i32 y){
 fun Window::draw(){
 
     while(!glfwWindowShouldClose(win)){
-        double mx, my, t, dt;
-        int winWidth, winHeight;
-        int fbWidth, fbHeight;
-        float pxRatio;
+        f64 mx, my, t, dt;
+        i32 winWidth, winHeight;
+        i32 fbWidth, fbHeight;
+        f32 pxRatio;
 
         t = glfwGetTime();
         dt = t - prevt;
@@ -72,12 +74,11 @@ fun Window::draw(){
         glViewport(0, 0, fbWidth, fbHeight);
         glClearColor(0,0,0,0);
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT|GL_STENCIL_BUFFER_BIT);
-
-        nvgBeginFrame(c, winWidth, winHeight, pxRatio);
-
-        //renderDemo(c, mx,my, winWidth,winHeight, t, blowup, &data);
-
-        nvgEndFrame(c);
+        if(this->c != null){
+            this->c->beginFrame( (f32)winWidth, (f32)winHeight, pxRatio);
+            //TODO draw views ...
+            this->c->endFrame();
+        }
         cpuTime = glfwGetTime() - t;
 
         glfwSwapBuffers(win);
@@ -85,13 +86,9 @@ fun Window::draw(){
     }
 }
 
-
 fun Window::error(const char* t){
     printf("%s\n",t);
     if(win != null){
-        if(c != null){
-            nvgDeleteGL3(c);
-        }
         glfwTerminate();
         exit(EXIT_FAILURE);
 

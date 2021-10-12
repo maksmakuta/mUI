@@ -1,21 +1,17 @@
 #ifndef TT_WINDOW_H
 #define TT_WINDOW_H
 
-#include "../sTypes.h"
-#include <cstdlib>
-#include <cstdio>
 #include <GL/glew.h>
 #define GLFW_INCLUDE_GLEXT
 #include <GLFW/glfw3.h>
+#include "../graphics/Canvas.h"
+#include "../sTypes.h"
 
-#include "../graphics/nanovg.h"
-#define NANOVG_GL3_IMPLEMENTATION
-#include "../graphics/nanovg_gl.h"
 
 class Window {
 private:
     GLFWwindow* win;
-    NVGcontext* c = null;
+    Canvas* c = null;
     double prevt = 0, cpuTime = 0;
 public:
     Window();
