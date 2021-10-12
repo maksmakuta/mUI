@@ -14,6 +14,7 @@ class Window {
 private:
     GLFWwindow* win;
     Canvas* c = null;
+    NVGcolor bg;
     double prevt = 0, cpuTime = 0;
 public:
     Window();
@@ -22,6 +23,8 @@ public:
     fun resize(i32 w,i32 h);
     fun remove(i32 x,i32 y);
     fun draw(View* v);
+
+    fun setBG(const char* h);
 
 private:
     fun prepare();
