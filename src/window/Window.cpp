@@ -1,5 +1,4 @@
 #include "Window.h"
-
 #include <cstdlib>
 #include <cstdio>
 
@@ -84,11 +83,14 @@ fun Window::draw(View* layout){
 
             glClearColor(this->bg.r,this->bg.g,this->bg.b,this->bg.a);
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
             if(layout != null)
                     layout->onDraw(this->c);
 =======
+=======
+>>>>>>> Stashed changes
             if(layout != null) {
                 layout->onDraw(this->c);
                 if(layout->getViewRect().inside((f32)mx,(f32)my)) {
@@ -104,12 +106,15 @@ fun Window::draw(View* layout){
             ss << "Mouse : " << mx << ":" << my;
             this->c->color("#fff");
             this->c->drawText(fbWidth / 2, fbHeight / 2,ss.str().c_str(),"font",30);
+<<<<<<< Updated upstream
 
 >>>>>>> stable
 =======
             if(layout != null)
                     layout->onDraw(this->c);
 >>>>>>> parent of 9481cdf... [1.3.3] ad mouse callbacks
+=======
+>>>>>>> Stashed changes
             this->c->endFrame();
         }
 

@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-int main() {
-=======
-#include "src/window/Window.h"
-#include "src/graphics/Color.h"
-
-int main() {
-    Window w(800,600,"Test");
-    w.setBG(new Color("#954624"));
-    w.draw();
->>>>>>> dev
-=======
 #include "src/app/Application.h"
 
 class RectView : public View{
@@ -25,12 +12,15 @@ public:
     }
 
     fun onDraw(Canvas *c) override{
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 
         c->color("#ffaa66");
         c->drawRect(x,y,w,h);
 =======
+=======
+>>>>>>> Stashed changes
         c->color("#ffaa66");
         c->drawRect(x,y,w,h);
     }
@@ -39,7 +29,6 @@ public:
         this->onDraw(c);
         c->color("#f00");
         c->drawText(x + w/2,y +h/2,"HOVER","font",10);
->>>>>>> stable
     }
 =======
 
@@ -51,11 +40,14 @@ public:
 
 class MainActivity : public Activity{
 public:
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
     MainActivity() : Activity(){
         this->setLayout(new RectView(0,0,150,60));
 =======
+=======
+>>>>>>> Stashed changes
 
     int s = 0;
 
@@ -68,11 +60,14 @@ public:
     fun onClick() override{
         printf("Clicked : %i\n",s);
         s++;
+<<<<<<< Updated upstream
 >>>>>>> stable
 =======
     MainActivity() : Activity(){
         this->setLayout(new RectView(0,0,150,60));
 >>>>>>> parent of 9481cdf... [1.3.3] ad mouse callbacks
+=======
+>>>>>>> Stashed changes
     }
 };
 
@@ -80,6 +75,5 @@ int main(){
     Application app(640,480,"App");
     app.setMainActivity(new MainActivity());
     app.exec();
->>>>>>> dev
     return 0;
 }
