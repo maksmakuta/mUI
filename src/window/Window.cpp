@@ -2,6 +2,7 @@
 
 #include <cstdlib>
 #include <cstdio>
+#include <sstream>
 
 fun onResize(GLFWwindow*, i32 w,i32 h){
     glViewport( 0, 0, w,  h );
@@ -84,8 +85,27 @@ fun Window::draw(View* layout){
 
             glClearColor(this->bg.r,this->bg.g,this->bg.b,this->bg.a);
 
+<<<<<<< HEAD
             if(layout != null)
                     layout->onDraw(this->c);
+=======
+            if(layout != null) {
+                layout->onDraw(this->c);
+                if(layout->getViewRect().inside((f32)mx,(f32)my)) {
+                    layout->onHover(this->c);
+                }
+
+                if(layout->getViewRect().inside((f32)mx,(f32)my) && glfwGetMouseButton(win,GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS) {
+                    if(layout->listeners(OnCLick) != null)
+                        ((OnClickListener*)layout->listeners(OnCLick))->onClick();
+                }
+            }
+            std::stringstream ss;
+            ss << "Mouse : " << mx << ":" << my;
+            this->c->color("#fff");
+            this->c->drawText(fbWidth / 2, fbHeight / 2,ss.str().c_str(),"font",30);
+
+>>>>>>> stable
             this->c->endFrame();
         }
 

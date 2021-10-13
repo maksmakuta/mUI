@@ -60,5 +60,9 @@ add_executable(mUI main.cpp
         src/graphics/Canvas.cpp src/graphics/Canvas.h
         src/view/View.cpp src/view/View.h
         src/app/Application.cpp src/app/Application.h
+<<<<<<< HEAD
         src/app/Activity.cpp src/app/Activity.h)
 >>>>>>> dev
+=======
+        src/app/Activity.cpp src/app/Activity.h src/graphics/Rect.cpp src/graphics/Rect.h src/view/listener/Listener.h src/view/listener/OnClickListener.h)
+>>>>>>> stable
