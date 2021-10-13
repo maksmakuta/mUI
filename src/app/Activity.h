@@ -3,8 +3,6 @@
 
 #include "../view/View.h"
 
-class View;
-
 class Activity {
 private:
     View* layout = null;

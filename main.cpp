@@ -17,7 +17,7 @@ class RectView : public View{
 private:
     f32 x,y,w,h;
 public:
-    RectView(f32 _x,f32 _y,f32 _w,f32 _h) : View(_x,_y,_w,_h){
+    RectView(f32 _x,f32 _y,f32 _w,f32 _h) : View(){
         this->x = _x;
         this->y = _y;
         this->w = _w;
@@ -25,6 +25,7 @@ public:
     }
 
     fun onDraw(Canvas *c) override{
+<<<<<<< HEAD
 <<<<<<< HEAD
 
         c->color("#ffaa66");
@@ -40,10 +41,17 @@ public:
         c->drawText(x + w/2,y +h/2,"HOVER","font",10);
 >>>>>>> stable
     }
+=======
+
+        c->color("#ffaa66");
+        c->drawRect(x,y,w,h);
+    }
+>>>>>>> parent of 9481cdf... [1.3.3] ad mouse callbacks
 };
 
-class MainActivity : public Activity,public OnClickListener{
+class MainActivity : public Activity{
 public:
+<<<<<<< HEAD
 <<<<<<< HEAD
     MainActivity() : Activity(){
         this->setLayout(new RectView(0,0,150,60));
@@ -61,6 +69,10 @@ public:
         printf("Clicked : %i\n",s);
         s++;
 >>>>>>> stable
+=======
+    MainActivity() : Activity(){
+        this->setLayout(new RectView(0,0,150,60));
+>>>>>>> parent of 9481cdf... [1.3.3] ad mouse callbacks
     }
 };
 
