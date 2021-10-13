@@ -4,7 +4,7 @@ class RectView : public View{
 private:
     f32 x,y,w,h;
 public:
-    RectView(f32 _x,f32 _y,f32 _w,f32 _h) : View(_x,_y,_w,_h){
+    RectView(f32 _x,f32 _y,f32 _w,f32 _h) : View(){
         this->x = _x;
         this->y = _y;
         this->w = _w;
@@ -12,6 +12,15 @@ public:
     }
 
     fun onDraw(Canvas *c) override{
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+        c->color("#ffaa66");
+        c->drawRect(x,y,w,h);
+=======
+=======
+>>>>>>> Stashed changes
         c->color("#ffaa66");
         c->drawRect(x,y,w,h);
     }
@@ -21,10 +30,24 @@ public:
         c->color("#f00");
         c->drawText(x + w/2,y +h/2,"HOVER","font",10);
     }
+=======
+
+        c->color("#ffaa66");
+        c->drawRect(x,y,w,h);
+    }
+>>>>>>> parent of 9481cdf... [1.3.3] ad mouse callbacks
 };
 
-class MainActivity : public Activity,public OnClickListener{
+class MainActivity : public Activity{
 public:
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<<<<<<< HEAD
+    MainActivity() : Activity(){
+        this->setLayout(new RectView(0,0,150,60));
+=======
+=======
+>>>>>>> Stashed changes
 
     int s = 0;
 
@@ -37,6 +60,14 @@ public:
     fun onClick() override{
         printf("Clicked : %i\n",s);
         s++;
+<<<<<<< Updated upstream
+>>>>>>> stable
+=======
+    MainActivity() : Activity(){
+        this->setLayout(new RectView(0,0,150,60));
+>>>>>>> parent of 9481cdf... [1.3.3] ad mouse callbacks
+=======
+>>>>>>> Stashed changes
     }
 };
 

@@ -1,7 +1,6 @@
 #include "Window.h"
 #include <cstdlib>
 #include <cstdio>
-#include <sstream>
 
 fun onResize(GLFWwindow*, i32 w,i32 h){
     glViewport( 0, 0, w,  h );
@@ -84,6 +83,14 @@ fun Window::draw(View* layout){
 
             glClearColor(this->bg.r,this->bg.g,this->bg.b,this->bg.a);
 
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<<<<<<< HEAD
+            if(layout != null)
+                    layout->onDraw(this->c);
+=======
+=======
+>>>>>>> Stashed changes
             if(layout != null) {
                 layout->onDraw(this->c);
                 if(layout->getViewRect().inside((f32)mx,(f32)my)) {
@@ -101,6 +108,14 @@ fun Window::draw(View* layout){
             this->c->drawText(fbWidth / 2, fbHeight / 2,ss.str().c_str(),"font",30);
 <<<<<<< Updated upstream
 
+<<<<<<< HEAD
+=======
+>>>>>>> stable
+=======
+            if(layout != null)
+                    layout->onDraw(this->c);
+>>>>>>> parent of 9481cdf... [1.3.3] ad mouse callbacks
+>>>>>>> dev
 =======
 >>>>>>> Stashed changes
             this->c->endFrame();
