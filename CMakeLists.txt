@@ -35,7 +35,10 @@ endif()
 
 add_executable(mUI main.cpp
         src/window/Window.cpp src/window/Window.h
+<<<<<<< Updated upstream
         src/sTypes.h
+=======
+>>>>>>> Stashed changes
         src/graphics/nanovg/fontstash.h
         src/graphics/nanovg/nanovg.c
         src/graphics/nanovg/nanovg.h
@@ -46,4 +49,8 @@ add_executable(mUI main.cpp
         src/graphics/Canvas.cpp src/graphics/Canvas.h
         src/view/View.cpp src/view/View.h
         src/app/Application.cpp src/app/Application.h
+<<<<<<< Updated upstream
         src/app/Activity.cpp src/app/Activity.h src/graphics/Rect.cpp src/graphics/Rect.h src/view/listener/Listener.h src/view/listener/OnClickListener.h)
+=======
+        src/app/Activity.cpp src/app/Activity.h)
+>>>>>>> Stashed changes

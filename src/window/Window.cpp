@@ -1,5 +1,4 @@
 #include "Window.h"
-
 #include <cstdlib>
 #include <cstdio>
 #include <sstream>
@@ -100,7 +99,10 @@ fun Window::draw(View* layout){
             ss << "Mouse : " << mx << ":" << my;
             this->c->color("#fff");
             this->c->drawText(fbWidth / 2, fbHeight / 2,ss.str().c_str(),"font",30);
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
             this->c->endFrame();
         }
 
