@@ -72,6 +72,8 @@ fun Canvas::color3f(f32 r,f32 g,f32 b)          {this->col = ColorUtils::color3f
 fun Canvas::color4f(f32 r,f32 g,f32 b,f32 a)    {this->col = ColorUtils::color4f(r,g,b,a);  }
 fun Canvas::color(const char* hex)              {this->col = ColorUtils::color(hex);        }
 
+
+
 fun Canvas::drawCircle(f32 x,f32 y,f32 r){
     nvgBeginPath(this->c);
     nvgCircle(this->c, x,y,r);
@@ -92,11 +94,7 @@ fun Canvas::drawArc(f32 x,f32 y,f32 r,f32 s,f32 e){
     nvgFill(this->c);
 }
 fun Canvas::drawRRect(f32 x, f32 y, f32 w,f32 h,f32 r){
-    nvgBeginPath(this->c);
-    nvgRoundedRect(this->c,x,y,w,h,r);
-    nvgFillColor(this->c, this->col);
-    nvgFill(this->c);
-
+    drawRRect(x,y,w,h,r,r,r,r);
 }
 fun Canvas::drawRRect(f32 x, f32 y, f32 w,f32 h,f32 tl,f32 tr, f32 bl, f32 br){
     nvgBeginPath(this->c);
@@ -121,7 +119,11 @@ fun Canvas::drawRect(f32 x, f32 y, f32 w,f32 h){
     nvgFill(this->c);
 }
 
-
+f32 Canvas::getWidth(const char* t){
+    NVGtextRow row[1];
+    nvgTextBreakLines(this->c, t, t + strlen(t), (f32)strlen(t), row, 1);
+    return row->maxx - row->minx;
+}
 
 u32 ColorUtils::fHex(char _c){
     switch(_c) {

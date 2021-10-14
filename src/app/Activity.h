@@ -1,7 +1,7 @@
 #ifndef MUI_ACTIVITY_H
 #define MUI_ACTIVITY_H
 
-#include "../view/View.h"
+#include "../view/core/View.h"
 
 class View;
 

@@ -10,7 +10,7 @@ fun Activity::setLayout(View* v){
 }
 fun Activity::draw(Canvas* canvas){
     if(this->layout != null){
-        layout->onDraw(canvas);
+      //  layout->onDraw(canvas);
     }
 }
 

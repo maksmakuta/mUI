@@ -24,6 +24,7 @@ fun Window::prepare(){
 
     glfwInitHint(GLFW_VERSION_MAJOR,3);
     glfwInitHint(GLFW_VERSION_MINOR,2);
+    glfwInitHint(GLFW_EGL_CONTEXT_API,GLFW_OPENGL_API);
     glfwInitHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_SAMPLES, 4);
 
@@ -83,7 +84,7 @@ fun Window::draw(View* layout){
             this->c->beginFrame( (f32)winWidth, (f32)winHeight, pxRatio);
 
             glClearColor(this->bg.r,this->bg.g,this->bg.b,this->bg.a);
-            if(layout != null) {
+           /* if(layout != null) {
                 layout->onDraw(this->c);
                 if(layout->getViewRect().inside((f32)mx,(f32)my)) {
                     layout->onHover(this->c);
@@ -93,12 +94,8 @@ fun Window::draw(View* layout){
                     if(layout->listeners(OnCLick) != null)
                         ((OnClickListener*)layout->listeners(OnCLick))->onClick();
                 }
-            }
-            std::stringstream ss;
-            ss << "Mouse : " << mx << ":" << my;
-            this->c->color("#fff");
-            this->c->drawText(fbWidth / 2, fbHeight / 2,ss.str().c_str(),"font",30);
-            this->c->endFrame();
+            }*/
+           this->c->endFrame();
         }
 
         glfwSwapBuffers(win);

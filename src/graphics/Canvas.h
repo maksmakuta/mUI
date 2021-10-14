@@ -47,6 +47,8 @@ public:
 
     fun drawText(f32 x,f32 y,const char* data,const char* fnt,f32 s);
 
+    f32 getWidth(const char* t);
+
 };
 
 #endif

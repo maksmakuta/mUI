@@ -44,8 +44,7 @@ add_executable(mUI main.cpp
         src/graphics/nanovg/stb_image.h
         src/graphics/nanovg/stb_truetype.h
         src/graphics/Canvas.cpp src/graphics/Canvas.h
-        src/view/View.cpp src/view/View.h
         src/app/Application.cpp src/app/Application.h
         src/app/Activity.cpp src/app/Activity.h
-        src/graphics/Rect.cpp src/graphics/Rect.h
-        src/view/listener/Listener.h src/view/listener/OnClickListener.h src/graphics/Rect.cpp src/graphics/Rect.h src/view/listener/Listener.h src/view/listener/OnClickListener.h)
+        src/view/core/View.cpp src/view/core/View.h
+        src/view/core/Layout.cpp src/view/core/Layout.h)
