@@ -1,14 +1,10 @@
-//
-// Created by maks on 10/14/21.
-//
-
 #ifndef MUI_LAYOUT_H
 #define MUI_LAYOUT_H
 
+#include "View.h"
 
-class Layout {
+class Layout : public View{
 
 };
 
-
-#endif //MUI_LAYOUT_H
+#endif

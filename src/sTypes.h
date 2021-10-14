@@ -4,8 +4,8 @@
 #include <string> // c++ strings
 
 /**
- * this header defines types
- * types in some places same as in Rust
+ * This header defines types.
+ * Types in some places same as in Rust
  */
 
 typedef float   f32;

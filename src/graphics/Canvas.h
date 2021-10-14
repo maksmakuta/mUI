@@ -6,48 +6,57 @@
 #include "../graphics/nanovg/nanovg_gl.h"
 #include "../sTypes.h"
 
-class ColorUtils{
-public:
-    static NVGcolor color3u(u32 r,u32 g,u32 b);
-    static NVGcolor color4u(u32 r,u32 g,u32 b,u32 a);
-    static NVGcolor color3f(f32 r,f32 g,f32 b);
-    static NVGcolor color4f(f32 r,f32 g,f32 b,f32 a);
-    static NVGcolor color(const char* hex);
-private:
-    static u32 fHex(char);
-};
-
 class Canvas {
 private:
     NVGcontext *c = null;
     NVGcolor col;
-    i32 font;
+    i32 *font = null;
+    i32 fontN = 0;
 public:
     Canvas();
-
-
 
     fun beginFrame(f32 w,f32 h,f32 p);
     fun endFrame();
 
-    fun color3u(u32 r,u32 g,u32 b);
-    fun color4u(u32 r,u32 g,u32 b,u32 a);
-    fun color3f(f32 r,f32 g,f32 b);
-    fun color4f(f32 r,f32 g,f32 b,f32 a);
-    fun color(const char* hex);
+    fun begin();
+    fun circle  (f32 x,f32 y,f32 r);
+    fun ellipse (f32 x,f32 y,f32 cx,f32 cy);
+    fun arc     (f32 x,f32 y,f32 r,f32 s,f32 e,bool);
+    fun rect    (f32 x, f32 y, f32 w,f32 h);
+    fun rect    (f32 x, f32 y, f32 w,f32 h,f32 r);
+    fun rect    (f32 x, f32 y, f32 w,f32 h,f32 tl,f32 tr, f32 bl, f32 br);
+    fun end(bool);
 
-    fun setupText(const char* face, const char* name);
+    fun beginPath   ();
+    fun moveTo      (f32 x,f32 y);
+    fun lineTo      (f32 x,f32 y);
+    fun bezierTo    (f32 c1x, f32 c1y, f32 c2x, f32 c2y, f32 x, f32 y);
+    fun quadTo      (f32 cx, f32 cy, f32 x, f32 y);
+    fun arcTo       (f32 x1, f32 y1, f32 x2, f32 y2, f32 radius);
+    fun endPath     ();
+    fun windingPath(int);
 
-    fun drawRect(f32 x, f32 y, f32 w,f32 h);
-    fun drawCircle(f32 x,f32 y,f32 r);
-    fun drawEllipse(f32 x,f32 y,f32 cx,f32 cy);
-    fun drawArc(f32 x,f32 y,f32 r,f32 s,f32 e);
-    fun drawRRect(f32 x, f32 y, f32 w,f32 h,f32 r);
-    fun drawRRect(f32 x, f32 y, f32 w,f32 h,f32 tl,f32 tr, f32 bl, f32 br);
+    fun lineWidth(f32);
 
-    fun drawText(f32 x,f32 y,const char* data,const char* fnt,f32 s);
+    fun fill(const char*);
+    fun fill(NVGcolor color);
 
-    f32 getWidth(const char* t);
+    fun initFont(const char* f,const char* n);
+    fun allocateFont(i32 size);
+    fun initFont(const char* f,i32 id);
+
+    fun fontFace(const char* fontname);
+    fun fontFace(i32 fontID);
+
+    fun fontSize(f32 s);
+    fun fontBlur(f32 b);
+    fun fontAlign(i32 e);
+
+    fun text    (f32 x,f32 y,const char* _text);
+    fun textBox (f32 x,f32 y,f32 w,const char* _text);
+
+    f32* textBounds(f32 x,f32 y,const char* _text);
+    f32* textBoxBounds(f32 x,f32 y,f32 w,const char* _text);
 
 };
 

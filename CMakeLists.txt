@@ -47,4 +47,4 @@ add_executable(mUI main.cpp
         src/app/Application.cpp src/app/Application.h
         src/app/Activity.cpp src/app/Activity.h
         src/view/core/View.cpp src/view/core/View.h
-        src/view/core/Layout.cpp src/view/core/Layout.h)
+        src/view/core/Layout.cpp src/view/core/Layout.h src/graphics/ColorUtils.cpp src/graphics/ColorUtils.h)
