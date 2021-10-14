@@ -2,8 +2,8 @@
 #define MUI_CANVAS_H
 
 #include <GL/glew.h>
-#include "../graphics/nanovg/nanovg.h"
-#include "../graphics/nanovg/nanovg_gl.h"
+#include "nanovg/nanovg.h"
+#include "nanovg/nanovg_gl.h"
 #include "../sTypes.h"
 
 class Canvas {
