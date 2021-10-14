@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.20)
 project(mUI)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -35,6 +35,7 @@ endif()
 
 add_executable(mUI main.cpp
         src/window/Window.cpp src/window/Window.h
+        src/sTypes.h
         src/graphics/nanovg/fontstash.h
         src/graphics/nanovg/nanovg.c
         src/graphics/nanovg/nanovg.h
@@ -43,19 +44,7 @@ add_executable(mUI main.cpp
         src/graphics/nanovg/stb_image.h
         src/graphics/nanovg/stb_truetype.h
         src/graphics/Canvas.cpp src/graphics/Canvas.h
-        src/view/View.cpp src/view/View.h
         src/app/Application.cpp src/app/Application.h
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<<<<<<< HEAD
-        src/app/Activity.cpp src/app/Activity.h)
->>>>>>> dev
-=======
-        src/app/Activity.cpp src/app/Activity.h src/graphics/Rect.cpp src/graphics/Rect.h src/view/listener/Listener.h src/view/listener/OnClickListener.h)
->>>>>>> stable
-=======
-        src/app/Activity.cpp src/app/Activity.h)
->>>>>>> parent of 9481cdf... [1.3.3] ad mouse callbacks
-=======
-        src/app/Activity.cpp src/app/Activity.h)
->>>>>>> Stashed changes
+        src/app/Activity.cpp src/app/Activity.h
+        src/view/core/View.cpp src/view/core/View.h
+        src/view/core/Layout.cpp src/view/core/Layout.h src/graphics/ColorUtils.cpp src/graphics/ColorUtils.h)

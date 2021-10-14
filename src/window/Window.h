@@ -7,7 +7,7 @@
 #include "../graphics/Canvas.h"
 #include "../sTypes.h"
 
-#include "../view/View.h"
+#include "../view/core/View.h"
 
 
 class Window {
