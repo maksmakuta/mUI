@@ -9,7 +9,7 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra ")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
@@ -18,6 +18,7 @@ if (OPENGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIRS})
     link_libraries(${OPENGL_LIBRARIES})
 endif()
+
 
 ###################################
 find_package(PkgConfig REQUIRED)
@@ -34,8 +35,7 @@ if (GLEW_FOUND)
 endif()
 
 add_executable(mUI main.cpp
-        src/window/Window.cpp src/window/Window.h
-        src/sTypes.h
+
         src/graphics/nanovg/fontstash.h
         src/graphics/nanovg/nanovg.c
         src/graphics/nanovg/nanovg.h
@@ -43,6 +43,9 @@ add_executable(mUI main.cpp
         src/graphics/nanovg/nanovg_gl_utils.h
         src/graphics/nanovg/stb_image.h
         src/graphics/nanovg/stb_truetype.h
+
+        src/window/Window.cpp src/window/Window.h
+        src/sTypes.h
         src/graphics/Canvas.cpp src/graphics/Canvas.h
         src/app/Application.cpp src/app/Application.h
         src/app/Activity.cpp src/app/Activity.h
