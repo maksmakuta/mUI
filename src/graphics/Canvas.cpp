@@ -4,6 +4,8 @@
 
 Canvas::Canvas(){
     this->c = nvgCreateGL3(NVGcreateFlags::NVG_STENCIL_STROKES|NVG_ANTIALIAS);
+    this->initFont("../assets/fonts/Roboto/Roboto-Regular.ttf","roboto");
+    this->initFont("../assets/fonts/Noto_Sans/NotoSans-Regular.ttf","noto");
 }
 
 fun Canvas::beginFrame(f32 w, f32 h,f32 p){

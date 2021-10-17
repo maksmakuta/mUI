@@ -25,7 +25,7 @@ typedef std::string str;
 
 // for function only
 typedef void fun;
-
+#define tmp template <class T>
 #define null nullptr
 
 /**

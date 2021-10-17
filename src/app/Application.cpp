@@ -1,7 +1,7 @@
 #include "Application.h"
 
-Application::Application(i32 w,i32 h,const char* title){
-    this->w = new Window(w,h,title);
+Application::Application(i32 w,i32 h,const char* _title){
+    this->w = new Window(w,h,_title);
 }
 fun Application::args(i32 a,char** b){
     // empty

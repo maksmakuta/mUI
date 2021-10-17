@@ -8,6 +8,7 @@ class Application {
 private:
     Window *w = null;
     Activity *a = null;
+    str title;
 public:
     Application(i32 w,i32 h,const char* title);
     fun args(i32 a,char** b);

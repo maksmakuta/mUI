@@ -9,11 +9,8 @@ class Activity {
 private:
     View* layout = null;
 public:
-
     Activity();
     fun setLayout(View*);
-    fun draw(Canvas*);
-
     View* getLayout();
 };
 
