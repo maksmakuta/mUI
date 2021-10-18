@@ -9,7 +9,7 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-set(CMAKE_CXX_FLAGS "-Wall -Wextra")
+set(CMAKE_CXX_FLAGS "-Wall -Wextra ")
 set(CMAKE_CXX_FLAGS_DEBUG "-g")
 set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
@@ -18,6 +18,7 @@ if (OPENGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIRS})
     link_libraries(${OPENGL_LIBRARIES})
 endif()
+
 
 ###################################
 find_package(PkgConfig REQUIRED)
@@ -34,8 +35,7 @@ if (GLEW_FOUND)
 endif()
 
 add_executable(mUI main.cpp
-        src/window/Window.cpp src/window/Window.h
-        src/sTypes.h
+
         src/graphics/nanovg/fontstash.h
         src/graphics/nanovg/nanovg.c
         src/graphics/nanovg/nanovg.h
@@ -43,8 +43,11 @@ add_executable(mUI main.cpp
         src/graphics/nanovg/nanovg_gl_utils.h
         src/graphics/nanovg/stb_image.h
         src/graphics/nanovg/stb_truetype.h
+
+        src/window/Window.cpp src/window/Window.h
+        src/sTypes.h
         src/graphics/Canvas.cpp src/graphics/Canvas.h
         src/app/Application.cpp src/app/Application.h
         src/app/Activity.cpp src/app/Activity.h
         src/view/core/View.cpp src/view/core/View.h
-        src/view/core/Layout.cpp src/view/core/Layout.h src/graphics/ColorUtils.cpp src/graphics/ColorUtils.h)
+        src/view/core/Layout.cpp src/view/core/Layout.h src/graphics/ColorUtils.cpp src/graphics/ColorUtils.h src/view/listener/OnLongClickListener.h src/view/listener/OnHoverListener.h src/view/listener/OnMoveListener.h src/view/listener/OnKeyListener.h src/view/listener/Listener.h src/view/Drawable.cpp src/view/Drawable.h src/view/TextView.cpp src/view/TextView.h src/view/Button.cpp src/view/Button.h src/view/ImageView.cpp src/view/ImageView.h src/view/EditText.cpp src/view/EditText.h src/view/LinearLayout.cpp src/view/LinearLayout.h src/view/RelativeLayout.cpp src/view/RelativeLayout.h src/view/CardView.cpp src/view/CardView.h src/view/Spinner.cpp src/view/Spinner.h src/view/ListView.cpp src/view/ListView.h src/view/ToolBar.cpp src/view/ToolBar.h)

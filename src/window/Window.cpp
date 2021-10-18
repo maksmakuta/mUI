@@ -1,5 +1,6 @@
 #include "Window.h"
 #include "../graphics/ColorUtils.h"
+#include "../view/core/Layout.h"
 #include <cstdlib>
 #include <cstdio>
 
@@ -85,18 +86,14 @@ fun Window::draw(View* layout){
 
             glClearColor(this->bg.r,this->bg.g,this->bg.b,this->bg.a);
             if(layout != null) {
-                layout->onDraw(this->c);
-           /*
-                if(layout->getViewRect().inside((f32)mx,(f32)my)) {
-                    layout->onHover(this->c);
+                if(layout->container()) {
+                    auto* l = (Layout*)layout;
+                    l->onDraw(this->c);
+                    l->onResize((f32) winWidth, (f32) winHeight);
+                }else{
+                    layout->onDraw(this->c);
+                    layout->onResize((f32) winWidth, (f32) winHeight);
                 }
-
-                if(layout->getViewRect().inside((f32)mx,(f32)my) && glfwGetMouseButton(win,GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS) {
-                    if(layout->listeners(OnCLick) != null)
-                        ((OnClickListener*)layout->listeners(OnCLick))->onClick();
-                }
-             */
-
             }
            this->c->endFrame();
         }
