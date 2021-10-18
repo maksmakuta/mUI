@@ -1,5 +1,6 @@
 #include "src/app/Application.h"
 #include "src/view/core/Layout.h"
+#include "src/view/Drawable.h"
 
 class RectView : public View{
 private:
@@ -78,8 +79,9 @@ public:
         }
     }
 
-    fun onResize(f32 w, f32 h) override{
-
+    fun onResize(f32 w,f32 h) override{
+        this->w(w);
+        this->h(h);
     }
 };
 
@@ -88,9 +90,8 @@ public:
     MainActivity() : Activity(){
         Layout* ll = new LinearLayout(false);
         ll->add(new RectView(100,200,"#fff"));
-        ll->add(new RectView(50,100,"#ff0"));
         ll->add(new RectView(100,50,"#f00"));
-        this->setLayout((View*)ll);
+        this->setLayout(ll->toView());
     }
 };
 

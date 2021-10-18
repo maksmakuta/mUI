@@ -20,6 +20,9 @@ fun Layout::update(View* v){
     }
 }
 
+View* Layout::toView(){
+    return (View*)this;
+}
 
 std::vector<View*> Layout::child(){
     return this->childs;

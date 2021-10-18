@@ -18,6 +18,8 @@ public:
     virtual fun onDraw(Canvas *c) = 0;
     virtual fun onResize(f32 w,f32 h) = 0;
 
+    View* toView();
+
 };
 
 #endif
