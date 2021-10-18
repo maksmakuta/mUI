@@ -7,7 +7,7 @@ class LinearLayout : public Layout{
 private:
     bool _v;
 public:
-    LinearLayout(bool v) : Layout(){
+    explicit LinearLayout(bool v = true) : Layout(){
         this->_v = v;
     }
 

@@ -10,7 +10,7 @@ public:
         auto* t = new TextView("Hello World");
         t->setFontSize(32.f);
         t->marginTop(150.0f);
-        Layout* ll = new LinearLayout(true);
+        Layout* ll = new LinearLayout();
         ll->add(new ToolBar("App"));
         ll->add(t);
         this->setLayout(ll->toView());
