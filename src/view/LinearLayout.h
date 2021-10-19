@@ -11,14 +11,16 @@ public:
         this->_v = v;
     }
 
-    fun onDraw(Canvas *c) override{
+    fun onDraw(Canvas *c) override{/*
         if(_v){
             f32 y = 0.f;
             for(auto& v : childs){
-                v->y(y + v->marginTop());
+                y += v->marginTop();
+                v->y(y);
                 v->w(this->w());
                 v->onDraw(c);
                 y += v->h();
+                y += v->marginBottom();
             }
         }else{
             f32 x = 0.f;
@@ -27,12 +29,12 @@ public:
                 v->onDraw(c);
                 x += v->w();
             }
-        }
+        }*/
     }
 
     fun onResize(f32 w,f32 h) override{
-        this->w(w);
-        this->h(h);
+        //this->w(w);
+        //this->h(h);
     }
 };
 

@@ -34,6 +34,16 @@ fun Canvas::rect(f32 x, f32 y, f32 w,f32 h,f32 tl,f32 tr, f32 bl, f32 br){
     nvgRoundedRectVarying(this->c,x,y,w,h,tl,tr,br,bl);
 }
 
+fun Canvas::rect(const Rect& _r){
+    rect(_r.x(),_r.y(),_r.w(),_r.h());
+}
+fun Canvas::rect(const Rect& _r,f32 r){
+    rect(_r.x(),_r.y(),_r.w(),_r.h(),r);
+}
+fun Canvas::rect(const Rect& _r,f32 tl,f32 tr, f32 bl, f32 br){
+    rect(_r.x(),_r.y(),_r.w(),_r.h(),tl,tr,bl,br);
+}
+
 fun Canvas::begin(){
     nvgBeginPath(this->c);
 }

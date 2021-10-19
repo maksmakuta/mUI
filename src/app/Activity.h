@@ -2,10 +2,11 @@
 #define MUI_ACTIVITY_H
 
 #include "../view/core/View.h"
+#include "../Object.h"
 
 class View;
 
-class Activity {
+class Activity : public Object{
 private:
     View* layout = null;
 public:

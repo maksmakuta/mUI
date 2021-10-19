@@ -4,23 +4,7 @@
 #include <cstdlib>
 #include <cstdio>
 
-fun onResize(GLFWwindow*, i32 w,i32 h){
-    glViewport( 0, 0, w,  h );
-    glMatrixMode( GL_PROJECTION );
-    glLoadIdentity();
-    glOrtho(0,w,h,0,-1,1);
-    glMatrixMode( GL_MODELVIEW );
-    glLoadIdentity();
-}
-
-Window::Window() : Window(640,480,"Test"){}
-
-Window::Window(i32 _w,i32 _h,const char* _t){
-    prepare();
-    init(_w,_h,_t);
-}
-
-fun Window::prepare(){
+Window::Window(i32 _w,i32 _h,const char* _t) {
     if(!glfwInit()) error("GLFWInit()");
 
     glfwInitHint(GLFW_VERSION_MAJOR,3);
@@ -28,77 +12,49 @@ fun Window::prepare(){
     glfwInitHint(GLFW_EGL_CONTEXT_API,GLFW_OPENGL_API);
     glfwInitHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_SAMPLES, 4);
+    this->win = glfwCreateWindow(_w,_h,_t,null,null);
+    if(!this->win) error("window");
 
-}
-
-fun Window::init(i32 _w,i32 _h,const char* _t){
-    win = glfwCreateWindow(_w,_h,_t,null,null);
-    if(!win) error("window");
-
-    glfwMakeContextCurrent(win);
+    glfwMakeContextCurrent(this->win);
     glewExperimental = GL_TRUE;
     if(glewInit() != GLEW_OK) error("glew");
     glfwSwapInterval(1);
 
     this->c = new Canvas();
-
-    glfwSetWindowSizeCallback(win,onResize);
-    onResize(win,_w,_h);
-
 }
-
-
 fun Window::setBG(const char* h){
     this->bg = ColorUtils::color(h);
 }
 
-fun Window::resize(i32 w,i32 h){
-    glfwSetWindowSize(win,w,h);
-}
-
-fun Window::remove(i32 x,i32 y){
-    glfwSetWindowPos(win,x,y);
-}
-
-fun Window::draw(View* layout){
-
-    while(!glfwWindowShouldClose(win)){
-        f64 mx, my, t, dt;
-        i32 winWidth, winHeight;
-        i32 fbWidth, fbHeight;
-        f32 pxRatio;
-
+fun Window::draw(View* v){
+    while(!glfwWindowShouldClose(this->win)){
+        f64 t, dt;
         t = glfwGetTime();
         dt = t - prevt;
         prevt = t;
 
-        glfwGetCursorPos(win, &mx, &my);
-        glfwGetWindowSize(win, &winWidth, &winHeight);
-        glfwGetFramebufferSize(win, &fbWidth, &fbHeight);
+        i32 fbWidth, fbHeight;
+        glfwGetFramebufferSize(this->win, &fbWidth, &fbHeight);
 
-        pxRatio = (float)fbWidth / (float)winWidth;
+        i32 w,h;
+        glfwGetWindowSize(this->win,&w,&h);
+
+        f64 mx,my;
+        glfwGetCursorPos(this->win,&mx,&my);
 
         glViewport(0, 0, fbWidth, fbHeight);
-        //glClearColor(0,0,0,0);
+
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT|GL_STENCIL_BUFFER_BIT);
         if(this->c != null){
-            this->c->beginFrame( (f32)winWidth, (f32)winHeight, pxRatio);
-
+            this->c->beginFrame( (f32)w, (f32)h, (f32)fbWidth / (f32)w);
             glClearColor(this->bg.r,this->bg.g,this->bg.b,this->bg.a);
-            if(layout != null) {
-                if(layout->container()) {
-                    auto* l = (Layout*)layout;
-                    l->onDraw(this->c);
-                    l->onResize((f32) winWidth, (f32) winHeight);
-                }else{
-                    layout->onDraw(this->c);
-                    layout->onResize((f32) winWidth, (f32) winHeight);
-                }
+            if(v != null) {
+                v->onDraw(this->c);
+                v->onResize((f32)w,(f32)h);
             }
-           this->c->endFrame();
+            this->c->endFrame();
         }
-
-        glfwSwapBuffers(win);
+        glfwSwapBuffers(this->win);
         glfwPollEvents();
     }
 
@@ -106,7 +62,7 @@ fun Window::draw(View* layout){
 
 fun Window::error(const char* t){
     printf("%s\n",t);
-    if(win != null){
+    if(this->win != null){
         glfwTerminate();
         exit(EXIT_FAILURE);
     }

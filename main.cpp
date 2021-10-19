@@ -1,24 +1,35 @@
 #include "src/app/Application.h"
-#include "src/view/LinearLayout.h"
-#include "src/view/ToolBar.h"
-#include "src/view/TextView.h"
 
+class MaterialView : public View{
+public :
+
+    MaterialView() : View(){
+
+    }
+
+    fun onDraw(Canvas *c) override{
+        c->begin();
+        c->rect(getViewRect(),150);
+        c->fill("#f0F");
+        c->end(true);
+    }
+/*
+    fun onResize(f32 _w, f32 _h) override{
+        Rect r(0,0,_w,_h);
+        this->setViewRect(r);
+    }
+*/
+};
 
 class MainActivity : public Activity{
 public:
     MainActivity() : Activity(){
-        auto* t = new TextView("Hello World");
-        t->setFontSize(32.f);
-        t->marginTop(150.0f);
-        Layout* ll = new LinearLayout();
-        ll->add(new ToolBar("App"));
-        ll->add(t);
-        this->setLayout(ll->toView());
+        this->setLayout(new MaterialView());
     }
 };
 
 int main(){
-    Application app(600,400,"App");
+    Application app(640,480,"App");
     app.setMainActivity(new MainActivity());
     app.exec();
     return 0;

@@ -38,7 +38,7 @@ public:
         c->fontFace(this->f.c_str());
         c->fontSize(this->s);
         c->fill("#fff");
-        c->text(x() + w()/2.f,y() + this->s/2.f,this->t.c_str());
+       // c->text(x() + w()/2.f,y() + this->s/2.f,this->t.c_str());
     }
 
     fun onResize(f32 _w, f32 _h) override{

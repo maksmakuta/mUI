@@ -10,10 +10,10 @@ public:
 
     ToolBar(const str& title) : View(){
         this->_t = title;
-        this->h(64.f);
+       // this->h(64.f);
     }
 
-    fun onDraw(Canvas *c) override{
+    fun onDraw(Canvas *c) override{/*
         c->begin();
         c->rect(x(),y(),w(),h());
         c->fill("#fa91cd");
@@ -23,11 +23,11 @@ public:
         c->fontFace("noto");
         c->fontSize(32);
         c->fill("#000");
-        c->text(x() + w()/2,y() + h() / 2.f,_t.c_str());
+        c->text(x() + w()/2,y() + h() / 2.f,_t.c_str());*/
     }
 
     fun onResize(f32 _w, f32 _h) override{
-        this->w(_w);
+        //this->w(_w);
     }
 
 };

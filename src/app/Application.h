@@ -3,8 +3,9 @@
 
 #include "../window/Window.h"
 #include "Activity.h"
+#include "../Object.h"
 
-class Application {
+class Application : public Object{
 private:
     Window *w = null;
     Activity *a = null;
@@ -14,6 +15,9 @@ public:
     fun args(i32 a,char** b);
     fun setMainActivity(Activity*);
     fun exec();
+
+    bool equal(Object &obj) override;
+    str toString() override;
 };
 
 

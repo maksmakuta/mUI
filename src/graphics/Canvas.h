@@ -5,6 +5,7 @@
 #include "nanovg/nanovg.h"
 #include "nanovg/nanovg_gl.h"
 #include "../sTypes.h"
+#include "Rect.h"
 
 class Canvas {
 private:
@@ -25,6 +26,10 @@ public:
     fun rect    (f32 x, f32 y, f32 w,f32 h);
     fun rect    (f32 x, f32 y, f32 w,f32 h,f32 r);
     fun rect    (f32 x, f32 y, f32 w,f32 h,f32 tl,f32 tr, f32 bl, f32 br);
+    fun rect    (const Rect& _r);
+    fun rect    (const Rect& _r,f32 r);
+    fun rect    (const Rect& _r,f32 tl,f32 tr, f32 bl, f32 br);
+
     fun end(bool);
 
     fun beginPath   ();
