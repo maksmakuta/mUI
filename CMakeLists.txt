@@ -34,36 +34,20 @@ if (GLEW_FOUND)
     link_libraries(     ${GLEW_LIBRARIES})
 endif()
 
+include_directories(/src)
+
 add_executable(mUI main.cpp
 
-        src/graphics/nanovg/fontstash.h
-        src/graphics/nanovg/nanovg.c
-        src/graphics/nanovg/nanovg.h
-        src/graphics/nanovg/nanovg_gl.h
-        src/graphics/nanovg/nanovg_gl_utils.h
-        src/graphics/nanovg/stb_image.h
-        src/graphics/nanovg/stb_truetype.h
+        src/core/gl/fontstash.h
+        src/core/gl/nanovg.c
+        src/core/gl/nanovg.h
+        src/core/gl/nanovg_gl.h
+        src/core/gl/nanovg_gl_utils.h
 
-        src/window/Window.cpp src/window/Window.h
-        src/sTypes.h
-        src/graphics/Canvas.cpp src/graphics/Canvas.h
-        src/app/Application.cpp src/app/Application.h
-        src/app/Activity.cpp src/app/Activity.h
-        src/view/core/View.cpp src/view/core/View.h
-        src/view/core/Layout.cpp src/view/core/Layout.h
-        src/graphics/ColorUtils.cpp src/graphics/ColorUtils.h
-        src/view/listener/OnLongClickListener.h
-        src/view/listener/OnMoveListener.h src/view/listener/OnKeyListener.h
-        src/view/listener/Listener.h
-        src/view/Drawable.cpp src/view/Drawable.h
-        src/view/TextView.cpp src/view/TextView.h
-        src/view/Button.cpp src/view/Button.h
-        src/view/ImageView.cpp src/view/ImageView.h
-        src/view/EditText.cpp src/view/EditText.h
-        src/view/LinearLayout.cpp src/view/LinearLayout.h
-        src/view/RelativeLayout.cpp src/view/RelativeLayout.h
-        src/view/CardView.cpp src/view/CardView.h
-        src/view/Spinner.cpp src/view/Spinner.h
-        src/view/ListView.cpp src/view/ListView.h
-        src/view/ToolBar.cpp src/view/ToolBar.h
-        src/graphics/Rect.cpp src/graphics/Rect.h src/Object.cpp src/Object.h src/app/Theme.cpp src/app/Theme.h)
+        src/core/gl/stb_image.h
+        src/core/gl/stb_truetype.h
+
+        src/core/App.cpp src/core/App.h
+        src/core/Window.cpp src/core/Window.h
+        src/core/View.cpp src/core/View.h
+        src/core/types.h src/core/gl/utils/ColorUtils.cpp src/core/gl/utils/ColorUtils.h src/core/gl/GL3Renderer.h src/core/Theme.cpp src/core/Theme.h src/layout/LinearLayout.cpp src/layout/LinearLayout.h src/view/ProgressView.cpp src/view/ProgressView.h src/core/Canvas.cpp src/core/Canvas.h)
