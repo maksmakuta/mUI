@@ -6,25 +6,14 @@
 class LinearLayout : public View{
 private:
     bool v;
-    //const char* bCol;
 public:
-    explicit LinearLayout(bool _v = false) : View(){
+    explicit LinearLayout(bool _v = true) : View(){
         this->v = _v;
         this->margin(10);
     }
 
-    //fun bg(const char* b){
-    //    this->bCol = b;
-    //}
-
     fun onDraw(Canvas *c) override{
-
-        //c->begin();
-        //c->rect(x,y,w,h);
-        //c->fill(bCol);
-        //c->end(true);
-
-        f32 _x = x,_y = y;
+        f32 _x = this->x,_y = this->y;
 
         for(View* view : getChild()){
             if(v) {

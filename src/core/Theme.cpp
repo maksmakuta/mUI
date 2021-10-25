@@ -2,10 +2,23 @@
 
 
 Theme Theme::Dark (){
-    return {};
+    Theme dark;
+    dark.setBaseFont        ("../assets/fonts/Roboto/Roboto-Regular.ttf");
+    dark.setFallFont        ("../assets/fonts/Noto_Sans/NotoSans-Regular.ttf");
+    dark.setDefaultFontSize (16.f);
+    dark.setHeaderFontSize  (21.f);
+    dark.setPrimaryColor    ("#444");
+    dark.setSecondaryColor  ("#777");
+    dark.setTextColor       ("#fafafa");
+    dark.setRadiusSize      (7.f);
+    return dark;
 }
 Theme Theme::Light(){
-    return {};
+    Theme light = Theme::Dark();
+    light.setPrimaryColor    ("#eee");
+    light.setSecondaryColor  ("#777");
+    light.setTextColor       ("#050505");
+    return light;
 }
 
 fun Theme::setPrimaryColor     (const str& h){this->primary     = h;}
