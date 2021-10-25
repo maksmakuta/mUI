@@ -4,7 +4,7 @@
 
 View* ll(){
     auto m = new LinearLayout();
-    m->add(new ProgressView());
+    m->add(new ProgressView("#fff"));
     return m;
 }
 

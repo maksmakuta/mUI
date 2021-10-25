@@ -1,18 +1,23 @@
 #include "View.h"
 
-View::View() { }
-
+View::View() {
+    this->margin(10);
+    this->rect(0,0,0,0);
+}
 
 fun View::add(View* v){
     child.push_back(v);
+    onMeasure();
 }
 fun View::del(i32 pos){
     child.erase(child.begin() + pos);
+    onMeasure();
 }
 fun View::del(View* v){
     for(i32 i = 0;i < (i32)child.size();i++)
         if(v == child[i])
             child.erase(child.begin() + i);
+    onMeasure();
 }
 
 std::vector<View*> View::getChild(){return this->child;}
@@ -35,7 +40,6 @@ fun View::margin(f32 _t,f32 _b,f32 _l,f32 _r){
 fun View::margin(f32 all){
     this->margin(all,all,all,all);
 }
-
 fun View::onDraw(Canvas* c) {
     c->begin();
     c->rect(x,y,w,h);
@@ -43,27 +47,8 @@ fun View::onDraw(Canvas* c) {
     c->end(true);
 }
 
-bool View::onMouseButton   (f32 x,f32 y, i32 button, bool down, i32 modifiers){
-
-}
-bool View::onMouseMotion   (f32 x,f32 y, f32 dx,f32 dy, i32 button, i32 modifiers){
-
-}
-bool View::onMouseDrag     (f32 x,f32 y, f32 dx,f32 dy, i32 button, i32 modifiers){
-
-}
-bool View::onMouseEnter    (f32 x,f32 y, bool enter){
-
-}
-bool View::onScroll        (f32 x,f32 y, f32 dx,f32 dy){
-
-}
-bool View::onFocus         (bool focused){
-
-}
-bool View::onKeyboard      (i32 key, i32 scancode, i32 action, i32 modifiers){
-
-}
-bool View::onKeyboardChar  (u32 codepoint){
-
+fun View::onMeasure(){
+    if(!child.empty())
+        for(View* v : child)
+            v->onMeasure();
 }

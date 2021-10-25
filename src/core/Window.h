@@ -1,3 +1,4 @@
+
 #ifndef MUI_WINDOW_H
 #define MUI_WINDOW_H
 
@@ -17,7 +18,6 @@ private:
 public:
     Window();
     Window(i32 w,i32 g,const char* t);
-
     fun draw(View*);
 
 private:

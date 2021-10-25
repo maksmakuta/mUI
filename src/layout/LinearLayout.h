@@ -4,9 +4,67 @@
 #include "../core/View.h"
 
 class LinearLayout : public View{
+private:
+    bool v;
+    //const char* bCol;
 public:
+    explicit LinearLayout(bool _v = false) : View(){
+        this->v = _v;
+        this->margin(10);
+    }
 
+    //fun bg(const char* b){
+    //    this->bCol = b;
+    //}
+
+    fun onDraw(Canvas *c) override{
+
+        //c->begin();
+        //c->rect(x,y,w,h);
+        //c->fill(bCol);
+        //c->end(true);
+
+        f32 _x = x,_y = y;
+
+        for(View* view : getChild()){
+            if(v) {
+                _y = view->t;
+                _x += view->l;
+            }else{
+                _x = view->l;
+                _y += view->t;
+            }
+
+            view->x = _x;
+            view->y = _y;
+
+            view->onDraw(c);
+
+            if(v) {
+                _x += view->w + view->r;
+            }else{
+                _y += view->h + view->b;
+            }
+        }
+    }
+
+    fun onMeasure() override{
+        f32 _w = 0.f,_h = 0.f;
+        for(View *_v: getChild()){
+            if(!v){
+                if(_v->w + _v->l + _v->r > _w) _w = _v->w + _v->l + _v->r;
+                _h += _v->h + _v->t + _v->b;
+            }else{
+                if(_v->h + _v->t + _v->b > _h) _h = _v->h + _v->b + _v->t;
+                _w += _v->w + _v->r + _v->l;
+            }
+        }
+        this->w = _w;
+        this->h = _h;
+        for(View* _v : getChild()){
+            _v->onMeasure();
+        }
+    }
 };
-
 
 #endif

@@ -1,4 +1,3 @@
-
 #include "Window.h"
 
 Window::Window() : Window(640,480,"Window"){}
@@ -23,10 +22,10 @@ Window::Window(i32 w,i32 h,const char* t){
     glfwSwapInterval(1);
 
     this->c = new Canvas(NVG_STENCIL_STROKES|NVG_ANTIALIAS);
-
 }
 
-fun Window::draw(View* v) {
+
+fun Window::draw(View *v) {
     while (!glfwWindowShouldClose(this->win)) {
         f64 mx, my, t, dt;
         i32 winWidth, winHeight;
@@ -37,10 +36,10 @@ fun Window::draw(View* v) {
         dt = t - prev;
         prev = t;
 
-
         glfwGetCursorPos(this->win, &mx, &my);
         glfwGetWindowSize(this->win, &winWidth, &winHeight);
         glfwGetFramebufferSize(this->win, &fbWidth, &fbHeight);
+
         pxRatio = (float) fbWidth / (float) winWidth;
 
         // Update and render
@@ -51,9 +50,9 @@ fun Window::draw(View* v) {
             c->beginFrame((f32) winWidth, (f32) winHeight, pxRatio);
                 if(decor)
                     border(c,(f32)winWidth,(f32)winHeight);
-            if (v != null)
+            if (v != null) {
                 v->onDraw(c);
-
+            }
             c->endFrame();
         }
         glfwSwapBuffers(this->win);
