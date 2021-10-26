@@ -27,7 +27,11 @@ fun View::del(View* v){
 
 std::vector<View*> View::getChild(){return this->child;}
 
-fun View::applyTheme(Theme* _t){this->mTheme = _t;}
+fun View::applyTheme(Theme* _t){
+    this->mTheme = _t;
+    for(auto v : child)
+        v->applyTheme(_t);
+}
 Theme* View::getTheme(){return this->mTheme;}
 
 

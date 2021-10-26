@@ -41,6 +41,7 @@ public:
 
     fun fill(const char*);
     fun fill(NVGcolor color);
+    fun fontFill(const char* );
 
     fun initFont(const char* f,const char* n);
     fun allocateFont(i32 size);

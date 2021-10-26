@@ -111,7 +111,7 @@ fun Window::onMouseButton(i32 button, i32 action, i32 mods){
 }
 fun Window::onMouseScroll(f64 dx,f64 dy){
     if(mainView != null){
-        mainView->onScroll(dx,dy);
+        mainView->onScroll((f32)dx,(f32)dy);
     }
 }
 

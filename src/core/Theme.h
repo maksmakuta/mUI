@@ -12,8 +12,8 @@ private:
 public:
     Theme(){}
 
-    static Theme Dark ();
-    static Theme Light();
+    static Theme* Dark ();
+    static Theme* Light();
 
     fun setPrimaryColor     (const str& h);
     fun setSecondaryColor   (const str& h);

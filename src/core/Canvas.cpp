@@ -83,6 +83,9 @@ fun Canvas::fill(NVGcolor color){
     this->col = color;
 }
 
+fun Canvas::fontFill(const char* col){
+    nvgFillColor(this->c,ColorUtils::color(col));
+}
 
 
 fun Canvas::initFont(const char* f,const char* n){

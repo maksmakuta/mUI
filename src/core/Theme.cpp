@@ -1,23 +1,23 @@
 #include "Theme.h"
 
 
-Theme Theme::Dark (){
-    Theme dark;
-    dark.setBaseFont        ("../assets/fonts/Roboto/Roboto-Regular.ttf");
-    dark.setFallFont        ("../assets/fonts/Noto_Sans/NotoSans-Regular.ttf");
-    dark.setDefaultFontSize (16.f);
-    dark.setHeaderFontSize  (21.f);
-    dark.setPrimaryColor    ("#444");
-    dark.setSecondaryColor  ("#777");
-    dark.setTextColor       ("#fafafa");
-    dark.setRadiusSize      (7.f);
+Theme* Theme::Dark (){
+    auto *dark = new Theme();
+    dark->setBaseFont        ("../assets/fonts/Roboto/Roboto-Regular.ttf");
+    dark->setFallFont        ("../assets/fonts/Noto_Sans/NotoSans-Regular.ttf");
+    dark->setDefaultFontSize (16.f);
+    dark->setHeaderFontSize  (21.f);
+    dark->setPrimaryColor    ("#444");
+    dark->setSecondaryColor  ("#777");
+    dark->setTextColor       ("#fafafa");
+    dark->setRadiusSize      (7.f);
     return dark;
 }
-Theme Theme::Light(){
-    Theme light = Theme::Dark();
-    light.setPrimaryColor    ("#eee");
-    light.setSecondaryColor  ("#777");
-    light.setTextColor       ("#050505");
+Theme* Theme::Light(){
+    Theme *light = Theme::Dark();
+    light->setPrimaryColor    ("#eee");
+    light->setSecondaryColor  ("#777");
+    light->setTextColor       ("#050505");
     return light;
 }
 
