@@ -5,14 +5,17 @@
 #include "types.h"
 #include "Canvas.h"
 #include "Theme.h"
+#include "utils/vec.h"
 
 class View {
 private:
     std::vector<View*> child;
     Theme *mTheme = null;
+    vec4 mRect ,mMargin;
+    bool isContainer = false;
 public:
 
-    View();
+    View(bool container);
 
     fun add(View* v);
     fun del(i32 pos);
@@ -20,19 +23,26 @@ public:
 
     std::vector<View*> getChild();
 
+    fun rect    (f32 x,f32 y,f32 w,f32 h);
+    fun margin  (f32 l,f32 t,f32 r,f32 b);
+    fun margin  (f32 a);
+    fun size    (f32 w,f32 h);
+    fun pos     (f32 x,f32 y);
+
+    vec2 pos ();
+    vec2 size();
+    vec4 margin();
+    vec4 rect();
+
     fun applyTheme(Theme*);
     Theme* getTheme();
 
-    fun rect  (f32 _x,f32 _y,f32 _w,f32 _h);
-    fun margin(f32 _t,f32 _b,f32 _l,f32 _r);
-    fun margin(f32 all);
-
-    virtual fun  onDraw         (Canvas* c);
-    virtual fun  onMeasure      ();
-
-    f32 x,y,w,h; // rect
-    f32 t,b,l,r; // margins
-
+    virtual fun onDraw    (Canvas* c);
+    virtual fun onMeasure ();
+    virtual fun onMouse(f32 x,f32 y,i32 button,i32 action,i32 mod);
+    virtual fun onKeyboard(i32 key,i32 scancode,i32 action,i32 mod);
+    virtual fun onKeyboard(u32 charcode);
+    virtual fun onScroll(f32 x,f32 y);
 };
 
 

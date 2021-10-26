@@ -50,4 +50,4 @@ add_executable(mUI main.cpp
         src/core/App.cpp src/core/App.h
         src/core/Window.cpp src/core/Window.h
         src/core/View.cpp src/core/View.h
-        src/core/types.h src/core/gl/utils/ColorUtils.cpp src/core/gl/utils/ColorUtils.h src/core/gl/GL3Renderer.h src/core/Theme.cpp src/core/Theme.h src/layout/LinearLayout.cpp src/layout/LinearLayout.h src/view/ProgressView.cpp src/view/ProgressView.h src/core/Canvas.cpp src/core/Canvas.h)
+        src/core/types.h src/core/gl/utils/ColorUtils.cpp src/core/gl/utils/ColorUtils.h src/core/gl/GL3Renderer.h src/core/Theme.cpp src/core/Theme.h src/layout/LinearLayout.cpp src/layout/LinearLayout.h src/core/Canvas.cpp src/core/Canvas.h src/core/utils/vec.h)

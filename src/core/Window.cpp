@@ -1,4 +1,7 @@
+#include <map>
 #include "Window.h"
+
+std::map<GLFWwindow *, Window *> mUI_screens;
 
 Window::Window() : Window(640,480,"Window"){}
 Window::Window(i32 w,i32 h,const char* t){
@@ -10,8 +13,6 @@ Window::Window(i32 w,i32 h,const char* t){
     glfwInitHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
 
     glfwWindowHint(GLFW_SAMPLES, 4);
-    //glfwWindowHint(GLFW_DECORATED,false);
-
 
     this->win = glfwCreateWindow(w,h,t,null,null);
     if(!win) error("window");
@@ -22,21 +23,47 @@ Window::Window(i32 w,i32 h,const char* t){
     glfwSwapInterval(1);
 
     this->c = new Canvas(NVG_STENCIL_STROKES|NVG_ANTIALIAS);
+
+    mUI_screens.insert(std::pair<GLFWwindow*,Window*>(this->win,this));
+
+    glfwSetKeyCallback(this->win,[](GLFWwindow* w,i32 key, i32 scancode, i32 action, i32 mods){
+        auto it = mUI_screens.find(w);
+        if(it == mUI_screens.end()) return;
+        it->second->onKey(key,scancode,action,mods);
+    });
+
+    glfwSetCharCallback(this->win,[](GLFWwindow* w,u32 charcode){
+        auto it = mUI_screens.find(w);
+        if(it == mUI_screens.end()) return;
+        it->second->onKey(charcode);
+    });
+
+    glfwSetCursorPosCallback(this->win,[](GLFWwindow* w,f64 mx,f64 my){
+        auto it = mUI_screens.find(w);
+        if(it == mUI_screens.end()) return;
+        it->second->onMousePos(mx,my);
+    });
+
+    glfwSetMouseButtonCallback(this->win,[](GLFWwindow* w,i32 button, i32 action, i32 mods){
+        auto it = mUI_screens.find(w);
+        if(it == mUI_screens.end()) return;
+        it->second->onMouseButton(button,action,mods);
+    });
+
+    glfwSetScrollCallback(this->win,[](GLFWwindow* w,f64 dx,f64 dy){
+        auto it = mUI_screens.find(w);
+        if(it == mUI_screens.end()) return;
+        it->second->onMouseScroll(dx,dy);
+    });
 }
 
-
 fun Window::draw(View *v) {
+    this->mainView = v;
     while (!glfwWindowShouldClose(this->win)) {
-        f64 mx, my, t, dt;
         i32 winWidth, winHeight;
         i32 fbWidth, fbHeight;
         f32 pxRatio;
 
-        t = glfwGetTime();
-        dt = t - prev;
-        prev = t;
-
-        glfwGetCursorPos(this->win, &mx, &my);
         glfwGetWindowSize(this->win, &winWidth, &winHeight);
         glfwGetFramebufferSize(this->win, &fbWidth, &fbHeight);
 
@@ -48,10 +75,8 @@ fun Window::draw(View *v) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
         if(c != null){
             c->beginFrame((f32) winWidth, (f32) winHeight, pxRatio);
-                if(decor)
-                    border(c,(f32)winWidth,(f32)winHeight);
-            if (v != null) {
-                v->onDraw(c);
+            if (mainView  != null) {
+                mainView ->onDraw(c);
             }
             c->endFrame();
         }
@@ -60,18 +85,39 @@ fun Window::draw(View *v) {
     }
 }
 
-fun Window::border(Canvas* _c,f32 w,f32 h){
-    _c->begin();
-    _c->rect(0,0,w,h);
-    _c->fill("#F00");
-    _c->end(false);
+
+fun Window::onKey(i32 key, i32 scancode, i32 action, i32 mods){
+    if(mainView != null){
+        mainView->onKeyboard(key,scancode,action,mods);
+    }
+}
+fun Window::onKey(u32 codepoint){
+    if(mainView != null){
+        mainView->onKeyboard(codepoint);
+    }
 }
 
+fun Window::onMousePos(f64 x,f64 y){
+    if(mainView != null){
+        mainView->onMouse((f32)x,(f32)y,0,0,0);
+    }
+}
+fun Window::onMouseButton(i32 button, i32 action, i32 mods){
+    if(mainView != null){
+        f64 x,y;
+        glfwGetCursorPos(this->win,&x,&y);
+        mainView->onMouse((f32)x,(f32)y,button,action,mods);
+    }
+}
+fun Window::onMouseScroll(f64 dx,f64 dy){
+    if(mainView != null){
+        mainView->onScroll(dx,dy);
+    }
+}
 
 fun Window::error(const char* t){
     printf("Error -> %s\n",t);
-    if(this->win != null){
+    if(this->win != null)
         glfwTerminate();
-        exit(-1);
-    }
+    exit(-1);
 }
