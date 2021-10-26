@@ -37,7 +37,7 @@ public:
     }
 
     bool in(f32 _x,f32 _y){
-        return x < _x and z > _x and y < _y and w > _y;
+        return (x <= _x and z >= _x) and (y <= _y and w >= _y);
     }
 };
 

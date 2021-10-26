@@ -137,8 +137,6 @@ f32* Canvas::textBoxBounds(f32 x,f32 y,f32 w,const char* _text){
     nvgTextBoxBounds(this->c,x,y,w,_text,null,bound);
     return bound;
 }
-
-// Canvas API 1.2 {
 fun Canvas::rotateRad(f32 rad){
     nvgRotate(this->c,rad);
 }
@@ -154,4 +152,13 @@ fun Canvas::scale(f32 x,f32 y){
 fun Canvas::reset(){
     nvgResetTransform(this->c);
 }
-// }Canvas API 1.2
+
+fun Canvas::apply(Theme* t){this->theme = t;}
+Theme* Canvas::getTheme(){return this->theme;}
+
+fun Canvas::save(){
+    nvgSave(this->c);
+}
+fun Canvas::restore(){
+    nvgRestore(this->c);
+}

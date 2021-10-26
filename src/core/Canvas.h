@@ -4,11 +4,13 @@
 #include <GL/glew.h>
 #include "types.h"
 #include "gl/GL3Renderer.h"
+#include "Theme.h"
 
 class Canvas {
 private:
     NVGcontext *c = null;
     NVGcolor col;
+    Theme* theme = null;
     i32 *font = null;
     i32 fontN = 0;
     bool isFill;
@@ -17,6 +19,9 @@ public:
 
     fun beginFrame(f32 w,f32 h,f32 p);
     fun endFrame();
+
+    fun apply(Theme*);
+    Theme* getTheme();
 
     fun begin();
     fun circle  (f32 x,f32 y,f32 r);
@@ -59,6 +64,9 @@ public:
 
     f32* textBounds(f32 x,f32 y,const char* _text);
     f32* textBoxBounds(f32 x,f32 y,f32 w,const char* _text);
+
+    fun save();
+    fun restore();
 
     fun rotateRad(f32 rad);
     fun rotateDeg(f32 deg);

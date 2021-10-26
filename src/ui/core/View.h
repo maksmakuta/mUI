@@ -2,26 +2,24 @@
 #define MUI_VIEW_H
 
 #include <vector>
-#include "types.h"
-#include "Canvas.h"
-#include "Theme.h"
-#include "utils/vec.h"
+#include "../../core/types.h"
+#include "../../core/Canvas.h"
+#include "../../core/Theme.h"
+#include "../../core/utils/vec.h"
+#include "Gravity.h"
+#include "Visibility.h"
+
 
 class View {
 private:
-    std::vector<View*> child;
-    Theme *mTheme = null;
+    i32 id;
+    bool inFocus;
     vec4 mRect ,mMargin;
-    bool isContainer = false;
+    Gravity mGravity;
+    Visibility mVisibility;
 public:
 
-    View(bool container);
-
-    fun add(View* v);
-    fun del(i32 pos);
-    fun del(View* v);
-
-    std::vector<View*> getChild();
+    View();
 
     fun rect    (f32 x,f32 y,f32 w,f32 h);
     fun margin  (f32 l,f32 t,f32 r,f32 b);
@@ -33,9 +31,6 @@ public:
     vec2 size();
     vec4 margin();
     vec4 rect();
-
-    fun applyTheme(Theme*);
-    Theme* getTheme();
 
     virtual fun onDraw    (Canvas* c);
     virtual fun onMeasure ();

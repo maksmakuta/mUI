@@ -22,10 +22,11 @@ typedef unsigned int     u32;
 typedef unsigned long    u64;
 
 typedef std::string str;
-
-// for function only
-typedef void fun;
+typedef void        fun;
 
 #define null nullptr
+#define pub  public
+#define priv private
+#define prot protected
 
 #endif

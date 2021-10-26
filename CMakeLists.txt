@@ -49,5 +49,11 @@ add_executable(mUI main.cpp
 
         src/core/App.cpp src/core/App.h
         src/core/Window.cpp src/core/Window.h
-        src/core/View.cpp src/core/View.h
-        src/core/types.h src/core/gl/utils/ColorUtils.cpp src/core/gl/utils/ColorUtils.h src/core/gl/GL3Renderer.h src/core/Theme.cpp src/core/Theme.h src/layout/LinearLayout.cpp src/layout/LinearLayout.h src/core/Canvas.cpp src/core/Canvas.h src/core/utils/vec.h)
+        src/ui/core/View.cpp src/ui/core/View.h
+        src/core/types.h
+        src/core/gl/utils/ColorUtils.cpp src/core/gl/utils/ColorUtils.h
+        src/core/gl/GL3Renderer.h
+        src/core/Theme.cpp src/core/Theme.h
+        src/core/Canvas.cpp src/core/Canvas.h
+        src/core/utils/vec.h
+        src/ui/core/Layout.cpp src/ui/core/Layout.h src/ui/core/Rect.cpp src/ui/core/Rect.h src/ui/core/Gravity.h src/ui/core/Visibility.h)

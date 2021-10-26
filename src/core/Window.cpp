@@ -3,6 +3,16 @@
 
 std::map<GLFWwindow *, Window *> mUI_screens;
 
+f32 scale(GLFWwindow* w){
+    i32 winWidth, winHeight;
+    i32 fbWidth, fbHeight;
+
+    glfwGetWindowSize       (w, &winWidth, &winHeight);
+    glfwGetFramebufferSize  (w, &fbWidth, &fbHeight);
+
+    return (f32) fbWidth / (f32) winWidth;
+}
+
 Window::Window() : Window(640,480,"Window"){}
 Window::Window(i32 w,i32 h,const char* t){
     if(!glfwInit()) error("glfw");
@@ -41,7 +51,8 @@ Window::Window(i32 w,i32 h,const char* t){
     glfwSetCursorPosCallback(this->win,[](GLFWwindow* w,f64 mx,f64 my){
         auto it = mUI_screens.find(w);
         if(it == mUI_screens.end()) return;
-        it->second->onMousePos(mx,my);
+        f32 s = scale(w);
+        it->second->onMousePos(mx * s,my * s);
     });
 
     glfwSetMouseButtonCallback(this->win,[](GLFWwindow* w,i32 button, i32 action, i32 mods){
@@ -57,25 +68,30 @@ Window::Window(i32 w,i32 h,const char* t){
     });
 }
 
+
+fun Window::theme(Theme* t){
+    if(this->c != null)
+        c->apply(t);
+}
+
 fun Window::draw(View *v) {
     this->mainView = v;
     while (!glfwWindowShouldClose(this->win)) {
         i32 winWidth, winHeight;
         i32 fbWidth, fbHeight;
-        f32 pxRatio;
 
         glfwGetWindowSize(this->win, &winWidth, &winHeight);
         glfwGetFramebufferSize(this->win, &fbWidth, &fbHeight);
 
-        pxRatio = (float) fbWidth / (float) winWidth;
-
         // Update and render
         glViewport(0, 0, fbWidth, fbHeight);
-        glClearColor(0.3f, 0.3f, 0.32f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
         if(c != null){
-            c->beginFrame((f32) winWidth, (f32) winHeight, pxRatio);
+            NVGcolor bg = ColorUtils::color(c->getTheme()->getPrimaryColor());
+            glClearColor(bg.r,bg.g,bg.b,bg.a);
+            c->beginFrame((f32) winWidth, (f32) winHeight, (f32) fbWidth / (f32) winWidth);
             if (mainView  != null) {
+                mainView->size((f32) winWidth, (f32) winHeight);
                 mainView ->onDraw(c);
             }
             c->endFrame();
