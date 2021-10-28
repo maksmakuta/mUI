@@ -18,10 +18,11 @@ pub:
 
     fun onDraw(Canvas *c) override{
         Rect r = rect();
-        c->begin();
-        c->rect(r.x,r.y,r.w,r.h);
-        c->fill("#111");
-        c->end(true);
+
+        //c->begin();
+        //c->rect(r.x,r.y,r.w,r.h);
+        //c->fill("#f0f");
+        //c->end(true);
 
         f32 x = r.x,y = r.y;
         for(View* v : data()){

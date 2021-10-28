@@ -80,6 +80,8 @@ public:
 
             glfwGetWindowSize(this->w, &winWidth, &winHeight);
             glfwGetFramebufferSize(this->w, &fbWidth, &fbHeight);
+            vec2 viewport((f32)winWidth, (f32)winHeight);
+            a->size(viewport);
 
             // Update and render
             glViewport(0, 0, fbWidth, fbHeight);
@@ -87,8 +89,10 @@ public:
             if(canvas != null){
                 glClearColor(0.3,0.3,0.3,1.0);
                 canvas->beginFrame((f32) winWidth, (f32) winHeight, (f32) fbWidth / (f32) winWidth);
-                    if(v != null)
+                    if(v != null) {
+                        v->onMeasure();
                         v->onDraw(canvas);
+                    }
                 canvas->endFrame();
             }
             glfwSwapBuffers(this->w);
@@ -119,7 +123,7 @@ public:
     }
 
 private:
-    void error(const char* err){
+    static void error(const char* err){
         printf("%s\n",err);
         exit(-1);
     }

@@ -7,6 +7,7 @@ class TextView : public View{
 priv:
     str text;
     f32 fontSize;
+    vec2 p;
 pub:
 
     explicit TextView(const str& t) : View(){
@@ -22,10 +23,13 @@ pub:
 
     fun onDraw(Canvas *c) override{
         c->useBaseFont(getFontSize(),"#fff");
-        vec2 p = c->textSize(text.c_str());
-        this->size(p.x * 1.2f,p.y * 1.4f);
+        p = c->textSize(text.c_str());
         c->fontAlign(hLeft | vBaseline);
         c->text(rect().x,rect().y + rect().h / 1.3f,text.c_str());
+    }
+
+    fun onMeasure() override{
+        this->size(p.x * 1.2f,p.y * 1.4f);
     }
 };
 

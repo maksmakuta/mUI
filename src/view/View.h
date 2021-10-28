@@ -6,36 +6,81 @@
 #include "../graphics/Canvas.h"
 #include "listener/OnClickListener.h"
 
+enum Visibility : i32{
+    Gone     ,
+    Visible  ,
+    Invisible
+};
+
+enum Gravity : i32{
+    Center            ,
+    Center_Vertical   ,
+    Center_Horizontal ,
+    Top               ,
+    Bottom            ,
+    Left              ,
+    Right             ,
+    Start             ,
+    End
+};
+
 class View{
 private:
-    Rect r;
-    std::vector<View*> mData{};
     OnClickListener* onClick = null;
     i32 ID = 0;
+
+    Rect r;
+    Visibility mVisibility;
+    Gravity mGravity;
+
+    std::vector<View*> mData{};
+
 public:
 
-    View(){
-        rect(0,0,1,1);
-    }
+    View() : r(0,0,1,1),mVisibility(Visible),mGravity(Center){ }
 
     fun add(View *v){
         mData.push_back(v);
+        onMeasure();
     }
 
     fun add(View *v, i32 p){
         mData.insert(mData.begin() + p,v);
+        onMeasure();
     }
 
     fun update(View *v, int p){
         if(mData[p] != v && mData[p] != null){
             mData[p] = v;
         }
-    }
-    fun remove(i32 p){
-        mData.erase(mData.begin() + p);
+        onMeasure();
     }
 
-    Rect rect(){return this->r;}
+    fun remove(i32 p){
+        mData.erase(mData.begin() + p);
+        onMeasure();
+    }
+
+    fun setVisibility(Visibility v){
+        this->mVisibility = v;
+    }
+
+    Visibility getVisibility(){
+        return this->mVisibility;
+    }
+
+    fun setGravity(Gravity v){
+        this->mGravity = v;
+    }
+
+    Gravity getGravity(){
+        return this->mGravity;
+    }
+
+    Rect rect(){
+        return this->r;
+    }
+
     fun rect(f32 x,f32 y,f32 w,f32 h){
         this->r = Rect(x,y,w,h);
     }
@@ -48,13 +93,25 @@ public:
         this->r.pos(x,y);
     }
 
-    i32 id(){return this->ID;}
-    fun id(i32 i){this->ID = i;}
+    i32 id(){
+        return this->ID;
+    }
 
-    std::vector<View*> data(){return mData;}
+    fun id(i32 i){
+        this->ID = i;
+    }
 
-    OnClickListener* getOnClickListener(){return this->onClick;}
-    fun setOnClickListener(OnClickListener* l){this->onClick = l;}
+    std::vector<View*> data(){
+        return mData;
+    }
+
+    OnClickListener* getOnClickListener(){
+        return this->onClick;
+    }
+
+    fun setOnClickListener(OnClickListener* l){
+        this->onClick = l;
+    }
 
     virtual fun onDraw(Canvas* c){
         if(!mData.empty()){

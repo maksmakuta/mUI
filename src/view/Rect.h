@@ -25,7 +25,7 @@ public:
     }
 
     bool in(f32 _x,f32 _y) const{
-        return (x <= _x && x + w >= _x) && (y <= _y && y + h >= _y);
+        return (x < _x && x + w > _x) && (y < _y && y + h > _y);
     }
 };
 

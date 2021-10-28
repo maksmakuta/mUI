@@ -8,8 +8,12 @@
 class Activity{
 private:
     View* mContent = null;
+    vec2 wp;
 public:
     Activity(){ }
+
+    fun size(const vec2& p){this->wp = p;}
+    vec2 size(){return this->wp;}
 
     fun setContentView(View* v){
         this->mContent = v;
@@ -17,10 +21,7 @@ public:
 
     View* content(){return this->mContent;}
 
-    virtual fun onCreate(){
-
-    }
-
+    virtual fun onCreate() = 0;
 };
 
 #endif

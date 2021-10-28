@@ -25,7 +25,6 @@ pub:
     fun onDraw(Canvas *c) override{
         c->fontSize(getFontSize());
         p = c->textSize(text.c_str());
-        this->size(p.x * 1.3f,p.y * 1.5f);
 
         c->begin();
         c->rect(rect().x,rect().y,rect().w,rect().h,10);
@@ -43,6 +42,11 @@ pub:
         } else {
             hover = false;
         }
+    }
+
+    fun onMeasure() override{
+        //this->size(this->p.x * 1.3f,this->p.y * 1.5f);
+        this->size((f32)this->text.size() * (this->fontSize * 0.8f),this->p.y * 1.5f);
     }
 
 };

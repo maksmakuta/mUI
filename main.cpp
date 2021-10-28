@@ -1,42 +1,53 @@
+#include <sstream>
+#include <ios>
+#include <unistd.h>
+#include <random>
 #include "src/graphics/Window.h"
 #include "src/widget/TextView.h"
 #include "src/widget/Button.h"
 #include "src/widget/layout/LinearLayout.h"
 #include "src/app/App.h"
 
-class MainActivity : pub Activity, pub OnClickListener{
-private:
-    Button* btn = new Button("Click me!");
-    Button* btn2 = new Button("Reverse!!");
-    TextView* t = new TextView("Hello, World!");
+class MainActivity : pub Activity{
 public:
     fun onCreate() override{
-        btn->id(5);
-        btn->setOnClickListener(this);
-
-        btn2->id(8);
-        btn2->setOnClickListener(this);
-        
-        setContentView(ll());
+        setContentView(init());
     }
 
-    fun onClick(View *v) override{
-        if(v->id() == btn->id()){
-            t->setText("Text was changed!");
+    View* init(){
+        auto ll = new LinearLayout(Vertical);
+        for(i32 x = 0;x < 15;x++){
+            auto l = new LinearLayout(Horizontal);
+            for(i32 y = 0;y < 5;y++){
+                l->add(new Button(randColor()));
+            }
+            ll->add(l);
         }
-        if(v->id() == btn2->id()){
-            t->setText("Hello, User!!!");
-        }
-    }
-
-    View* ll(){
-        View* ll = new LinearLayout(Horizontal);
-        ll->add(t);
-        ll->add(btn);
-        ll->add(btn2);
-        ll->add(new Button("Hello, World!2"));
         return ll;
     }
+
+    i32 rand(i32 m){
+        std::random_device dev;
+        std::mt19937 rng(dev());
+        std::uniform_int_distribution<std::mt19937::result_type> dist6(0,m);
+        return (i32)dist6(rng);
+    }
+
+    str randColor(){
+        i32 r = rand(256);
+        i32 g = rand(256);
+        i32 b = rand(256);
+        std::stringstream ss;
+        ss << "#" << std::hex << r << g << b;
+        str col = ss.str();
+        while(true){
+            if(col.size() -1 >= 6)
+                break;
+            col.append("0");
+        }
+        return col;
+    }
+
 };
 
 int main(){
