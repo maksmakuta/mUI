@@ -2,15 +2,30 @@
 #define MUI_CANVAS_H
 
 #include <GL/glew.h>
-#include "types.h"
-#include "gl/GL3Renderer.h"
-#include "Theme.h"
+#include "nanovg/nanovg.h"
+#include "nanovg/nanovg_gl.h"
+#include "../types.h"
+#include "../view/vec2.h"
+
+
+#define hLeft   NVG_ALIGN_LEFT
+#define hCenter NVG_ALIGN_CENTER
+#define hRight  NVG_ALIGN_RIGHT
+
+#define vTop        NVG_ALIGN_TOP
+#define vMiddle     NVG_ALIGN_MIDDLE
+#define vBottom     NVG_ALIGN_BOTTOM
+#define vBaseline   NVG_ALIGN_BASELINE
+
+
+#define MOUSE_LEFT GLFW_MOUSE_BUTTON_LEFT
+#define MOUSE_RIGHT GLFW_MOUSE_BUTTON_RIGHT
+#define MOUSE_CLICK GLFW_PRESS
 
 class Canvas {
 private:
     NVGcontext *c = null;
     NVGcolor col;
-    Theme* theme = null;
     i32 *font = null;
     i32 fontN = 0;
     bool isFill;
@@ -20,9 +35,8 @@ public:
     fun beginFrame(f32 w,f32 h,f32 p);
     fun endFrame();
 
-    fun apply(Theme*);
-    Theme* getTheme();
-
+    fun useBaseFont(f32 s,const char* color);
+    vec2 textSize(const char* text);
     fun begin();
     fun circle  (f32 x,f32 y,f32 r);
     fun ellipse (f32 x,f32 y,f32 cx,f32 cy);

@@ -34,26 +34,22 @@ if (GLEW_FOUND)
     link_libraries(     ${GLEW_LIBRARIES})
 endif()
 
-include_directories(/src)
-
 add_executable(mUI main.cpp
+        src/graphics/nanovg/nanovg.h
+        src/graphics/nanovg/nanovg.c
+        src/graphics/nanovg/nanovg_gl.h
+        src/graphics/nanovg/nanovg_gl_utils.h
 
-        src/core/gl/fontstash.h
-        src/core/gl/nanovg.c
-        src/core/gl/nanovg.h
-        src/core/gl/nanovg_gl.h
-        src/core/gl/nanovg_gl_utils.h
+        src/graphics/nanovg/fontstash.h
+        src/graphics/nanovg/stb_truetype.h
+        src/graphics/nanovg/stb_image.h
+        src/graphics/Window.h
+        src/graphics/Canvas.cpp
+        src/graphics/Canvas.h
 
-        src/core/gl/stb_image.h
-        src/core/gl/stb_truetype.h
+        src/graphics/utils/ColorUtils.h
+        src/graphics/utils/ColorUtils.cpp
 
-        src/core/App.cpp src/core/App.h
-        src/core/Window.cpp src/core/Window.h
-        src/ui/core/View.cpp src/ui/core/View.h
-        src/core/types.h
-        src/core/gl/utils/ColorUtils.cpp src/core/gl/utils/ColorUtils.h
-        src/core/gl/GL3Renderer.h
-        src/core/Theme.cpp src/core/Theme.h
-        src/core/Canvas.cpp src/core/Canvas.h
-        src/core/utils/vec.h
-        src/ui/core/Layout.cpp src/ui/core/Layout.h src/ui/core/Rect.cpp src/ui/core/Rect.h src/ui/core/Gravity.h src/ui/core/Visibility.h)
+        src/types.h
+        src/view/View.h
+        src/widget/Button.h src/widget/TextView.h src/widget/layout/LinearLayout.h src/widget/EditText.h src/view/Rect.h src/view/vec2.h src/app/App.h src/app/Activity.h src/view/listener/OnClickListener.h)

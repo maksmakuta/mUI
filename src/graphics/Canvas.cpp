@@ -1,10 +1,11 @@
 #define NANOVG_GL3_IMPLEMENTATION
 #include "Canvas.h"
+#include "utils/ColorUtils.h"
 
 Canvas::Canvas(i32 flags){
     this->c = nvgCreateGL3(flags);
-    this->initFont("../assets/fonts/Roboto/Roboto-Regular.ttf","roboto");
-    this->initFont("../assets/fonts/Noto_Sans/NotoSans-Regular.ttf","noto");
+    this->initFont("../assets/fonts/Roboto/Roboto-Regular.ttf"      ,"roboto");
+    //this->initFont("../assets/fonts/Noto_Sans/NotoSans-Regular.ttf" ,"noto");
 }
 
 fun Canvas::beginFrame(f32 w, f32 h,f32 p){
@@ -82,12 +83,9 @@ fun Canvas::fill(const char* hex){
 fun Canvas::fill(NVGcolor color){
     this->col = color;
 }
-
-fun Canvas::fontFill(const char* col){
-    nvgFillColor(this->c,ColorUtils::color(col));
+fun Canvas::fontFill(const char* color){
+    nvgFillColor(this->c,ColorUtils::color(color));
 }
-
-
 fun Canvas::initFont(const char* f,const char* n){
     nvgCreateFont(this->c,n,f);
 }
@@ -153,12 +151,21 @@ fun Canvas::reset(){
     nvgResetTransform(this->c);
 }
 
-fun Canvas::apply(Theme* t){this->theme = t;}
-Theme* Canvas::getTheme(){return this->theme;}
-
 fun Canvas::save(){
     nvgSave(this->c);
 }
 fun Canvas::restore(){
     nvgRestore(this->c);
+}
+
+fun Canvas::useBaseFont(f32 s,const char* color){
+    this->fontFace("roboto");
+    this->fontSize(s);
+    this->fontFill(color);
+}
+
+
+vec2 Canvas::textSize(const char* text){
+    f32* d = textBounds(0,0,text);
+    return {d[2] - d[0],d[3] - d[1]};
 }
