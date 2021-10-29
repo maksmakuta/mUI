@@ -11,6 +11,7 @@ enum Orientation{
 class LinearLayout : pub View{
 priv:
     Orientation o;
+    vec2 sliders;
 pub:
     explicit LinearLayout(Orientation _o) : View(){
         this->o = _o;
@@ -18,12 +19,12 @@ pub:
 
     fun onDraw(Canvas *c) override{
         Rect r = rect();
-        if(this->isScrollableH()) {
-            c->begin();
-            c->rect(r.x, r.y, r.w, r.h);
-            c->fill("#f0f");
-            c->end(true);
-        }
+//        if(this->isScrollableH()) {
+//            c->begin();
+//            c->rect(r.x, r.y, r.w, r.h);
+//            c->fill("#f0f");
+//            c->end(true);
+//        }
         f32 x = r.x,y = r.y;
         for(View* v : data()){
             v->pos(x,y);
@@ -33,6 +34,30 @@ pub:
             else
                 y += v->rect().h;
         }
+
+        if(isScrollableH()){
+            x += 5;
+            slider(true,c);
+        }
+        if(isScrollableV()){
+            y -= 5;
+            slider(false,c);
+        }
+    }
+
+    fun slider(bool t,Canvas* c){
+        Rect r = rect();
+        c->lineWidth(3);
+        c->begin();
+        if(t) {
+            c->moveTo(r.x + sliders.x * getWinSize().x * (getWinSize().x / r.w), r.y + r.h);
+            c->lineTo(r.x + getWinSize().x * (getWinSize().x / r.w), r.y + r.h);
+        }else{
+            c->moveTo(r.x + r.w, r.y+ sliders.y );
+            c->lineTo(r.x + r.w, r.y + getWinSize().y * (getWinSize().y / r.h));
+        }
+        c->fill("#aaa");
+        c->end(false);
     }
 
     fun onMeasure() override{
@@ -60,6 +85,7 @@ pub:
         if(isScrollableV() && r.y - ddy + r.h >= getWinSize().y && r.y - ddy <= 0){
             pos(r.x ,r.y - (f32)ddy);
         }
+        sliders += vec2(ddx,ddy);
     }
 };
 

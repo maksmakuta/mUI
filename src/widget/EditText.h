@@ -1,6 +1,7 @@
 #ifndef MUI_EDITTEXT_H
 #define MUI_EDITTEXT_H
 
+#include <sstream>
 #include "../view/View.h"
 
 enum EditType{

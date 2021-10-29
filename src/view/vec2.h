@@ -15,6 +15,53 @@ public:
     }
 
     f32 x,y;
+
+
+    bool operator == (const vec2& v) const{
+        return v.x == x && v.y == y;
+    }
+
+    vec2 operator ++(){
+        this->x++;
+        this->y++;
+        return *this;
+    }
+
+    vec2 operator --(){
+        this->x--;
+        this->y--;
+        return *this;
+    }
+    vec2 operator +(const vec2& a){
+        this->x+a.x;
+        this->y+a.y;
+        return *this;
+    }
+    vec2 operator -(const vec2& a){
+        this->x - a.x;
+        this->y - a.y;
+        return *this;
+    }
+
+    vec2 operator += (const vec2& v){
+        return *this + v;
+    }
+    vec2 operator -= (const vec2& v){
+        return *this - v;
+    }
+
+    vec2 operator *(f32 d){
+        this->x *= d;
+        this->y *= d;
+        return *this;
+    }
+
+    vec2 operator /(f32 d){
+        this->x /= d;
+        this->y /= d;
+        return *this;
+    }
+
 };
 
 #endif

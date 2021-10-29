@@ -95,6 +95,12 @@ public:
                         v->onDraw(canvas);
 
                     }
+
+                if(a->toast() != null) {
+                    a->toast()->onMeasure();
+                    a->toast()->onDraw(canvas);
+
+                }
                 canvas->endFrame();
             }
             glfwSwapBuffers(this->w);

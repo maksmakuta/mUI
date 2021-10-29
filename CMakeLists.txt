@@ -58,4 +58,4 @@ add_executable(mUI main.cpp
 
         src/types.h
         src/view/View.h
-        src/widget/Button.h src/widget/TextView.h src/widget/layout/LinearLayout.h src/widget/EditText.h src/view/Rect.h src/view/vec2.h src/app/App.h src/app/Activity.h src/view/listener/OnClickListener.h)
+        src/widget/Button.h src/widget/TextView.h src/widget/layout/LinearLayout.h src/widget/EditText.h src/view/Rect.h src/view/vec2.h src/app/App.h src/app/Activity.h src/view/listener/OnClickListener.h src/widget/SVGImage.h src/graphics/nanovg/nanosvg.h src/graphics/utils/MaterialIcons.h src/widget/IconView.h)
