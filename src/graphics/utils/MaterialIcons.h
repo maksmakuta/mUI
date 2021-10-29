@@ -1,1874 +1,1871 @@
 #ifndef MUI_MATERIALICONS_H
 #define MUI_MATERIALICONS_H
 
-#define _10k             0xe951
-#define _10mp            0xe952
-#define _11mp            0xe953
-#define _12mp            0xe954
-#define _13mp            0xe955
-#define _14mp            0xe956
-#define _15mp            0xe957
-#define _16mp            0xe958
-#define _17mp            0xe959
-#define _18mp            0xe95a
-#define _19mp            0xe95b
-#define _1k              0xe95c
-#define _1k_plus         0xe95d
-#define _1x_mobiledata   0xefcd
-#define _20mp            0xe95e
-#define _21mp            0xe95f
-#define _22mp            0xe960
-#define _23mp            0xe961
-#define _24mp            0xe962
-#define _2k              0xe963
-#define _2k_plus         0xe964
-#define _2mp             0xe965
-#define _30fps           0xefce
-#define _30fps_select    0xefcf
-#define _360             0xe577
-#define _3d_rotation     0xe84d
-#define _3g_mobiledata   0xefd0
-#define _3k              0xe966
-#define _3k_plus         0xe967
-#define _3mp             0xe968
-#define _3p              0xefd1
-#define _4g_mobiledata   0xefd2
-#define _4g_plus_mobiledata    0xefd3
-#define _4k              0xe072
-#define _4k_plus         0xe969
-/*
-4mp e96a
-5g ef38
-5k e96b
-5k_plus e96c
-5mp e96d
-60fps efd4
-60fps_select efd5
-6_ft_apart f21e
-6k e96e
-6k_plus e96f
-6mp e970
-7k e971
-7k_plus e972
-7mp e973
-8k e974
-8k_plus e975
-8mp e976
-9k e977
-9k_plus e978
-9mp e979
-ac_unit eb3b
-access_alarm e190
-access_alarms e191
-access_time e192
-access_time_filled efd6
-accessibility e84e
-accessibility_new e92c
-accessible e914
-accessible_forward e934
-account_balance e84f
-account_balance_wallet e850
-account_box e851
-account_circle e853
-account_tree e97a
-ad_units ef39
-adb e60e
-add e145
-add_a_photo e439
-add_alarm e193
-add_alert e003
-add_box e146
-add_business e729
-add_call e0e8
-add_chart e97b
-add_circle e147
-add_circle_outline e148
-add_comment e266
-add_ic_call e97c
-add_link e178
-add_location e567
-add_location_alt ef3a
-add_moderator e97d
-add_photo_alternate e43e
-add_reaction e1d3
-add_road ef3b
-add_shopping_cart e854
-add_task f23a
-add_to_drive e65c
-add_to_home_screen e1fe
-add_to_photos e39d
-add_to_queue e05c
-addchart ef3c
-adjust e39e
-admin_panel_settings ef3d
-ads_click e762
-agriculture ea79
-air efd8
-airline_seat_flat e630
-airline_seat_flat_angled e631
-airline_seat_individual_suite e632
-airline_seat_legroom_extra e633
-airline_seat_legroom_normal e634
-airline_seat_legroom_reduced e635
-airline_seat_recline_extra e636
-airline_seat_recline_normal e637
-airplane_ticket efd9
-airplanemode_active e195
-airplanemode_inactive e194
-airplanemode_off e194
-airplanemode_on e195
-airplay e055
-airport_shuttle eb3c
-alarm e855
-alarm_add e856
-alarm_off e857
-alarm_on e858
-album e019
-align_horizontal_center e00f
-align_horizontal_left e00d
-align_horizontal_right e010
-align_vertical_bottom e015
-align_vertical_center e011
-align_vertical_top e00c
-all_inbox e97f
-all_inclusive eb3d
-all_out e90b
-alt_route f184
-alternate_email e0e6
-amp_stories ea13
-analytics ef3e
-anchor f1cd
-android e859
-animation e71c
-announcement e85a
-aod efda
-apartment ea40
-api f1b7
-app_blocking ef3f
-app_registration ef40
-app_settings_alt ef41
-approval e982
-apps e5c3
-architecture ea3b
-archive e149
-area_chart e770
-arrow_back e5c4
-arrow_back_ios e5e0
-arrow_back_ios_new e2ea
-arrow_circle_down f181
-arrow_circle_up f182
-arrow_downward e5db
-arrow_drop_down e5c5
-arrow_drop_down_circle e5c6
-arrow_drop_up e5c7
-arrow_forward e5c8
-arrow_forward_ios e5e1
-arrow_left e5de
-arrow_right e5df
-arrow_right_alt e941
-arrow_upward e5d8
-art_track e060
-article ef42
-aspect_ratio e85b
-assessment e85c
-assignment e85d
-assignment_ind e85e
-assignment_late e85f
-assignment_return e860
-assignment_returned e861
-assignment_turned_in e862
-assistant e39f
-assistant_direction e988
-assistant_navigation e989
-assistant_photo e3a0
-atm e573
-attach_email ea5e
-attach_file e226
-attach_money e227
-attachment e2bc
-attractions ea52
-attribution efdb
-audiotrack e3a1
-auto_awesome e65f
-auto_awesome_mosaic e660
-auto_awesome_motion e661
-auto_delete ea4c
-auto_fix_high e663
-auto_fix_normal e664
-auto_fix_off e665
-auto_graph e4fb
-auto_stories e666
-autofps_select efdc
-autorenew e863
-av_timer e01b
-baby_changing_station f19b
-back_hand e764
-backpack f19c
-backspace e14a
-backup e864
-backup_table ef43
-badge ea67
-bakery_dining ea53
-balcony e58f
-ballot e172
-bar_chart e26b
-batch_prediction f0f5
-bathroom efdd
-bathtub ea41
-battery_alert e19c
-battery_charging_full e1a3
-battery_full e1a4
-battery_saver efde
-battery_std e1a5
-battery_unknown e1a6
-beach_access eb3e
-bed efdf
-bedroom_baby efe0
-bedroom_child efe1
-bedroom_parent efe2
-bedtime ef44
-beenhere e52d
-bento f1f4
-bike_scooter ef45
-biotech ea3a
-blender efe3
-block e14b
-block_flipped ef46
-bloodtype efe4
-bluetooth e1a7
-bluetooth_audio e60f
-bluetooth_connected e1a8
-bluetooth_disabled e1a9
-bluetooth_drive efe5
-bluetooth_searching e1aa
-blur_circular e3a2
-blur_linear e3a3
-blur_off e3a4
-blur_on e3a5
-bolt ea0b
-book e865
-book_online f217
-bookmark e866
-bookmark_add e598
-bookmark_added e599
-bookmark_border e867
-bookmark_outline e867
-bookmark_remove e59a
-bookmarks e98b
-border_all e228
-border_bottom e229
-border_clear e22a
-border_color e22b
-border_horizontal e22c
-border_inner e22d
-border_left e22e
-border_outer e22f
-border_right e230
-border_style e231
-border_top e232
-border_vertical e233
-branding_watermark e06b
-breakfast_dining ea54
-brightness_1 e3a6
-brightness_2 e3a7
-brightness_3 e3a8
-brightness_4 e3a9
-brightness_5 e3aa
-brightness_6 e3ab
-brightness_7 e3ac
-brightness_auto e1ab
-brightness_high e1ac
-brightness_low e1ad
-brightness_medium e1ae
-broken_image e3ad
-browser_not_supported ef47
-brunch_dining ea73
-brush e3ae
-bubble_chart e6dd
-bug_report e868
-build e869
-build_circle ef48
-bungalow e591
-burst_mode e43c
-bus_alert e98f
-business e0af
-business_center eb3f
-cabin e589
-cable efe6
-cached e86a
-cake e7e9
-calculate ea5f
-calendar_today e935
-calendar_view_day e936
-calendar_view_month efe7
-calendar_view_week efe8
-call e0b0
-call_end e0b1
-call_made e0b2
-call_merge e0b3
-call_missed e0b4
-call_missed_outgoing e0e4
-call_received e0b5
-call_split e0b6
-call_to_action e06c
-camera e3af
-camera_alt e3b0
-camera_enhance e8fc
-camera_front e3b1
-camera_indoor efe9
-camera_outdoor efea
-camera_rear e3b2
-camera_roll e3b3
-cameraswitch efeb
-campaign ef49
-cancel e5c9
-cancel_presentation e0e9
-cancel_schedule_send ea39
-car_rental ea55
-car_repair ea56
-card_giftcard e8f6
-card_membership e8f7
-card_travel e8f8
-carpenter f1f8
-cases e992
-casino eb40
-cast e307
-cast_connected e308
-cast_for_education efec
-catching_pokemon e508
-category e574
-celebration ea65
-cell_wifi e0ec
-center_focus_strong e3b4
-center_focus_weak e3b5
-chair efed
-chair_alt efee
-chalet e585
-change_circle e2e7
-change_history e86b
-charging_station f19d
-chat e0b7
-chat_bubble e0ca
-chat_bubble_outline e0cb
-check e5ca
-check_box e834
-check_box_outline_blank e835
-check_circle e86c
-check_circle_outline e92d
-checklist e6b1
-checklist_rtl e6b3
-checkroom f19e
-chevron_left e5cb
-chevron_right e5cc
-child_care eb41
-child_friendly eb42
-chrome_reader_mode e86d
-circle ef4a
-circle_notifications e994
-class e86e
-clean_hands f21f
-cleaning_services f0ff
-clear e14c
-clear_all e0b8
-close e5cd
-close_fullscreen f1cf
-closed_caption e01c
-closed_caption_disabled f1dc
-closed_caption_off e996
-cloud e2bd
-cloud_circle e2be
-cloud_done e2bf
-cloud_download e2c0
-cloud_off e2c1
-cloud_queue e2c2
-cloud_upload e2c3
-code e86f
-code_off e4f3
-coffee efef
-coffee_maker eff0
-collections e3b6
-collections_bookmark e431
-color_lens e3b7
-colorize e3b8
-comment e0b9
-comment_bank ea4e
-commute e940
-compare e3b9
-compare_arrows e915
-compass_calibration e57c
-compost e761
-compress e94d
-computer e30a
-confirmation_num e638
-confirmation_number e638
-connect_without_contact f223
-connected_tv e998
-construction ea3c
-contact_mail e0d0
-contact_page f22e
-contact_phone e0cf
-contact_support e94c
-contactless ea71
-contacts e0ba
-content_copy e14d
-content_cut e14e
-content_paste e14f
-content_paste_off e4f8
-control_camera e074
-control_point e3ba
-control_point_duplicate e3bb
-copy_all e2ec
-copyright e90c
-coronavirus f221
-corporate_fare f1d0
-cottage e587
-countertops f1f7
-create e150
-create_new_folder e2cc
-credit_card e870
-credit_card_off e4f4
-credit_score eff1
-crib e588
-crop e3be
-crop_16_9 e3bc
-crop_3_2 e3bd
-crop_5_4 e3bf
-crop_7_5 e3c0
-crop_din e3c1
-crop_free e3c2
-crop_landscape e3c3
-crop_original e3c4
-crop_portrait e3c5
-crop_rotate e437
-crop_square e3c6
-cruelty_free e799
-dangerous e99a
-dark_mode e51c
-dashboard e871
-dashboard_customize e99b
-data_exploration e76f
-data_saver_off eff2
-data_saver_on eff3
-data_usage e1af
-date_range e916
-deck ea42
-dehaze e3c7
-delete e872
-delete_forever e92b
-delete_outline e92e
-delete_sweep e16c
-delivery_dining ea72
-departure_board e576
-description e873
-design_services f10a
-desktop_access_disabled e99d
-desktop_mac e30b
-desktop_windows e30c
-details e3c8
-developer_board e30d
-developer_board_off e4ff
-developer_mode e1b0
-device_hub e335
-device_thermostat e1ff
-device_unknown e339
-devices e1b1
-devices_other e337
-dialer_sip e0bb
-dialpad e0bc
-dining eff4
-dinner_dining ea57
-directions e52e
-directions_bike e52f
-directions_boat e532
-directions_boat_filled eff5
-directions_bus e530
-directions_bus_filled eff6
-directions_car e531
-directions_car_filled eff7
-directions_ferry e532
-directions_off f10f
-directions_railway e534
-directions_railway_filled eff8
-directions_run e566
-directions_subway e533
-directions_subway_filled eff9
-directions_train e534
-directions_transit e535
-directions_transit_filled effa
-directions_walk e536
-dirty_lens ef4b
-disabled_by_default f230
-disabled_visible e76e
-disc_full e610
-dnd_forwardslash e611
-dns e875
-do_disturb f08c
-do_disturb_alt f08d
-do_disturb_off f08e
-do_disturb_on f08f
-do_not_disturb e612
-do_not_disturb_alt e611
-do_not_disturb_off e643
-do_not_disturb_on e644
-do_not_disturb_on_total_silence effb
-do_not_step f19f
-do_not_touch f1b0
-dock e30e
-document_scanner e5fa
-domain e7ee
-domain_disabled e0ef
-domain_verification ef4c
-done e876
-done_all e877
-done_outline e92f
-donut_large e917
-donut_small e918
-door_back effc
-door_front effd
-door_sliding effe
-doorbell efff
-double_arrow ea50
-downhill_skiing e509
-download f090
-download_done f091
-download_for_offline f000
-downloading f001
-drafts e151
-drag_handle e25d
-drag_indicator e945
-draw e746
-drive_eta e613
-drive_file_move e675
-drive_file_move_outline e9a1
-drive_file_move_rtl e76d
-drive_file_rename_outline e9a2
-drive_folder_upload e9a3
-dry f1b3
-dry_cleaning ea58
-duo e9a5
-dvr e1b2
-dynamic_feed ea14
-dynamic_form f1bf
-e_mobiledata f002
-earbuds f003
-earbuds_battery f004
-east f1df
-eco ea35
-edgesensor_high f005
-edgesensor_low f006
-edit e3c9
-edit_attributes e578
-edit_calendar e742
-edit_location e568
-edit_location_alt e1c5
-edit_note e745
-edit_notifications e525
-edit_off e950
-edit_road ef4d
-eject e8fb
-elderly f21a
-electric_bike eb1b
-electric_car eb1c
-electric_moped eb1d
-electric_rickshaw eb1e
-electric_scooter eb1f
-electrical_services f102
-elevator f1a0
-email e0be
-emergency e1eb
-emoji_emotions ea22
-emoji_events ea23
-emoji_flags ea1a
-emoji_food_beverage ea1b
-emoji_nature ea1c
-emoji_objects ea24
-emoji_people ea1d
-emoji_symbols ea1e
-emoji_transportation ea1f
-engineering ea3d
-enhance_photo_translate e8fc
-enhanced_encryption e63f
-equalizer e01d
-error e000
-error_outline e001
-escalator f1a1
-escalator_warning f1ac
-euro ea15
-euro_symbol e926
-ev_station e56d
-event e878
-event_available e614
-event_busy e615
-event_note e616
-event_seat e903
-exit_to_app e879
-expand e94f
-expand_less e5ce
-expand_more e5cf
-explicit e01e
-explore e87a
-explore_off e9a8
-exposure e3ca
-exposure_minus_1 e3cb
-exposure_minus_2 e3cc
-exposure_neg_1 e3cb
-exposure_neg_2 e3cc
-exposure_plus_1 e3cd
-exposure_plus_2 e3ce
-exposure_zero e3cf
-extension e87b
-extension_off e4f5
-face e87c
-face_retouching_natural ef4e
-face_retouching_off f007
-facebook f234
-fact_check f0c5
-family_restroom f1a2
-fast_forward e01f
-fast_rewind e020
-fastfood e57a
-favorite e87d
-favorite_border e87e
-favorite_outline e87e
-featured_play_list e06d
-featured_video e06e
-feed f009
-feedback e87f
-female e590
-fence f1f6
-festival ea68
-fiber_dvr e05d
-fiber_manual_record e061
-fiber_new e05e
-fiber_pin e06a
-fiber_smart_record e062
-file_copy e173
-file_download e2c4
-file_download_done e9aa
-file_download_off e4fe
-file_present ea0e
-file_upload e2c6
-filter e3d3
-filter_1 e3d0
-filter_2 e3d1
-filter_3 e3d2
-filter_4 e3d4
-filter_5 e3d5
-filter_6 e3d6
-filter_7 e3d7
-filter_8 e3d8
-filter_9 e3d9
-filter_9_plus e3da
-filter_alt ef4f
-filter_b_and_w e3db
-filter_center_focus e3dc
-filter_drama e3dd
-filter_frames e3de
-filter_hdr e3df
-filter_list e152
-filter_list_alt e94e
-filter_none e3e0
-filter_tilt_shift e3e2
-filter_vintage e3e3
-find_in_page e880
-find_replace e881
-fingerprint e90d
-fire_extinguisher f1d8
-fire_hydrant f1a3
-fireplace ea43
-first_page e5dc
-fit_screen ea10
-fitness_center eb43
-flag e153
-flaky ef50
-flare e3e4
-flash_auto e3e5
-flash_off e3e6
-flash_on e3e7
-flashlight_off f00a
-flashlight_on f00b
-flatware f00c
-flight e539
-flight_land e904
-flight_takeoff e905
-flip e3e8
-flip_camera_android ea37
-flip_camera_ios ea38
-flip_to_back e882
-flip_to_front e883
-flourescent f00d
-flutter_dash e00b
-fmd_bad f00e
-fmd_good f00f
-folder e2c7
-folder_open e2c8
-folder_shared e2c9
-folder_special e617
-follow_the_signs f222
-font_download e167
-font_download_off e4f9
-food_bank f1f2
-format_align_center e234
-format_align_justify e235
-format_align_left e236
-format_align_right e237
-format_bold e238
-format_clear e239
-format_color_fill e23a
-format_color_reset e23b
-format_color_text e23c
-format_indent_decrease e23d
-format_indent_increase e23e
-format_italic e23f
-format_line_spacing e240
-format_list_bulleted e241
-format_list_numbered e242
-format_list_numbered_rtl e267
-format_paint e243
-format_quote e244
-format_shapes e25e
-format_size e245
-format_strikethrough e246
-format_textdirection_l_to_r e247
-format_textdirection_r_to_l e248
-format_underline e249
-format_underlined e249
-forum e0bf
-forward e154
-forward_10 e056
-forward_30 e057
-forward_5 e058
-forward_to_inbox f187
-foundation f200
-free_breakfast eb44
-free_cancellation e748
-front_hand e769
-fullscreen e5d0
-fullscreen_exit e5d1
-functions e24a
-g_mobiledata f010
-g_translate e927
-gamepad e30f
-games e021
-garage f011
-gavel e90e
-generating_tokens e749
-gesture e155
-get_app e884
-gif e908
-gite e58b
-goat 10fffd
-golf_course eb45
-gpp_bad f012
-gpp_good f013
-gpp_maybe f014
-gps_fixed e1b3
-gps_not_fixed e1b4
-gps_off e1b5
-grade e885
-gradient e3e9
-grading ea4f
-grain e3ea
-graphic_eq e1b8
-grass f205
-grid_3x3 f015
-grid_4x4 f016
-grid_goldenratio f017
-grid_off e3eb
-grid_on e3ec
-grid_view e9b0
-group e7ef
-group_add e7f0
-group_off e747
-group_work e886
-groups f233
-h_mobiledata f018
-h_plus_mobiledata f019
-hail e9b1
-handyman f10b
-hardware ea59
-hd e052
-hdr_auto f01a
-hdr_auto_select f01b
-hdr_enhanced_select ef51
-hdr_off e3ed
-hdr_off_select f01c
-hdr_on e3ee
-hdr_on_select f01d
-hdr_plus f01e
-hdr_strong e3f1
-hdr_weak e3f2
-headphones f01f
-headphones_battery f020
-headset e310
-headset_mic e311
-headset_off e33a
-healing e3f3
-health_and_safety e1d5
-hearing e023
-hearing_disabled f104
-height ea16
-help e887
-help_center f1c0
-help_outline e8fd
-hevc f021
-hide_image f022
-hide_source f023
-high_quality e024
-highlight e25f
-highlight_alt ef52
-highlight_off e888
-highlight_remove e888
-hiking e50a
-history e889
-history_edu ea3e
-history_toggle_off f17d
-holiday_village e58a
-home e88a
-home_filled e9b2
-home_max f024
-home_mini f025
-home_repair_service f100
-home_work ea09
-horizontal_distribute e014
-horizontal_rule f108
-horizontal_split e947
-hot_tub eb46
-hotel e53a
-hotel_class e743
-hourglass_bottom ea5c
-hourglass_disabled ef53
-hourglass_empty e88b
-hourglass_full e88c
-hourglass_top ea5b
-house ea44
-house_siding f202
-houseboat e584
-how_to_reg e174
-how_to_vote e175
-http e902
-https e88d
-hvac f10e
-ice_skating e50b
-icecream ea69
-image e3f4
-image_aspect_ratio e3f5
-image_not_supported f116
-image_search e43f
-imagesearch_roller e9b4
-import_contacts e0e0
-import_export e0c3
-important_devices e912
-inbox e156
-incomplete_circle e79b
-indeterminate_check_box e909
-info e88e
-info_outline e88f
-input e890
-insert_chart e24b
-insert_chart_outlined e26a
-insert_comment e24c
-insert_drive_file e24d
-insert_emoticon e24e
-insert_invitation e24f
-insert_link e250
-insert_photo e251
-insights f092
-integration_instructions ef54
-inventory e179
-inventory_2 e1a1
-invert_colors e891
-invert_colors_off e0c4
-invert_colors_on e891
-ios_share e6b8
-iron e583
-iso e3f6
-kayaking e50c
-keyboard e312
-keyboard_alt f028
-keyboard_arrow_down e313
-keyboard_arrow_left e314
-keyboard_arrow_right e315
-keyboard_arrow_up e316
-keyboard_backspace e317
-keyboard_capslock e318
-keyboard_control e5d3
-keyboard_hide e31a
-keyboard_return e31b
-keyboard_tab e31c
-keyboard_voice e31d
-king_bed ea45
-kitchen eb47
-kitesurfing e50d
-label e892
-label_important e937
-label_important_outline e948
-label_off e9b6
-label_outline e893
-landscape e3f7
-language e894
-laptop e31e
-laptop_chromebook e31f
-laptop_mac e320
-laptop_windows e321
-last_page e5dd
-launch e895
-layers e53b
-layers_clear e53c
-leaderboard f20c
-leak_add e3f8
-leak_remove e3f9
-leave_bags_at_home f21b
-legend_toggle f11b
-lens e3fa
-lens_blur f029
-library_add e02e
-library_add_check e9b7
-library_books e02f
-library_music e030
-light f02a
-light_mode e518
-lightbulb e0f0
-lightbulb_outline e90f
-line_style e919
-line_weight e91a
-linear_scale e260
-link e157
-link_off e16f
-linked_camera e438
-liquor ea60
-list e896
-list_alt e0ee
-live_help e0c6
-live_tv e639
-living f02b
-local_activity e53f
-local_airport e53d
-local_atm e53e
-local_attraction e53f
-local_bar e540
-local_cafe e541
-local_car_wash e542
-local_convenience_store e543
-local_dining e556
-local_drink e544
-local_fire_department ef55
-local_florist e545
-local_gas_station e546
-local_grocery_store e547
-local_hospital e548
-local_hotel e549
-local_laundry_service e54a
-local_library e54b
-local_mall e54c
-local_movies e54d
-local_offer e54e
-local_parking e54f
-local_pharmacy e550
-local_phone e551
-local_pizza e552
-local_play e553
-local_police ef56
-local_post_office e554
-local_print_shop e555
-local_printshop e555
-local_restaurant e556
-local_see e557
-local_shipping e558
-local_taxi e559
-location_city e7f1
-location_disabled e1b6
-location_history e55a
-location_off e0c7
-location_on e0c8
-location_pin f1db
-location_searching e1b7
-lock e897
-lock_clock ef57
-lock_open e898
-lock_outline e899
-login ea77
-logout e9ba
-looks e3fc
-looks_3 e3fb
-looks_4 e3fd
-looks_5 e3fe
-looks_6 e3ff
-looks_one e400
-looks_two e401
-loop e028
-loupe e402
-low_priority e16d
-loyalty e89a
-lte_mobiledata f02c
-lte_plus_mobiledata f02d
-luggage f235
-lunch_dining ea61
-mail e158
-mail_outline e0e1
-male e58e
-manage_accounts f02e
-manage_search f02f
-map e55b
-maps_home_work f030
-maps_ugc ef58
-margin e9bb
-mark_as_unread e9bc
-mark_chat_read f18b
-mark_chat_unread f189
-mark_email_read f18c
-mark_email_unread f18a
-markunread e159
-markunread_mailbox e89b
-masks f218
-maximize e930
-media_bluetooth_off f031
-media_bluetooth_on f032
-mediation efa7
-medical_services f109
-medication f033
-meeting_room eb4f
-memory e322
-menu e5d2
-menu_book ea19
-menu_open e9bd
-merge_type e252
-message e0c9
-messenger e0ca
-messenger_outline e0cb
-mic e029
-mic_external_off ef59
-mic_external_on ef5a
-mic_none e02a
-mic_off e02b
-microwave f204
-military_tech ea3f
-minimize e931
-miscellaneous_services f10c
-missed_video_call e073
-mms e618
-mobile_friendly e200
-mobile_off e201
-mobile_screen_share e0e7
-mobiledata_off f034
-mode f097
-mode_comment e253
-mode_edit e254
-mode_edit_outline f035
-mode_night f036
-mode_standby f037
-model_training f0cf
-monetization_on e263
-money e57d
-money_off e25c
-money_off_csred f038
-monitor ef5b
-monitor_weight f039
-monochrome_photos e403
-mood e7f2
-mood_bad e7f3
-moped eb28
-more e619
-more_horiz e5d3
-more_time ea5d
-more_vert e5d4
-motion_photos_auto f03a
-motion_photos_off e9c0
-motion_photos_on e9c1
-motion_photos_pause f227
-motion_photos_paused e9c2
-motorcycle e91b
-mouse e323
-move_to_inbox e168
-movie e02c
-movie_creation e404
-movie_filter e43a
-moving e501
-mp e9c3
-multiline_chart e6df
-multiple_stop f1b9
-multitrack_audio e1b8
-museum ea36
-music_note e405
-music_off e440
-music_video e063
-my_library_add e02e
-my_library_books e02f
-my_library_music e030
-my_location e55c
-nat ef5c
-nature e406
-nature_people e407
-navigate_before e408
-navigate_next e409
-navigation e55d
-near_me e569
-near_me_disabled f1ef
-nearby_error f03b
-nearby_off f03c
-network_cell e1b9
-network_check e640
-network_locked e61a
-network_wifi e1ba
-new_label e609
-new_releases e031
-next_plan ef5d
-next_week e16a
-nfc e1bb
-night_shelter f1f1
-nightlife ea62
-nightlight f03d
-nightlight_round ef5e
-nights_stay ea46
-no_accounts f03e
-no_backpack f237
-no_cell f1a4
-no_drinks f1a5
-no_encryption e641
-no_encryption_gmailerrorred f03f
-no_flash f1a6
-no_food f1a7
-no_luggage f23b
-no_meals f1d6
-no_meals_ouline f229
-no_meeting_room eb4e
-no_photography f1a8
-no_sim e0cc
-no_stroller f1af
-no_transfer f1d5
-nordic_walking e50e
-north f1e0
-north_east f1e1
-north_west f1e2
-not_accessible f0fe
-not_interested e033
-not_listed_location e575
-not_started f0d1
-note e06f
-note_add e89c
-note_alt f040
-notes e26c
-notification_add e399
-notification_important e004
-notifications e7f4
-notifications_active e7f7
-notifications_none e7f5
-notifications_off e7f6
-notifications_on e7f7
-notifications_paused e7f8
-now_wallpaper e1bc
-now_widgets e1bd
-offline_bolt e932
-offline_pin e90a
-offline_share e9c5
-ondemand_video e63a
-online_prediction f0eb
-opacity e91c
-open_in_browser e89d
-open_in_full f1ce
-open_in_new e89e
-open_in_new_off e4f6
-open_with e89f
-other_houses e58c
-outbond f228
-outbound e1ca
-outbox ef5f
-outdoor_grill ea47
-outgoing_mail f0d2
-outlet f1d4
-outlined_flag e16e
-padding e9c8
-pages e7f9
-pageview e8a0
-paid f041
-palette e40a
-pan_tool e925
-panorama e40b
-panorama_fish_eye e40c
-panorama_fisheye e40c
-panorama_horizontal e40d
-panorama_horizontal_select ef60
-panorama_photosphere e9c9
-panorama_photosphere_select e9ca
-panorama_vertical e40e
-panorama_vertical_select ef61
-panorama_wide_angle e40f
-panorama_wide_angle_select ef62
-paragliding e50f
-park ea63
-party_mode e7fa
-password f042
-pattern f043
-pause e034
-pause_circle e1a2
-pause_circle_filled e035
-pause_circle_outline e036
-pause_presentation e0ea
-payment e8a1
-payments ef63
-pedal_bike eb29
-pending ef64
-pending_actions f1bb
-people e7fb
-people_alt ea21
-people_outline e7fc
-perm_camera_mic e8a2
-perm_contact_cal e8a3
-perm_contact_calendar e8a3
-perm_data_setting e8a4
-perm_device_info e8a5
-perm_device_information e8a5
-perm_identity e8a6
-perm_media e8a7
-perm_phone_msg e8a8
-perm_scan_wifi e8a9
-person e7fd
-person_add e7fe
-person_add_alt ea4d
-person_add_alt_1 ef65
-person_add_disabled e9cb
-person_off e510
-person_outline e7ff
-person_pin e55a
-person_pin_circle e56a
-person_remove ef66
-person_remove_alt_1 ef67
-person_search f106
-personal_injury e6da
-personal_video e63b
-pest_control f0fa
-pest_control_rodent f0fd
-pets e91d
-phone e0cd
-phone_android e324
-phone_bluetooth_speaker e61b
-phone_callback e649
-phone_disabled e9cc
-phone_enabled e9cd
-phone_forwarded e61c
-phone_in_talk e61d
-phone_iphone e325
-phone_locked e61e
-phone_missed e61f
-phone_paused e620
-phonelink e326
-phonelink_erase e0db
-phonelink_lock e0dc
-phonelink_off e327
-phonelink_ring e0dd
-phonelink_setup e0de
-photo e410
-photo_album e411
-photo_camera e412
-photo_camera_back ef68
-photo_camera_front ef69
-photo_filter e43b
-photo_library e413
-photo_size_select_actual e432
-photo_size_select_large e433
-photo_size_select_small e434
-piano e521
-piano_off e520
-picture_as_pdf e415
-picture_in_picture e8aa
-picture_in_picture_alt e911
-pie_chart e6c4
-pie_chart_outline f044
-pie_chart_outlined e6c5
-pin f045
-pin_drop e55e
-pin_end e767
-pin_invoke e763
-pivot_table_chart e9ce
-place e55f
-plagiarism ea5a
-play_arrow e037
-play_circle e1c4
-play_circle_fill e038
-play_circle_filled e038
-play_circle_outline e039
-play_disabled ef6a
-play_for_work e906
-play_lesson f047
-playlist_add e03b
-playlist_add_check e065
-playlist_play e05f
-plumbing f107
-plus_one e800
-podcasts f048
-point_of_sale f17e
-policy ea17
-poll e801
-polymer e8ab
-pool eb48
-portable_wifi_off e0ce
-portrait e416
-post_add ea20
-power e63c
-power_input e336
-power_off e646
-power_settings_new e8ac
-precision_manufacturing f049
-pregnant_woman e91e
-present_to_all e0df
-preview f1c5
-price_change f04a
-price_check f04b
-print e8ad
-print_disabled e9cf
-priority_high e645
-privacy_tip f0dc
-private_connectivity e744
-production_quantity_limits e1d1
-psychology ea4a
-public e80b
-public_off f1ca
-publish e255
-published_with_changes f232
-push_pin f10d
-qr_code ef6b
-qr_code_2 e00a
-qr_code_scanner f206
-query_builder e8ae
-query_stats e4fc
-question_answer e8af
-queue e03c
-queue_music e03d
-queue_play_next e066
-quick_contacts_dialer e0cf
-quick_contacts_mail e0d0
-quickreply ef6c
-quiz f04c
-r_mobiledata f04d
-radar f04e
-radio e03e
-radio_button_checked e837
-radio_button_off e836
-radio_button_on e837
-radio_button_unchecked e836
-railway_alert e9d1
-ramen_dining ea64
-rate_review e560
-raw_off f04f
-raw_on f050
-read_more ef6d
-real_estate_agent e73a
-receipt e8b0
-receipt_long ef6e
-recent_actors e03f
-recommend e9d2
-record_voice_over e91f
-recycling e760
-redeem e8b1
-redo e15a
-reduce_capacity f21c
-refresh e5d5
-remember_me f051
-remove e15b
-remove_circle e15c
-remove_circle_outline e15d
-remove_done e9d3
-remove_from_queue e067
-remove_moderator e9d4
-remove_red_eye e417
-remove_shopping_cart e928
-reorder e8fe
-repeat e040
-repeat_on e9d6
-repeat_one e041
-repeat_one_on e9d7
-replay e042
-replay_10 e059
-replay_30 e05a
-replay_5 e05b
-replay_circle_filled e9d8
-reply e15e
-reply_all e15f
-report e160
-report_gmailerrorred f052
-report_off e170
-report_problem e8b2
-request_page f22c
-request_quote f1b6
-reset_tv e9d9
-restart_alt f053
-restaurant e56c
-restaurant_menu e561
-restore e8b3
-restore_from_trash e938
-restore_page e929
-reviews f054
-rice_bowl f1f5
-ring_volume e0d1
-roofing f201
-room e8b4
-room_preferences f1b8
-room_service eb49
-rotate_90_degrees_ccw e418
-rotate_left e419
-rotate_right e41a
-rounded_corner e920
-router e328
-rowing e921
-rss_feed e0e5
-rsvp f055
-rtt e9ad
-rule f1c2
-rule_folder f1c9
-run_circle ef6f
-running_with_errors e51d
-rv_hookup e642
-safety_divider e1cc
-sailing e502
-sanitizer f21d
-satellite e562
-save e161
-save_alt e171
-saved_search ea11
-savings e2eb
-scanner e329
-scatter_plot e268
-schedule e8b5
-schedule_send ea0a
-schema e4fd
-school e80c
-science ea4b
-score e269
-screen_lock_landscape e1be
-screen_lock_portrait e1bf
-screen_lock_rotation e1c0
-screen_rotation e1c1
-screen_search_desktop ef70
-screen_share e0e2
-screenshot f056
-sd e9dd
-sd_card e623
-sd_card_alert f057
-sd_storage e1c2
-search e8b6
-search_off ea76
-security e32a
-security_update f058
-security_update_good f059
-security_update_warning f05a
-segment e94b
-select_all e162
-self_improvement ea78
-sell f05b
-send e163
-send_and_archive ea0c
-send_to_mobile f05c
-sensor_door f1b5
-sensor_window f1b4
-sensors e51e
-sensors_off e51f
-sentiment_dissatisfied e811
-sentiment_neutral e812
-sentiment_satisfied e813
-sentiment_satisfied_alt e0ed
-sentiment_very_dissatisfied e814
-sentiment_very_satisfied e815
-set_meal f1ea
-settings e8b8
-settings_accessibility f05d
-settings_applications e8b9
-settings_backup_restore e8ba
-settings_bluetooth e8bb
-settings_brightness e8bd
-settings_cell e8bc
-settings_display e8bd
-settings_ethernet e8be
-settings_input_antenna e8bf
-settings_input_component e8c0
-settings_input_composite e8c1
-settings_input_hdmi e8c2
-settings_input_svideo e8c3
-settings_overscan e8c4
-settings_phone e8c5
-settings_power e8c6
-settings_remote e8c7
-settings_suggest f05e
-settings_system_daydream e1c3
-settings_voice e8c8
-share e80d
-share_arrival_time e524
-share_location f05f
-shield e9e0
-shop e8c9
-shop_2 e19e
-shop_two e8ca
-shopping_bag f1cc
-shopping_basket e8cb
-shopping_cart e8cc
-short_text e261
-shortcut f060
-show_chart e6e1
-shower f061
-shuffle e043
-shuffle_on e9e1
-shutter_speed e43d
-sick f220
-signal_cellular_0_bar f0a8
-signal_cellular_4_bar e1c8
-signal_cellular_alt e202
-signal_cellular_connected_no_internet_0_bar f0ac
-signal_cellular_connected_no_internet_4_bar e1cd
-signal_cellular_no_sim e1ce
-signal_cellular_nodata f062
-signal_cellular_null e1cf
-signal_cellular_off e1d0
-signal_wifi_0_bar f0b0
-signal_wifi_4_bar e1d8
-signal_wifi_4_bar_lock e1d9
-signal_wifi_bad f063
-signal_wifi_connected_no_internet_4 f064
-signal_wifi_off e1da
-signal_wifi_statusbar_4_bar f065
-signal_wifi_statusbar_connected_no_internet_4 f066
-signal_wifi_statusbar_null f067
-sim_card e32b
-sim_card_alert e624
-sim_card_download f068
-single_bed ea48
-sip f069
-skateboarding e511
-skip_next e044
-skip_previous e045
-sledding e512
-slideshow e41b
-slow_motion_video e068
-smart_button f1c1
-smart_display f06a
-smart_screen f06b
-smart_toy f06c
-smartphone e32c
-smoke_free eb4a
-smoking_rooms eb4b
-sms e625
-sms_failed e626
-snippet_folder f1c7
-snooze e046
-snowboarding e513
-snowmobile e503
-snowshoeing e514
-soap f1b2
-social_distance e1cb
-sort e164
-sort_by_alpha e053
-source f1c4
-south f1e3
-south_east f1e4
-south_west f1e5
-spa eb4c
-space_bar e256
-space_dashboard e66b
-speaker e32d
-speaker_group e32e
-speaker_notes e8cd
-speaker_notes_off e92a
-speaker_phone e0d2
-speed e9e4
-spellcheck e8ce
-splitscreen f06d
-sports ea30
-sports_bar f1f3
-sports_baseball ea51
-sports_basketball ea26
-sports_cricket ea27
-sports_esports ea28
-sports_football ea29
-sports_golf ea2a
-sports_handball ea33
-sports_hockey ea2b
-sports_kabaddi ea34
-sports_mma ea2c
-sports_motorsports ea2d
-sports_rugby ea2e
-sports_score f06e
-sports_soccer ea2f
-sports_tennis ea32
-sports_volleyball ea31
-square_foot ea49
-stacked_bar_chart e9e6
-stacked_line_chart f22b
-stairs f1a9
-star e838
-star_border e83a
-star_border_purple500 f099
-star_half e839
-star_outline f06f
-star_purple500 f09a
-star_rate f0ec
-stars e8d0
-stay_current_landscape e0d3
-stay_current_portrait e0d4
-stay_primary_landscape e0d5
-stay_primary_portrait e0d6
-sticky_note_2 f1fc
-stop e047
-stop_circle ef71
-stop_screen_share e0e3
-storage e1db
-store e8d1
-store_mall_directory e563
-storefront ea12
-storm f070
-straighten e41c
-stream e9e9
-streetview e56e
-strikethrough_s e257
-stroller f1ae
-style e41d
-subdirectory_arrow_left e5d9
-subdirectory_arrow_right e5da
-subject e8d2
-subscript f111
-subscriptions e064
-subtitles e048
-subtitles_off ef72
-subway e56f
-summarize f071
-superscript f112
-supervised_user_circle e939
-supervisor_account e8d3
-support ef73
-support_agent f0e2
-surfing e515
-surround_sound e049
-swap_calls e0d7
-swap_horiz e8d4
-swap_horizontal_circle e933
-swap_vert e8d5
-swap_vert_circle e8d6
-swap_vertical_circle e8d6
-swipe e9ec
-switch_account e9ed
-switch_camera e41e
-switch_left f1d1
-switch_right f1d2
-switch_video e41f
-sync e627
-sync_alt ea18
-sync_disabled e628
-sync_problem e629
-system_security_update f072
-system_security_update_good f073
-system_security_update_warning f074
-system_update e62a
-system_update_alt e8d7
-system_update_tv e8d7
-tab e8d8
-tab_unselected e8d9
-table_chart e265
-table_rows f101
-table_view f1be
-tablet e32f
-tablet_android e330
-tablet_mac e331
-tag e9ef
-tag_faces e420
-takeout_dining ea74
-tap_and_play e62b
-tapas f1e9
-task f075
-task_alt e2e6
-taxi_alert ef74
-terrain e564
-text_fields e262
-text_format e165
-text_rotate_up e93a
-text_rotate_vertical e93b
-text_rotation_angledown e93c
-text_rotation_angleup e93d
-text_rotation_down e93e
-text_rotation_none e93f
-text_snippet f1c6
-textsms e0d8
-texture e421
-theater_comedy ea66
-theaters e8da
-thermostat f076
-thermostat_auto f077
-thumb_down e8db
-thumb_down_alt e816
-thumb_down_off_alt e9f2
-thumb_up e8dc
-thumb_up_alt e817
-thumb_up_off_alt e9f3
-thumbs_up_down e8dd
-time_to_leave e62c
-timelapse e422
-timeline e922
-timer e425
-timer_10 e423
-timer_10_select f07a
-timer_3 e424
-timer_3_select f07b
-timer_off e426
-tips_and_updates e79a
-title e264
-toc e8de
-today e8df
-toggle_off e9f5
-toggle_on e9f6
-toll e8e0
-tonality e427
-topic f1c8
-touch_app e913
-tour ef75
-toys e332
-track_changes e8e1
-traffic e565
-train e570
-tram e571
-transfer_within_a_station e572
-transform e428
-transgender e58d
-transit_enterexit e579
-translate e8e2
-travel_explore e2db
-trending_down e8e3
-trending_flat e8e4
-trending_neutral e8e4
-trending_up e8e5
-trip_origin e57b
-try f07c
-tty f1aa
-tune e429
-tungsten f07d
-turned_in e8e6
-turned_in_not e8e7
-tv e333
-tv_off e647
-two_wheeler e9f9
-umbrella f1ad
-unarchive e169
-undo e166
-unfold_less e5d6
-unfold_more e5d7
-unpublished f236
-unsubscribe e0eb
-upcoming f07e
-update e923
-update_disabled e075
-upgrade f0fb
-upload f09b
-upload_file e9fc
-usb e1e0
-usb_off e4fa
-verified ef76
-verified_user e8e8
-vertical_align_bottom e258
-vertical_align_center e259
-vertical_align_top e25a
-vertical_distribute e076
-vertical_split e949
-vibration e62d
-video_call e070
-video_camera_back f07f
-video_camera_front f080
-video_collection e04a
-video_label e071
-video_library e04a
-video_settings ea75
-video_stable f081
-videocam e04b
-videocam_off e04c
-videogame_asset e338
-videogame_asset_off e500
-view_agenda e8e9
-view_array e8ea
-view_carousel e8eb
-view_column e8ec
-view_comfortable e42a
-view_comfy e42a
-view_compact e42b
-view_day e8ed
-view_headline e8ee
-view_in_ar e9fe
-view_list e8ef
-view_module e8f0
-view_quilt e8f1
-view_sidebar f114
-view_stream e8f2
-view_week e8f3
-vignette e435
-villa e586
-visibility e8f4
-visibility_off e8f5
-voice_chat e62e
-voice_over_off e94a
-voicemail e0d9
-volume_down e04d
-volume_down_alt e79c
-volume_mute e04e
-volume_off e04f
-volume_up e050
-volunteer_activism ea70
-vpn_key e0da
-vpn_lock e62f
-vrpano f082
-wallet_giftcard e8f6
-wallet_membership e8f7
-wallet_travel e8f8
-wallpaper e1bc
-warning e002
-warning_amber f083
-wash f1b1
-watch e334
-watch_later e924
-water f084
-water_damage f203
-water_drop e798
-waterfall_chart ea00
-waves e176
-waving_hand e766
-wb_auto e42c
-wb_cloudy e42d
-wb_incandescent e42e
-wb_iridescent e436
-wb_shade ea01
-wb_sunny e430
-wb_twighlight ea02
-wb_twilight e1c6
-wc e63d
-web e051
-web_asset e069
-web_asset_off e4f7
-web_stories e595
-weekend e16b
-west f1e6
-whatshot e80e
-wheelchair_pickup f1ab
-where_to_vote e177
-widgets e1bd
-wifi e63e
-wifi_calling ef77
-wifi_calling_3 f085
-wifi_lock e1e1
-wifi_off e648
-wifi_protected_setup f0fc
-wifi_tethering e1e2
-wifi_tethering_error_rounded f086
-wifi_tethering_off f087
-window f088
-wine_bar f1e8
-work e8f9
-work_off e942
-work_outline e943
-workspaces e1a0
-workspaces_filled ea0d
-workspaces_outline ea0f
-wrap_text e25b
-wrong_location ef78
-wysiwyg f1c3
-yard f089
-youtube_searched_for e8fa
-zoom_in e8ff
-zoom_out e900
-zoom_out_map e56b
-
-*/
+#define ic_10k             0xe951
+#define ic_10mp            0xe952
+#define ic_11mp            0xe953
+#define ic_12mp            0xe954
+#define ic_13mp            0xe955
+#define ic_14mp            0xe956
+#define ic_15mp            0xe957
+#define ic_16mp            0xe958
+#define ic_17mp            0xe959
+#define ic_18mp            0xe95a
+#define ic_19mp            0xe95b
+#define ic_1k              0xe95c
+#define ic_1k_plus         0xe95d
+#define ic_1x_mobiledata   0xefcd
+#define ic_20mp            0xe95e
+#define ic_21mp            0xe95f
+#define ic_22mp            0xe960
+#define ic_23mp            0xe961
+#define ic_24mp            0xe962
+#define ic_2k              0xe963
+#define ic_2k_plus         0xe964
+#define ic_2mp             0xe965
+#define ic_30fps           0xefce
+#define ic_30fps_select    0xefcf
+#define ic_360             0xe577
+#define ic_3d_rotation     0xe84d
+#define ic_3g_mobiledata   0xefd0
+#define ic_3k              0xe966
+#define ic_3k_plus         0xe967
+#define ic_3mp             0xe968
+#define ic_3p              0xefd1
+#define ic_4g_mobiledata   0xefd2
+#define ic_4g_plus_mobiledata    0xefd3
+#define ic_4k              0xe072
+#define ic_4k_plus         0xe969
+#define ic_4mp              0xe96a
+#define ic_5g               0xef38
+#define ic_5k               0xe96b
+#define ic_5k_plus          0xe96c
+#define ic_5mp              0xe96d
+#define ic_60fps            0xefd4
+#define ic_60fps_select     0xefd5
+#define ic_6_ft_apart       0xf21e
+#define ic_6k               0xe96e
+#define ic_6k_plus          0xe96f
+#define ic_6mp              0xe970
+#define ic_7k               0xe971
+#define ic_7k_plus          0xe972
+#define ic_7mp              0xe973
+#define ic_8k               0xe974
+#define ic_8k_plus          0xe975
+#define ic_8mp              0xe976
+#define ic_9k               0xe977
+#define ic_9k_plus          0xe978
+#define ic_9mp              0xe979
+#define ic_ac_unit          0xeb3b
+#define ic_access_alarm     0xe190
+#define ic_access_alarms    0xe191
+#define ic_access_time      0xe192
+#define ic_access_time_filled     0xefd6
+#define ic_accessibility    0xe84e
+#define ic_accessibility_new      0xe92c
+#define ic_accessible       0xe914
+#define ic_accessible_forward     0xe934
+#define ic_account_balance        0xe84f
+#define ic_account_balance_wallet 0xe850
+#define ic_account_box            0xe851
+#define ic_account_circle         0xe853
+#define ic_account_tree           0xe97a
+#define ic_ad_units               0xef39
+#define ic_adb                    0xe60e
+#define ic_add                    0xe145
+#define ic_add_a_photo            0xe439
+#define ic_add_alarm              0xe193
+#define ic_add_alert              0xe003
+#define ic_add_box                0xe146
+#define ic_add_business           0xe729
+#define ic_add_call               0xe0e8
+#define ic_add_chart              0xe97b
+#define ic_add_circle             0xe147
+#define ic_add_circle_outline     0xe148
+#define ic_add_comment            0xe266
+#define ic_add_ic_call            0xe97c
+#define ic_add_link               0xe178
+#define ic_add_location           0xe567
+#define ic_add_location_alt       0xef3a
+#define ic_add_moderator          0xe97d
+#define ic_add_photo_alternate    0xe43e
+#define ic_add_reaction           0xe1d3
+#define ic_add_road               0xef3b
+#define ic_add_shopping_cart      0xe854
+#define ic_add_task               0xf23a
+#define ic_add_to_drive           0xe65c
+#define ic_add_to_home_screen     0xe1fe
+#define ic_add_to_photos          0xe39d
+#define ic_add_to_queue           0xe05c
+#define ic_addchart               0xef3c
+#define ic_adjust                 0xe39e
+#define ic_admin_panel_settings   0xef3d
+#define ic_ads_click              0xe762
+#define ic_agriculture            0xea79
+#define ic_air                    0xefd8
+#define ic_airline_seat_flat      0xe630
+#define ic_airline_seat_flat_angled     0xe631
+#define ic_airline_seat_individual_suite      0xe632
+#define ic_airline_seat_legroom_extra         0xe633
+#define ic_airline_seat_legroom_normal        0xe634
+#define ic_airline_seat_legroom_reduced       0xe635
+#define ic_airline_seat_recline_extra         0xe636
+#define ic_airline_seat_recline_normal        0xe637
+#define ic_airplane_ticket        0xefd9
+#define ic_airplanemode_active    0xe195
+#define ic_airplanemode_inactive  0xe194
+#define ic_airplanemode_off       0xe194
+#define ic_airplanemode_on        0xe195
+#define ic_airplay             0xe055
+#define ic_airport_shuttle             0xeb3c
+#define ic_alarm           0xe855
+#define ic_alarm_add           0xe856
+#define ic_alarm_off           0xe857
+#define ic_alarm_on            0xe858
+#define ic_album           0xe019
+#define ic_align_horizontal_center             0xe00f
+#define ic_align_horizontal_left           0xe00d
+#define ic_align_horizontal_right          0xe010
+#define ic_align_vertical_bottom           0xe015
+#define ic_align_vertical_center           0xe011
+#define ic_align_vertical_top          0xe00c
+#define ic_all_inbox           0xe97f
+#define ic_all_inclusive           0xeb3d
+#define ic_all_out             0xe90b
+#define ic_alt_route           0xf184
+#define ic_alternate_email             0xe0e6
+#define ic_amp_stories             0xea13
+#define ic_analytics           0xef3e
+#define ic_anchor          0xf1cd
+#define ic_android             0xe859
+#define ic_animation           0xe71c
+#define ic_announcement            0xe85a
+#define ic_aod             0xefda
+#define ic_apartment           0xea40
+#define ic_api             0xf1b7
+#define ic_app_blocking            0xef3f
+#define ic_app_registration            0xef40
+#define ic_app_settings_alt            0xef41
+#define ic_approval            0xe982
+#define ic_apps            0xe5c3
+#define ic_architecture            0xea3b
+#define ic_archive             0xe149
+#define ic_area_chart          0xe770
+#define ic_arrow_back          0xe5c4
+#define ic_arrow_back_ios          0xe5e0
+#define ic_arrow_back_ios_new          0xe2ea
+#define ic_arrow_circle_down           0xf181
+#define ic_arrow_circle_up             0xf182
+#define ic_arrow_downward          0xe5db
+#define ic_arrow_drop_down             0xe5c5
+#define ic_arrow_drop_down_circle          0xe5c6
+#define ic_arrow_drop_up           0xe5c7
+#define ic_arrow_forward           0xe5c8
+#define ic_arrow_forward_ios           0xe5e1
+#define ic_arrow_left          0xe5de
+#define ic_arrow_right             0xe5df
+#define ic_arrow_right_alt             0xe941
+#define ic_arrow_upward            0xe5d8
+#define ic_art_track           0xe060
+#define ic_article             0xef42
+#define ic_aspect_ratio            0xe85b
+#define ic_assessment          0xe85c
+#define ic_assignment          0xe85d
+#define ic_assignment_ind          0xe85e
+#define ic_assignment_late             0xe85f
+#define ic_assignment_return           0xe860
+#define ic_assignment_returned             0xe861
+#define ic_assignment_turned_in            0xe862
+#define ic_assistant           0xe39f
+#define ic_assistant_direction             0xe988
+#define ic_assistant_navigation            0xe989
+#define ic_assistant_photo             0xe3a0
+#define ic_atm             0xe573
+#define ic_attach_email            0xea5e
+#define ic_attach_file             0xe226
+#define ic_attach_money            0xe227
+#define ic_attachment          0xe2bc
+#define ic_attractions             0xea52
+#define ic_attribution             0xefdb
+#define ic_audiotrack          0xe3a1
+#define ic_auto_awesome            0xe65f
+#define ic_auto_awesome_mosaic             0xe660
+#define ic_auto_awesome_motion             0xe661
+#define ic_auto_delete             0xea4c
+#define ic_auto_fix_high           0xe663
+#define ic_auto_fix_normal             0xe664
+#define ic_auto_fix_off        0xe665
+#define ic_auto_graph          0xe4fb
+#define ic_auto_stories        0xe666
+#define ic_autofps_select      0xefdc
+#define ic_autorenew           0xe863
+#define ic_av_timer            0xe01b
+#define ic_baby_changing_station     0xf19b
+#define ic_back_hand           0xe764
+#define ic_backpack            0xf19c
+#define ic_backspace           0xe14a
+#define ic_backup              0xe864
+#define ic_backup_table        0xef43
+#define ic_badge               0xea67
+#define ic_bakery_dining       0xea53
+#define ic_balcony             0xe58f
+#define ic_ballot              0xe172
+#define ic_bar_chart           0xe26b
+#define ic_batch_prediction    0xf0f5
+#define ic_bathroom            0xefdd
+#define ic_bathtub             0xea41
+#define ic_battery_alert       0xe19c
+#define ic_battery_charging_full 0xe1a3
+#define ic_battery_full 0xe1a4
+#define ic_battery_saver 0xefde
+#define ic_battery_std 0xe1a5
+#define ic_battery_unknown 0xe1a6
+#define ic_beach_access 0xeb3e
+#define ic_bed 0xefdf
+#define ic_bedroom_baby 0xefe0
+#define ic_bedroom_child 0xefe1
+#define ic_bedroom_parent 0xefe2
+#define ic_bedtime 0xef44
+#define ic_beenhere 0xe52d
+#define ic_bento 0xf1f4
+#define ic_bike_scooter 0xef45
+#define ic_biotech 0xea3a
+#define ic_blender 0xefe3
+#define ic_block 0xe14b
+#define ic_block_flipped 0xef46
+#define ic_bloodtype 0xefe4
+#define ic_bluetooth 0xe1a7
+#define ic_bluetooth_audio 0xe60f
+#define ic_bluetooth_connected 0xe1a8
+#define ic_bluetooth_disabled 0xe1a9
+#define ic_bluetooth_drive 0xefe5
+#define ic_bluetooth_searching 0xe1aa
+#define ic_blur_circular 0xe3a2
+#define ic_blur_linear 0xe3a3
+#define ic_blur_off 0xe3a4
+#define ic_blur_on 0xe3a5
+#define ic_bolt 0xea0b
+#define ic_book 0xe865
+#define ic_book_online 0xf217
+#define ic_bookmark 0xe866
+#define ic_bookmark_add 0xe598
+#define ic_bookmark_added 0xe599
+#define ic_bookmark_border 0xe867
+#define ic_bookmark_outline 0xe867
+#define ic_bookmark_remove 0xe59a
+#define ic_bookmarks 0xe98b
+#define ic_border_all 0xe228
+#define ic_border_bottom 0xe229
+#define ic_border_clear 0xe22a
+#define ic_border_color 0xe22b
+#define ic_border_horizontal 0xe22c
+#define ic_border_inner 0xe22d
+#define ic_border_left 0xe22e
+#define ic_border_outer 0xe22f
+#define ic_border_right 0xe230
+#define ic_border_style 0xe231
+#define ic_border_top 0xe232
+#define ic_border_vertical 0xe233
+#define ic_branding_watermark 0xe06b
+#define ic_breakfast_dining 0xea54
+#define ic_brightness_1 0xe3a6
+#define ic_brightness_2 0xe3a7
+#define ic_brightness_3 0xe3a8
+#define ic_brightness_4 0xe3a9
+#define ic_brightness_5 0xe3aa
+#define ic_brightness_6 0xe3ab
+#define ic_brightness_7 0xe3ac
+#define ic_brightness_auto 0xe1ab
+#define ic_brightness_high 0xe1ac
+#define ic_brightness_low 0xe1ad
+#define ic_brightness_medium 0xe1ae
+#define ic_broken_image 0xe3ad
+#define ic_browser_not_supported 0xef47
+#define ic_brunch_dining 0xea73
+#define ic_brush 0xe3ae
+#define ic_bubble_chart 0xe6dd
+#define ic_bug_report 0xe868
+#define ic_build 0xe869
+#define ic_build_circle 0xef48
+#define ic_bungalow 0xe591
+#define ic_burst_mode 0xe43c
+#define ic_bus_alert 0xe98f
+#define ic_business 0xe0af
+#define ic_business_center 0xeb3f
+#define ic_cabin 0xe589
+#define ic_cable 0xefe6
+#define ic_cached 0xe86a
+#define ic_cake 0xe7e9
+#define ic_calculate 0xea5f
+#define ic_calendar_today 0xe935
+#define ic_calendar_view_day 0xe936
+#define ic_calendar_view_month 0xefe7
+#define ic_calendar_view_week 0xefe8
+#define ic_call 0xe0b0
+#define ic_call_end 0xe0b1
+#define ic_call_made 0xe0b2
+#define ic_call_merge 0xe0b3
+#define ic_call_missed 0xe0b4
+#define ic_call_missed_outgoing 0xe0e4
+#define ic_call_received 0xe0b5
+#define ic_call_split 0xe0b6
+#define ic_call_to_action 0xe06c
+#define ic_camera 0xe3af
+#define ic_camera_alt 0xe3b0
+#define ic_camera_enhance 0xe8fc
+#define ic_camera_front 0xe3b1
+#define ic_camera_indoor 0xefe9
+#define ic_camera_outdoor 0xefea
+#define ic_camera_rear 0xe3b2
+#define ic_camera_roll 0xe3b3
+#define ic_cameraswitch 0xefeb
+#define ic_campaign 0xef49
+#define ic_cancel 0xe5c9
+#define ic_cancel_presentation 0xe0e9
+#define ic_cancel_schedule_send 0xea39
+#define ic_car_rental 0xea55
+#define ic_car_repair 0xea56
+#define ic_card_giftcard 0xe8f6
+#define ic_card_membership 0xe8f7
+#define ic_card_travel 0xe8f8
+#define ic_carpenter 0xf1f8
+#define ic_cases 0xe992
+#define ic_casino 0xeb40
+#define ic_cast 0xe307
+#define ic_cast_connected 0xe308
+#define ic_cast_for_education 0xefec
+#define ic_catching_pokemon 0xe508
+#define ic_category 0xe574
+#define ic_celebration 0xea65
+#define ic_cell_wifi 0xe0ec
+#define ic_center_focus_strong 0xe3b4
+#define ic_center_focus_weak 0xe3b5
+#define ic_chair 0xefed
+#define ic_chair_alt 0xefee
+#define ic_chalet 0xe585
+#define ic_change_circle 0xe2e7
+#define ic_change_history 0xe86b
+#define ic_charging_station 0xf19d
+#define ic_chat 0xe0b7
+#define ic_chat_bubble 0xe0ca
+#define ic_chat_bubble_outline 0xe0cb
+#define ic_check 0xe5ca
+#define ic_check_box 0xe834
+#define ic_check_box_outline_blank 0xe835
+#define ic_check_circle 0xe86c
+#define ic_check_circle_outline 0xe92d
+#define ic_checklist 0xe6b1
+#define ic_checklist_rtl 0xe6b3
+#define ic_checkroom 0xf19e
+#define ic_chevron_left 0xe5cb
+#define ic_chevron_right 0xe5cc
+#define ic_child_care 0xeb41
+#define ic_child_friendly 0xeb42
+#define ic_chrome_reader_mode 0xe86d
+#define ic_circle 0xef4a
+#define ic_circle_notifications 0xe994
+#define ic_class 0xe86e
+#define ic_clean_hands 0xf21f
+#define ic_cleaning_services 0xf0ff
+#define ic_clear 0xe14c
+#define ic_clear_all 0xe0b8
+#define ic_close 0xe5cd
+#define ic_close_fullscreen 0xf1cf
+#define ic_closed_caption 0xe01c
+#define ic_closed_caption_disabled 0xf1dc
+#define ic_closed_caption_off 0xe996
+#define ic_cloud 0xe2bd
+#define ic_cloud_circle 0xe2be
+#define ic_cloud_done 0xe2bf
+#define ic_cloud_download 0xe2c0
+#define ic_cloud_off 0xe2c1
+#define ic_cloud_queue 0xe2c2
+#define ic_cloud_upload 0xe2c3
+#define ic_code 0xe86f
+#define ic_code_off 0xe4f3
+#define ic_coffee 0xefef
+#define ic_coffee_maker 0xeff0
+#define ic_collections 0xe3b6
+#define ic_collections_bookmark 0xe431
+#define ic_color_lens 0xe3b7
+#define ic_colorize 0xe3b8
+#define ic_comment 0xe0b9
+#define ic_comment_bank 0xea4e
+#define ic_commute 0xe940
+#define ic_compare 0xe3b9
+#define ic_compare_arrows 0xe915
+#define ic_compass_calibration 0xe57c
+#define ic_compost 0xe761
+#define ic_compress 0xe94d
+#define ic_computer 0xe30a
+#define ic_confirmation_num 0xe638
+#define ic_confirmation_number 0xe638
+#define ic_connect_without_contact 0xf223
+#define ic_connected_tv 0xe998
+#define ic_construction 0xea3c
+#define ic_contact_mail 0xe0d0
+#define ic_contact_page 0xf22e
+#define ic_contact_phone 0xe0cf
+#define ic_contact_support 0xe94c
+#define ic_contactless 0xea71
+#define ic_contacts 0xe0ba
+#define ic_content_copy 0xe14d
+#define ic_content_cut 0xe14e
+#define ic_content_paste 0xe14f
+#define ic_content_paste_off 0xe4f8
+#define ic_control_camera 0xe074
+#define ic_control_point 0xe3ba
+#define ic_control_point_duplicate 0xe3bb
+#define ic_copy_all 0xe2ec
+#define ic_copyright 0xe90c
+#define ic_coronavirus 0xf221
+#define ic_corporate_fare 0xf1d0
+#define ic_cottage 0xe587
+#define ic_countertops 0xf1f7
+#define ic_create 0xe150
+#define ic_create_new_folder 0xe2cc
+#define ic_credit_card 0xe870
+#define ic_credit_card_off 0xe4f4
+#define ic_credit_score 0xeff1
+#define ic_crib 0xe588
+#define ic_crop 0xe3be
+#define ic_crop_16_9 0xe3bc
+#define ic_crop_3_2 0xe3bd
+#define ic_crop_5_4 0xe3bf
+#define ic_crop_7_5 0xe3c0
+#define ic_crop_din 0xe3c1
+#define ic_crop_free 0xe3c2
+#define ic_crop_landscape 0xe3c3
+#define ic_crop_original 0xe3c4
+#define ic_crop_portrait 0xe3c5
+#define ic_crop_rotate 0xe437
+#define ic_crop_square 0xe3c6
+#define ic_cruelty_free 0xe799
+#define ic_dangerous 0xe99a
+#define ic_dark_mode 0xe51c
+#define ic_dashboard 0xe871
+#define ic_dashboard_customize 0xe99b
+#define ic_data_exploration 0xe76f
+#define ic_data_saver_off 0xeff2
+#define ic_data_saver_on 0xeff3
+#define ic_data_usage 0xe1af
+#define ic_date_range 0xe916
+#define ic_deck 0xea42
+#define ic_dehaze 0xe3c7
+#define ic_delete 0xe872
+#define ic_delete_forever 0xe92b
+#define ic_delete_outline 0xe92e
+#define ic_delete_sweep 0xe16c
+#define ic_delivery_dining 0xea72
+#define ic_departure_board 0xe576
+#define ic_description 0xe873
+#define ic_design_services 0xf10a
+#define ic_desktop_access_disabled 0xe99d
+#define ic_desktop_mac 0xe30b
+#define ic_desktop_windows 0xe30c
+#define ic_details 0xe3c8
+#define ic_developer_board 0xe30d
+#define ic_developer_board_off 0xe4ff
+#define ic_developer_mode 0xe1b0
+#define ic_device_hub 0xe335
+#define ic_device_thermostat 0xe1ff
+#define ic_device_unknown 0xe339
+#define ic_devices 0xe1b1
+#define ic_devices_other 0xe337
+#define ic_dialer_sip 0xe0bb
+#define ic_dialpad 0xe0bc
+#define ic_dining 0xeff4
+#define ic_dinner_dining 0xea57
+#define ic_directions 0xe52e
+#define ic_directions_bike 0xe52f
+#define ic_directions_boat 0xe532
+#define ic_directions_boat_filled 0xeff5
+#define ic_directions_bus 0xe530
+#define ic_directions_bus_filled 0xeff6
+#define ic_directions_car 0xe531
+#define ic_directions_car_filled 0xeff7
+#define ic_directions_ferry 0xe532
+#define ic_directions_off 0xf10f
+#define ic_directions_railway 0xe534
+#define ic_directions_railway_filled 0xeff8
+#define ic_directions_run 0xe566
+#define ic_directions_subway 0xe533
+#define ic_directions_subway_filled 0xeff9
+#define ic_directions_train 0xe534
+#define ic_directions_transit 0xe535
+#define ic_directions_transit_filled 0xeffa
+#define ic_directions_walk 0xe536
+#define ic_dirty_lens 0xef4b
+#define ic_disabled_by_default 0xf230
+#define ic_disabled_visible 0xe76e
+#define ic_disc_full 0xe610
+#define ic_dnd_forwardslash 0xe611
+#define ic_dns 0xe875
+#define ic_do_disturb 0xf08c
+#define ic_do_disturb_alt 0xf08d
+#define ic_do_disturb_off 0xf08e
+#define ic_do_disturb_on 0xf08f
+#define ic_do_not_disturb 0xe612
+#define ic_do_not_disturb_alt 0xe611
+#define ic_do_not_disturb_off 0xe643
+#define ic_do_not_disturb_on 0xe644
+#define ic_do_not_disturb_on_total_silence 0xeffb
+#define ic_do_not_step 0xf19f
+#define ic_do_not_touch 0xf1b0
+#define ic_dock 0xe30e
+#define ic_document_scanner 0xe5fa
+#define ic_domain 0xe7ee
+#define ic_domain_disabled 0xe0ef
+#define ic_domain_verification 0xef4c
+#define ic_done 0xe876
+#define ic_done_all 0xe877
+#define ic_done_outline 0xe92f
+#define ic_donut_large 0xe917
+#define ic_donut_small 0xe918
+#define ic_door_back 0xeffc
+#define ic_door_front 0xeffd
+#define ic_door_sliding 0xeffe
+#define ic_doorbell 0xefff
+#define ic_double_arrow 0xea50
+#define ic_downhill_skiing 0xe509
+#define ic_download 0xf090
+#define ic_download_done 0xf091
+#define ic_download_for_offline 0xf000
+#define ic_downloading 0xf001
+#define ic_drafts 0xe151
+#define ic_drag_handle 0xe25d
+#define ic_drag_indicator 0xe945
+#define ic_draw 0xe746
+#define ic_drive_eta 0xe613
+#define ic_drive_file_move 0xe675
+#define ic_drive_file_move_outline 0xe9a1
+#define ic_drive_file_move_rtl 0xe76d
+#define ic_drive_file_rename_outline 0xe9a2
+#define ic_drive_folder_upload 0xe9a3
+#define ic_dry 0xf1b3
+#define ic_dry_cleaning 0xea58
+#define ic_duo 0xe9a5
+#define ic_dvr 0xe1b2
+#define ic_dynamic_feed 0xea14
+#define ic_dynamic_form 0xf1bf
+#define ic_e_mobiledata 0xf002
+#define ic_earbuds 0xf003
+#define ic_earbuds_battery 0xf004
+#define ic_east 0xf1df
+#define ic_eco 0xea35
+#define ic_edgesensor_high 0xf005
+#define ic_edgesensor_low 0xf006
+#define ic_edit 0xe3c9
+#define ic_edit_attributes 0xe578
+#define ic_edit_calendar 0xe742
+#define ic_edit_location 0xe568
+#define ic_edit_location_alt 0xe1c5
+#define ic_edit_note 0xe745
+#define ic_edit_notifications 0xe525
+#define ic_edit_off 0xe950
+#define ic_edit_road 0xef4d
+#define ic_eject 0xe8fb
+#define ic_elderly 0xf21a
+#define ic_electric_bike 0xeb1b
+#define ic_electric_car 0xeb1c
+#define ic_electric_moped 0xeb1d
+#define ic_electric_rickshaw 0xeb1e
+#define ic_electric_scooter 0xeb1f
+#define ic_electrical_services 0xf102
+#define ic_elevator 0xf1a0
+#define ic_email 0xe0be
+#define ic_emergency 0xe1eb
+#define ic_emoji_emotions 0xea22
+#define ic_emoji_events 0xea23
+#define ic_emoji_flags 0xea1a
+#define ic_emoji_food_beverage 0xea1b
+#define ic_emoji_nature 0xea1c
+#define ic_emoji_objects 0xea24
+#define ic_emoji_people 0xea1d
+#define ic_emoji_symbols 0xea1e
+#define ic_emoji_transportation 0xea1f
+#define ic_engineering 0xea3d
+#define ic_enhance_photo_translate 0xe8fc
+#define ic_enhanced_encryption 0xe63f
+#define ic_equalizer 0xe01d
+#define ic_error 0xe000
+#define ic_error_outline 0xe001
+#define ic_escalator 0xf1a1
+#define ic_escalator_warning 0xf1ac
+#define ic_euro 0xea15
+#define ic_euro_symbol 0xe926
+#define ic_ev_station 0xe56d
+#define ic_event 0xe878
+#define ic_event_available 0xe614
+#define ic_event_busy 0xe615
+#define ic_event_note 0xe616
+#define ic_event_seat 0xe903
+#define ic_exit_to_app 0xe879
+#define ic_expand 0xe94f
+#define ic_expand_less 0xe5ce
+#define ic_expand_more 0xe5cf
+#define ic_explicit 0xe01e
+#define ic_explore 0xe87a
+#define ic_explore_off 0xe9a8
+#define ic_exposure 0xe3ca
+#define ic_exposure_minus_1 0xe3cb
+#define ic_exposure_minus_2 0xe3cc
+#define ic_exposure_neg_1 0xe3cb
+#define ic_exposure_neg_2 0xe3cc
+#define ic_exposure_plus_1 0xe3cd
+#define ic_exposure_plus_2 0xe3ce
+#define ic_exposure_zero 0xe3cf
+#define ic_extension 0xe87b
+#define ic_extension_off 0xe4f5
+#define ic_face 0xe87c
+#define ic_face_retouching_natural 0xef4e
+#define ic_face_retouching_off 0xf007
+#define ic_facebook 0xf234
+#define ic_fact_check 0xf0c5
+#define ic_family_restroom 0xf1a2
+#define ic_fast_forward 0xe01f
+#define ic_fast_rewind 0xe020
+#define ic_fastfood 0xe57a
+#define ic_favorite 0xe87d
+#define ic_favorite_border 0xe87e
+#define ic_favorite_outline 0xe87e
+#define ic_featured_play_list 0xe06d
+#define ic_featured_video 0xe06e
+#define ic_feed 0xf009
+#define ic_feedback 0xe87f
+#define ic_female 0xe590
+#define ic_fence 0xf1f6
+#define ic_festival 0xea68
+#define ic_fiber_dvr 0xe05d
+#define ic_fiber_manual_record 0xe061
+#define ic_fiber_new 0xe05e
+#define ic_fiber_pin 0xe06a
+#define ic_fiber_smart_record 0xe062
+#define ic_file_copy 0xe173
+#define ic_file_download 0xe2c4
+#define ic_file_download_done 0xe9aa
+#define ic_file_download_off 0xe4fe
+#define ic_file_present 0xea0e
+#define ic_file_upload 0xe2c6
+#define ic_filter 0xe3d3
+#define ic_filter_1 0xe3d0
+#define ic_filter_2 0xe3d1
+#define ic_filter_3 0xe3d2
+#define ic_filter_4 0xe3d4
+#define ic_filter_5 0xe3d5
+#define ic_filter_6 0xe3d6
+#define ic_filter_7 0xe3d7
+#define ic_filter_8 0xe3d8
+#define ic_filter_9 0xe3d9
+#define ic_filter_9_plus 0xe3da
+#define ic_filter_alt 0xef4f
+#define ic_filter_b_and_w 0xe3db
+#define ic_filter_center_focus 0xe3dc
+#define ic_filter_drama 0xe3dd
+#define ic_filter_frames 0xe3de
+#define ic_filter_hdr 0xe3df
+#define ic_filter_list 0xe152
+#define ic_filter_list_alt 0xe94e
+#define ic_filter_none 0xe3e0
+#define ic_filter_tilt_shift 0xe3e2
+#define ic_filter_vintage 0xe3e3
+#define ic_find_in_page 0xe880
+#define ic_find_replace 0xe881
+#define ic_fingerprint 0xe90d
+#define ic_fire_extinguisher 0xf1d8
+#define ic_fire_hydrant 0xf1a3
+#define ic_fireplace 0xea43
+#define ic_first_page 0xe5dc
+#define ic_fit_screen 0xea10
+#define ic_fitness_center 0xeb43
+#define ic_flag 0xe153
+#define ic_flaky 0xef50
+#define ic_flare 0xe3e4
+#define ic_flash_auto 0xe3e5
+#define ic_flash_off 0xe3e6
+#define ic_flash_on 0xe3e7
+#define ic_flashlight_off 0xf00a
+#define ic_flashlight_on 0xf00b
+#define ic_flatware 0xf00c
+#define ic_flight 0xe539
+#define ic_flight_land 0xe904
+#define ic_flight_takeoff 0xe905
+#define ic_flip 0xe3e8
+#define ic_flip_camera_android 0xea37
+#define ic_flip_camera_ios 0xea38
+#define ic_flip_to_back 0xe882
+#define ic_flip_to_front 0xe883
+#define ic_flourescent 0xf00d
+#define ic_flutter_dash 0xe00b
+#define ic_fmd_bad 0xf00e
+#define ic_fmd_good 0xf00f
+#define ic_folder 0xe2c7
+#define ic_folder_open 0xe2c8
+#define ic_folder_shared 0xe2c9
+#define ic_folder_special 0xe617
+#define ic_follow_the_signs 0xf222
+#define ic_font_download 0xe167
+#define ic_font_download_off 0xe4f9
+#define ic_food_bank 0xf1f2
+#define ic_format_align_center 0xe234
+#define ic_format_align_justify 0xe235
+#define ic_format_align_left 0xe236
+#define ic_format_align_right 0xe237
+#define ic_format_bold 0xe238
+#define ic_format_clear 0xe239
+#define ic_format_color_fill 0xe23a
+#define ic_format_color_reset 0xe23b
+#define ic_format_color_text 0xe23c
+#define ic_format_indent_decrease 0xe23d
+#define ic_format_indent_increase 0xe23e
+#define ic_format_italic 0xe23f
+#define ic_format_line_spacing 0xe240
+#define ic_format_list_bulleted 0xe241
+#define ic_format_list_numbered 0xe242
+#define ic_format_list_numbered_rtl 0xe267
+#define ic_format_paint 0xe243
+#define ic_format_quote 0xe244
+#define ic_format_shapes 0xe25e
+#define ic_format_size 0xe245
+#define ic_format_strikethrough 0xe246
+#define ic_format_textdirection_l_to_r 0xe247
+#define ic_format_textdirection_r_to_l 0xe248
+#define ic_format_underline 0xe249
+#define ic_format_underlined 0xe249
+#define ic_forum 0xe0bf
+#define ic_forward 0xe154
+#define ic_forward_10 0xe056
+#define ic_forward_30 0xe057
+#define ic_forward_5 0xe058
+#define ic_forward_to_inbox 0xf187
+#define ic_foundation 0xf200
+#define ic_free_breakfast 0xeb44
+#define ic_free_cancellation 0xe748
+#define ic_front_hand 0xe769
+#define ic_fullscreen 0xe5d0
+#define ic_fullscreen_exit 0xe5d1
+#define ic_functions 0xe24a
+#define ic_g_mobiledata 0xf010
+#define ic_g_translate 0xe927
+#define ic_gamepad 0xe30f
+#define ic_games 0xe021
+#define ic_garage 0xf011
+#define ic_gavel 0xe90e
+#define ic_generating_tokens 0xe749
+#define ic_gesture 0xe155
+#define ic_get_app 0xe884
+#define ic_gif 0xe908
+#define ic_gite 0xe58b
+#define ic_goat 100xfffd
+#define ic_golf_course 0xeb45
+#define ic_gpp_bad 0xf012
+#define ic_gpp_good 0xf013
+#define ic_gpp_maybe 0xf014
+#define ic_gps_fixed 0xe1b3
+#define ic_gps_not_fixed 0xe1b4
+#define ic_gps_off 0xe1b5
+#define ic_grade 0xe885
+#define ic_gradient 0xe3e9
+#define ic_grading 0xea4f
+#define ic_grain 0xe3ea
+#define ic_graphic_eq 0xe1b8
+#define ic_grass 0xf205
+#define ic_grid_3x3 0xf015
+#define ic_grid_4x4 0xf016
+#define ic_grid_goldenratio 0xf017
+#define ic_grid_off 0xe3eb
+#define ic_grid_on 0xe3ec
+#define ic_grid_view 0xe9b0
+#define ic_group 0xe7ef
+#define ic_group_add 0xe7f0
+#define ic_group_off 0xe747
+#define ic_group_work 0xe886
+#define ic_groups 0xf233
+#define ic_h_mobiledata 0xf018
+#define ic_h_plus_mobiledata 0xf019
+#define ic_hail 0xe9b1
+#define ic_handyman 0xf10b
+#define ic_hardware 0xea59
+#define ic_hd 0xe052
+#define ic_hdr_auto 0xf01a
+#define ic_hdr_auto_select 0xf01b
+#define ic_hdr_enhanced_select 0xef51
+#define ic_hdr_off 0xe3ed
+#define ic_hdr_off_select 0xf01c
+#define ic_hdr_on 0xe3ee
+#define ic_hdr_on_select 0xf01d
+#define ic_hdr_plus 0xf01e
+#define ic_hdr_strong 0xe3f1
+#define ic_hdr_weak 0xe3f2
+#define ic_headphones 0xf01f
+#define ic_headphones_battery 0xf020
+#define ic_headset 0xe310
+#define ic_headset_mic 0xe311
+#define ic_headset_off 0xe33a
+#define ic_healing 0xe3f3
+#define ic_health_and_safety 0xe1d5
+#define ic_hearing 0xe023
+#define ic_hearing_disabled 0xf104
+#define ic_height 0xea16
+#define ic_help 0xe887
+#define ic_help_center 0xf1c0
+#define ic_help_outline 0xe8fd
+#define ic_hevc 0xf021
+#define ic_hide_image 0xf022
+#define ic_hide_source 0xf023
+#define ic_high_quality 0xe024
+#define ic_highlight 0xe25f
+#define ic_highlight_alt 0xef52
+#define ic_highlight_off 0xe888
+#define ic_highlight_remove 0xe888
+#define ic_hiking 0xe50a
+#define ic_history 0xe889
+#define ic_history_edu 0xea3e
+#define ic_history_toggle_off 0xf17d
+#define ic_holiday_village 0xe58a
+#define ic_home 0xe88a
+#define ic_home_filled 0xe9b2
+#define ic_home_max 0xf024
+#define ic_home_mini 0xf025
+#define ic_home_repair_service 0xf100
+#define ic_home_work 0xea09
+#define ic_horizontal_distribute 0xe014
+#define ic_horizontal_rule 0xf108
+#define ic_horizontal_split 0xe947
+#define ic_hot_tub 0xeb46
+#define ic_hotel 0xe53a
+#define ic_hotel_class 0xe743
+#define ic_hourglass_bottom 0xea5c
+#define ic_hourglass_disabled 0xef53
+#define ic_hourglass_empty 0xe88b
+#define ic_hourglass_full 0xe88c
+#define ic_hourglass_top 0xea5b
+#define ic_house 0xea44
+#define ic_house_siding 0xf202
+#define ic_houseboat 0xe584
+#define ic_how_to_reg 0xe174
+#define ic_how_to_vote 0xe175
+#define ic_http 0xe902
+#define ic_https 0xe88d
+#define ic_hvac 0xf10e
+#define ic_ice_skating 0xe50b
+#define ic_icecream 0xea69
+#define ic_image 0xe3f4
+#define ic_image_aspect_ratio 0xe3f5
+#define ic_image_not_supported 0xf116
+#define ic_image_search 0xe43f
+#define ic_imagesearch_roller 0xe9b4
+#define ic_import_contacts 0xe0e0
+#define ic_import_export 0xe0c3
+#define ic_important_devices 0xe912
+#define ic_inbox 0xe156
+#define ic_incomplete_circle 0xe79b
+#define ic_indeterminate_check_box 0xe909
+#define ic_info 0xe88e
+#define ic_info_outline 0xe88f
+#define ic_input 0xe890
+#define ic_insert_chart 0xe24b
+#define ic_insert_chart_outlined 0xe26a
+#define ic_insert_comment 0xe24c
+#define ic_insert_drive_file 0xe24d
+#define ic_insert_emoticon 0xe24e
+#define ic_insert_invitation 0xe24f
+#define ic_insert_link 0xe250
+#define ic_insert_photo 0xe251
+#define ic_insights 0xf092
+#define ic_integration_instructions 0xef54
+#define ic_inventory 0xe179
+#define ic_inventory_2 0xe1a1
+#define ic_invert_colors 0xe891
+#define ic_invert_colors_off 0xe0c4
+#define ic_invert_colors_on 0xe891
+#define ic_ios_share 0xe6b8
+#define ic_iron 0xe583
+#define ic_iso 0xe3f6
+#define ic_kayaking 0xe50c
+#define ic_keyboard 0xe312
+#define ic_keyboard_alt 0xf028
+#define ic_keyboard_arrow_down 0xe313
+#define ic_keyboard_arrow_left 0xe314
+#define ic_keyboard_arrow_right 0xe315
+#define ic_keyboard_arrow_up 0xe316
+#define ic_keyboard_backspace 0xe317
+#define ic_keyboard_capslock 0xe318
+#define ic_keyboard_control 0xe5d3
+#define ic_keyboard_hide 0xe31a
+#define ic_keyboard_return 0xe31b
+#define ic_keyboard_tab 0xe31c
+#define ic_keyboard_voice 0xe31d
+#define ic_king_bed 0xea45
+#define ic_kitchen 0xeb47
+#define ic_kitesurfing 0xe50d
+#define ic_label 0xe892
+#define ic_label_important 0xe937
+#define ic_label_important_outline 0xe948
+#define ic_label_off 0xe9b6
+#define ic_label_outline 0xe893
+#define ic_landscape 0xe3f7
+#define ic_language 0xe894
+#define ic_laptop 0xe31e
+#define ic_laptop_chromebook 0xe31f
+#define ic_laptop_mac 0xe320
+#define ic_laptop_windows 0xe321
+#define ic_last_page 0xe5dd
+#define ic_launch 0xe895
+#define ic_layers 0xe53b
+#define ic_layers_clear 0xe53c
+#define ic_leaderboard 0xf20c
+#define ic_leak_add 0xe3f8
+#define ic_leak_remove 0xe3f9
+#define ic_leave_bags_at_home 0xf21b
+#define ic_legend_toggle 0xf11b
+#define ic_lens 0xe3fa
+#define ic_lens_blur 0xf029
+#define ic_library_add 0xe02e
+#define ic_library_add_check 0xe9b7
+#define ic_library_books 0xe02f
+#define ic_library_music 0xe030
+#define ic_light 0xf02a
+#define ic_light_mode 0xe518
+#define ic_lightbulb 0xe0f0
+#define ic_lightbulb_outline 0xe90f
+#define ic_line_style 0xe919
+#define ic_line_weight 0xe91a
+#define ic_linear_scale 0xe260
+#define ic_link 0xe157
+#define ic_link_off 0xe16f
+#define ic_linked_camera 0xe438
+#define ic_liquor 0xea60
+#define ic_list 0xe896
+#define ic_list_alt 0xe0ee
+#define ic_live_help 0xe0c6
+#define ic_live_tv 0xe639
+#define ic_living 0xf02b
+#define ic_local_activity 0xe53f
+#define ic_local_airport 0xe53d
+#define ic_local_atm 0xe53e
+#define ic_local_attraction 0xe53f
+#define ic_local_bar 0xe540
+#define ic_local_cafe 0xe541
+#define ic_local_car_wash 0xe542
+#define ic_local_convenience_store 0xe543
+#define ic_local_dining 0xe556
+#define ic_local_drink 0xe544
+#define ic_local_fire_department 0xef55
+#define ic_local_florist 0xe545
+#define ic_local_gas_station 0xe546
+#define ic_local_grocery_store 0xe547
+#define ic_local_hospital 0xe548
+#define ic_local_hotel 0xe549
+#define ic_local_laundry_service 0xe54a
+#define ic_local_library 0xe54b
+#define ic_local_mall 0xe54c
+#define ic_local_movies 0xe54d
+#define ic_local_offer 0xe54e
+#define ic_local_parking 0xe54f
+#define ic_local_pharmacy 0xe550
+#define ic_local_phone 0xe551
+#define ic_local_pizza 0xe552
+#define ic_local_play 0xe553
+#define ic_local_police 0xef56
+#define ic_local_post_office 0xe554
+#define ic_local_print_shop 0xe555
+#define ic_local_printshop 0xe555
+#define ic_local_restaurant 0xe556
+#define ic_local_see 0xe557
+#define ic_local_shipping 0xe558
+#define ic_local_taxi 0xe559
+#define ic_location_city 0xe7f1
+#define ic_location_disabled 0xe1b6
+#define ic_location_history 0xe55a
+#define ic_location_off 0xe0c7
+#define ic_location_on 0xe0c8
+#define ic_location_pin 0xf1db
+#define ic_location_searching 0xe1b7
+#define ic_lock 0xe897
+#define ic_lock_clock 0xef57
+#define ic_lock_open 0xe898
+#define ic_lock_outline 0xe899
+#define ic_login 0xea77
+#define ic_logout 0xe9ba
+#define ic_looks 0xe3fc
+#define ic_looks_3 0xe3fb
+#define ic_looks_4 0xe3fd
+#define ic_looks_5 0xe3fe
+#define ic_looks_6 0xe3ff
+#define ic_looks_one 0xe400
+#define ic_looks_two 0xe401
+#define ic_loop 0xe028
+#define ic_loupe 0xe402
+#define ic_low_priority 0xe16d
+#define ic_loyalty 0xe89a
+#define ic_lte_mobiledata 0xf02c
+#define ic_lte_plus_mobiledata 0xf02d
+#define ic_luggage 0xf235
+#define ic_lunch_dining 0xea61
+#define ic_mail 0xe158
+#define ic_mail_outline 0xe0e1
+#define ic_male 0xe58e
+#define ic_manage_accounts 0xf02e
+#define ic_manage_search 0xf02f
+#define ic_map 0xe55b
+#define ic_maps_home_work 0xf030
+#define ic_maps_ugc 0xef58
+#define ic_margin 0xe9bb
+#define ic_mark_as_unread 0xe9bc
+#define ic_mark_chat_read 0xf18b
+#define ic_mark_chat_unread 0xf189
+#define ic_mark_email_read 0xf18c
+#define ic_mark_email_unread 0xf18a
+#define ic_markunread 0xe159
+#define ic_markunread_mailbox 0xe89b
+#define ic_masks 0xf218
+#define ic_maximize 0xe930
+#define ic_media_bluetooth_off 0xf031
+#define ic_media_bluetooth_on 0xf032
+#define ic_mediation 0xefa7
+#define ic_medical_services 0xf109
+#define ic_medication 0xf033
+#define ic_meeting_room 0xeb4f
+#define ic_memory 0xe322
+#define ic_menu 0xe5d2
+#define ic_menu_book 0xea19
+#define ic_menu_open 0xe9bd
+#define ic_merge_type 0xe252
+#define ic_message 0xe0c9
+#define ic_messenger 0xe0ca
+#define ic_messenger_outline 0xe0cb
+#define ic_mic 0xe029
+#define ic_mic_external_off 0xef59
+#define ic_mic_external_on 0xef5a
+#define ic_mic_none 0xe02a
+#define ic_mic_off 0xe02b
+#define ic_microwave 0xf204
+#define ic_military_tech 0xea3f
+#define ic_minimize 0xe931
+#define ic_miscellaneous_services 0xf10c
+#define ic_missed_video_call 0xe073
+#define ic_mms 0xe618
+#define ic_mobile_friendly 0xe200
+#define ic_mobile_off 0xe201
+#define ic_mobile_screen_share 0xe0e7
+#define ic_mobiledata_off 0xf034
+#define ic_mode 0xf097
+#define ic_mode_comment 0xe253
+#define ic_mode_edit 0xe254
+#define ic_mode_edit_outline 0xf035
+#define ic_mode_night 0xf036
+#define ic_mode_standby 0xf037
+#define ic_model_training 0xf0cf
+#define ic_monetization_on 0xe263
+#define ic_money 0xe57d
+#define ic_money_off 0xe25c
+#define ic_money_off_csred 0xf038
+#define ic_monitor 0xef5b
+#define ic_monitor_weight 0xf039
+#define ic_monochrome_photos 0xe403
+#define ic_mood 0xe7f2
+#define ic_mood_bad 0xe7f3
+#define ic_moped 0xeb28
+#define ic_more 0xe619
+#define ic_more_horiz 0xe5d3
+#define ic_more_time 0xea5d
+#define ic_more_vert 0xe5d4
+#define ic_motion_photos_auto 0xf03a
+#define ic_motion_photos_off 0xe9c0
+#define ic_motion_photos_on 0xe9c1
+#define ic_motion_photos_pause 0xf227
+#define ic_motion_photos_paused 0xe9c2
+#define ic_motorcycle 0xe91b
+#define ic_mouse 0xe323
+#define ic_move_to_inbox 0xe168
+#define ic_movie 0xe02c
+#define ic_movie_creation 0xe404
+#define ic_movie_filter 0xe43a
+#define ic_moving 0xe501
+#define ic_mp 0xe9c3
+#define ic_multiline_chart 0xe6df
+#define ic_multiple_stop 0xf1b9
+#define ic_multitrack_audio 0xe1b8
+#define ic_museum 0xea36
+#define ic_music_note 0xe405
+#define ic_music_off 0xe440
+#define ic_music_video 0xe063
+#define ic_my_library_add 0xe02e
+#define ic_my_library_books 0xe02f
+#define ic_my_library_music 0xe030
+#define ic_my_location 0xe55c
+#define ic_nat 0xef5c
+#define ic_nature 0xe406
+#define ic_nature_people 0xe407
+#define ic_navigate_before 0xe408
+#define ic_navigate_next 0xe409
+#define ic_navigation 0xe55d
+#define ic_near_me 0xe569
+#define ic_near_me_disabled 0xf1ef
+#define ic_nearby_error 0xf03b
+#define ic_nearby_off 0xf03c
+#define ic_network_cell 0xe1b9
+#define ic_network_check 0xe640
+#define ic_network_locked 0xe61a
+#define ic_network_wifi 0xe1ba
+#define ic_new_label 0xe609
+#define ic_new_releases 0xe031
+#define ic_next_plan 0xef5d
+#define ic_next_week 0xe16a
+#define ic_nfc 0xe1bb
+#define ic_night_shelter 0xf1f1
+#define ic_nightlife 0xea62
+#define ic_nightlight 0xf03d
+#define ic_nightlight_round 0xef5e
+#define ic_nights_stay 0xea46
+#define ic_no_accounts 0xf03e
+#define ic_no_backpack 0xf237
+#define ic_no_cell 0xf1a4
+#define ic_no_drinks 0xf1a5
+#define ic_no_encryption 0xe641
+#define ic_no_encryption_gmailerrorred 0xf03f
+#define ic_no_flash 0xf1a6
+#define ic_no_food 0xf1a7
+#define ic_no_luggage 0xf23b
+#define ic_no_meals 0xf1d6
+#define ic_no_meals_ouline 0xf229
+#define ic_no_meeting_room 0xeb4e
+#define ic_no_photography 0xf1a8
+#define ic_no_sim 0xe0cc
+#define ic_no_stroller 0xf1af
+#define ic_no_transfer 0xf1d5
+#define ic_nordic_walking 0xe50e
+#define ic_north 0xf1e0
+#define ic_north_east 0xf1e1
+#define ic_north_west 0xf1e2
+#define ic_not_accessible 0xf0fe
+#define ic_not_interested 0xe033
+#define ic_not_listed_location 0xe575
+#define ic_not_started 0xf0d1
+#define ic_note 0xe06f
+#define ic_note_add 0xe89c
+#define ic_note_alt 0xf040
+#define ic_notes 0xe26c
+#define ic_notification_add 0xe399
+#define ic_notification_important 0xe004
+#define ic_notifications 0xe7f4
+#define ic_notifications_active 0xe7f7
+#define ic_notifications_none 0xe7f5
+#define ic_notifications_off 0xe7f6
+#define ic_notifications_on 0xe7f7
+#define ic_notifications_paused 0xe7f8
+#define ic_now_wallpaper 0xe1bc
+#define ic_now_widgets 0xe1bd
+#define ic_offline_bolt 0xe932
+#define ic_offline_pin 0xe90a
+#define ic_offline_share 0xe9c5
+#define ic_ondemand_video 0xe63a
+#define ic_online_prediction 0xf0eb
+#define ic_opacity 0xe91c
+#define ic_open_in_browser 0xe89d
+#define ic_open_in_full 0xf1ce
+#define ic_open_in_new 0xe89e
+#define ic_open_in_new_off 0xe4f6
+#define ic_open_with 0xe89f
+#define ic_other_houses 0xe58c
+#define ic_outbond 0xf228
+#define ic_outbound 0xe1ca
+#define ic_outbox 0xef5f
+#define ic_outdoor_grill 0xea47
+#define ic_outgoing_mail 0xf0d2
+#define ic_outlet 0xf1d4
+#define ic_outlined_flag 0xe16e
+#define ic_padding 0xe9c8
+#define ic_pages 0xe7f9
+#define ic_pageview 0xe8a0
+#define ic_paid 0xf041
+#define ic_palette 0xe40a
+#define ic_pan_tool 0xe925
+#define ic_panorama 0xe40b
+#define ic_panorama_fish_eye 0xe40c
+#define ic_panorama_fisheye 0xe40c
+#define ic_panorama_horizontal 0xe40d
+#define ic_panorama_horizontal_select 0xef60
+#define ic_panorama_photosphere 0xe9c9
+#define ic_panorama_photosphere_select 0xe9ca
+#define ic_panorama_vertical 0xe40e
+#define ic_panorama_vertical_select 0xef61
+#define ic_panorama_wide_angle 0xe40f
+#define ic_panorama_wide_angle_select 0xef62
+#define ic_paragliding 0xe50f
+#define ic_park 0xea63
+#define ic_party_mode 0xe7fa
+#define ic_password 0xf042
+#define ic_pattern 0xf043
+#define ic_pause 0xe034
+#define ic_pause_circle 0xe1a2
+#define ic_pause_circle_filled 0xe035
+#define ic_pause_circle_outline 0xe036
+#define ic_pause_presentation 0xe0ea
+#define ic_payment 0xe8a1
+#define ic_payments 0xef63
+#define ic_pedal_bike 0xeb29
+#define ic_pending 0xef64
+#define ic_pending_actions 0xf1bb
+#define ic_people 0xe7fb
+#define ic_people_alt 0xea21
+#define ic_people_outline 0xe7fc
+#define ic_perm_camera_mic 0xe8a2
+#define ic_perm_contact_cal 0xe8a3
+#define ic_perm_contact_calendar 0xe8a3
+#define ic_perm_data_setting 0xe8a4
+#define ic_perm_device_info 0xe8a5
+#define ic_perm_device_information 0xe8a5
+#define ic_perm_identity 0xe8a6
+#define ic_perm_media 0xe8a7
+#define ic_perm_phone_msg 0xe8a8
+#define ic_perm_scan_wifi 0xe8a9
+#define ic_person 0xe7fd
+#define ic_person_add 0xe7fe
+#define ic_person_add_alt 0xea4d
+#define ic_person_add_alt_1 0xef65
+#define ic_person_add_disabled 0xe9cb
+#define ic_person_off 0xe510
+#define ic_person_outline 0xe7ff
+#define ic_person_pin 0xe55a
+#define ic_person_pin_circle 0xe56a
+#define ic_person_remove 0xef66
+#define ic_person_remove_alt_1 0xef67
+#define ic_person_search 0xf106
+#define ic_personal_injury 0xe6da
+#define ic_personal_video 0xe63b
+#define ic_pest_control 0xf0fa
+#define ic_pest_control_rodent 0xf0fd
+#define ic_pets 0xe91d
+#define ic_phone 0xe0cd
+#define ic_phone_android 0xe324
+#define ic_phone_bluetooth_speaker 0xe61b
+#define ic_phone_callback 0xe649
+#define ic_phone_disabled 0xe9cc
+#define ic_phone_enabled 0xe9cd
+#define ic_phone_forwarded 0xe61c
+#define ic_phone_in_talk 0xe61d
+#define ic_phone_iphone 0xe325
+#define ic_phone_locked 0xe61e
+#define ic_phone_missed 0xe61f
+#define ic_phone_paused 0xe620
+#define ic_phonelink 0xe326
+#define ic_phonelink_erase 0xe0db
+#define ic_phonelink_lock 0xe0dc
+#define ic_phonelink_off 0xe327
+#define ic_phonelink_ring 0xe0dd
+#define ic_phonelink_setup 0xe0de
+#define ic_photo 0xe410
+#define ic_photo_album 0xe411
+#define ic_photo_camera 0xe412
+#define ic_photo_camera_back 0xef68
+#define ic_photo_camera_front 0xef69
+#define ic_photo_filter 0xe43b
+#define ic_photo_library 0xe413
+#define ic_photo_size_select_actual 0xe432
+#define ic_photo_size_select_large 0xe433
+#define ic_photo_size_select_small 0xe434
+#define ic_piano 0xe521
+#define ic_piano_off 0xe520
+#define ic_picture_as_pdf 0xe415
+#define ic_picture_in_picture 0xe8aa
+#define ic_picture_in_picture_alt 0xe911
+#define ic_pie_chart 0xe6c4
+#define ic_pie_chart_outline 0xf044
+#define ic_pie_chart_outlined 0xe6c5
+#define ic_pin 0xf045
+#define ic_pin_drop 0xe55e
+#define ic_pin_end 0xe767
+#define ic_pin_invoke 0xe763
+#define ic_pivot_table_chart 0xe9ce
+#define ic_place 0xe55f
+#define ic_plagiarism 0xea5a
+#define ic_play_arrow 0xe037
+#define ic_play_circle 0xe1c4
+#define ic_play_circle_fill 0xe038
+#define ic_play_circle_filled 0xe038
+#define ic_play_circle_outline 0xe039
+#define ic_play_disabled 0xef6a
+#define ic_play_for_work 0xe906
+#define ic_play_lesson 0xf047
+#define ic_playlist_add 0xe03b
+#define ic_playlist_add_check 0xe065
+#define ic_playlist_play 0xe05f
+#define ic_plumbing 0xf107
+#define ic_plus_one 0xe800
+#define ic_podcasts 0xf048
+#define ic_point_of_sale 0xf17e
+#define ic_policy 0xea17
+#define ic_poll 0xe801
+#define ic_polymer 0xe8ab
+#define ic_pool 0xeb48
+#define ic_portable_wifi_off 0xe0ce
+#define ic_portrait 0xe416
+#define ic_post_add 0xea20
+#define ic_power 0xe63c
+#define ic_power_input 0xe336
+#define ic_power_off 0xe646
+#define ic_power_settings_new 0xe8ac
+#define ic_precision_manufacturing 0xf049
+#define ic_pregnant_woman 0xe91e
+#define ic_present_to_all 0xe0df
+#define ic_preview 0xf1c5
+#define ic_price_change 0xf04a
+#define ic_price_check 0xf04b
+#define ic_print 0xe8ad
+#define ic_print_disabled 0xe9cf
+#define ic_priority_high 0xe645
+#define ic_privacy_tip 0xf0dc
+#define ic_private_connectivity 0xe744
+#define ic_production_quantity_limits 0xe1d1
+#define ic_psychology 0xea4a
+#define ic_public 0xe80b
+#define ic_public_off 0xf1ca
+#define ic_publish 0xe255
+#define ic_published_with_changes 0xf232
+#define ic_push_pin 0xf10d
+#define ic_qr_code 0xef6b
+#define ic_qr_code_2 0xe00a
+#define ic_qr_code_scanner 0xf206
+#define ic_query_builder 0xe8ae
+#define ic_query_stats 0xe4fc
+#define ic_question_answer 0xe8af
+#define ic_queue 0xe03c
+#define ic_queue_music 0xe03d
+#define ic_queue_play_next 0xe066
+#define ic_quick_contacts_dialer 0xe0cf
+#define ic_quick_contacts_mail 0xe0d0
+#define ic_quickreply 0xef6c
+#define ic_quiz 0xf04c
+#define ic_r_mobiledata 0xf04d
+#define ic_radar 0xf04e
+#define ic_radio 0xe03e
+#define ic_radio_button_checked 0xe837
+#define ic_radio_button_off 0xe836
+#define ic_radio_button_on 0xe837
+#define ic_radio_button_unchecked 0xe836
+#define ic_railway_alert 0xe9d1
+#define ic_ramen_dining 0xea64
+#define ic_rate_review 0xe560
+#define ic_raw_off 0xf04f
+#define ic_raw_on 0xf050
+#define ic_read_more 0xef6d
+#define ic_real_estate_agent 0xe73a
+#define ic_receipt 0xe8b0
+#define ic_receipt_long 0xef6e
+#define ic_recent_actors 0xe03f
+#define ic_recommend 0xe9d2
+#define ic_record_voice_over 0xe91f
+#define ic_recycling 0xe760
+#define ic_redeem 0xe8b1
+#define ic_redo 0xe15a
+#define ic_reduce_capacity 0xf21c
+#define ic_refresh 0xe5d5
+#define ic_remember_me 0xf051
+#define ic_remove 0xe15b
+#define ic_remove_circle 0xe15c
+#define ic_remove_circle_outline 0xe15d
+#define ic_remove_done 0xe9d3
+#define ic_remove_from_queue 0xe067
+#define ic_remove_moderator 0xe9d4
+#define ic_remove_red_eye 0xe417
+#define ic_remove_shopping_cart 0xe928
+#define ic_reorder 0xe8fe
+#define ic_repeat 0xe040
+#define ic_repeat_on 0xe9d6
+#define ic_repeat_one 0xe041
+#define ic_repeat_one_on 0xe9d7
+#define ic_replay 0xe042
+#define ic_replay_10 0xe059
+#define ic_replay_30 0xe05a
+#define ic_replay_5 0xe05b
+#define ic_replay_circle_filled 0xe9d8
+#define ic_reply 0xe15e
+#define ic_reply_all 0xe15f
+#define ic_report 0xe160
+#define ic_report_gmailerrorred 0xf052
+#define ic_report_off 0xe170
+#define ic_report_problem 0xe8b2
+#define ic_request_page 0xf22c
+#define ic_request_quote 0xf1b6
+#define ic_reset_tv 0xe9d9
+#define ic_restart_alt 0xf053
+#define ic_restaurant 0xe56c
+#define ic_restaurant_menu 0xe561
+#define ic_restore 0xe8b3
+#define ic_restore_from_trash 0xe938
+#define ic_restore_page 0xe929
+#define ic_reviews 0xf054
+#define ic_rice_bowl 0xf1f5
+#define ic_ring_volume 0xe0d1
+#define ic_roofing 0xf201
+#define ic_room 0xe8b4
+#define ic_room_preferences 0xf1b8
+#define ic_room_service 0xeb49
+#define ic_rotate_90_degrees_ccw 0xe418
+#define ic_rotate_left 0xe419
+#define ic_rotate_right 0xe41a
+#define ic_rounded_corner 0xe920
+#define ic_router 0xe328
+#define ic_rowing 0xe921
+#define ic_rss_feed 0xe0e5
+#define ic_rsvp 0xf055
+#define ic_rtt 0xe9ad
+#define ic_rule 0xf1c2
+#define ic_rule_folder 0xf1c9
+#define ic_run_circle 0xef6f
+#define ic_running_with_errors 0xe51d
+#define ic_rv_hookup 0xe642
+#define ic_safety_divider 0xe1cc
+#define ic_sailing 0xe502
+#define ic_sanitizer 0xf21d
+#define ic_satellite 0xe562
+#define ic_save 0xe161
+#define ic_save_alt 0xe171
+#define ic_saved_search 0xea11
+#define ic_savings 0xe2eb
+#define ic_scanner 0xe329
+#define ic_scatter_plot 0xe268
+#define ic_schedule 0xe8b5
+#define ic_schedule_send 0xea0a
+#define ic_schema 0xe4fd
+#define ic_school 0xe80c
+#define ic_science 0xea4b
+#define ic_score 0xe269
+#define ic_screen_lock_landscape 0xe1be
+#define ic_screen_lock_portrait 0xe1bf
+#define ic_screen_lock_rotation 0xe1c0
+#define ic_screen_rotation 0xe1c1
+#define ic_screen_search_desktop 0xef70
+#define ic_screen_share 0xe0e2
+#define ic_screenshot 0xf056
+#define ic_sd 0xe9dd
+#define ic_sd_card 0xe623
+#define ic_sd_card_alert 0xf057
+#define ic_sd_storage 0xe1c2
+#define ic_search 0xe8b6
+#define ic_search_off 0xea76
+#define ic_security 0xe32a
+#define ic_security_update 0xf058
+#define ic_security_update_good 0xf059
+#define ic_security_update_warning 0xf05a
+#define ic_segment 0xe94b
+#define ic_select_all 0xe162
+#define ic_self_improvement 0xea78
+#define ic_sell 0xf05b
+#define ic_send 0xe163
+#define ic_send_and_archive 0xea0c
+#define ic_send_to_mobile 0xf05c
+#define ic_sensor_door 0xf1b5
+#define ic_sensor_window 0xf1b4
+#define ic_sensors 0xe51e
+#define ic_sensors_off 0xe51f
+#define ic_sentiment_dissatisfied 0xe811
+#define ic_sentiment_neutral 0xe812
+#define ic_sentiment_satisfied 0xe813
+#define ic_sentiment_satisfied_alt 0xe0ed
+#define ic_sentiment_very_dissatisfied 0xe814
+#define ic_sentiment_very_satisfied 0xe815
+#define ic_set_meal 0xf1ea
+#define ic_settings 0xe8b8
+#define ic_settings_accessibility 0xf05d
+#define ic_settings_applications 0xe8b9
+#define ic_settings_backup_restore 0xe8ba
+#define ic_settings_bluetooth 0xe8bb
+#define ic_settings_brightness 0xe8bd
+#define ic_settings_cell 0xe8bc
+#define ic_settings_display 0xe8bd
+#define ic_settings_ethernet 0xe8be
+#define ic_settings_input_antenna 0xe8bf
+#define ic_settings_input_component 0xe8c0
+#define ic_settings_input_composite 0xe8c1
+#define ic_settings_input_hdmi 0xe8c2
+#define ic_settings_input_svideo 0xe8c3
+#define ic_settings_overscan 0xe8c4
+#define ic_settings_phone 0xe8c5
+#define ic_settings_power 0xe8c6
+#define ic_settings_remote 0xe8c7
+#define ic_settings_suggest 0xf05e
+#define ic_settings_system_daydream 0xe1c3
+#define ic_settings_voice 0xe8c8
+#define ic_share 0xe80d
+#define ic_share_arrival_time 0xe524
+#define ic_share_location 0xf05f
+#define ic_shield 0xe9e0
+#define ic_shop 0xe8c9
+#define ic_shop_2 0xe19e
+#define ic_shop_two 0xe8ca
+#define ic_shopping_bag 0xf1cc
+#define ic_shopping_basket 0xe8cb
+#define ic_shopping_cart 0xe8cc
+#define ic_short_text 0xe261
+#define ic_shortcut 0xf060
+#define ic_show_chart 0xe6e1
+#define ic_shower 0xf061
+#define ic_shuffle 0xe043
+#define ic_shuffle_on 0xe9e1
+#define ic_shutter_speed 0xe43d
+#define ic_sick 0xf220
+#define ic_signal_cellular_0_bar 0xf0a8
+#define ic_signal_cellular_4_bar 0xe1c8
+#define ic_signal_cellular_alt 0xe202
+#define ic_signal_cellular_connected_no_internet_0_bar 0xf0ac
+#define ic_signal_cellular_connected_no_internet_4_bar 0xe1cd
+#define ic_signal_cellular_no_sim 0xe1ce
+#define ic_signal_cellular_nodata 0xf062
+#define ic_signal_cellular_null 0xe1cf
+#define ic_signal_cellular_off 0xe1d0
+#define ic_signal_wifi_0_bar 0xf0b0
+#define ic_signal_wifi_4_bar 0xe1d8
+#define ic_signal_wifi_4_bar_lock 0xe1d9
+#define ic_signal_wifi_bad 0xf063
+#define ic_signal_wifi_connected_no_internet_4 0xf064
+#define ic_signal_wifi_off 0xe1da
+#define ic_signal_wifi_statusbar_4_bar 0xf065
+#define ic_signal_wifi_statusbar_connected_no_internet_4 0xf066
+#define ic_signal_wifi_statusbar_null 0xf067
+#define ic_sim_card 0xe32b
+#define ic_sim_card_alert 0xe624
+#define ic_sim_card_download 0xf068
+#define ic_single_bed 0xea48
+#define ic_sip 0xf069
+#define ic_skateboarding 0xe511
+#define ic_skip_next 0xe044
+#define ic_skip_previous 0xe045
+#define ic_sledding 0xe512
+#define ic_slideshow 0xe41b
+#define ic_slow_motion_video 0xe068
+#define ic_smart_button 0xf1c1
+#define ic_smart_display 0xf06a
+#define ic_smart_screen 0xf06b
+#define ic_smart_toy 0xf06c
+#define ic_smartphone 0xe32c
+#define ic_smoke_free 0xeb4a
+#define ic_smoking_rooms 0xeb4b
+#define ic_sms 0xe625
+#define ic_sms_failed 0xe626
+#define ic_snippet_folder 0xf1c7
+#define ic_snooze 0xe046
+#define ic_snowboarding 0xe513
+#define ic_snowmobile 0xe503
+#define ic_snowshoeing 0xe514
+#define ic_soap 0xf1b2
+#define ic_social_distance 0xe1cb
+#define ic_sort 0xe164
+#define ic_sort_by_alpha 0xe053
+#define ic_source 0xf1c4
+#define ic_south 0xf1e3
+#define ic_south_east 0xf1e4
+#define ic_south_west 0xf1e5
+#define ic_spa 0xeb4c
+#define ic_space_bar 0xe256
+#define ic_space_dashboard 0xe66b
+#define ic_speaker 0xe32d
+#define ic_speaker_group 0xe32e
+#define ic_speaker_notes 0xe8cd
+#define ic_speaker_notes_off 0xe92a
+#define ic_speaker_phone 0xe0d2
+#define ic_speed 0xe9e4
+#define ic_spellcheck 0xe8ce
+#define ic_splitscreen 0xf06d
+#define ic_sports 0xea30
+#define ic_sports_bar 0xf1f3
+#define ic_sports_baseball 0xea51
+#define ic_sports_basketball 0xea26
+#define ic_sports_cricket 0xea27
+#define ic_sports_esports 0xea28
+#define ic_sports_football 0xea29
+#define ic_sports_golf 0xea2a
+#define ic_sports_handball 0xea33
+#define ic_sports_hockey 0xea2b
+#define ic_sports_kabaddi 0xea34
+#define ic_sports_mma 0xea2c
+#define ic_sports_motorsports 0xea2d
+#define ic_sports_rugby 0xea2e
+#define ic_sports_score 0xf06e
+#define ic_sports_soccer 0xea2f
+#define ic_sports_tennis 0xea32
+#define ic_sports_volleyball 0xea31
+#define ic_square_foot 0xea49
+#define ic_stacked_bar_chart 0xe9e6
+#define ic_stacked_line_chart 0xf22b
+#define ic_stairs 0xf1a9
+#define ic_star 0xe838
+#define ic_star_border 0xe83a
+#define ic_star_border_purple500 0xf099
+#define ic_star_half 0xe839
+#define ic_star_outline 0xf06f
+#define ic_star_purple500 0xf09a
+#define ic_star_rate 0xf0ec
+#define ic_stars 0xe8d0
+#define ic_stay_current_landscape 0xe0d3
+#define ic_stay_current_portrait 0xe0d4
+#define ic_stay_primary_landscape 0xe0d5
+#define ic_stay_primary_portrait 0xe0d6
+#define ic_sticky_note_2 0xf1fc
+#define ic_stop 0xe047
+#define ic_stop_circle 0xef71
+#define ic_stop_screen_share 0xe0e3
+#define ic_storage 0xe1db
+#define ic_store 0xe8d1
+#define ic_store_mall_directory 0xe563
+#define ic_storefront 0xea12
+#define ic_storm 0xf070
+#define ic_straighten 0xe41c
+#define ic_stream 0xe9e9
+#define ic_streetview 0xe56e
+#define ic_strikethrough_s 0xe257
+#define ic_stroller 0xf1ae
+#define ic_style 0xe41d
+#define ic_subdirectory_arrow_left 0xe5d9
+#define ic_subdirectory_arrow_right 0xe5da
+#define ic_subject 0xe8d2
+#define ic_subscript 0xf111
+#define ic_subscriptions 0xe064
+#define ic_subtitles 0xe048
+#define ic_subtitles_off 0xef72
+#define ic_subway 0xe56f
+#define ic_summarize 0xf071
+#define ic_superscript 0xf112
+#define ic_supervised_user_circle 0xe939
+#define ic_supervisor_account 0xe8d3
+#define ic_support 0xef73
+#define ic_support_agent 0xf0e2
+#define ic_surfing 0xe515
+#define ic_surround_sound 0xe049
+#define ic_swap_calls 0xe0d7
+#define ic_swap_horiz 0xe8d4
+#define ic_swap_horizontal_circle 0xe933
+#define ic_swap_vert 0xe8d5
+#define ic_swap_vert_circle 0xe8d6
+#define ic_swap_vertical_circle 0xe8d6
+#define ic_swipe 0xe9ec
+#define ic_switch_account 0xe9ed
+#define ic_switch_camera 0xe41e
+#define ic_switch_left 0xf1d1
+#define ic_switch_right 0xf1d2
+#define ic_switch_video 0xe41f
+#define ic_sync 0xe627
+#define ic_sync_alt 0xea18
+#define ic_sync_disabled 0xe628
+#define ic_sync_problem 0xe629
+#define ic_system_security_update 0xf072
+#define ic_system_security_update_good 0xf073
+#define ic_system_security_update_warning 0xf074
+#define ic_system_update 0xe62a
+#define ic_system_update_alt 0xe8d7
+#define ic_system_update_tv 0xe8d7
+#define ic_tab 0xe8d8
+#define ic_tab_unselected 0xe8d9
+#define ic_table_chart 0xe265
+#define ic_table_rows 0xf101
+#define ic_table_view 0xf1be
+#define ic_tablet 0xe32f
+#define ic_tablet_android 0xe330
+#define ic_tablet_mac 0xe331
+#define ic_tag 0xe9ef
+#define ic_tag_faces 0xe420
+#define ic_takeout_dining 0xea74
+#define ic_tap_and_play 0xe62b
+#define ic_tapas 0xf1e9
+#define ic_task 0xf075
+#define ic_task_alt 0xe2e6
+#define ic_taxi_alert 0xef74
+#define ic_terrain 0xe564
+#define ic_text_fields 0xe262
+#define ic_text_format 0xe165
+#define ic_text_rotate_up 0xe93a
+#define ic_text_rotate_vertical 0xe93b
+#define ic_text_rotation_angledown 0xe93c
+#define ic_text_rotation_angleup 0xe93d
+#define ic_text_rotation_down 0xe93e
+#define ic_text_rotation_none 0xe93f
+#define ic_text_snippet 0xf1c6
+#define ic_textsms 0xe0d8
+#define ic_texture 0xe421
+#define ic_theater_comedy 0xea66
+#define ic_theaters 0xe8da
+#define ic_thermostat 0xf076
+#define ic_thermostat_auto 0xf077
+#define ic_thumb_down 0xe8db
+#define ic_thumb_down_alt 0xe816
+#define ic_thumb_down_off_alt 0xe9f2
+#define ic_thumb_up 0xe8dc
+#define ic_thumb_up_alt 0xe817
+#define ic_thumb_up_off_alt 0xe9f3
+#define ic_thumbs_up_down 0xe8dd
+#define ic_time_to_leave 0xe62c
+#define ic_timelapse 0xe422
+#define ic_timeline 0xe922
+#define ic_timer 0xe425
+#define ic_timer_10 0xe423
+#define ic_timer_10_select 0xf07a
+#define ic_timer_3 0xe424
+#define ic_timer_3_select 0xf07b
+#define ic_timer_off 0xe426
+#define ic_tips_and_updates 0xe79a
+#define ic_title 0xe264
+#define ic_toc 0xe8de
+#define ic_today 0xe8df
+#define ic_toggle_off 0xe9f5
+#define ic_toggle_on 0xe9f6
+#define ic_toll 0xe8e0
+#define ic_tonality 0xe427
+#define ic_topic 0xf1c8
+#define ic_touch_app 0xe913
+#define ic_tour 0xef75
+#define ic_toys 0xe332
+#define ic_track_changes 0xe8e1
+#define ic_traffic 0xe565
+#define ic_train 0xe570
+#define ic_tram 0xe571
+#define ic_transfer_within_a_station 0xe572
+#define ic_transform 0xe428
+#define ic_transgender 0xe58d
+#define ic_transit_enterexit 0xe579
+#define ic_translate 0xe8e2
+#define ic_travel_explore 0xe2db
+#define ic_trending_down 0xe8e3
+#define ic_trending_flat 0xe8e4
+#define ic_trending_neutral 0xe8e4
+#define ic_trending_up 0xe8e5
+#define ic_trip_origin 0xe57b
+#define ic_try 0xf07c
+#define ic_tty 0xf1aa
+#define ic_tune 0xe429
+#define ic_tungsten 0xf07d
+#define ic_turned_in 0xe8e6
+#define ic_turned_in_not 0xe8e7
+#define ic_tv 0xe333
+#define ic_tv_off 0xe647
+#define ic_two_wheeler 0xe9f9
+#define ic_umbrella 0xf1ad
+#define ic_unarchive 0xe169
+#define ic_undo 0xe166
+#define ic_unfold_less 0xe5d6
+#define ic_unfold_more 0xe5d7
+#define ic_unpublished 0xf236
+#define ic_unsubscribe 0xe0eb
+#define ic_upcoming 0xf07e
+#define ic_update 0xe923
+#define ic_update_disabled 0xe075
+#define ic_upgrade 0xf0fb
+#define ic_upload 0xf09b
+#define ic_upload_file 0xe9fc
+#define ic_usb 0xe1e0
+#define ic_usb_off 0xe4fa
+#define ic_verified 0xef76
+#define ic_verified_user 0xe8e8
+#define ic_vertical_align_bottom 0xe258
+#define ic_vertical_align_center 0xe259
+#define ic_vertical_align_top 0xe25a
+#define ic_vertical_distribute 0xe076
+#define ic_vertical_split 0xe949
+#define ic_vibration 0xe62d
+#define ic_video_call 0xe070
+#define ic_video_camera_back 0xf07f
+#define ic_video_camera_front 0xf080
+#define ic_video_collection 0xe04a
+#define ic_video_label 0xe071
+#define ic_video_library 0xe04a
+#define ic_video_settings 0xea75
+#define ic_video_stable 0xf081
+#define ic_videocam 0xe04b
+#define ic_videocam_off 0xe04c
+#define ic_videogame_asset 0xe338
+#define ic_videogame_asset_off 0xe500
+#define ic_view_agenda 0xe8e9
+#define ic_view_array 0xe8ea
+#define ic_view_carousel 0xe8eb
+#define ic_view_column 0xe8ec
+#define ic_view_comfortable 0xe42a
+#define ic_view_comfy 0xe42a
+#define ic_view_compact 0xe42b
+#define ic_view_day 0xe8ed
+#define ic_view_headline 0xe8ee
+#define ic_view_in_ar 0xe9fe
+#define ic_view_list 0xe8ef
+#define ic_view_module 0xe8f0
+#define ic_view_quilt 0xe8f1
+#define ic_view_sidebar 0xf114
+#define ic_view_stream 0xe8f2
+#define ic_view_week 0xe8f3
+#define ic_vignette 0xe435
+#define ic_villa 0xe586
+#define ic_visibility 0xe8f4
+#define ic_visibility_off 0xe8f5
+#define ic_voice_chat 0xe62e
+#define ic_voice_over_off 0xe94a
+#define ic_voicemail 0xe0d9
+#define ic_volume_down 0xe04d
+#define ic_volume_down_alt 0xe79c
+#define ic_volume_mute 0xe04e
+#define ic_volume_off 0xe04f
+#define ic_volume_up 0xe050
+#define ic_volunteer_activism 0xea70
+#define ic_vpn_key 0xe0da
+#define ic_vpn_lock 0xe62f
+#define ic_vrpano 0xf082
+#define ic_wallet_giftcard 0xe8f6
+#define ic_wallet_membership 0xe8f7
+#define ic_wallet_travel 0xe8f8
+#define ic_wallpaper 0xe1bc
+#define ic_warning 0xe002
+#define ic_warning_amber 0xf083
+#define ic_wash 0xf1b1
+#define ic_watch 0xe334
+#define ic_watch_later 0xe924
+#define ic_water 0xf084
+#define ic_water_damage 0xf203
+#define ic_water_drop 0xe798
+#define ic_waterfall_chart 0xea00
+#define ic_waves 0xe176
+#define ic_waving_hand 0xe766
+#define ic_wb_auto 0xe42c
+#define ic_wb_cloudy 0xe42d
+#define ic_wb_incandescent 0xe42e
+#define ic_wb_iridescent 0xe436
+#define ic_wb_shade 0xea01
+#define ic_wb_sunny 0xe430
+#define ic_wb_twighlight 0xea02
+#define ic_wb_twilight 0xe1c6
+#define ic_wc 0xe63d
+#define ic_web 0xe051
+#define ic_web_asset 0xe069
+#define ic_web_asset_off 0xe4f7
+#define ic_web_stories 0xe595
+#define ic_weekend 0xe16b
+#define ic_west 0xf1e6
+#define ic_whatshot 0xe80e
+#define ic_wheelchair_pickup 0xf1ab
+#define ic_where_to_vote 0xe177
+#define ic_widgets 0xe1bd
+#define ic_wifi 0xe63e
+#define ic_wifi_calling 0xef77
+#define ic_wifi_calling_3 0xf085
+#define ic_wifi_lock 0xe1e1
+#define ic_wifi_off 0xe648
+#define ic_wifi_protected_setup 0xf0fc
+#define ic_wifi_tethering 0xe1e2
+#define ic_wifi_tethering_error_rounded 0xf086
+#define ic_wifi_tethering_off 0xf087
+#define ic_window 0xf088
+#define ic_wine_bar 0xf1e8
+#define ic_work 0xe8f9
+#define ic_work_off 0xe942
+#define ic_work_outline 0xe943
+#define ic_workspaces 0xe1a0
+#define ic_workspaces_filled 0xea0d
+#define ic_workspaces_outline 0xea0f
+#define ic_wrap_text 0xe25b
+#define ic_wrong_location 0xef78
+#define ic_wysiwyg 0xf1c3
+#define ic_yard 0xf089
+#define ic_youtube_searched_for 0xe8fa
+#define ic_zoom_in 0xe8ff
+#define ic_zoom_out 0xe900
+#define ic_zoom_out_map 0xe56b
 
 static char* cpToUTF8(int cp){
     char *utf8 = new char[8];

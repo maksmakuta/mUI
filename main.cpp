@@ -27,7 +27,7 @@ public:
         ll->add(clearBtn);
         ll->add(ed);
         l->add(ll);
-        return new IconView(_10k);
+        return new IconView(ic_account_circle);
     }
 
 };
