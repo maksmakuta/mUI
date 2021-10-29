@@ -28,7 +28,9 @@ class View{
 private:
     OnClickListener* onClick = null;
     i32 ID = 0;
+    bool scrollableV = false,scrollableH = false;
 
+    vec2 winSize;
     Rect r;
     Visibility mVisibility;
     Gravity mGravity;
@@ -56,6 +58,14 @@ public:
         onMeasure();
     }
 
+    fun setWinSize(f32 w,f32 h){
+        this->winSize = vec2(w,h);
+    }
+
+    vec2 getWinSize(){
+        return this->winSize;
+    }
+
     fun remove(i32 p){
         mData.erase(mData.begin() + p);
         onMeasure();
@@ -75,6 +85,22 @@ public:
 
     Gravity getGravity(){
         return this->mGravity;
+    }
+
+    bool isScrollableV(){
+        return this->scrollableV;
+    }
+
+    fun setScrollableV(bool s){
+        this->scrollableV = s;
+    }
+
+    bool isScrollableH(){
+        return this->scrollableH;
+    }
+
+    fun setScrollableH(bool s){
+        this->scrollableH = s;
     }
 
     Rect rect(){

@@ -91,7 +91,9 @@ public:
                 canvas->beginFrame((f32) winWidth, (f32) winHeight, (f32) fbWidth / (f32) winWidth);
                     if(v != null) {
                         v->onMeasure();
+                        checkScrollable(v);
                         v->onDraw(canvas);
+
                     }
                 canvas->endFrame();
             }
@@ -100,6 +102,22 @@ public:
 
         }
         return 0;
+    }
+
+    fun checkScrollable(View* v){
+        i32 _w,_h;
+        glfwGetWindowSize(this->w,&_w,&_h);
+        v->setWinSize((f32)_w,(f32)_h);
+        if(v->rect().w > (f32)_w){
+            v->setScrollableH(true);
+        }else{
+            v->setScrollableH(false);
+        }
+        if(v->rect().h > (f32)_h){
+            v->setScrollableV(true);
+        }else{
+            v->setScrollableV(false);
+        }
     }
 
     fun onKey(i32 key, i32 scancode, i32 action, i32 mods){

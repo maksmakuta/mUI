@@ -18,12 +18,12 @@ pub:
 
     fun onDraw(Canvas *c) override{
         Rect r = rect();
-
-        //c->begin();
-        //c->rect(r.x,r.y,r.w,r.h);
-        //c->fill("#f0f");
-        //c->end(true);
-
+        if(this->isScrollableH()) {
+            c->begin();
+            c->rect(r.x, r.y, r.w, r.h);
+            c->fill("#f0f");
+            c->end(true);
+        }
         f32 x = r.x,y = r.y;
         for(View* v : data()){
             v->pos(x,y);
@@ -48,6 +48,18 @@ pub:
             }
         }
         this->size(x,y);
+    }
+
+    fun onMouseScroll(f64 dx, f64 dy) override{
+        Rect r = rect();
+        f32 ddx = (f32)-dx * 2.56f;
+        f32 ddy = (f32)-dy * 2.56f;
+        if(isScrollableH() && r.x - ddx + r.w >= getWinSize().x && r.x - ddx <= 0){
+            pos(r.x - (f32)ddx,r.y);
+        }
+        if(isScrollableV() && r.y - ddy + r.h >= getWinSize().y && r.y - ddy <= 0){
+            pos(r.x ,r.y - (f32)ddy);
+        }
     }
 };
 

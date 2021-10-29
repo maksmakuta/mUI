@@ -34,6 +34,12 @@ if (GLEW_FOUND)
     link_libraries(     ${GLEW_LIBRARIES})
 endif()
 
+find_package(LibXml2 REQUIRED)
+if (LibXml2_FOUND)
+    include_directories(${LibXml2_INCLUDE_DIRS})
+    link_libraries(     ${LibXml2_LIBRARIES})
+endif()
+
 add_executable(mUI main.cpp
         src/graphics/nanovg/nanovg.h
         src/graphics/nanovg/nanovg.c
