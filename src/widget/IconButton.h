@@ -14,14 +14,12 @@ class IconButton : public View{
 private:
     str text;
     f32 sF;
-    bool hover;
     Shape mShape;
 public:
     IconButton(Shape sh, i32 icon,f32 s,View* p) : View(p){
         this->text = cpToUTF8(icon);
         this->sF = s;
         this->margin(10);
-        this->hover = false;
         this->mShape = sh;
     }
 
@@ -39,22 +37,14 @@ public:
                 c->rect(r.x,r.y,r.w,r.h,r.w * 0.2f);
                 break;
         }
-        c->fill(!hover ? "#333" : "#f84");
+        c->fill(!hover() ? "#333" : "#f84");
         c->end(true);
 
         c->fontFace("icons");
         c->fontSize(this->sF);
-        c->fontFill(!hover ? "#aaa" : "#222");
+        c->fontFill(!hover() ? "#aaa" : "#222");
         c->fontAlign(hCenter | vMiddle);
         c->text(r.x + r.w/2.f,r.y + r.h/2.f,text.c_str());
-    }
-
-    fun onMouse(f64 x, f64 y, i32 button, i32 action, i32 mod) override{
-        if(rect().in(x,y)){
-            hover = true;
-        }else{
-            hover = false;
-        }
     }
 
     fun onMeasure() override{

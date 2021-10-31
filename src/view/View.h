@@ -38,12 +38,14 @@ private:
     Gravity     vGravity;
     Visibility  vVisibility;
     MeasureSize mw,mh;
-
+    bool scrollW,scrollH;
     i32 id;
     bool isLayout;
+    bool isHover;
 
     std::vector<View*> child;
     View* parent = null;
+
 public:
 
     View(View *parent) : View(parent,false){ }
@@ -95,6 +97,8 @@ public:
         this->vRect.pos(x,y);
     }
 
+    bool hover(){return this->isHover;}
+
     virtual fun onDraw(Canvas* c){
         if(!child.empty() && layout()){
             for(auto v : child){
@@ -104,16 +108,25 @@ public:
         }
     }
     virtual fun onMouse(f64 x, f64 y, i32 button, i32 action, i32 mod){
+        if (this->rect().in((f32)x, (f32)y)) {
+            this->isHover = true;
+        }else{
+            this->isHover = false;
+        }
+
         if(!child.empty() && layout()){
             for(auto v : child) {
                 if (v != null) {
                     v->onMouse(x, y, button, action, mod);
-                    //if (v->rect().in((f32)x, (f32)y)) {
+                    if (v->rect().in((f32)x, (f32)y)) {
+                        this->isHover = true;
                     //    if (button == MOUSE_LEFT && action == MOUSE_CLICK) {
                     //        if(v->getOnClickListener() != null)
                     //            v->getOnClickListener()->onClick(v);
                     //    }
-                    //}
+                    }else{
+                        this->isHover = false;
+                    }
                 }
             }
         }

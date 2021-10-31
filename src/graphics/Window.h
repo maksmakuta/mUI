@@ -91,6 +91,7 @@ public:
                 canvas->beginFrame((f32) winWidth, (f32) winHeight, (f32) fbWidth / (f32) winWidth);
                     if(v != null) {
                         v->onMeasure();
+                        v->size((f32)winWidth,(f32)winHeight);
                         v->onDraw(canvas);
                     }
                 canvas->endFrame();
