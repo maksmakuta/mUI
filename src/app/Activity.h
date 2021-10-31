@@ -7,7 +7,6 @@
 class Activity{
 private:
     View* mContent = null;
-    View* mToast = null;
     vec2 wp;
 public:
     Activity(){ }
@@ -17,14 +16,6 @@ public:
 
     fun setContentView(View* v){
         this->mContent = v;
-    }
-
-    fun toast(View* v){
-        this->mToast = v;
-    }
-
-    View* toast(){
-        return this->mToast;
     }
 
     View* content(){return this->mContent;}

@@ -91,25 +91,16 @@ public:
                 canvas->beginFrame((f32) winWidth, (f32) winHeight, (f32) fbWidth / (f32) winWidth);
                     if(v != null) {
                         v->onMeasure();
-                        checkScrollable(v);
                         v->onDraw(canvas);
-
                     }
-
-                if(a->toast() != null) {
-                    a->toast()->onMeasure();
-                    a->toast()->onDraw(canvas);
-
-                }
                 canvas->endFrame();
             }
             glfwSwapBuffers(this->w);
             glfwPollEvents();
-
         }
         return 0;
     }
-
+/*
     fun checkScrollable(View* v){
         i32 _w,_h;
         glfwGetWindowSize(this->w,&_w,&_h);
@@ -125,7 +116,7 @@ public:
             v->setScrollableV(false);
         }
     }
-
+*/
     fun onKey(i32 key, i32 scancode, i32 action, i32 mods){
         if(a != null && a->content() != null) a->content()->onKey(key,scancode,action,mods);
     }

@@ -4,20 +4,13 @@
 #include <sstream>
 #include "../view/View.h"
 
-enum EditType{
-    Line,
-    MultiLine,
-    Scrollable
-};
-
-class EditText : pub View{
+class EditText : pub View {
 priv:
     str text;
     f32 fontSize;
     vec2 p;
     bool focus;
 pub:
-
     explicit EditText() : View(){
         this->setFontSize(24.f);
         this->setText("");
@@ -30,10 +23,8 @@ pub:
     f32 getFontSize(){
         return this->fontSize;
     }
-
     fun setText(const str& _t){
         this->text = _t;
-        onMeasure();
     }
     str getText(){
         return this->text;
@@ -73,6 +64,9 @@ pub:
             if(key == GLFW_KEY_BACKSPACE && (action == GLFW_PRESS or action == GLFW_REPEAT)){
                 if(text.size() > 0)
                     text.erase(text.end() - 1);
+            }
+            if(key == GLFW_KEY_ENTER && action == GLFW_PRESS){
+                focus = false;
             }
         }
     }

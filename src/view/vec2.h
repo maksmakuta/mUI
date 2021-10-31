@@ -33,13 +33,13 @@ public:
         return *this;
     }
     vec2 operator +(const vec2& a){
-        this->x+a.x;
-        this->y+a.y;
+        this->x += a.x;
+        this->y += a.y;
         return *this;
     }
     vec2 operator -(const vec2& a){
-        this->x - a.x;
-        this->y - a.y;
+        this->x -= a.x;
+        this->y -= a.y;
         return *this;
     }
 

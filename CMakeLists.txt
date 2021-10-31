@@ -34,17 +34,12 @@ if (GLEW_FOUND)
     link_libraries(     ${GLEW_LIBRARIES})
 endif()
 
-find_package(LibXml2 REQUIRED)
-if (LibXml2_FOUND)
-    include_directories(${LibXml2_INCLUDE_DIRS})
-    link_libraries(     ${LibXml2_LIBRARIES})
-endif()
-
 add_executable(mUI main.cpp
         src/graphics/nanovg/nanovg.h
         src/graphics/nanovg/nanovg.c
         src/graphics/nanovg/nanovg_gl.h
         src/graphics/nanovg/nanovg_gl_utils.h
+        src/graphics/nanovg/nanosvg.h
 
         src/graphics/nanovg/fontstash.h
         src/graphics/nanovg/stb_truetype.h
@@ -58,4 +53,16 @@ add_executable(mUI main.cpp
 
         src/types.h
         src/view/View.h
-        src/widget/Button.h src/widget/TextView.h src/widget/layout/LinearLayout.h src/widget/EditText.h src/view/Rect.h src/view/vec2.h src/app/App.h src/app/Activity.h src/view/listener/OnClickListener.h src/widget/SVGImage.h src/graphics/nanovg/nanosvg.h src/graphics/utils/MaterialIcons.h src/widget/IconView.h)
+        src/widget/Button.h
+        src/widget/TextView.h
+        src/widget/layout/LinearLayout.h
+        src/widget/EditText.h
+        src/view/Rect.h
+        src/view/vec2.h
+        src/app/App.h
+        src/app/Activity.h
+        src/view/listener/OnClickListener.h
+        src/widget/SVGImage.h
+        src/graphics/utils/MaterialIcons.h
+        src/widget/ImageView.h
+        src/view/Margin.h src/widget/IconButton.h)

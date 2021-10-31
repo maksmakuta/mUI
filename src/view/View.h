@@ -3,16 +3,23 @@
 
 #include <vector>
 #include "Rect.h"
+#include "Margin.h"
 #include "../graphics/Canvas.h"
 #include "listener/OnClickListener.h"
 
-enum Visibility : i32{
+enum MeasureSize{
+    Parent,
+    Content,
+    Fixed
+};
+
+enum Visibility{
     Gone     ,
     Visible  ,
     Invisible
 };
 
-enum Gravity : i32{
+enum Gravity {
     Center            ,
     Center_Vertical   ,
     Center_Horizontal ,
@@ -26,169 +33,114 @@ enum Gravity : i32{
 
 class View{
 private:
-    OnClickListener* onClick = null;
-    i32 ID = 0;
-    bool scrollableV = false,scrollableH = false;
+    Rect        vRect;
+    Margin      vMargin;
+    Gravity     vGravity;
+    Visibility  vVisibility;
+    MeasureSize mw,mh;
 
-    vec2 winSize;
-    Rect r;
-    Visibility mVisibility;
-    Gravity mGravity;
+    i32 id;
+    bool isLayout;
 
-    std::vector<View*> mData{};
-
+    std::vector<View*> child;
+    View* parent = null;
 public:
 
-    View() : r(0,0,1,1),mVisibility(Visible),mGravity(Center){ }
+    View(View *parent) : View(parent,false){ }
 
-    fun add(View *v){
-        mData.push_back(v);
-        onMeasure();
-    }
-
-    fun add(View *v, i32 p){
-        mData.insert(mData.begin() + p,v);
-        onMeasure();
-    }
-
-    fun update(View *v, int p){
-        if(mData[p] != v && mData[p] != null){
-            mData[p] = v;
+    View(View *parent, bool _layout){
+        this->visibility(Visible);
+        this->setParent(parent);
+        this->layout(_layout);
+        this->measure(Fixed,Fixed);
+        if(getParent() != null){
+            getParent()->push(this);
         }
-        onMeasure();
     }
 
-    fun setWinSize(f32 w,f32 h){
-        this->winSize = vec2(w,h);
+
+    std::vector<View*> data(){return this->child;}
+
+    fun push(View* v){
+        if(this->layout())
+            child.push_back(v);
     }
 
-    vec2 getWinSize(){
-        return this->winSize;
+    fun     setParent(View* p)  {this->parent = p;}
+    View*   getParent()         {return this->parent;}
+    Rect    rect()              {return this->vRect;}
+    Margin  margin()            {return this->vMargin;}
+    bool    layout()            {return this->isLayout;}
+    fun     layout(bool l)      {this->isLayout = l;}
+    Gravity gravity()           {return this->vGravity;}
+    fun     gravity(Gravity g){this->vGravity = g;}
+    Visibility  visibility()           {return this->vVisibility;}
+    fun         visibility(Visibility v){this->vVisibility = v;}
+    fun measure(MeasureSize _w,MeasureSize _h){
+        this->mw = _w;
+        this->mh = _h;
     }
-
-    fun remove(i32 p){
-        mData.erase(mData.begin() + p);
-        onMeasure();
+    fun margin(f32 a){
+        margin(a,a,a,a);
     }
-
-    fun setVisibility(Visibility v){
-        this->mVisibility = v;
-    }
-
-    Visibility getVisibility(){
-        return this->mVisibility;
-    }
-
-    fun setGravity(Gravity v){
-        this->mGravity = v;
-    }
-
-    Gravity getGravity(){
-        return this->mGravity;
-    }
-
-    bool isScrollableV(){
-        return this->scrollableV;
-    }
-
-    fun setScrollableV(bool s){
-        this->scrollableV = s;
-    }
-
-    bool isScrollableH(){
-        return this->scrollableH;
-    }
-
-    fun setScrollableH(bool s){
-        this->scrollableH = s;
-    }
-
-    Rect rect(){
-        return this->r;
-    }
-
-    fun rect(f32 x,f32 y,f32 w,f32 h){
-        this->r = Rect(x,y,w,h);
+    fun margin(f32 t,f32 b,f32 r,f32 l){
+        this->vMargin = Margin(t,b,r,l);
     }
 
     fun size(f32 w,f32 h){
-        this->r.size(w,h);
+        this->vRect.size(w,h);
     }
 
     fun pos(f32 x,f32 y){
-        this->r.pos(x,y);
-    }
-
-    i32 id(){
-        return this->ID;
-    }
-
-    fun id(i32 i){
-        this->ID = i;
-    }
-
-    std::vector<View*> data(){
-        return mData;
-    }
-
-    OnClickListener* getOnClickListener(){
-        return this->onClick;
-    }
-
-    fun setOnClickListener(OnClickListener* l){
-        this->onClick = l;
+        this->vRect.pos(x,y);
     }
 
     virtual fun onDraw(Canvas* c){
-        if(!mData.empty()){
-            for(auto v : mData){
+        if(!child.empty() && layout()){
+            for(auto v : child){
                 if(v != null)
                     v->onDraw(c);
             }
         }
     }
     virtual fun onMouse(f64 x, f64 y, i32 button, i32 action, i32 mod){
-        if(!mData.empty()){
-            for(auto v : mData) {
+        if(!child.empty() && layout()){
+            for(auto v : child) {
                 if (v != null) {
                     v->onMouse(x, y, button, action, mod);
-                    if (v->rect().in((f32)x, (f32)y)) {
-                        if (button == MOUSE_LEFT && action == MOUSE_CLICK) {
-                            if(v->getOnClickListener() != null)
-                                v->getOnClickListener()->onClick(v);
-                        }
-                    }
+                    //if (v->rect().in((f32)x, (f32)y)) {
+                    //    if (button == MOUSE_LEFT && action == MOUSE_CLICK) {
+                    //        if(v->getOnClickListener() != null)
+                    //            v->getOnClickListener()->onClick(v);
+                    //    }
+                    //}
                 }
             }
         }
     }
+
     virtual fun onMeasure(){
-        if(!mData.empty()){
-            for(auto v : mData){
-                if(v != null)
-                    v->onMeasure();
-            }
-        }
+
     }
     virtual fun onKey(i32 key, i32 scancode, i32 action, i32 mods){
-        if(!mData.empty()){
-            for(auto v : mData){
+        if(!child.empty() && layout()){
+            for(auto v : child){
                 if(v != null)
                     v->onKey(key,scancode,action,mods);
             }
         }
     }
     virtual fun onKey(u32 codepoint){
-        if(!mData.empty()){
-            for(auto v : mData){
+        if(!child.empty() && layout()){
+            for(auto v : child){
                 if(v != null)
                     v->onKey(codepoint);
             }
         }
     }
     virtual fun onMouseScroll(f64 dx,f64 dy){
-        if(!mData.empty()){
-            for(auto v : mData){
+        if(!child.empty() && layout()){
+            for(auto v : child){
                 if(v != null)
                     v->onMouseScroll(dx,dy);
             }

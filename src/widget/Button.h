@@ -11,7 +11,7 @@ priv:
     f32 fontSize{};
     bool hover = false;
 pub:
-    explicit Button(const str& t) : View(){
+    explicit Button(const str& t,View* parent) : View(parent){
         this->text = t;
         setFontSize(20.f);
     }

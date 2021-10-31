@@ -6,7 +6,6 @@ Canvas::Canvas(i32 flags){
     this->c = nvgCreateGL3(flags);
     this->initFont("../assets/fonts/Roboto/Roboto-Regular.ttf"               ,"roboto");
     this->initFont("../assets/fonts/MaterialIcons/MaterialIcons-Regular.ttf" ,"icons");
-    //this->initFont("../assets/fonts/Noto_Sans/NotoSans-Regular.ttf" ,"noto");
 }
 
 fun Canvas::beginFrame(f32 w, f32 h,f32 p){
@@ -169,4 +168,20 @@ fun Canvas::useBaseFont(f32 s,const char* color){
 vec2 Canvas::textSize(const char* text){
     f32* d = textBounds(0,0,text);
     return {d[2] - d[0],d[3] - d[1]};
+}
+
+
+vec2 Canvas::textBoxSize(f32 w,const char* text){
+    f32 *d = textBoxBounds(0,0,w,text);
+    return {d[2] - d[0],d[3] - d[1]};
+}
+
+
+i32 Canvas::image(const char* imgLocation){
+    return nvgCreateImage(this->c,imgLocation,0);
+}
+
+fun Canvas::img(f32 _x,f32 _y,f32 _w,f32 _h,i32 _img){
+    nvgFillPaint(this->c, nvgImagePattern(this->c,_x,_y,_w,_h, nvgDegToRad(0),_img,1.0f));
+    nvgFill(this->c);
 }

@@ -10,7 +10,7 @@ priv:
     vec2 p;
 pub:
 
-    explicit TextView(const str& t) : View(){
+    explicit TextView(const str& t,View* parent) : View(parent){
         this->text = t;
         this->setFontSize(24.f);
     }
