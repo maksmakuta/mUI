@@ -10,6 +10,23 @@ public:
         T NewRange = max - min;
         return (((val - rmin) * NewRange) / OldRange) + min;
     }
+    template<class T> static T max(T a,T b){
+        if(a == b)
+            return a;
+        if(a > b)
+            return a;
+        else
+            return b;
+    }
+
+    template<class T> static T min(T a,T b){
+        if(a == b)
+            return a;
+        if(a > b)
+            return b;
+        else
+            return a;
+    }
 
 };
 

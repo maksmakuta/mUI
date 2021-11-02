@@ -65,4 +65,4 @@ add_executable(mUI main.cpp
         src/widget/SVGImage.h
         src/graphics/utils/MaterialIcons.h
         src/widget/ImageView.h
-        src/view/Margin.h src/widget/IconButton.h src/widget/ToolBar.h src/widget/Slider.h src/graphics/utils/MathUtils.h)
+        src/view/Margin.h src/widget/IconButton.h src/widget/ToolBar.h src/widget/Slider.h src/graphics/utils/MathUtils.h src/widget/Switch.h)
