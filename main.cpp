@@ -4,21 +4,25 @@
 #include "src/widget/IconButton.h"
 #include "src/widget/ToolBar.h"
 #include "src/widget/TextView.h"
+#include "src/widget/Slider.h"
 
-class MainActivity : pub Activity{
+class MainActivity : public Activity, public OnSliderChangeListener{
+private:
+    TextView* i = new TextView("Some Large Text",null);
 public:
     fun onCreate() override{
         View* ll = new LinearLayout(Vertical,null);
         new ToolBar("app",28,ll);
-        ll->push(it());
+        i->setFontSize(32.f);
+        i->margin(10);
+        ll->push(i);
+        auto s = new Slider(-10,10,ll);
+        s->setOnSliderChangeListener(this);
         setContentView(ll);
     }
 
-    View* it(){
-        auto i = new TextView("Some Large Text",null);
-        i->setFontSize(32.f);
-        i->margin(10);
-        return i;
+    fun onSliderChange(f32 var) override{
+        i->setText("Data -> " + std::to_string((i32)var));
     }
 
 };

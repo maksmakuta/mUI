@@ -98,6 +98,7 @@ public:
     }
 
     bool hover(){return this->isHover;}
+    fun hover(bool h){this->isHover = h;}
 
     virtual fun onDraw(Canvas* c){
         if(!child.empty() && layout()){
