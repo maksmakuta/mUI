@@ -9,8 +9,7 @@
 
 enum MeasureSize{
     Parent,
-    Content,
-    Fixed
+    Content
 };
 
 enum Visibility{
@@ -54,7 +53,7 @@ public:
         this->visibility(Visible);
         this->setParent(parent);
         this->layout(_layout);
-        this->measure(Fixed,Fixed);
+        this->measure(Content,Content);
         if(getParent() != null){
             getParent()->push(this);
         }
@@ -120,13 +119,13 @@ public:
                 if (v != null) {
                     v->onMouse(x, y, button, action, mod);
                     if (v->rect().in((f32)x, (f32)y)) {
-                        this->isHover = true;
+                        this->hover(true);
                     //    if (button == MOUSE_LEFT && action == MOUSE_CLICK) {
                     //        if(v->getOnClickListener() != null)
                     //            v->getOnClickListener()->onClick(v);
                     //    }
                     }else{
-                        this->isHover = false;
+                        this->hover(false);
                     }
                 }
             }
@@ -134,7 +133,7 @@ public:
     }
 
     virtual fun onMeasure(){
-
+        this->size(100,100);
     }
     virtual fun onKey(i32 key, i32 scancode, i32 action, i32 mods){
         if(!child.empty() && layout()){
