@@ -1,25 +1,49 @@
-#include "src/app/Application.h"
-#include "src/view/LinearLayout.h"
-#include "src/view/ToolBar.h"
-#include "src/view/TextView.h"
+#include "src/graphics/Window.h"
+#include "src/app/App.h"
+#include "src/widget/RadioButton.h"
+#include "src/widget/layout/LinearLayout.h"
+#include "src/widget/ToolBar.h"
+#include "src/widget/TextView.h"
 
-
-class MainActivity : public Activity{
+class MainActivity : public Activity,public OnCheckedChangeListener{
+private:
+    TextView* t = new TextView("",null);
 public:
-    MainActivity() : Activity(){
-        auto* t = new TextView("Hello World");
-        t->setFontSize(32.f);
-        t->marginTop(150.0f);
-        Layout* ll = new LinearLayout();
-        ll->add(new ToolBar("App"));
-        ll->add(t);
-        this->setLayout(ll->toView());
+    fun onCreate() override{
+        t->margin(10);
+        View* ll = new LinearLayout(Vertical,null);
+        new ToolBar("app",28,ll);
+        ll->push(rb());
+        ll->push(t);
+        setContentView(ll);
     }
+
+    fun onCheckedChange(View *v, View *cView) override{
+        t->setText(((RadioButton*)cView)->getText());
+    }
+
+    fun onCheckedChange(View *v, bool checked) override{
+        if(checked)
+            t->setText("Item \"Three\" is checked");
+    }
+
+    View* rb(){
+        auto rB = new RadioGroup(null);
+        rB->setOnCheckedChangeListener(this);
+        rB->add(new RadioButton("One",null));
+        rB->add(new RadioButton("Two",null));
+        auto three = new RadioButton("Three",null);
+        three->setOnCheckedChangeListener(this);
+        rB->add(three);
+        rB->add(new RadioButton("Four",null));
+        rB->add(new RadioButton("Five",null));
+        return rB;
+    }
+
 };
 
 int main(){
-    Application app(600,400,"App");
-    app.setMainActivity(new MainActivity());
-    app.exec();
-    return 0;
+    App a(640,480,"app");
+    a.setActivity(new MainActivity());
+    return a.exec();
 }

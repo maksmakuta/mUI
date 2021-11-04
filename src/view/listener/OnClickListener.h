@@ -1,9 +1,11 @@
 #ifndef MUI_ONCLICKLISTENER_H
 #define MUI_ONCLICKLISTENER_H
 
-#include "Listener.h"
+#include "../View.h"
 
-class OnClickListener : public Listener{
+class View;
+
+class OnClickListener{
 public:
     virtual fun onClick(View* v) = 0;
 };

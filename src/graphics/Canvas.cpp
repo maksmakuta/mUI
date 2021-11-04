@@ -1,11 +1,11 @@
 #define NANOVG_GL3_IMPLEMENTATION
-#include "ColorUtils.h"
 #include "Canvas.h"
+#include "utils/ColorUtils.h"
 
-Canvas::Canvas(){
-    this->c = nvgCreateGL3(NVGcreateFlags::NVG_STENCIL_STROKES|NVG_ANTIALIAS);
-    this->initFont("../assets/fonts/Roboto/Roboto-Regular.ttf","roboto");
-    this->initFont("../assets/fonts/Noto_Sans/NotoSans-Regular.ttf","noto");
+Canvas::Canvas(i32 flags){
+    this->c = nvgCreateGL3(flags);
+    this->initFont("../assets/fonts/Roboto/Roboto-Regular.ttf"               ,"roboto");
+    this->initFont("../assets/fonts/MaterialIcons/MaterialIcons-Regular.ttf" ,"icons");
 }
 
 fun Canvas::beginFrame(f32 w, f32 h,f32 p){
@@ -37,11 +37,14 @@ fun Canvas::rect(f32 x, f32 y, f32 w,f32 h,f32 tl,f32 tr, f32 bl, f32 br){
 fun Canvas::begin(){
     nvgBeginPath(this->c);
 }
-fun Canvas::end(bool f = true){
-    if(f)
+fun Canvas::end(bool f = true) {
+    if (f) {
+        nvgFillColor(this->c, this->col);
         nvgFill(this->c);
-    else
+    }else{
+        nvgStrokeColor(this->c, this->col);
         nvgStroke(this->c);
+    }
 }
 
 fun Canvas::lineWidth(f32 w){
@@ -75,14 +78,14 @@ fun Canvas::windingPath(int v){
 }
 
 fun Canvas::fill(const char* hex){
-    nvgFillColor(this->c, ColorUtils::color(hex));
+    this->col = ColorUtils::color(hex);
 }
 fun Canvas::fill(NVGcolor color){
-    nvgFillColor(this->c, color);
+    this->col = color;
 }
-
-
-
+fun Canvas::fontFill(const char* color){
+    nvgFillColor(this->c,ColorUtils::color(color));
+}
 fun Canvas::initFont(const char* f,const char* n){
     nvgCreateFont(this->c,n,f);
 }
@@ -131,4 +134,54 @@ f32* Canvas::textBoxBounds(f32 x,f32 y,f32 w,const char* _text){
     f32* bound = new f32[4];
     nvgTextBoxBounds(this->c,x,y,w,_text,null,bound);
     return bound;
+}
+fun Canvas::rotateRad(f32 rad){
+    nvgRotate(this->c,rad);
+}
+fun Canvas::rotateDeg(f32 deg){
+    nvgRotate(this->c, nvgDegToRad(deg));
+}
+fun Canvas::translate(f32 x,f32 y){
+    nvgTranslate(this->c,x,y);
+}
+fun Canvas::scale(f32 x,f32 y){
+    nvgScale(this->c,x,y);
+}
+fun Canvas::reset(){
+    nvgResetTransform(this->c);
+}
+
+fun Canvas::save(){
+    nvgSave(this->c);
+}
+fun Canvas::restore(){
+    nvgRestore(this->c);
+}
+
+fun Canvas::useBaseFont(f32 s,const char* color){
+    this->fontFace("roboto");
+    this->fontSize(s);
+    this->fontFill(color);
+}
+
+
+vec2 Canvas::textSize(const char* text){
+    f32* d = textBounds(0,0,text);
+    return {d[2] - d[0],d[3] - d[1]};
+}
+
+
+vec2 Canvas::textBoxSize(f32 w,const char* text){
+    f32 *d = textBoxBounds(0,0,w,text);
+    return {d[2] - d[0],d[3] - d[1]};
+}
+
+
+i32 Canvas::image(const char* imgLocation){
+    return nvgCreateImage(this->c,imgLocation,0);
+}
+
+fun Canvas::img(f32 _x,f32 _y,f32 _w,f32 _h,i32 _img){
+    nvgFillPaint(this->c, nvgImagePattern(this->c,_x,_y,_w,_h, nvgDegToRad(0),_img,1.0f));
+    nvgFill(this->c);
 }

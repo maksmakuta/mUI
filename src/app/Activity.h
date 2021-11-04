@@ -1,18 +1,27 @@
 #ifndef MUI_ACTIVITY_H
 #define MUI_ACTIVITY_H
 
-#include "../view/core/View.h"
+#include "../types.h"
+#include "../view/View.h"
 
-class View;
-
-class Activity {
+class Activity{
 private:
-    View* layout = null;
+    View* mContent = null;
+    vec2 wp;
 public:
-    Activity();
-    fun setLayout(View*);
-    View* getLayout();
-};
+    Activity(){ }
 
+    fun size(const vec2& p){this->wp = p;}
+    vec2 size(){return this->wp;}
+
+    fun setContentView(View* v){
+        this->mContent = v;
+    }
+
+    View* content(){return this->mContent;}
+
+    virtual fun onCreate() = 0;
+
+};
 
 #endif

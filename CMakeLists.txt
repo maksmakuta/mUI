@@ -35,19 +35,34 @@ if (GLEW_FOUND)
 endif()
 
 add_executable(mUI main.cpp
-
-        src/graphics/nanovg/fontstash.h
-        src/graphics/nanovg/nanovg.c
         src/graphics/nanovg/nanovg.h
+        src/graphics/nanovg/nanovg.c
         src/graphics/nanovg/nanovg_gl.h
         src/graphics/nanovg/nanovg_gl_utils.h
-        src/graphics/nanovg/stb_image.h
-        src/graphics/nanovg/stb_truetype.h
+        src/graphics/nanovg/nanosvg.h
 
-        src/window/Window.cpp src/window/Window.h
-        src/sTypes.h
-        src/graphics/Canvas.cpp src/graphics/Canvas.h
-        src/app/Application.cpp src/app/Application.h
-        src/app/Activity.cpp src/app/Activity.h
-        src/view/core/View.cpp src/view/core/View.h
-        src/view/core/Layout.cpp src/view/core/Layout.h src/graphics/ColorUtils.cpp src/graphics/ColorUtils.h src/view/listener/OnLongClickListener.h src/view/listener/OnHoverListener.h src/view/listener/OnMoveListener.h src/view/listener/OnKeyListener.h src/view/listener/Listener.h src/view/Drawable.cpp src/view/Drawable.h src/view/TextView.cpp src/view/TextView.h src/view/Button.cpp src/view/Button.h src/view/ImageView.cpp src/view/ImageView.h src/view/EditText.cpp src/view/EditText.h src/view/LinearLayout.cpp src/view/LinearLayout.h src/view/RelativeLayout.cpp src/view/RelativeLayout.h src/view/CardView.cpp src/view/CardView.h src/view/Spinner.cpp src/view/Spinner.h src/view/ListView.cpp src/view/ListView.h src/view/ToolBar.cpp src/view/ToolBar.h)
+        src/graphics/nanovg/fontstash.h
+        src/graphics/nanovg/stb_truetype.h
+        src/graphics/nanovg/stb_image.h
+        src/graphics/Window.h
+        src/graphics/Canvas.cpp
+        src/graphics/Canvas.h
+
+        src/graphics/utils/ColorUtils.h
+        src/graphics/utils/ColorUtils.cpp
+
+        src/types.h
+        src/view/View.h
+        src/widget/Button.h
+        src/widget/TextView.h
+        src/widget/layout/LinearLayout.h
+        src/widget/EditText.h
+        src/view/Rect.h
+        src/view/vec2.h
+        src/app/App.h
+        src/app/Activity.h
+        src/view/listener/OnClickListener.h
+        src/widget/SVGImage.h
+        src/graphics/utils/MaterialIcons.h
+        src/widget/ImageView.h
+        src/view/Margin.h src/widget/IconButton.h src/widget/ToolBar.h src/widget/Slider.h src/graphics/utils/MathUtils.h src/widget/Switch.h src/widget/RadioButton.h)
