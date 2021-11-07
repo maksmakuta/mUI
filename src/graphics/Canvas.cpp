@@ -185,3 +185,7 @@ fun Canvas::img(f32 _x,f32 _y,f32 _w,f32 _h,i32 _img){
     nvgFillPaint(this->c, nvgImagePattern(this->c,_x,_y,_w,_h, nvgDegToRad(0),_img,1.0f));
     nvgFill(this->c);
 }
+
+fun Canvas::scissor(f32 x,f32 y,f32 w,f32 h){
+    nvgScissor(this->c,x,y,w,h);
+}

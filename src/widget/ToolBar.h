@@ -2,6 +2,7 @@
 #define MUI_TOOLBAR_H
 
 #include "../view/View.h"
+#include "../graphics/utils/MaterialIcons.h"
 
 class ToolBar : public View{
 private:

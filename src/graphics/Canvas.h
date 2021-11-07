@@ -91,6 +91,8 @@ public:
     i32 image(const char* imgLoaction);
     fun img(f32 _x,f32 _y,f32 _w,f32 _h,i32 _img);
 
+    fun scissor(f32 x,f32 y,f32 w,f32 h);
+
 };
 
 #endif
