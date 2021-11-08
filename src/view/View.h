@@ -67,6 +67,10 @@ public:
             child.push_back(v);
     }
 
+    View* at(i32 p){
+        return child[p];
+    }
+
     fun     setParent(View* p)  {this->parent = p;}
     View*   getParent()         {return this->parent;}
     Rect    rect()              {return this->vRect;}

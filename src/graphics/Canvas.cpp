@@ -5,6 +5,7 @@
 Canvas::Canvas(i32 flags){
     this->c = nvgCreateGL3(flags);
     this->initFont("../assets/fonts/Roboto/Roboto-Regular.ttf"               ,"roboto");
+    this->initFont("../assets/fonts/Noto/NotoSans-Regular.ttf"               ,"noto");
     this->initFont("../assets/fonts/MaterialIcons/MaterialIcons-Regular.ttf" ,"icons");
 }
 
