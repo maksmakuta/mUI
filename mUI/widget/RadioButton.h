@@ -64,7 +64,7 @@ public:
         c->text(r.x + r.h + 5.f,r.y + r.h/2.f,text.c_str());
     }
 
-    fun onMeasure() override{
+    fun onMeasure(f32 _w,f32 _h) override{
         this->size(p.x+48.f,p.y);
     }
 };
@@ -123,11 +123,11 @@ public:
         }
     }
 
-    fun onMeasure() override{
+    fun onMeasure(f32 _w,f32 _h) override{
         f32 w = 0.0f,h = 0.0f;
         if(!buttons.empty()) {
             for (auto v: buttons) {
-                v->onMeasure();
+                v->onMeasure(_w,_h);
                 Margin m = v->margin();
                 h += m.getMarginTop() + v->rect().h + m.getMarginBottom();
                 if(v->rect().w + m.getMarginRight() + m.getMarginLeft()> w)

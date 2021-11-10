@@ -116,7 +116,7 @@ pub:
         m = vec2((f32)_x,(f32)_y);
     }
 
-    fun onMeasure() override{
+    fun onMeasure(f32 _w,f32 _h) override{
         this->size(300,getFontSize() * 1.3f);
     }
 };

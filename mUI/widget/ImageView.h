@@ -25,7 +25,7 @@ pub:
         c->img(r.x,r.y,r.w,r.h,img);
     }
 
-    fun onMeasure() override{
+    fun onMeasure(f32 _w,f32 _h) override{
         this->size(p.x,p.y);
     }
 };

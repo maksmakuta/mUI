@@ -44,7 +44,7 @@ pub:
         }
     }
 
-    fun onMeasure() override{
+    fun onMeasure(f32 _w,f32 _h) override{
         //this->size(this->p.x * 1.3f,this->p.y * 1.5f);
         this->size((f32)this->text.size() * (this->fontSize * 0.8f),this->p.y * 1.5f);
     }

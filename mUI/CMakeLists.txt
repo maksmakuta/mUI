@@ -2,7 +2,6 @@ set(SOURCES
   graphics/nanovg/nanovg.c
   graphics/utils/ColorUtils.cpp
   graphics/Canvas.cpp
-
 )
 
 set(HEADERS_PUBLIC
@@ -46,4 +45,28 @@ set(HEADERS_PUBLIC
   mUI.h
   types.h
 )
+
+
+set(OpenGL_GL_PREFERENCE GLVND)
+find_package(OpenGL REQUIRED)
+if (OPENGL_FOUND)
+    include_directories(${OPENGL_INCLUDE_DIRS})
+    link_libraries(${OPENGL_LIBRARIES})
+endif()
+
+
+###################################
+find_package(PkgConfig REQUIRED)
+pkg_search_module(GLFW REQUIRED glfw3)
+include_directories(${GLFW_INCLUDE_DIRS})
+link_libraries(     ${GLFW_LIBRARIES})
+link_libraries(     ${GLFW_STATIC_LIBRARIES})
+###################################
+
+find_package(GLEW REQUIRED)
+if (GLEW_FOUND)
+    include_directories(${GLEW_INCLUDE_DIRS})
+    link_libraries(     ${GLEW_LIBRARIES})
+endif()
+
 include(${PROJECT_SOURCE_DIR}/cmake/LibraryConfig.cmake)

@@ -47,7 +47,7 @@ public:
         c->text(r.x + r.w/2.f,r.y + r.h/2.f,text.c_str());
     }
 
-    fun onMeasure() override{
+    fun onMeasure(f32 _w,f32 _h) override{
         this->size(sF*2.f,sF*2.f);
     }
 

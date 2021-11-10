@@ -65,7 +65,7 @@ public:
 
     }
 */
-    fun onMeasure() override{
+    fun onMeasure(f32 _w,f32 _h) override{
         View* p = getParent();
         if(p!= null){
             this->size(p->rect().w,64);

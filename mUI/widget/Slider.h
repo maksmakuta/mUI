@@ -91,7 +91,7 @@ public:
         return MathUtils::range<f32>(0.f,1.f,min,max,curr);
     }
 
-    fun onMeasure() override{
+    fun onMeasure(f32 _w,f32 _h) override{
         this->size(300,40);
     }
 

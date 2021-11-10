@@ -11,7 +11,7 @@ class SVGImage : pub View{
 private:
     NSVGimage* image;
 public:
-    SVGImage(const str& img){
+    SVGImage(const str& img) : View(null){
         this->image = nsvgParseFromFile(img.c_str(), "px", 96);
     }
 
