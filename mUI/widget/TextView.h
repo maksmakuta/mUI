@@ -28,7 +28,7 @@ pub:
         c->text(rect().x,rect().y + rect().h / 1.3f,text.c_str());
     }
 
-    fun onMeasure() override{
+    fun onMeasure(f32 _w,f32 _h) override{
         this->size(p.x * 1.2f,p.y * 1.4f);
     }
 };

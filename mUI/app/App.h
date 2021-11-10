@@ -8,6 +8,7 @@
 class App{
 priv:
     Window* w = null;
+    str name;
 pub:
     App() : App(640,480,"App"){
 
@@ -15,9 +16,11 @@ pub:
 
     App(i32 _w,i32 _h,const char* _t){
         this->w = new Window(_w,_h,_t);
+        this->name = _t;
     }
 
     fun setActivity(Activity* _activity){
+        _activity->setName(name);
         this->w->currentActivity(_activity);
     }
 

@@ -46,7 +46,7 @@ public:
         }
     }
 
-    fun onMeasure() override{
+    fun onMeasure(f32 _w,f32 _h) override{
         this->size(textSize.x + 100,MathUtils::max<f32>(textSize.y,50));
     }
 };

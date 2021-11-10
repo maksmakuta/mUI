@@ -6,11 +6,9 @@
 #include "Margin.h"
 #include "../graphics/Canvas.h"
 #include "listener/OnClickListener.h"
+#include "Measure.h"
 
-enum MeasureSize{
-    Parent,
-    Content
-};
+#define UNSIZE -1
 
 enum Visibility{
     Gone     ,
@@ -36,11 +34,9 @@ private:
     Margin      vMargin;
     Gravity     vGravity;
     Visibility  vVisibility;
-    MeasureSize mw,mh;
-    bool scrollW,scrollH;
+    Measure mMeasure;
     i32 id;
-    bool isLayout;
-    bool isHover;
+    bool isLayout,isHover;
 
     std::vector<View*> child;
     View* parent = null;
@@ -54,6 +50,7 @@ public:
         this->setParent(parent);
         this->layout(_layout);
         this->measure(Content,Content);
+        this->hover(false);
         if(getParent() != null){
             getParent()->push(this);
         }
@@ -67,25 +64,77 @@ public:
             child.push_back(v);
     }
 
-    fun     setParent(View* p)  {this->parent = p;}
-    View*   getParent()         {return this->parent;}
-    Rect    rect()              {return this->vRect;}
-    Margin  margin()            {return this->vMargin;}
-    bool    layout()            {return this->isLayout;}
-    fun     layout(bool l)      {this->isLayout = l;}
-    Gravity gravity()           {return this->vGravity;}
-    fun     gravity(Gravity g){this->vGravity = g;}
-    Visibility  visibility()           {return this->vVisibility;}
-    fun         visibility(Visibility v){this->vVisibility = v;}
+    View* at(i32 p){
+        return child[p];
+    }
+
+    fun     setParent(View* p)  {
+        this->parent = p;
+    }
+    View*   getParent()         {
+        return this->parent;
+    }
+    Rect    rect()              {
+        return this->vRect;
+    }
+    Margin  margin()            {
+        return this->vMargin;
+    }
+    bool    layout()            {
+        return this->isLayout;
+    }
+    fun     layout(bool l)      {
+        this->isLayout = l;
+    }
+    Gravity gravity()           {
+        return this->vGravity;
+    }
+    fun     gravity(Gravity g){
+        this->vGravity = g;
+    }
+    Visibility  visibility()           {
+        return this->vVisibility;
+    }
+    fun         visibility(Visibility v){
+        this->vVisibility = v;
+    }
     fun measure(MeasureSize _w,MeasureSize _h){
-        this->mw = _w;
-        this->mh = _h;
+        this->mMeasure = Measure(_w,_h);
+    }
+    Measure measure(){
+        return this->mMeasure;
     }
     fun margin(f32 a){
         margin(a,a,a,a);
     }
     fun margin(f32 t,f32 b,f32 r,f32 l){
         this->vMargin = Margin(t,b,r,l);
+    }
+
+    fun marginTop(f32 t){
+        this->vMargin.setMarginTop(t);
+    }
+    fun marginBottom(f32 b){
+        this->vMargin.setMarginBottom(b);
+    }
+    fun marginLeft(f32 l){
+        this->vMargin.setMarginLeft(l);
+    }
+    fun marginRight(f32 r){
+        this->vMargin.setMarginRight(r);
+    }
+
+    f32 marginTop(){
+        return this->vMargin.getMarginTop();
+    }
+    f32 marginBottom(){
+        return this->vMargin.getMarginBottom();
+    }
+    f32 marginLeft(){
+        return this->vMargin.getMarginLeft();
+    }
+    f32 marginRight(){
+        return this->vMargin.getMarginRight();
     }
 
     fun size(f32 w,f32 h){
@@ -96,8 +145,12 @@ public:
         this->vRect.pos(x,y);
     }
 
-    bool hover(){return this->isHover;}
-    fun hover(bool h){this->isHover = h;}
+    bool hover(){
+        return this->isHover;
+    }
+    fun hover(bool h){
+        this->isHover = h;
+    }
 
     virtual fun onDraw(Canvas* c){
         if(!child.empty() && layout()){
@@ -132,8 +185,14 @@ public:
         }
     }
 
-    virtual fun onMeasure(){
-        this->size(100,100);
+    virtual fun onMeasure(f32 w,f32 h){
+        this->size(w,h);
+        if(!child.empty() && layout()){
+            for(auto v : child){
+                if(v != null)
+                    v->onMeasure(w,h);
+            }
+        }
     }
     virtual fun onKey(i32 key, i32 scancode, i32 action, i32 mods){
         if(!child.empty() && layout()){
@@ -158,6 +217,10 @@ public:
                     v->onMouseScroll(dx,dy);
             }
         }
+    }
+
+    virtual ~View(){
+        delete parent;
     }
 };
 

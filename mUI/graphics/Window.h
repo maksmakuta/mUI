@@ -90,8 +90,7 @@ public:
                 glClearColor(0.3,0.3,0.3,1.0);
                 canvas->beginFrame((f32) winWidth, (f32) winHeight, (f32) fbWidth / (f32) winWidth);
                     if(v != null) {
-                        v->onMeasure();
-                        v->size((f32)winWidth,(f32)winHeight);
+                        v->onMeasure((f32)winWidth,(f32)winHeight);
                         v->onDraw(canvas);
                     }
                 canvas->endFrame();
@@ -101,23 +100,6 @@ public:
         }
         return 0;
     }
-/*
-    fun checkScrollable(View* v){
-        i32 _w,_h;
-        glfwGetWindowSize(this->w,&_w,&_h);
-        v->setWinSize((f32)_w,(f32)_h);
-        if(v->rect().w > (f32)_w){
-            v->setScrollableH(true);
-        }else{
-            v->setScrollableH(false);
-        }
-        if(v->rect().h > (f32)_h){
-            v->setScrollableV(true);
-        }else{
-            v->setScrollableV(false);
-        }
-    }
-*/
     fun onKey(i32 key, i32 scancode, i32 action, i32 mods){
         if(a != null && a->content() != null) a->content()->onKey(key,scancode,action,mods);
     }
@@ -136,6 +118,13 @@ public:
     }
     fun onMouseScroll(f64 dx,f64 dy){
         if(a != null && a->content() != null) a->content()->onMouseScroll(dx,dy);
+    }
+
+    ~Window(){
+        delete a;
+        delete canvas ;
+        glfwTerminate();
+        //delete (w = null);
     }
 
 private:

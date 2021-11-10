@@ -45,10 +45,29 @@ pub:
         }
     }
 
-    fun onMeasure() override{
+    fun onMeasure(f32 w,f32 h) override{
         f32 x = 0.f,y = 0.f;
         for(View* v : data()) {
-            v->onMeasure();
+            Measure _m = v->measure();
+            if(o == Horizontal) {
+                if (_m.getW() == Parent && _m.getH() == Parent)
+                    v->onMeasure(w - x, h);
+                else if (_m.getW() == Parent)
+                    v->onMeasure(w - x, UNSIZE);
+                else if (_m.getH() == Parent)
+                    v->onMeasure(UNSIZE, h);
+                else
+                    v->onMeasure(UNSIZE, UNSIZE);
+            }else{
+                if (_m.getW() == Parent && _m.getH() == Parent)
+                    v->onMeasure(w, h - y);
+                else if (_m.getW() == Parent)
+                    v->onMeasure(w, UNSIZE);
+                else if (_m.getH() == Parent)
+                    v->onMeasure(UNSIZE, h - y);
+                else
+                    v->onMeasure(UNSIZE, UNSIZE);
+            }
             Margin m = v->margin();
             f32 marginH = m.getMarginLeft() + m.getMarginRight();
             f32 marginV = m.getMarginBottom() + m.getMarginTop();

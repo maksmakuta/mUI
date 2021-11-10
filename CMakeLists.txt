@@ -1,68 +1,11 @@
-cmake_minimum_required(VERSION 3.20)
-project(mUI)
+cmake_minimum_required(VERSION 3.10)
+project(mUI VERSION 0.5.12)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(OpenGL_GL_PREFERENCE GLVND)
+set(LIBRARY_NAME   ${PROJECT_NAME})
+set(LIBRARY_FOLDER ${PROJECT_NAME})
 
-if(NOT CMAKE_BUILD_TYPE)
-    set(CMAKE_BUILD_TYPE Release)
-endif()
+include(${PROJECT_SOURCE_DIR}/cmake/SetEnv.cmake)
+add_subdirectory(${LIBRARY_FOLDER})
+add_subdirectory(example)
 
-set(CMAKE_CXX_FLAGS "-Wall -Wextra ")
-set(CMAKE_CXX_FLAGS_DEBUG "-g")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
-
-find_package(OpenGL REQUIRED)
-if (OPENGL_FOUND)
-    include_directories(${OPENGL_INCLUDE_DIRS})
-    link_libraries(${OPENGL_LIBRARIES})
-endif()
-
-
-###################################
-find_package(PkgConfig REQUIRED)
-pkg_search_module(GLFW REQUIRED glfw3)
-include_directories(${GLFW_INCLUDE_DIRS})
-link_libraries(     ${GLFW_LIBRARIES})
-link_libraries(     ${GLFW_STATIC_LIBRARIES})
-###################################
-
-find_package(GLEW REQUIRED)
-if (GLEW_FOUND)
-    include_directories(${GLEW_INCLUDE_DIRS})
-    link_libraries(     ${GLEW_LIBRARIES})
-endif()
-
-add_executable(mUI main.cpp
-        src/graphics/nanovg/nanovg.h
-        src/graphics/nanovg/nanovg.c
-        src/graphics/nanovg/nanovg_gl.h
-        src/graphics/nanovg/nanovg_gl_utils.h
-        src/graphics/nanovg/nanosvg.h
-
-        src/graphics/nanovg/fontstash.h
-        src/graphics/nanovg/stb_truetype.h
-        src/graphics/nanovg/stb_image.h
-        src/graphics/Window.h
-        src/graphics/Canvas.cpp
-        src/graphics/Canvas.h
-
-        src/graphics/utils/ColorUtils.h
-        src/graphics/utils/ColorUtils.cpp
-
-        src/types.h
-        src/view/View.h
-        src/widget/Button.h
-        src/widget/TextView.h
-        src/widget/layout/LinearLayout.h
-        src/widget/EditText.h
-        src/view/Rect.h
-        src/view/vec2.h
-        src/app/App.h
-        src/app/Activity.h
-        src/view/listener/OnClickListener.h
-        src/widget/SVGImage.h
-        src/graphics/utils/MaterialIcons.h
-        src/widget/ImageView.h
-        src/view/Margin.h src/widget/IconButton.h src/widget/ToolBar.h src/widget/Slider.h src/graphics/utils/MathUtils.h src/widget/Switch.h src/widget/RadioButton.h)
+# taken from https://github.com/pablospe/cmake-example-library

@@ -7,9 +7,16 @@
 class Activity{
 private:
     View* mContent = null;
+    str name;
     vec2 wp;
 public:
-    Activity(){ }
+    Activity(){
+
+    }
+
+    fun setName(const str& _name){
+        this->name = _name;
+    }
 
     fun size(const vec2& p){this->wp = p;}
     vec2 size(){return this->wp;}
@@ -21,6 +28,10 @@ public:
     View* content(){return this->mContent;}
 
     virtual fun onCreate() = 0;
+
+    virtual ~Activity(){
+        delete mContent;
+    }
 
 };
 
