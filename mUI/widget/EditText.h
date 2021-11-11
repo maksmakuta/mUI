@@ -4,10 +4,6 @@
 #include <sstream>
 #include "../view/View.h"
 
-enum EditStyle{
-    Filled,
-    OutLine
-};
 
 class EditText : pub View {
 priv:
@@ -15,15 +11,13 @@ priv:
     f32 fontSize,x = 0.f;
     vec2 p,m;
     f32 bitPos;
-    EditStyle style;
 pub:
-    EditText(const str& _label,View* parent,EditStyle s = Filled) : View(parent){
+    EditText(const str& _label,View* parent) : View(parent){
         this->setFontSize(24.f);
         this->setText("");
         this->p = vec2(100,getFontSize());
         this->margin(10);
         this->label = _label;
-        this->style = s;
     }
 
     fun setFontSize(f32 f){
@@ -44,22 +38,10 @@ pub:
         c->save();
         c->scissor(r.x,r.y,r.w,r.h);
 
-        if(style == Filled) {
-            c->begin();
-            c->rect(r.x, r.y, r.w, r.h);
-            c->fill("#666");
-            c->end(true);
-
-            c->begin();
-            c->rect(r.x, r.y + r.h - 1, r.w, 1);
-            c->fill("#aaa");
-            c->end(true);
-        }else{
-            c->begin();
-            c->rect(r.x, r.y, r.w, r.h,r.h * .2f);
-            c->fill("#aaa");
-            c->end(false);
-        }
+        c->begin();
+        c->rect(r.x, r.y, r.w, r.h,r.h * .2f);
+        c->fill("#aaa");
+        c->end(false);
 
         if(!text.empty()) {
             c->begin();
