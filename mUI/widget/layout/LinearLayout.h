@@ -3,6 +3,9 @@
 
 #include "../../view/View.h"
 
+/**
+ * set orientation of LinearLayout
+ */
 enum Orientation{
     Horizontal,
     Vertical
@@ -11,9 +14,8 @@ enum Orientation{
 class LinearLayout : pub View{
 priv:
     Orientation o;
-    vec2 sliders;
 pub:
-    explicit LinearLayout(Orientation _o,View* parent) : View(parent,true){
+    explicit LinearLayout(Orientation _o = Vertical,View* parent = null) : View(parent,true){
         this->o = _o;
     }
 
@@ -35,7 +37,6 @@ pub:
             if (vv == Visible)
                 v->onDraw(c);
             if (vv == Visible || vv == Gone) {
-
                 if (o == Horizontal) {
                     x += v->rect().w + m.getMarginRight();
                 } else {
@@ -48,29 +49,25 @@ pub:
     fun onMeasure(f32 w,f32 h) override{
         f32 x = 0.f,y = 0.f;
         for(View* v : data()) {
-            Measure _m = v->measure();
-            if(o == Horizontal) {
-                if (_m.getW() == Parent && _m.getH() == Parent)
-                    v->onMeasure(w - x, h);
-                else if (_m.getW() == Parent)
-                    v->onMeasure(w - x, UNSIZE);
-                else if (_m.getH() == Parent)
-                    v->onMeasure(UNSIZE, h);
-                else
-                    v->onMeasure(UNSIZE, UNSIZE);
-            }else{
-                if (_m.getW() == Parent && _m.getH() == Parent)
-                    v->onMeasure(w, h - y);
-                else if (_m.getW() == Parent)
-                    v->onMeasure(w, UNSIZE);
-                else if (_m.getH() == Parent)
-                    v->onMeasure(UNSIZE, h - y);
-                else
-                    v->onMeasure(UNSIZE, UNSIZE);
-            }
+            f32 mw,mh;
+
             Margin m = v->margin();
             f32 marginH = m.getMarginLeft() + m.getMarginRight();
             f32 marginV = m.getMarginBottom() + m.getMarginTop();
+            Measure _m = v->measure();
+            switch (_m.getW()) {
+                case Parent  : mw = o == Horizontal ? w - x - marginH : w - marginH ; break;
+                case Content : mw = UNSIZE;                                           break;
+                case Fixed   : mw = 0;                                                break;
+            }
+            switch (_m.getH()) {
+                case Parent  : mh = o == Horizontal ? h - marginV : h - y - marginV ; break;
+                case Content : mh = UNSIZE;                                           break;
+                case Fixed   : mh = 0;                                                break;
+            }
+            v->onMeasure(mw,mh);
+
+
             if (o == Horizontal) {
                 x += v->rect().w + marginH;
                 if(v->rect().h + marginV > y) y = v->rect().h + marginV;

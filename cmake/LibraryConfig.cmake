@@ -3,7 +3,7 @@ add_library(${LIBRARY_NAME}
   ${SOURCES}
   ${HEADERS_PUBLIC}
   ${HEADERS_PRIVATE}
-  )
+        ../mUI/app/Theme.h)
 
 # Alias:
 #   - Foo::foo alias of foo

@@ -4,7 +4,8 @@
 
 enum MeasureSize{
     Parent,
-    Content
+    Content,
+    Fixed
 };
 
 class Measure{

@@ -8,6 +8,8 @@
 #include "listener/OnClickListener.h"
 #include "Measure.h"
 
+#include "../app/Theme.h"
+
 #define UNSIZE -1
 
 enum Visibility{
@@ -35,12 +37,13 @@ private:
     Gravity     vGravity;
     Visibility  vVisibility;
     Measure mMeasure;
+    vec2 fixedSize;
     i32 id;
     bool isLayout,isHover;
 
     std::vector<View*> child;
     View* parent = null;
-
+    Theme* theme = null;
 public:
 
     View(View *parent) : View(parent,false){ }
@@ -56,6 +59,20 @@ public:
         }
     }
 
+    Theme* getTheme(){
+        return this->theme;
+    }
+
+    fun setTheme(Theme* t){
+        if(this->theme == null)
+            this->theme = t;
+        if(!child.empty() && layout()){
+            for(auto v : child){
+                if(v != null)
+                    v->setTheme(t);
+            }
+        }
+    }
 
     std::vector<View*> data(){return this->child;}
 
@@ -66,6 +83,13 @@ public:
 
     View* at(i32 p){
         return child[p];
+    }
+
+    fun fixed(f32 w,f32 h){
+        this->fixedSize = vec2(w,h);
+    }
+    vec2 fixed(){
+        return this->fixedSize;
     }
 
     fun     setParent(View* p)  {
@@ -92,7 +116,7 @@ public:
     fun     gravity(Gravity g){
         this->vGravity = g;
     }
-    Visibility  visibility()           {
+    Visibility  visibility(){
         return this->vVisibility;
     }
     fun         visibility(Visibility v){
@@ -221,6 +245,7 @@ public:
 
     virtual ~View(){
         delete parent;
+        delete theme;
     }
 };
 
