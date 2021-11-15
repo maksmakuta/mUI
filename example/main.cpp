@@ -5,14 +5,12 @@ private:
     str* data = null;
 public:
     fun onCreate() override{
-        const i32 s = 128;
+        const i32 s = 32;
         init(s);
-
         auto ss = new ScrollLayout();
         auto ll = new LinearLayout(Vertical,ss);
         for(i32 i = 0;i < s;i++)
             new TextView(data[i],ll);
-        
         setContentView(ss);
     }
 

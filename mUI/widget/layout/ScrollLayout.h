@@ -7,19 +7,21 @@
 #define SMin -0.5f
 #define SMax  0.5f
 #define MAX_SPEED 15.0f
+#define BAR_SIZE 10.0f
 
 /**
  * ScrollLayout
- * API 1.0
+ * API 1.0.1
  * @since 0.5.16
  */
 class ScrollLayout : public View{
 private:
-    f32 s = 0.0f,p = 0.0f;
+    f32 s = 0.0f,p = 0.0f,l = 50.f,sp = 0.0f;
 public:
     explicit ScrollLayout(View* parent = null) : View(parent,true){ }
 
     fun onDraw(Canvas *c) override {
+        Rect r = rect();
         View *v = at(0); // only 1 item draw
         v->pos(v->rect().x, p);
 
@@ -31,8 +33,23 @@ public:
         v->onDraw(c);
         c->restore();
 
+        sp = p / (v->rect().h - (rect().h + l));
+        if(sp < 0) sp *= -1;
+
+        c->begin();
+        c->rect(r.x + r.w - BAR_SIZE ,r.y ,BAR_SIZE ,r.h,5);
+        if(hover())
+            c->fill(getTheme()->colorSecondary().c_str());
+        else
+            c->fill(getTheme()->colorBackground().c_str());
+        c->end(true);
+
+        c->begin();
+        c->rect(r.x + r.w - BAR_SIZE,r.y + r.h * sp ,BAR_SIZE,l,5);
+        c->fill(getTheme()->colorAccent().c_str());
+        c->end(true);
+
         p += s;
-        //printf("%f\n", s);
 
         if (s >= SMax + SMOOTH)
             s -= SMOOTH;
@@ -49,8 +66,12 @@ public:
     }
 
     fun onMeasure(f32 w, f32 h) override{
-        at(0)->onMeasure(w,h);
+        View *v = at(0);
+        v->onMeasure(w,h);
         this->size(w,h);
+
+        l = (this->rect().h / v->rect().h) * this->rect().h;
+        if(l < BAR_SIZE) l = BAR_SIZE;
     }
 };
 

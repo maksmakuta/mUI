@@ -43,7 +43,7 @@ public:
         auto t = new Theme();
         t->colorPrimary   ("#6200EE");
         t->colorSecondary ("#03DAC6");
-        t->colorAccent    ("#F8CA99");
+        t->colorAccent    ("#FA5596");
         t->colorText      ("#000");
         t->colorError     ("#f41");
         t->colorBackground("#fff");
