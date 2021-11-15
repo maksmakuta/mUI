@@ -37,7 +37,7 @@ private:
     Gravity     vGravity;
     Visibility  vVisibility;
     Measure mMeasure;
-    vec2 fixedSize;
+    vec2 fixedSize,contentSize;
     i32 id;
     bool isLayout,isHover;
 
@@ -87,6 +87,13 @@ public:
 
     fun fixed(f32 w,f32 h){
         this->fixedSize = vec2(w,h);
+    }
+
+    fun content(f32 w,f32 h){
+        this->contentSize = vec2(w,h);
+    }
+    fun content(vec2 s){
+        this->contentSize = s;
     }
     vec2 fixed(){
         return this->fixedSize;
@@ -210,7 +217,20 @@ public:
     }
 
     virtual fun onMeasure(f32 w,f32 h){
-        this->size(w,h);
+        f32 s = this->getTheme() == null ? 0.0f : this->getTheme()->sizeDef();
+        f32 vw,vh;
+        switch (this->measure().getW()) {
+            case Parent  : vw = w;                  break;
+            case Content : vw = contentSize.x + s;  break;
+            case Fixed   : vw = fixed().x;          break;
+        }
+        switch (this->measure().getH()) {
+            case Parent  : vh = h;                  break;
+            case Content : vh = contentSize.y + s;  break;
+            case Fixed   : vh = fixed().y;          break;
+        }
+        this->size(vw,vh);
+
         if(!child.empty() && layout()){
             for(auto v : child){
                 if(v != null)

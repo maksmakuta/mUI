@@ -101,7 +101,7 @@ public:
             a->onCreate();
             a->applyTheme();
         }
-
+        NVGcolor bg = ColorUtils::color(a->getTheme()->colorBackground());
         while(!glfwWindowShouldClose(w)){
             View* v = a->content();
             i32 winWidth, winHeight;
@@ -113,7 +113,7 @@ public:
             glViewport(0, 0, fbWidth, fbHeight);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
             if(canvas != null){
-                glClearColor(0.3,0.3,0.3,1.0);
+                glClearColor(bg.r,bg.g,bg.b,bg.a);
                 canvas->beginFrame((f32) winWidth, (f32) winHeight, (f32) fbWidth / (f32) winWidth);
                     if(v != null) {
                         v->onMeasure((f32)winWidth,(f32)winHeight);

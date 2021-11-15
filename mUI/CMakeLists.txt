@@ -1,7 +1,6 @@
 set(SOURCES
   graphics/nanovg/nanovg.c
-  graphics/utils/ColorUtils.cpp
-  graphics/Canvas.cpp
+        graphics/Canvas.cpp
 )
 
 set(HEADERS_PUBLIC
