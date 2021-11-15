@@ -6,6 +6,7 @@ set(SOURCES
 set(HEADERS_PUBLIC
   app/Activity.h
   app/App.h
+  app/Theme.h
 
   graphics/nanovg/fontstash.h
   graphics/nanovg/nanosvg.h
@@ -40,6 +41,9 @@ set(HEADERS_PUBLIC
   widget/Switch.h
   widget/TextView.h
   widget/ToolBar.h
+
+  widget/layout/ScrollLayout.h
+  widget/layout/GridLayout.h
 
   mUI.h
   types.h

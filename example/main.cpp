@@ -1,34 +1,30 @@
-#include <mUI/widget/layout/GridLayout.h>
-#include "mUI/mUI.h"
+#include <mUI/mUI.h>
 
 class MainActivity : public Activity{
+private:
+    str* data = null;
 public:
     fun onCreate() override{
-        auto ll = new GridLayout(2,2);
-        auto b = new Button("Button",ll);
-        b->style(Button::Outline);
-        b->margin(10);
+        const i32 s = 128;
+        init(s);
 
-        auto b1 = new Slider(-5,15,ll);
-        b1->measure(Parent,Content);
+        auto ss = new ScrollLayout();
+        auto ll = new LinearLayout(Vertical,ss);
+        for(i32 i = 0;i < s;i++)
+            new TextView(data[i],ll);
+        
+        setContentView(ss);
+    }
 
-        auto b2 = new Switch("Switch",ll);
-
-
-        auto b3 = new Button(ic_signal_wifi_4_bar,ll);
-        b3->style(Button::Icon);
-        b3->margin(10);
-
-        auto t = new TextView("Text",ll);
-        t->margin(10);
-        auto t2 = new TextView("Text2",ll);
-        t2->margin(10);
-
-        setContentView(ll);
+    fun init(i32 s){
+        data = new str[s];
+        for(i32 i = 0;i < s;i++){
+            data[i] = "Item " + (str)(i <= 9 ? "0" : "") + std::to_string(i);
+        }
     }
 };
 
-int main(int argc, char *argv[]) {
+int main(/*int argc, char *argv[]*/) {
     App app(640,480,"App");
     app.setActivity(new MainActivity(),Theme::Light());
     return app.exec();

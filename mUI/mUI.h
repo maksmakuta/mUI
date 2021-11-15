@@ -17,6 +17,8 @@
 #include "view/Measure.h"
 
 #include "widget/layout/LinearLayout.h"
+#include "widget/layout/GridLayout.h"
+#include "widget/layout/ScrollLayout.h"
 #include "widget/Button.h"
 #include "widget/EditText.h"
 #include "widget/IconButton.h"

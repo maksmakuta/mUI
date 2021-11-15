@@ -5,12 +5,12 @@
 
 /**
  * GridLayout
- *
+ * API 1.0
+ * @since 0.5.15
  */
 class GridLayout : public View{
 private:
     i32 w,h;
-
 public:
     GridLayout(i32 _w,i32 _h,View* parent = null) : View(parent,true){
         this->w = _w;
@@ -54,6 +54,7 @@ public:
 
         this->size(w,h);
     }
+
 };
 
 #endif
