@@ -54,7 +54,7 @@ public:
         str color;
         switch (vStyle) {
             case Filled : case Icon: color = hover() ? "#000" : getTheme()->colorBackground(); break;
-            case Outline: case Text: color = hover() ? "#f92" : getTheme()->colorText(); break;
+            case Outline: case Text: color = hover() ? "#f92" : getTheme()->colorText();       break;
         }
         c->fontFill(color.c_str());
         c->text(rect().x + rect().w /2.f,rect().y + rect().h / 2.f,text.c_str());

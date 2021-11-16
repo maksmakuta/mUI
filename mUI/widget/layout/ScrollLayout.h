@@ -17,6 +17,7 @@
 class ScrollLayout : public View{
 private:
     f32 s = 0.0f,p = 0.0f,l = 50.f,sp = 0.0f;
+    bool showBar = true;
 public:
     explicit ScrollLayout(View* parent = null) : View(parent,true){ }
 
@@ -35,20 +36,20 @@ public:
 
         sp = p / (v->rect().h - (rect().h + l));
         if(sp < 0) sp *= -1;
+        if(showBar) {
+            c->begin();
+            c->rect(r.x + r.w - BAR_SIZE, r.y, BAR_SIZE, r.h, 5);
+            if (hover())
+                c->fill(getTheme()->colorSecondary().c_str());
+            else
+                c->fill(getTheme()->colorBackground().c_str());
+            c->end(true);
 
-        c->begin();
-        c->rect(r.x + r.w - BAR_SIZE ,r.y ,BAR_SIZE ,r.h,5);
-        if(hover())
-            c->fill(getTheme()->colorSecondary().c_str());
-        else
-            c->fill(getTheme()->colorBackground().c_str());
-        c->end(true);
-
-        c->begin();
-        c->rect(r.x + r.w - BAR_SIZE,r.y + r.h * sp ,BAR_SIZE,l,5);
-        c->fill(getTheme()->colorAccent().c_str());
-        c->end(true);
-
+            c->begin();
+            c->rect(r.x + r.w - BAR_SIZE, r.y + (r.h - l) * sp, BAR_SIZE, l, 5);
+            c->fill(getTheme()->colorAccent().c_str());
+            c->end(true);
+        }
         p += s;
 
         if (s >= SMax + SMOOTH)
@@ -72,6 +73,7 @@ public:
 
         l = (this->rect().h / v->rect().h) * this->rect().h;
         if(l < BAR_SIZE) l = BAR_SIZE;
+        if(l <= 0.95f) showBar = false;
     }
 };
 

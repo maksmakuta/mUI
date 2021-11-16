@@ -98,6 +98,9 @@ public:
     vec2 fixed(){
         return this->fixedSize;
     }
+    vec2 content(){
+        return this->contentSize;
+    }
 
     fun     setParent(View* p)  {
         this->parent = p;
