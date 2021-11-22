@@ -16,6 +16,7 @@ public:
         setContentView(ss);
     }
 
+
 };
 
 int main(/*int argc, char *argv[]*/) {

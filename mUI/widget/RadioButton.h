@@ -42,15 +42,14 @@ public:
 
     fun onDraw(Canvas *c) override{
         Rect r = rect();
+        Theme *t = getTheme();
 
         if(this->hover()) {
             c->begin();
             c->circle(r.x + r.h / 2.f, r.y + r.h / 2.f, r.h / 2.f);
-            c->fill("#099");
+            c->fill(t->colorSecondary().c_str());
             c->end(true);
         }
-
-        Theme *t = getTheme();
 
         c->fontFace("icons");
         c->fontSize(t->sizeText());

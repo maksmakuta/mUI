@@ -7,10 +7,14 @@
 #include "../graphics/Canvas.h"
 #include "listener/OnClickListener.h"
 #include "Measure.h"
-
+#include "../graphics/utils/MaterialIcons.h"
 #include "../app/Theme.h"
 
 #define UNSIZE -1
+
+#define MOUSE_LEFT  GLFW_MOUSE_BUTTON_LEFT
+#define MOUSE_RIGHT GLFW_MOUSE_BUTTON_RIGHT
+#define MOUSE_CLICK GLFW_PRESS
 
 enum Visibility{
     Gone     ,

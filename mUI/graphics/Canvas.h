@@ -17,11 +17,6 @@
 #define vBottom     NVG_ALIGN_BOTTOM
 #define vBaseline   NVG_ALIGN_BASELINE
 
-
-#define MOUSE_LEFT  GLFW_MOUSE_BUTTON_LEFT
-#define MOUSE_RIGHT GLFW_MOUSE_BUTTON_RIGHT
-#define MOUSE_CLICK GLFW_PRESS
-
 class Canvas {
 private:
     NVGcontext *c = null;
