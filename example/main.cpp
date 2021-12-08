@@ -3,20 +3,21 @@
 class MainActivity : public Activity{
 public:
     fun onCreate() override{
-        const i32 s = 60;
-        auto ss = new ScrollLayout();
-        auto ll = new LinearLayout(Vertical,ss);
-        auto gg = new GridLayout(6,ll);
-        for(i32 i = 0;i < s;i++)
-            new TextView("Item " + (str)(i < 9 ? "0" : "") + std::to_string(i+1),gg);
-        auto cc = new RadioGroup(ll);
-        for(i32 i = 0;i < 16;i++)
-            new RadioButton("Button "+ std::to_string(i+1),cc);
-
-        setContentView(ss);
+        auto ll = new LinearLayout(Vertical);
+        auto btn = new Button(ic_add,ll);
+        btn->style(Button::Icon);
+        btn->margin(10);
+        auto btn1 = new Button("OutLine",ll);
+        btn1->style(Button::Outline);
+        btn1->margin(10);
+        auto btn2 = new Button("Filled",ll);
+        btn2->style(Button::Filled);
+        btn2->margin(10);
+        auto btn3 = new Button("Text",ll);
+        btn3->style(Button::Text);
+        btn3->margin(10);
+        setContentView(ll);
     }
-
-
 };
 
 int main(/*int argc, char *argv[]*/) {

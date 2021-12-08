@@ -18,10 +18,12 @@ private:
     f32 fontSize{};
     Style vStyle = Filled;
 public:
-    explicit Button(i32 icon,View* parent = null) : Button(cpToUTF8(icon),parent) { }
+    explicit Button(i32 icon,View* parent = null) : Button(cpToUTF8(icon),parent) {
+        this->style(Icon);
+    }
     explicit Button(const str& t,View* parent = null) : View(parent){
         this->text = t;
-        style(Filled);
+        this->style(Outline);
     }
 
     fun style(Style s){
