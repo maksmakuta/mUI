@@ -80,6 +80,13 @@ public:
     virtual fun onCreate() = 0;
 
     /**
+     * onKey callback for app
+     */
+     virtual fun onKey(i32 key, i32 scancode, i32 action, i32 mods){
+
+     }
+
+    /**
      * destructor
      */
     virtual ~Activity(){

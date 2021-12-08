@@ -42,23 +42,24 @@ public:
 
     fun onDraw(Canvas *c) override{
         Rect r = rect();
+        Theme *t = getTheme();
 
         if(this->hover()) {
             c->begin();
             c->circle(r.x + r.h / 2.f, r.y + r.h / 2.f, r.h / 2.f);
-            c->fill("#099");
+            c->fill(t->colorSecondary().c_str());
             c->end(true);
         }
 
         c->fontFace("icons");
-        c->fontSize(20.0);
-        c->fontFill("#0ff");
+        c->fontSize(t->sizeText());
+        c->fontFill(t->colorPrimary().c_str());
         c->fontAlign(vMiddle | hCenter);
         c->text(r.x +r.h/2.f,r.y + r.h/2.f, cpToUTF8(checked ? ic_radio_button_on : ic_radio_button_off));
 
         c->fontFace("roboto");
-        c->fontSize(26.0);
-        c->fontFill("#fff");
+        c->fontSize(t->sizeText());
+        c->fontFill(t->colorText().c_str());
         c->fontAlign(vMiddle | hLeft);
         p = c->textSize(text.c_str());
         c->text(r.x + r.h + 5.f,r.y + r.h/2.f,text.c_str());
@@ -72,15 +73,10 @@ public:
 class RadioGroup : public View{
 private:
     OnCheckedChangeListener* l = null;
-    std::vector<RadioButton*> buttons;
     i32 selected;
 public:
-    explicit RadioGroup(View* parent) : View(parent,true){
+    explicit RadioGroup(View* parent = null) : View(parent,true){
         this->selected = 0;
-    }
-
-    fun add(RadioButton* b){
-        buttons.push_back(b);
     }
 
     fun setOnCheckedChangeListener(OnCheckedChangeListener* cl){
@@ -90,8 +86,8 @@ public:
 
     fun onDraw(Canvas *c) override{
         f32 x = rect().x,y = rect().y;
-        for(i32 a = 0;a < (i32)buttons.size();a++){
-            RadioButton* v = buttons[a];
+        for(i32 a = 0;a < (i32)data().size();a++){
+            RadioButton* v = (RadioButton*)data()[a];
             Margin m = v->margin();
 
             x += m.getMarginLeft();
@@ -107,8 +103,8 @@ public:
     }
 
     fun onMouse(f64 x, f64 y, i32 button, i32 action, i32) override{
-        for(i32 a = 0;a < (i32)buttons.size();a++){
-            RadioButton* v = buttons[a];
+        for(i32 a = 0;a < (i32)data().size();a++){
+            RadioButton* v = (RadioButton*)data()[a];
             if(v->rect().in(x,y)){
                 v->hover(true);
                 if(button == MOUSE_LEFT && action == MOUSE_CLICK) {
@@ -125,8 +121,8 @@ public:
 
     fun onMeasure(f32 _w,f32 _h) override{
         f32 w = 0.0f,h = 0.0f;
-        if(!buttons.empty()) {
-            for (auto v: buttons) {
+        if(!data().empty()) {
+            for (auto v: data()) {
                 v->onMeasure(_w,_h);
                 Margin m = v->margin();
                 h += m.getMarginTop() + v->rect().h + m.getMarginBottom();

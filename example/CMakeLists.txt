@@ -1,8 +1,8 @@
-add_executable(calc main.cpp)
+add_executable(example main.cpp)
 
-target_link_libraries(calc PRIVATE mUI::mUI)
+target_link_libraries(example PRIVATE mUI::mUI)
 
 install(
-  TARGETS calc
+  TARGETS example
   RUNTIME DESTINATION bin
 )

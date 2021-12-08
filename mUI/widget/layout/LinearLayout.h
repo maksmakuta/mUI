@@ -11,14 +11,28 @@ enum Orientation{
     Vertical
 };
 
+/**
+ * LinearLayout
+ * API 1.3
+ * @since 0.4.0
+ */
 class LinearLayout : pub View{
 priv:
     Orientation o;
 pub:
+    /**
+     * Constructor
+     * @param _o     : Orientation  -> orientation for layout
+     * @param parent : View*        -> parent view
+     */
     explicit LinearLayout(Orientation _o = Vertical,View* parent = null) : View(parent,true){
         this->o = _o;
     }
 
+    /**
+     * onDraw -> method for draw child views
+     * @param c : Canvas*
+     */
     fun onDraw(Canvas *c) override{
         Rect r = rect();
         f32 x = r.x,y = r.y;
@@ -45,7 +59,11 @@ pub:
             }
         }
     }
-
+    /**
+     * onMeasure -> used for resize child view and this view (layout)
+     * @param w : Float -> width  of parent view
+     * @param h : Float -> height of parent view
+     */
     fun onMeasure(f32 w,f32 h) override{
         f32 x = 0.f,y = 0.f;
         for(View* v : data()) {
@@ -66,7 +84,6 @@ pub:
                 case Fixed   : mh = 0;                                                break;
             }
             v->onMeasure(mw,mh);
-
 
             if (o == Horizontal) {
                 x += v->rect().w + marginH;

@@ -6,7 +6,7 @@
 class Switch : public View{
 private:
     str _text;
-    bool state = true;
+    bool state = false;
     vec2 textSize;
 public:
     explicit Switch(const str& text = "", View* parent = null) : View(parent){
@@ -14,15 +14,19 @@ public:
         this->margin(10);
     }
 
+    bool getState(){
+        return this->state;
+    }
+
     fun onDraw(Canvas *c) override{
         Rect r = rect();
         f32 cr = r.h / 3.f;
 
         c->fontFace("roboto");
-        c->fontSize(20.f);
+        c->fontSize(getTheme()->sizeText());
         c->fontAlign(hCenter | vMiddle);
         textSize = c->textSize(_text.c_str());
-        c->fontFill("#fff");
+        c->fontFill(getTheme()->colorText().c_str());
         c->text(r.x + textSize.x/2.f + 20.f,r.y + r.h/2.f,_text.c_str());
 
         c->begin();

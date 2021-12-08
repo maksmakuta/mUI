@@ -52,7 +52,6 @@ public:
 
     fun onMouse(f64 x, f64 y, i32 button, i32 action, i32 mod) override{
         Rect r = rect();
-        Margin m = margin();
         f32 cr = r.h/2.f;
         if (r.in((f32)x, (f32)y)) {
             this->hover(true);
@@ -89,10 +88,6 @@ public:
 
     f32 current(){
         return MathUtils::range<f32>(0.f,1.f,min,max,curr);
-    }
-
-    fun onMeasure(f32 _w,f32 _h) override{
-        this->size(300,40);
     }
 
 
