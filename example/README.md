@@ -1,6 +1,6 @@
  
 # Example
-<center> Default </center><br>
+## Default
 ![IMG1](1.png) 
-<center> Button hovered by mouse </center><br>
+## Button hovered by mouse 
 ![IMG2](2.png) 
