@@ -16,7 +16,7 @@ private:
     str text;
     vec2 p;
     f32 fontSize{};
-    Style vStyle = Filled;
+    Style vStyle;
 public:
     explicit Button(i32 icon,View* parent = null) : Button(cpToUTF8(icon),parent) {
         this->style(Icon);

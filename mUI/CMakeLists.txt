@@ -43,6 +43,7 @@ set(HEADERS_PUBLIC
   widget/ToolBar.h
 
   widget/layout/ScrollLayout.h
+  widget/layout/RelativeLayout.h
   widget/layout/GridLayout.h
 
   mUI.h

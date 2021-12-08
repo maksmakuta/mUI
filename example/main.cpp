@@ -4,23 +4,25 @@ class MainActivity : public Activity{
 public:
     fun onCreate() override{
         auto ll = new LinearLayout(Vertical);
-        auto btn = new Button(ic_add,ll);
-        btn->style(Button::Icon);
-        btn->margin(10);
-        auto btn1 = new Button("OutLine",ll);
-        btn1->style(Button::Outline);
-        btn1->margin(10);
-        auto btn2 = new Button("Filled",ll);
-        btn2->style(Button::Filled);
-        btn2->margin(10);
-        auto btn3 = new Button("Text",ll);
-        btn3->style(Button::Text);
-        btn3->margin(10);
+        new TextView("Button style",ll);
+        ll->push(btn(cpToUTF8(ic_account_box),Button::Icon      ,"Icon    -> "));
+        ll->push(btn("Outline"               ,Button::Outline   ,"Outline -> "));
+        ll->push(btn("Filled"                ,Button::Filled    ,"Filled  -> "));
+        ll->push(btn("Text"                  ,Button::Text      ,"Text    -> "));
         setContentView(ll);
+    }
+
+    View* btn(const str& text,Button::Style style,const str& t){
+        auto ll = new LinearLayout(Horizontal);
+        new TextView(t,ll);
+        auto btn = new Button(text,ll);
+        btn->style(style);
+        btn->margin(10);
+        return ll;
     }
 };
 
-int main(/*int argc, char *argv[]*/) {
+i32 main(/*int argc, char *argv[]*/) {
     App app(640,480,"App");
     app.setActivity(new MainActivity(),Theme::Light());
     return app.exec();
