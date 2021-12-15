@@ -81,10 +81,16 @@ fun Canvas::windingPath(int v){
 fun Canvas::fill(const char* hex){
     this->col = ColorUtils::color(hex);
 }
+fun Canvas::fill(const str& hex){
+    this->col = ColorUtils::color(hex);
+}
 fun Canvas::fill(NVGcolor color){
     this->col = color;
 }
 fun Canvas::fontFill(const char* color){
+    nvgFillColor(this->c,ColorUtils::color(color));
+}
+fun Canvas::fontFill(const str& color){
     nvgFillColor(this->c,ColorUtils::color(color));
 }
 fun Canvas::initFont(const char* f,const char* n){

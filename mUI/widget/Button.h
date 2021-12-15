@@ -2,6 +2,7 @@
 #define MUI_BUTTON_H
 
 #include "../view/View.h"
+#include "../graphics/utils/ColorUtils.h"
 #include "../graphics/utils/MaterialIcons.h"
 
 /**
@@ -54,6 +55,7 @@ public:
 
     fun onDraw(Canvas *c) override{
         Rect r = rect();
+        Theme *th = getTheme();
 
         c->fontFace(vStyle == Icon ? "icons" : "roboto");
         c->fontSize(24.f);
@@ -77,15 +79,15 @@ public:
                         c->rect(r.x,r.y,r.w,r.h,r.w * 0.2f);
                         break;
                 }
-            c->fill(hover() ? "#f92" : "#222");
+            c->fill(hover() ? th->colorAccent() : th->colorSecondary());
             c->end(vStyle != Outline);
         }
 
         c->fontAlign(hCenter | vMiddle);
         str color;
         switch (vStyle) {
-            case Filled : case Icon: color = hover() ? "#000" : getTheme()->colorBackground(); break;
-            case Outline: case Text: color = hover() ? "#f92" : getTheme()->colorText();       break;
+            case Filled : case Icon: color = hover() ? th->colorBackground() : th->colorText(); break;
+            case Outline: case Text: color = hover() ? th->colorAccent()     : th->colorText(); break;
         }
         c->fontFill(color.c_str());
         c->text(r.x + r.w /2.f,r.y + r.h / 2.f,text.c_str());

@@ -14,9 +14,9 @@ public:
         auto l2 = new LinearLayout(Vertical,lv);
         auto t1 = new TextView("Button shape",l2);
         t1->margin(20);
-        l2->push(icbtn(ic_usb,Button::SRect     ,"Rect   -> "));
-        l2->push(icbtn(ic_4k ,Button::SCircle   ,"Circle -> "));
-        l2->push(icbtn(ic_5g ,Button::SRoundRect,"RRect  -> "));
+        l2->push(icbtn(ic_account_box           ,Button::SRect     ,"Rect   -> "));
+        l2->push(icbtn(ic_wifi_protected_setup  ,Button::SCircle   ,"Circle -> "));
+        l2->push(icbtn(ic_now_wallpaper         ,Button::SRoundRect,"RRect  -> "));
 
         setContentView(lv);
     }
@@ -48,6 +48,6 @@ public:
 
 i32 main(/*int argc, char *argv[]*/) {
     App app(640,480,"App",true);
-    app.setActivity(new MainActivity(),Theme::Light());
+    app.setActivity(new MainActivity(),Theme::Dark());
     return app.exec();
 }
