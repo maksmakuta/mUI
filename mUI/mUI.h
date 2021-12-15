@@ -4,6 +4,7 @@
 #include "app/App.h"
 #include "app/Activity.h"
 
+#include "graphics/Decorator.h"
 #include "graphics/Window.h"
 #include "graphics/Canvas.h"
 #include "graphics/utils/ColorUtils.h"
@@ -21,7 +22,6 @@
 #include "widget/layout/ScrollLayout.h"
 #include "widget/Button.h"
 #include "widget/EditText.h"
-#include "widget/IconButton.h"
 #include "widget/ImageView.h"
 #include "widget/RadioButton.h"
 #include "widget/Slider.h"

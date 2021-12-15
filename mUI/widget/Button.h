@@ -4,6 +4,11 @@
 #include "../view/View.h"
 #include "../graphics/utils/MaterialIcons.h"
 
+/**
+ * @brief The Button class
+ * API 2.0
+ * @since 0.4.0
+ */
 class Button : pub View{
 public:
     enum Style{
@@ -12,14 +17,21 @@ public:
         Text    ,
         Icon
     };
+    enum Shape{
+        SRect,
+        SCircle,
+        SRoundRect
+    };
 private:
     str text;
     vec2 p;
     f32 fontSize{};
     Style vStyle;
+    Shape vShape;
 public:
     explicit Button(i32 icon,View* parent = null) : Button(cpToUTF8(icon),parent) {
         this->style(Icon);
+        this->shape(SRoundRect);
     }
     explicit Button(const str& t,View* parent = null) : View(parent){
         this->text = t;
@@ -28,6 +40,13 @@ public:
 
     fun style(Style s){
         this->vStyle = s;
+    }
+
+    fun shape(Shape s){
+        if(this->vStyle == Icon)
+            this->vShape = s;
+        else
+            printf("Warning -> Button style != Icon\n");
     }
 
     fun setText(const str& _t){this->text = _t;}
@@ -47,7 +66,17 @@ public:
             if(vStyle != Icon)
                 c->rect(r.x, r.y, r.w, r.h, r.h / 2.f);
             else
-                c->circle(r.x + r.w /2.f, r.y + r.h / 2.f,r.h / 2.f);
+                switch (vShape) {
+                    case Shape::SRect :
+                        c->rect(r.x,r.y,r.w,r.h);
+                        break;
+                    case Shape::SCircle :
+                        c->circle(r.x + r.w / 2.f,r.y + r.h / 2.f,r.h / 2.f);
+                        break;
+                    case Shape::SRoundRect :
+                        c->rect(r.x,r.y,r.w,r.h,r.w * 0.2f);
+                        break;
+                }
             c->fill(hover() ? "#f92" : "#222");
             c->end(vStyle != Outline);
         }
@@ -59,7 +88,7 @@ public:
             case Outline: case Text: color = hover() ? "#f92" : getTheme()->colorText();       break;
         }
         c->fontFill(color.c_str());
-        c->text(rect().x + rect().w /2.f,rect().y + rect().h / 2.f,text.c_str());
+        c->text(r.x + r.w /2.f,r.y + r.h / 2.f,text.c_str());
     }
 
 };

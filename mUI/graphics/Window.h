@@ -5,6 +5,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "Canvas.h"
+#include "Decorator.h"
 #include "utils/ColorUtils.h"
 #include "../app/Activity.h"
 
@@ -17,7 +18,7 @@ std::map<GLFWwindow*,Window*> __windows;
 
 /**
  * Window
- * API 2.0
+ * API 2.0.1
  * @since 0.0.2a (alpha)
  */
 class Window{
@@ -25,6 +26,7 @@ private:
     GLFWwindow* w = null;   // Window class to make context for drawing
     Canvas* canvas = null;  // Canvas class to draw in window
     Activity *a = null;     // Activity to draw
+    Decorator *dec = null;
 public:
     /**
      * constructor
@@ -36,7 +38,7 @@ public:
      * @param _h : Int
      * @param _t : String
      */
-    Window(int _w,int _h,const str& _t){
+    Window(int _w,int _h,const str& _t,bool _d){
         if(!glfwInit()) error("glfw");
 
         glfwWindowHint(GLFW_VERSION_MAJOR,3);

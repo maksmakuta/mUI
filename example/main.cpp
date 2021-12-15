@@ -2,28 +2,52 @@
 
 class MainActivity : public Activity{
 public:
-    fun onCreate() override{
-        auto ll = new LinearLayout(Vertical);
-        new TextView("Button style",ll);
-        ll->push(btn(cpToUTF8(ic_account_box),Button::Icon      ,"Icon    -> "));
-        ll->push(btn("Outline"               ,Button::Outline   ,"Outline -> "));
-        ll->push(btn("Filled"                ,Button::Filled    ,"Filled  -> "));
-        ll->push(btn("Text"                  ,Button::Text      ,"Text    -> "));
-        setContentView(ll);
+    fun onCreate() override {
+        auto lv = new LinearLayout(Horizontal);
+        auto l1 = new LinearLayout(Vertical,lv);
+        auto t0 = new TextView("Button style",l1);
+        t0->margin(20);
+        l1->push(btn("Outline"               ,Button::Outline   ,"Outline -> "));
+        l1->push(btn("Filled"                ,Button::Filled    ,"Filled  -> "));
+        l1->push(btn("Text"                  ,Button::Text      ,"Text    -> "));
+
+        auto l2 = new LinearLayout(Vertical,lv);
+        auto t1 = new TextView("Button shape",l2);
+        t1->margin(20);
+        l2->push(icbtn(ic_usb,Button::SRect     ,"Rect   -> "));
+        l2->push(icbtn(ic_4k ,Button::SCircle   ,"Circle -> "));
+        l2->push(icbtn(ic_5g ,Button::SRoundRect,"RRect  -> "));
+
+        setContentView(lv);
     }
 
     View* btn(const str& text,Button::Style style,const str& t){
         auto ll = new LinearLayout(Horizontal);
-        new TextView(t,ll);
+        auto tv  = new TextView(t,ll);
+        tv->fixed(150,30);
+        tv->margin(15);
+        tv->measure(Fixed,Fixed);
         auto btn = new Button(text,ll);
         btn->style(style);
+        btn->margin(10);
+        return ll;
+    }
+
+    View* icbtn(i32 icon,Button::Shape s,const str& t){
+        auto ll = new LinearLayout(Horizontal);
+        auto tv  = new TextView(t,ll);
+        tv->margin(15);
+        tv->fixed(150,30);
+        tv->measure(Fixed,Fixed);
+        auto btn = new Button(icon,ll);
+        btn->shape(s);
         btn->margin(10);
         return ll;
     }
 };
 
 i32 main(/*int argc, char *argv[]*/) {
-    App app(640,480,"App");
+    App app(640,480,"App",true);
     app.setActivity(new MainActivity(),Theme::Light());
     return app.exec();
 }

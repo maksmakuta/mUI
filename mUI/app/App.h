@@ -8,7 +8,7 @@
 
 /**
  * App
- * API 1.0
+ * API 1.0.1
  * @since 0.4.3
  */
 class App{
@@ -31,11 +31,10 @@ public:
      * @param _h : Int -> window height
      * @param _t : String -> window title
      */
-    App(i32 _w,i32 _h,const str& _t){
-        this->w = new Window(_w,_h,_t);
+    App(i32 _w,i32 _h,const str& _t,bool decorated = true){
+        this->w = new Window(_w,_h,_t,decorated);
         this->name = _t;
     }
-
     /**
      * method to set main activity with default theme
      * @param _activity : Activity* -> activity to run

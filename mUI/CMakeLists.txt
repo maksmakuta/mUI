@@ -22,6 +22,7 @@ set(HEADERS_PUBLIC
 
   graphics/Canvas.h
   graphics/Window.h
+  graphics/Decorator.h
 
   view/listener/OnClickListener.h
   view/Margin.h
@@ -33,7 +34,6 @@ set(HEADERS_PUBLIC
   widget/layout/LinearLayout.h
   widget/Button.h
   widget/EditText.h
-  widget/IconButton.h
   widget/ImageView.h
   widget/RadioButton.h
   widget/Slider.h
