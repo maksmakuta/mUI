@@ -1,6 +1,7 @@
 #ifndef MUI_SWITCH_H
 #define MUI_SWITCH_H
 
+#include "../graphics/utils/MathUtils.h"
 #include "../view/View.h"
 
 class Switch : public View{
@@ -25,20 +26,18 @@ public:
         c->fontFace("roboto");
         c->fontSize(getTheme()->sizeText());
         c->fontAlign(hCenter | vMiddle);
-        textSize = c->textSize(_text.c_str());
-        c->fontFill(getTheme()->colorText().c_str());
+        //textSize = c->textSize(_text.c_str());
+        c->fillColor(getTheme()->colorText().c_str());
         c->text(r.x + textSize.x/2.f + 20.f,r.y + r.h/2.f,_text.c_str());
 
         c->begin();
         f32 rad = MathUtils::max<f32>(textSize.y/2.f,cr);
         c->rect(r.x + 45 + textSize.x,r.y + rad,cr*2.f,rad,rad/2.f);
-        c->fill("#999");
-        c->end(true);
+        c->fillColor("#999");
 
         c->begin();
         c->circle(state ? r.x + r.w - r.h/2.f : r.x + r.w - r.h,r.y + r.h/2.f,cr);
-        c->fill("#faa");
-        c->end(true);
+        c->fillColor("#faa");
 
     }
 

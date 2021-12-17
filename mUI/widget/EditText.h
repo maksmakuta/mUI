@@ -9,13 +9,11 @@ class EditText : pub View {
 priv:
     str text,label;
     f32 fontSize,x = 0.f;
-    vec2 p,m;
     f32 bitPos;
 pub:
     EditText(const str& _label,View* parent) : View(parent){
         this->setFontSize(24.f);
         this->setText("");
-        this->p = vec2(100,getFontSize());
         this->margin(10);
         this->label = _label;
     }
@@ -34,6 +32,7 @@ pub:
     }
 
     fun onDraw(Canvas *c) override{
+        /*
         Rect r = rect();
         c->save();
         c->scissor(r.x,r.y,r.w,r.h);
@@ -41,23 +40,21 @@ pub:
         c->begin();
         c->rect(r.x, r.y, r.w, r.h,r.h * .2f);
         c->fill("#aaa");
-        c->end(false);
 
         if(!text.empty()) {
             c->begin();
             f32 b = (r.h - getFontSize()) / 2.f;
             c->rect(r.x + bitPos, r.y + b, 1, getFontSize());
             c->fill("#f00");
-            c->end(true);
         }
 
-        c->useBaseFont(getFontSize(),text.empty() ? "#aaa" : "#fff");
+        c->fontFace(getFontSize(),text.empty() ? "#aaa" : "#fff");
         if(!text.empty())
-            p = c->textSize(text.c_str());
+            c->textBounds(text.c_str());
         c->fontAlign(hLeft | vBaseline);
         c->text(r.x + x,r.y + r.h / 1.3f,text.empty() ? label.c_str() :text.c_str());
         c->restore();
-
+        */
     }
 
     fun onKey(u32 codepoint) override{
@@ -84,18 +81,11 @@ pub:
     }
 
     fun onMouseScroll(f64 dx, f64 dy) override{
-        if(p.x > rect().w){
-            this-> x += (f32)dx * 5.f;
-        }
 
-        if(x > 0.f)
-            x = 0.f;
-        if(x < rect().w - p.x)
-            x = rect().w - p.x;
     }
 
     fun onMouse(f64 _x, f64 _y, i32 button, i32 action, i32 mod) override{
-        m = vec2((f32)_x,(f32)_y);
+       // m = vec2((f32)_x,(f32)_y);
     }
 
     fun onMeasure(f32 _w,f32 _h) override{

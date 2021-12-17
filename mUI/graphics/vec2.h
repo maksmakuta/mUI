@@ -1,6 +1,8 @@
 #ifndef MUI_VEC2_H
 #define MUI_VEC2_H
 
+#include "../types.h"
+
 class vec2{
 public:
     vec2() : vec2(0.f){}

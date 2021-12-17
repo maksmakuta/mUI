@@ -26,8 +26,7 @@ public:
                 }
             }
         }
-        c->fill("#fff");
-        c->end(false);
+        c->strokeColor("#fff");
     }
 
 

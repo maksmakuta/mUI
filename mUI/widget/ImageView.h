@@ -3,30 +3,50 @@
 
 #include "../view/View.h"
 
+/**
+ * @brief The ImageView class
+ * API 2.0
+ * @since 0.4.0
+ */
 class ImageView : public View{
+public:
+    enum Shape{
+        SRect,
+        SCircle,
+        SRoundRect
+    };
 priv:
+    Shape vShape;
     str imgL;
     i32 img;
-    vec2 p;
 pub:
     explicit ImageView(const str& img,View* parent) : ImageView(img,100,100,parent){ }
     explicit ImageView(const str& img,f32 w,f32 h,View* parent) : View(parent){
         this->imgL = img;
-        this->p = vec2(w,h);
     }
 
     fun setImage(const str& _t){this->imgL = _t;}
+    fun shape(Shape s){
+        this->vShape = s;
+    }
 
     fun onDraw(Canvas *c) override{
         Rect r = rect();
-        img = c->image(imgL.c_str());
+        img = c->createImage(imgL.c_str(),0);
         c->begin();
-        c->rect(r.x,r.y,r.w,r.h);
-        c->img(r.x,r.y,r.w,r.h,img);
-    }
-
-    fun onMeasure(f32 _w,f32 _h) override{
-        this->size(p.x,p.y);
+        switch(vShape){
+            case SRect:
+                c->rect(r.x,r.y,r.w,r.h);
+            break;
+            case SCircle:
+                c->circle(r.x + r.w/2,r.y +r.h/2,r.h/2);
+            break;
+            case SRoundRect:
+                c->rect(r.x,r.y,r.w,r.h,10);
+            break;
+        }
+        c->fillPaint(c->imagePaint(r.x,r.y,r.w,r.h,0.f,img,1.f));
+        c->fill();
     }
 };
 

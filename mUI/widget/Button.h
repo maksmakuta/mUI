@@ -7,7 +7,7 @@
 
 /**
  * @brief The Button class
- * API 2.0
+ * API 2.0.2
  * @since 0.4.0
  */
 class Button : pub View{
@@ -25,8 +25,6 @@ public:
     };
 private:
     str text;
-    vec2 p;
-    f32 fontSize{};
     Style vStyle;
     Shape vShape;
 public:
@@ -51,46 +49,37 @@ public:
     }
 
     fun setText(const str& _t){this->text = _t;}
+
     str getText(){return this->text;}
 
     fun onDraw(Canvas *c) override{
         Rect r = rect();
-        Theme *th = getTheme();
+        Theme* t = getTheme();
 
-        c->fontFace(vStyle == Icon ? "icons" : "roboto");
-        c->fontSize(24.f);
-        vec2 cc = c->textSize(text.c_str());
-        cc.y = 0.f;
-        this->content(cc);
-
-        if(vStyle != Text) {
-            c->begin();
+        c->begin();
+        if(vStyle != Text){
             if(vStyle != Icon)
-                c->rect(r.x, r.y, r.w, r.h, r.h / 2.f);
+                c->rect(r.x,r.y,r.w,r.h,r.h/2.f);
             else
-                switch (vShape) {
-                    case Shape::SRect :
+                switch(vShape){
+                    case SCircle:
+                        c->circle(r.x + r.w/2,r.y + r.h/2,r.h / 2.f);
+                    break;
+                    case SRect:
                         c->rect(r.x,r.y,r.w,r.h);
-                        break;
-                    case Shape::SCircle :
-                        c->circle(r.x + r.w / 2.f,r.y + r.h / 2.f,r.h / 2.f);
-                        break;
-                    case Shape::SRoundRect :
-                        c->rect(r.x,r.y,r.w,r.h,r.w * 0.2f);
-                        break;
+                    break;
+                    case SRoundRect:
+                        c->rect(r.x,r.y,r.w,r.h,r.h/6.f);
+                    break;
                 }
-            c->fill(hover() ? th->colorAccent() : th->colorSecondary());
-            c->end(vStyle != Outline);
-        }
 
-        c->fontAlign(hCenter | vMiddle);
-        str color;
-        switch (vStyle) {
-            case Filled : case Icon: color = hover() ? th->colorBackground() : th->colorText(); break;
-            case Outline: case Text: color = hover() ? th->colorAccent()     : th->colorText(); break;
+            c->end(vStyle == Filled || vStyle == Icon,hover() ? t->colorSecondary() : t->colorPrimary());
         }
-        c->fontFill(color.c_str());
-        c->text(r.x + r.w /2.f,r.y + r.h / 2.f,text.c_str());
+        str col = hover() ? vStyle == Outline || vStyle == Text ? t->colorSecondary() : t->colorBackground() : t->colorText();
+        c->font(vStyle == Icon ? "icon" : "base",col,t->sizeText());
+        c->fontAlign(vMiddle | hCenter);
+        vec2 cc = c->text(r.x + r.w/2.f,r.y + r.h/2.f,text);
+        this->content(cc.x,0);
     }
 
 };

@@ -4,6 +4,14 @@
 
 Canvas::Canvas(i32 flags){
     this->c = nvgCreateGL3(flags);
+    this->fonts.push_back(createFont("../../mUI/assets/fonts/Roboto/Roboto-Regular.ttf"                 ,"base"));
+    this->fonts.push_back(createFont("../../mUI/assets/fonts/Noto/NotoSans-Regular.ttf"                 ,"fall"));
+    this->fonts.push_back(createFont("../../mUI/assets/fonts/MaterialIcons/MaterialIcons-Regular.ttf"   ,"icon"));
+}
+
+Canvas::~Canvas(){
+    fonts.clear();
+    nvgDeleteGL3(c);
 }
 
 fun Canvas::beginFrame(f32 w, f32 h,f32 p){
@@ -18,23 +26,11 @@ fun Canvas::endFrame(){
     nvgEndFrame(this->c);
 }
 
-fun Canvas::fill(const char* col){
-    nvgFillColor(this->c,ColorUtils::color(col));
+fun Canvas::fill(){
     nvgFill(this->c);
 }
 
-fun Canvas::fill(const str& col){
-    nvgFillColor(this->c,ColorUtils::color(col));
-    nvgFill(this->c);
-}
-
-fun Canvas::stroke(const char* col){
-    nvgStrokeColor(this->c,ColorUtils::color(col));
-    nvgStroke(this->c);
-}
-
-fun Canvas::stroke(const str& col){
-    nvgStrokeColor(this->c,ColorUtils::color(col));
+fun Canvas::stroke(){
     nvgStroke(this->c);
 }
 
@@ -337,3 +333,43 @@ fun Canvas::textBounds(f32 *bounds, f32 x, f32 y,f32 w, const char *text, const 
 fun Canvas::textMetrics(f32 *a, f32 *d, f32 *l){
     nvgTextMetrics(this->c,a,d,l);
 }
+
+// =============== Canvas API =========================
+
+
+fun Canvas::strokeColor(const str& color){
+    this->strokeColor(ColorUtils::color(color));
+    this->stroke();
+}
+
+fun Canvas::fillColor(const str& color){
+    this->fillColor(ColorUtils::color(color));
+    this->fill();
+}
+
+fun Canvas::font(const str& face,const str& color, f32 size){
+    this->fontFace(face.c_str());
+    this->fillColor(ColorUtils::color(color));
+    this->fontSize(size);
+}
+
+vec2 Canvas::text(f32 x,f32 y,const str& text){
+    float* tmp = new float[4];
+    this->textBounds(tmp,x,y,text.c_str());
+    vec2 s(tmp[2] - tmp[0],tmp[3] - tmp[1]);
+    delete [] tmp;
+    this->text(x,y,text.c_str());
+    return s;
+}
+
+fun Canvas::fontColor(const str& color){
+    fillColor(ColorUtils::color(color));
+}
+
+fun Canvas::end(bool fill,const str& color){
+    if(fill)
+        fillColor(color);
+    else
+        strokeColor(color);
+}
+

@@ -6,6 +6,7 @@
 
 #include "graphics/Decorator.h"
 #include "graphics/Window.h"
+#include "graphics/Rect.h"
 #include "graphics/Canvas.h"
 #include "graphics/utils/ColorUtils.h"
 #include "graphics/utils/MathUtils.h"
@@ -13,7 +14,6 @@
 
 #include "view/listener/OnClickListener.h"
 #include "view/Margin.h"
-#include "view/Rect.h"
 #include "view/View.h"
 #include "view/Measure.h"
 

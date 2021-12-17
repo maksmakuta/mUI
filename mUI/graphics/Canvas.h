@@ -6,6 +6,8 @@
 #include "nanovg/nanovg.h"
 #include "nanovg/nanovg_gl.h"
 #include "../types.h"
+#include "Rect.h"
+#include "vec2.h"
 
 #define hLeft       NVG_ALIGN_LEFT
 #define hCenter     NVG_ALIGN_CENTER
@@ -35,6 +37,8 @@ private:
     std::vector<i32> fonts; // fonts allocators
 public:
     explicit Canvas(i32 flags);
+    ~Canvas();
+    // ======================= nanovg API ==============================
 
     /**
      * @brief beginFrame -> begin drawing a new frame
@@ -56,27 +60,13 @@ public:
 
     /**
      * @brief fill -> fill current shape
-     * @param color : const char* -> color string ("#f00f0a")
      */
-    fun fill(const char* color);
-
-    /**
-     * @brief fill -> fill current shape
-     * @param color : const str& -> color string ("#f00f0a")
-     */
-    fun fill(const  str& color);
+    fun fill();
 
     /**
      * @brief stroke -> draw stroked shape
-     * @param color : const char* -> color string ("#fff")
      */
-    fun stroke(const char* color);
-
-    /**
-     * @brief stroke -> draw stroked shape
-     * @param color : const str& -> color string ("#fff")
-     */
-    fun stroke(const  str& color);
+    fun stroke();
 
     /**
      * @brief save -> save current state
@@ -685,6 +675,33 @@ public:
      * @param l : float* -> line height
      */
     fun textMetrics(f32* a,f32* d,f32* l);
+
+
+    // ======================= Canvas API ==============================
+
+    /**
+     * @brief fillColor -> fill color using hex color ("#f00fa9")
+     * @param color :const str& -> hex color
+     */
+    fun fillColor(const str& color);
+
+    /**
+     * @brief strokeColor -> stroke color using hex color ("#f00fa9")
+     * @param color :const str& -> hex color
+     */
+    fun strokeColor(const str& color);
+
+    /**
+     * @brief font -> method to define font face, color and size
+     * @param face  : const str& -> font face
+     * @param color : const str& -> font color
+     * @param size  :      float -> font size
+     */
+    fun font(const str& face,const str& color, f32 size);
+
+    fun fontColor(const str& color);
+    vec2 text(f32 x,f32 y,const str& text);
+    fun end(bool fill,const str& color);
 
 };
 

@@ -19,7 +19,8 @@ set(HEADERS_PUBLIC
   graphics/utils/ColorUtils.h
   graphics/utils/MathUtils.h
   graphics/utils/MaterialIcons.h
-
+  graphics/vec2.h
+  graphics/Rect.h
   graphics/Canvas.h
   graphics/Window.h
   graphics/Decorator.h
@@ -27,11 +28,12 @@ set(HEADERS_PUBLIC
   view/listener/OnClickListener.h
   view/Margin.h
   view/Measure.h
-  view/Rect.h
   view/View.h
-  view/vec2.h
 
   widget/layout/LinearLayout.h
+  widget/layout/ScrollLayout.h
+  widget/layout/RelativeLayout.h
+  widget/layout/GridLayout.h
   widget/Button.h
   widget/EditText.h
   widget/ImageView.h
@@ -41,10 +43,6 @@ set(HEADERS_PUBLIC
   widget/Switch.h
   widget/TextView.h
   widget/ToolBar.h
-
-  widget/layout/ScrollLayout.h
-  widget/layout/RelativeLayout.h
-  widget/layout/GridLayout.h
 
   mUI.h
   types.h

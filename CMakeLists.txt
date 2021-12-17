@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(mUI VERSION 0.5.12)
+project(mUI VERSION 0.6.0)
 
 set(LIBRARY_NAME   ${PROJECT_NAME})
 set(LIBRARY_FOLDER ${PROJECT_NAME})

@@ -1,14 +1,14 @@
 #ifndef MUI_VIEW_H
 #define MUI_VIEW_H
-
+#pragma once
 #include <vector>
-#include "Rect.h"
 #include "Margin.h"
-#include "../graphics/Canvas.h"
-#include "listener/OnClickListener.h"
 #include "Measure.h"
+#include "listener/OnClickListener.h"
+#include "../graphics/Canvas.h"
 #include "../graphics/utils/MaterialIcons.h"
 #include "../app/Theme.h"
+#include <GLFW/glfw3.h>
 
 #define UNSIZE -1
 
@@ -91,6 +91,7 @@ public:
 
     fun fixed(f32 w,f32 h){
         this->fixedSize = vec2(w,h);
+        this->measure(Fixed,Fixed);
     }
 
     fun content(f32 w,f32 h){

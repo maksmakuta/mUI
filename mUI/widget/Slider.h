@@ -32,20 +32,17 @@ public:
         f32 cr = r.h/2.f;
         c->begin();
         c->rect(r.x + cr,r.y + r.h/2,r.w - 2*cr,r.h * .1f);
-        c->fill("#999");
-        c->end(true);
+        c->fillColor("#999");
 
         if(this->hover()) {
             c->begin();
             c->circle(r.x + r.w*curr + cr/2.f, r.y + cr, cr*1.5f);
-            c->fill("#c78");
-            c->end(true);
+            c->fillColor("#c78");
         }
 
         c->begin();
         c->circle(r.x + r.w*curr + cr/2.f,r.y + cr,cr);
-        c->fill("#fab");
-        c->end(true);
+        c->fillColor("#fab");
     }
 
     fun setStep(f32 s){this->step = s;}

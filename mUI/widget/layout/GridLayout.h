@@ -22,8 +22,7 @@ public:
 
         c->begin();
         c->rect(r.x,r.y,r.w,r.h);
-        c->fill("#faa");
-        c->end(true);
+        c->fillColor("#faa");
 
         f32 _x = r.x ,_y = r.y;
         i32 p = 0;

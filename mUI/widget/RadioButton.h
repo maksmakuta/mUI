@@ -47,26 +47,25 @@ public:
         if(this->hover()) {
             c->begin();
             c->circle(r.x + r.h / 2.f, r.y + r.h / 2.f, r.h / 2.f);
-            c->fill(t->colorSecondary().c_str());
-            c->end(true);
+            c->fillColor(t->colorSecondary().c_str());
         }
 
         c->fontFace("icons");
         c->fontSize(t->sizeText());
-        c->fontFill(t->colorPrimary().c_str());
+        c->fillColor(t->colorPrimary().c_str());
         c->fontAlign(vMiddle | hCenter);
         c->text(r.x +r.h/2.f,r.y + r.h/2.f, cpToUTF8(checked ? ic_radio_button_on : ic_radio_button_off));
 
         c->fontFace("roboto");
         c->fontSize(t->sizeText());
-        c->fontFill(t->colorText().c_str());
+        c->fillColor(t->colorText().c_str());
         c->fontAlign(vMiddle | hLeft);
-        p = c->textSize(text.c_str());
+        //p = c->textSize(text.c_str());
         c->text(r.x + r.h + 5.f,r.y + r.h/2.f,text.c_str());
     }
 
     fun onMeasure(f32 _w,f32 _h) override{
-        this->size(p.x+48.f,p.y);
+        //this->size(p.x+48.f,p.y);
     }
 };
 

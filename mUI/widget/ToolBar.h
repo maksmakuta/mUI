@@ -16,12 +16,11 @@ public:
         Theme* t = getTheme();
         c->begin();
         c->rect(r.x,r.y,r.w,r.h);
-        c->fill(t->colorSecondary().c_str());
-        c->end(true);
+        c->fillColor(t->colorSecondary().c_str());
 
         c->fontFace("roboto");
         c->fontSize(t->sizeText());
-        c->fontFill(t->colorText().c_str());
+        c->fillColor(t->colorText().c_str());
         c->fontAlign(hCenter |vMiddle);
         c->text(r.x + r.w/2.f,r.y + r.h/2.f,title.c_str());
     }
