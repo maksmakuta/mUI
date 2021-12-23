@@ -58,6 +58,7 @@ public:
 
         c->begin();
         if(vStyle != Text){
+            i32 m = t->sizeMargin();
             if(vStyle != Icon)
                 c->rect(r.x,r.y,r.w,r.h,r.h/2.f);
             else
@@ -66,10 +67,10 @@ public:
                         c->circle(r.x + r.w/2,r.y + r.h/2,r.h / 2.f);
                     break;
                     case SRect:
-                        c->rect(r.x,r.y,r.w,r.h);
+                        c->rect(r.x + m,r.y,r.w - 2*m,r.h);
                     break;
                     case SRoundRect:
-                        c->rect(r.x,r.y,r.w,r.h,r.h/6.f);
+                        c->rect(r.x + m,r.y,r.w - 2*m,r.h,r.h/6.f);
                     break;
                 }
 

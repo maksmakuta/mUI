@@ -1,6 +1,7 @@
 #ifndef MUI_MEASURE_H
 #define MUI_MEASURE_H
 
+#include "../types.h"
 
 enum MeasureSize{
     Parent,

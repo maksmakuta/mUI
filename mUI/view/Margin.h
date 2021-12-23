@@ -39,6 +39,14 @@ public:
     f32 getMarginBottom() const {return this->b;}
     f32 getMarginLeft  () const {return this->l;}
     f32 getMarginRight () const {return this->r;}
+
+    Margin operator =(const Margin& m){
+        this->setMarginTop   (m.getMarginTop   ());
+        this->setMarginBottom(m.getMarginBottom());
+        this->setMarginLeft  (m.getMarginLeft  ());
+        this->setMarginRight (m.getMarginRight ());
+        return *this;
+    }
 };
 
 #endif

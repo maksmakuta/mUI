@@ -16,6 +16,8 @@
 #define MOUSE_RIGHT GLFW_MOUSE_BUTTON_RIGHT
 #define MOUSE_CLICK GLFW_PRESS
 
+#define forEach(T,arr) for(T item: arr)
+
 enum Visibility{
     Gone     ,
     Visible  ,
@@ -34,6 +36,16 @@ enum Gravity {
     End
 };
 
+/**
+ * @brief The View class
+ * API 2.0
+ * @since 0.1
+ */
+class View{
+
+};
+
+/*
 class View{
 private:
     Rect        vRect;
@@ -276,5 +288,6 @@ public:
         delete theme;
     }
 };
+*/
 
 #endif
