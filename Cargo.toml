@@ -1,0 +1,15 @@
+[package]
+name = "mUI"
+version = "0.6.0"
+edition = "2021"
+
+[lib]
+name = "lib_material_ui"
+path = "src/lib.rs"
+
+[[bin]]
+name = "example"
+path = "src/example/bin.rs"
+
+
+[dependencies]
