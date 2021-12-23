@@ -1,10 +1,10 @@
 [package]
-name = "mUI"
+name = "materialui"
 version = "0.6.0"
 edition = "2021"
 
 [lib]
-name = "lib_material_ui"
+name = "mui"
 path = "src/lib.rs"
 
 [[bin]]
@@ -13,3 +13,6 @@ path = "src/example/bin.rs"
 
 
 [dependencies]
+nvg = "0.5.11"
+glutin = "0.28.0"
+
