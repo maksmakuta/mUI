@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 3.20)
 
 project(mUI VERSION 0.6.0 LANGUAGES CXX)
 
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 find_package(OpenGL REQUIRED)
 if (OPENGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIRS})
@@ -26,6 +29,6 @@ set(CODE
   src/mUI.h
 )
 
-add_library(mUI ${CODE})
+add_library(mUI SHARED ${CODE})
 set_target_properties(mUI PROPERTIES LINKER_LANGUAGE CXX)
 add_subdirectory(example)
