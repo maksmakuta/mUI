@@ -1,6 +1,8 @@
 #ifndef MUI_H
 #define MUI_H
 
+#include "types.h"
+
 #include "app/Activity.h"
 #include "app/App.h"
 #include "app/Theme.h"
