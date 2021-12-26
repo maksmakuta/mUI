@@ -30,5 +30,3 @@ set(CODE
 )
 
 add_executable(example main.cpp ${CODE})
-set_target_properties(mUI PROPERTIES LINKER_LANGUAGE CXX)
-add_subdirectory(example)
