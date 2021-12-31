@@ -3,19 +3,15 @@
 
 #include "types.h"
 
+#include "core/Object.h"
+
 #include "app/Activity.h"
 #include "app/App.h"
+#include "app/Logger.h"
 #include "app/Theme.h"
 
 #include "graphics/Window.h"
 #include "graphics/Canvas.h"
-
-#include "nanovg/fontstash.h"
-#include "nanovg/nanovg.h"
-#include "nanovg/nanovg_gl.h"
-#include "nanovg/nanovg_gl_utils.h"
-#include "nanovg/stb_image.h"
-#include "nanovg/stb_truetype.h"
 
 #include "view/View.h"
 

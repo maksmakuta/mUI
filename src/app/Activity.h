@@ -16,6 +16,10 @@ public:
     virtual fun onCreate() = 0;
     virtual fun onKey(i32 k){/* ... */}
 
+    ~Activity(){
+        delete main;
+    }
+
 };
 
 #endif

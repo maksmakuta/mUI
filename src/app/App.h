@@ -31,7 +31,11 @@ public:
             Log::onError("App()::run()");
             return 1;
         }
+    }
 
+    ~App(){
+        delete main;
+        delete win;
     }
 };
 

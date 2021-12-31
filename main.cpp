@@ -1,8 +1,7 @@
-#include "src/mUI.h"
+#include <mUI.h>
 
 class Main : public Activity{
-  public:
-
+public:
     fun onCreate() override {
 
     }
