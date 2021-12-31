@@ -3,8 +3,9 @@
 
 #include "../types.h"
 
-#define rad(x)      x*(NVG_PI/180)
-#define deg(x)      x*(180/NVG_PI)
+#define PI          3.1415926
+#define rad(x)      x*(PI/180)
+#define deg(x)      x*(180/PI)
 
 class Canvas{
 public:

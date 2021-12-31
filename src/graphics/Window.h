@@ -2,6 +2,7 @@
 #define WINDOW_H
 
 #include "../types.h"
+#define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 #include "Canvas.h"
 
@@ -15,10 +16,8 @@ public:
     Window(i32 w,i32 h,const str& t){
         if(!glfwInit()) onError("GLFW::init()");
 
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
-        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+        glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+        glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
         win = glfwCreateWindow(w,h,t.c_str(),null,null);
         if(!win) onError("GLFW::createWindow()");

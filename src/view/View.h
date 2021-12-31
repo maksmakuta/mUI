@@ -2,9 +2,11 @@
 #define VIEW_H
 
 #include "../types.h"
+#include "Rect.h"
 
 class View{
-
+private:
+    Rect r;
 public:
     View(){
 
