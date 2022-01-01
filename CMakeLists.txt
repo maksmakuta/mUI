@@ -4,8 +4,9 @@ project(mUI VERSION 0.6.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_COMPILER "clang++")
 
-find_package(Vulkan REQUIRED)
+find_package(Vulkan REQUIRED FAILURE)
 if (VULKAN_FOUND)
     include_directories(${VULKAN_INCLUDE_DIRS})
     link_libraries(     ${VULKAN_LIBRARIES})
