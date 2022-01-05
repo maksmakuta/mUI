@@ -26,8 +26,8 @@ public:
 
         glfwSwapInterval(1);
 
-        //this->c = new Canvas();
-        //if(nullable(c)) onError("NVG::init()");
+        this->c = new Canvas();
+        if(nullable(c)) onError("Canvas::init()");
 
     }
 

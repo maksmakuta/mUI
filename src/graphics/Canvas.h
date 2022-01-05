@@ -2,14 +2,22 @@
 #define CANVAS_H
 
 #include "../types.h"
+#include "gl/GLRenderer.h"
+#include "vk/VKRenderer.h"
 
-#define PI          3.1415926
-#define rad(x)      x*(PI/180)
-#define deg(x)      x*(180/PI)
+enum Backend{
+    GL,
+    VK,
+    Default = GL
+};
 
 class Canvas{
+private:
+    VKRenderer* vk = null;
+    GLRenderer* gl = null;
+    Backend backend;
 public:
-    explicit Canvas();
+    explicit Canvas(Backend mBackend = Default);
     ~Canvas();
 
 };
