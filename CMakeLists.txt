@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(mUI VERSION 0.6.0 LANGUAGES CXX)
+project(mUI VERSION 0.6.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -12,6 +12,12 @@ if (VULKAN_FOUND)
     link_libraries(     ${VULKAN_LIBRARIES})
 endif()
 
+find_package(OpenGL REQUIRED)
+if (OpenGL_FOUND)
+    include_directories(${OpenGL_INCLUDE_DIRS})
+    link_libraries(     ${OpenGL_LIBRARIES})
+endif()
+
 ###################################
 find_package(PkgConfig REQUIRED)
 pkg_search_module(GLFW REQUIRED glfw3)
@@ -19,6 +25,12 @@ include_directories(${GLFW_INCLUDE_DIRS})
 link_libraries(     ${GLFW_LIBRARIES})
 link_libraries(     ${GLFW_STATIC_LIBRARIES})
 ###################################
+
+find_package(GLEW REQUIRED)
+if (GLEW_FOUND)
+    include_directories(${GLEW_INCLUDE_DIRS})
+    link_libraries(     ${GLEW_LIBRARIES})
+endif()
 
 find_package(glm REQUIRED)
 if (GLM_FOUND)
@@ -31,14 +43,18 @@ include_directories(src)
 set(CODE
   src/mUI.h
   src/types.h
+
   src/app/Activity.h
   src/app/App.h
   src/app/Logger.h
   src/app/Theme.h
+
   src/graphics/Window.h
   src/graphics/Canvas.h
   src/graphics/Canvas.cpp
+
   src/view/View.h
+
   src/widget/layout/LinearLayout.h
   src/widget/layout/GridLayout.h
   src/widget/layout/ListLayout.h

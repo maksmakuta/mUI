@@ -12,7 +12,7 @@ public:
     }
 
     static fun onWarning(const str& msg){
-        cout << "[WARNIG ] " << msg << "\n";
+        cout << "[WARNING] " << msg << "\n";
     }
 
     static fun onMessage(const str& msg){
