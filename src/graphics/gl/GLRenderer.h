@@ -3,6 +3,13 @@
 
 #include "../../app/Logger.h"
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+
+struct Vertex{
+    f32 x,y;
+    f32 r,g,b,a;
+    f32 s,t;
+};
 
 class GLRenderer{
 private:
@@ -14,7 +21,7 @@ private:
 
     // ============ frame methods ============
     fun beginFrame(f32 w, f32 h){
-
+        matrix = glm::ortho<f32>(0.f,(f32)w,(f32)h,0.f);
     }
     fun endFrame(){
 

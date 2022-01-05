@@ -5,6 +5,7 @@ project(mUI VERSION 0.6.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_COMPILER "clang++")
+set(OpenGL_GL_PREFERENCE GLVND)
 
 find_package(Vulkan REQUIRED FAILURE)
 if (VULKAN_FOUND)
@@ -13,9 +14,9 @@ if (VULKAN_FOUND)
 endif()
 
 find_package(OpenGL REQUIRED)
-if (OpenGL_FOUND)
-    include_directories(${OpenGL_INCLUDE_DIRS})
-    link_libraries(     ${OpenGL_LIBRARIES})
+if (OPENGL_FOUND)
+    include_directories(${OPENGL_INCLUDE_DIRS})
+    link_libraries(     ${OPENGL_LIBRARIES})
 endif()
 
 ###################################
@@ -49,6 +50,11 @@ set(CODE
   src/app/Logger.h
   src/app/Theme.h
 
+
+  src/graphics/core/Color.h
+  src/graphics/gl/GLRenderer.h
+  src/graphics/gl/glShader.h
+  src/graphics/vk/VKRenderer.h
   src/graphics/Window.h
   src/graphics/Canvas.h
   src/graphics/Canvas.cpp
