@@ -6,10 +6,22 @@
 #include <GL/glew.h>
 
 const str vert =
-        "";
+        "#version 330 core"
+        "layout (location = 0) in vec2 aPos;"
+        "layout (location = 1) in vec4 aCol;"
+        "out vec4 gl_color;"
+        "void main(){"
+        "   gl_color = aCol;"
+        "   gl_Position = vec4(aPos.x, aPos.y, 0.0f, 1.0f);"
+        "}";
 
 const str frag =
-        "";
+        "#version 330 core"
+        "in vec4 gl_color;"
+        "out vec4 FragColor;"
+        "void main(){"
+        "    FragColor = gl_color;"
+        "} ";
 
 class glShader{
 private:
