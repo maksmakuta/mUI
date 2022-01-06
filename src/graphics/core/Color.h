@@ -8,6 +8,7 @@ class Color{
 private:
     f32 r,g,b,a;
 public:
+    Color() : Color("#fff"){/* ... */}
     Color(f32 a) : Color(a,a,a){/* ... */}
     Color(f32 _r,f32 _g,f32 _b) : Color(_r,_g,_b,1.0f){/* ... */}
     Color(f32 _r,f32 _g,f32 _b,f32 _a){

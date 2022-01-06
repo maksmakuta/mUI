@@ -1,8 +1,10 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-#include "../types.h"
-#include "Rect.h"
+#include <types.h>
+#include <view/Rect.h>
+#include <view/event/Event.h>
+#include <graphics/Canvas.h>
 
 class View{
 private:
@@ -14,8 +16,8 @@ public:
 
     // interface
 
-    virtual fun onDraw();
-    virtual fun onEvent();
+    virtual fun onDraw(Canvas*);
+    virtual fun onEvent(Event*);
 
 };
 
