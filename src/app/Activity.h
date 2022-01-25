@@ -8,10 +8,7 @@ class Activity{
 private:
     View* main = null;
 public:
-
-    Activity(){
-
-    }
+    Activity(){/* ... */}
 
     virtual fun onCreate() = 0;
     virtual fun onKey(i32 k){/* ... */}

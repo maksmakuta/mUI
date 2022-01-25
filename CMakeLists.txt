@@ -1,9 +1,10 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.0)
 
-project(mUI VERSION 0.6.0 LANGUAGES CXX)
+project(mUI VERSION 0.6.2 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 
 ###################################
 find_package(PkgConfig REQUIRED)
@@ -11,27 +12,28 @@ pkg_search_module(GLFW REQUIRED glfw3)
 include_directories(${GLFW_INCLUDE_DIRS})
 link_libraries(     ${GLFW_LIBRARIES})
 link_libraries(     ${GLFW_STATIC_LIBRARIES})
-###################################
 
-find_package(glm REQUIRED)
-if (GLM_FOUND)
-    include_directories(${GLM_INCLUDE_DIRS})
-    link_libraries(     ${GLM_LIBRARIES})
-endif()
+add_subdirectory("./bgfx.cmake/")
+###################################
 
 include_directories(src)
 
 set(CODE
   src/mUI.h
   src/types.h
+
   src/app/Activity.h
   src/app/App.h
   src/app/Logger.h
   src/app/Theme.h
+
+  src/graphics/core/Color.h
   src/graphics/Window.h
   src/graphics/Canvas.h
   src/graphics/Canvas.cpp
+
   src/view/View.h
+
   src/widget/layout/LinearLayout.h
   src/widget/layout/GridLayout.h
   src/widget/layout/ListLayout.h

@@ -16,11 +16,12 @@
 #define priv private
 #define prot protected
 
+#define ret return
+
 #define nonNull(T)      T != null
 #define nullable(T)     T == null
 
 using namespace std;
-
 
 typedef float   f32;
 typedef double  f64;
