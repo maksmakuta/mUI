@@ -2,9 +2,8 @@
 #define CANVAS_H
 
 #include "../types.h"
-#include "gl/GLRenderer.h"
-#include "vk/VKRenderer.h"
 #include "Backend.h"
+#include "core/Renderer.h"
 
 class Canvas : public Renderer{
 private:
@@ -37,8 +36,6 @@ public:
     fun reset() override;
     fun push() override;
     fun pop() override;
-
-    fun glew();
 };
 
 #endif

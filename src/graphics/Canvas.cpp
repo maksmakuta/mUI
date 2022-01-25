@@ -3,22 +3,7 @@
 
 Canvas::Canvas(Backend mBackend){
     this->backend = mBackend;
-    switch(this->backend){
-        case GL:
-            this->renderer = new GLRenderer();
-        break;
-        case VK:
-            this->renderer = new VKRenderer();
-        break;
-    }
-}
 
-
-fun Canvas::glew(){
-    if(this->backend == GL){
-        glewExperimental = GL_TRUE;
-        if(glewInit() != GLEW_OK) Log::onError("GLEW::init()");
-    }
 }
 
 fun Canvas::beginFrame(f32 w, f32 h){}

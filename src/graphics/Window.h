@@ -3,10 +3,11 @@
 
 #include "../types.h"
 #include "Canvas.h"
-#define GLFW_INCLUDE_NONE
+#define GLFW_INCLUDE_GLEW
 #include <GLFW/glfw3.h>
 #include "Backend.h"
 #include <app/Activity.h>
+#include <app/Logger.h>
 
 class Window{
 private:
@@ -42,10 +43,6 @@ public:
         if(!win) onError("GLFW::createWindow()");
 
         glfwMakeContextCurrent(win);
-        if(this->backend == GL){
-            if(nonNull(c))
-                this->c->glew();
-        }
         glfwSwapInterval(0);
     }
 
@@ -61,8 +58,8 @@ public:
             while(!glfwWindowShouldClose(this->win)){
 
                 if(this->backend == GL){
-                    glClearColor(1.f,0.f,0.f,1.f);
-                    glClear(GL_COLOR_BUFFER_BIT);
+                    //glClearColor(1.f,0.f,0.f,1.f);
+                    //glClear(GL_COLOR_BUFFER_BIT);
                 }
 
 
