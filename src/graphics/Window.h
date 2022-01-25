@@ -56,16 +56,6 @@ public:
         this->initWindow(this->width,this->height,this->title);
         if(nonNull(this->win)){
             while(!glfwWindowShouldClose(this->win)){
-
-                if(this->backend == GL){
-                    //glClearColor(1.f,0.f,0.f,1.f);
-                    //glClear(GL_COLOR_BUFFER_BIT);
-                }
-
-
-
-
-
                 nbFrames++;
                 if ( glfwGetTime() - lastTime >= 1.0 ){
                     f64 ftime = 1000.0/f64(nbFrames);
