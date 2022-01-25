@@ -1,11 +1,11 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.0)
 
-project(mUI VERSION 0.6.1 LANGUAGES CXX)
+project(mUI VERSION 0.6.2 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_COMPILER "clang++")
 
+add_subdirectory("./bgfx.cmake/")
 include_directories(src)
 
 set(CODE
