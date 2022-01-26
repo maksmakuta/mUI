@@ -1,0 +1,3 @@
+[submodule "mGL"]
+	path = mGL
+	url = https://github.com/ktpp-yt/mGL
