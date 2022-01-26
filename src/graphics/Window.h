@@ -5,7 +5,6 @@
 #include "Canvas.h"
 #define GLFW_INCLUDE_GLEW
 #include <GLFW/glfw3.h>
-#include "Backend.h"
 #include <app/Activity.h>
 #include <app/Logger.h>
 
@@ -16,7 +15,6 @@ private:
     GLFWwindow* win = null;
     Canvas* c = null;
     Activity *activity = null;
-    Backend backend = Default;
     f64 lastTime = glfwGetTime();
     i32 nbFrames = 0;
 public:
@@ -30,26 +28,13 @@ public:
 
     fun initWindow(i32 w,i32 h,const str& t){
         if(!glfwInit()) onError("GLFW::init()");
-
-        if(this->backend == VK){
-            glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-        }else{
-            glfwWindowHint(GLFW_VERSION_MAJOR,3);
-            glfwWindowHint(GLFW_VERSION_MINOR,3);
-        }
         glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
         win = glfwCreateWindow(w,h,t.c_str(),null,null);
         if(!win) onError("GLFW::createWindow()");
 
         glfwMakeContextCurrent(win);
-        glfwSwapInterval(0);
-    }
-
-    fun renderer(Backend b){
-        this->backend = b;
-        //this->c = new Canvas(this->backend);
-        //if(nullable(c)) onError("Canvas::init()");
+        glfwSwapInterval(0);   
     }
 
     void draw(){

@@ -1,19 +1,18 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.10)
 
 project(mUI VERSION 0.6.2 LANGUAGES CXX)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-
 ###################################
+
 find_package(PkgConfig REQUIRED)
 pkg_search_module(GLFW REQUIRED glfw3)
 include_directories(${GLFW_INCLUDE_DIRS})
 link_libraries(     ${GLFW_LIBRARIES})
 link_libraries(     ${GLFW_STATIC_LIBRARIES})
 
-add_subdirectory("./bgfx.cmake/")
 ###################################
 
 include_directories(src)
@@ -27,10 +26,9 @@ set(CODE
   src/app/Logger.h
   src/app/Theme.h
 
-  src/graphics/core/Color.h
+  src/graphics/Color.h
   src/graphics/Window.h
   src/graphics/Canvas.h
-  src/graphics/Canvas.cpp
 
   src/view/View.h
 
@@ -56,3 +54,5 @@ set(CODE
 add_library(mUI SHARED ${CODE})
 add_executable(mApp main.cpp)
 target_link_libraries(mApp mUI)
+
+set_target_properties(mUI PROPERTIES LINKER_LANGUAGE CXX)
