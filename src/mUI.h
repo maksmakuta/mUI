@@ -11,7 +11,7 @@
 #include "app/Theme.h"
 
 #include "graphics/Window.h"
-#include "graphics/Canvas.h"
+#include "graphics/nanovg.h"
 
 #include "view/View.h"
 

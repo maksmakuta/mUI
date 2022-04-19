@@ -4,8 +4,7 @@
 #include <types.h>
 #include <view/Rect.h>
 #include <view/event/Event.h>
-#include <graphics/Canvas.h>
-
+#include <graphics/nanovg.h>
 class View{
 private:
     Rect r;
@@ -16,7 +15,7 @@ public:
 
     // interface
 
-    virtual fun onDraw(Canvas*);
+    virtual fun onDraw(NVGcontext*);
     virtual fun onEvent(Event*);
 
 };

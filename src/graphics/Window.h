@@ -2,7 +2,8 @@
 #define WINDOW_H
 
 #include "../types.h"
-#include "Canvas.h"
+#include "nanovg.h"
+#include "nanovg_gl.h"
 #define GLFW_INCLUDE_GLEW
 #include <GLFW/glfw3.h>
 #include <app/Activity.h>
@@ -13,7 +14,7 @@ private:
     i32 width,height;
     str title;
     GLFWwindow* win = null;
-    Canvas* c = null;
+    NVGcontext* c = null;
     Activity *activity = null;
     f64 lastTime = glfwGetTime();
     i32 nbFrames = 0;
@@ -41,6 +42,8 @@ public:
         this->initWindow(this->width,this->height,this->title);
         if(nonNull(this->win)){
             while(!glfwWindowShouldClose(this->win)){
+
+#ifdef FPS
                 nbFrames++;
                 if ( glfwGetTime() - lastTime >= 1.0 ){
                     f64 ftime = 1000.0/f64(nbFrames);
@@ -50,7 +53,7 @@ public:
                     nbFrames = 0;
                     lastTime += 1.0;
                 }
-
+#endif
                 glfwPollEvents();
                 glfwSwapBuffers(this->win);
             }
