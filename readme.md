@@ -8,15 +8,17 @@
  - GLEW
  - GLFW
  - nanovg
+   - stb_image
+   - stb_truetype
 
 ### What's works
 
- [] Create OpenGL context
- [] Application context
- [] Widgets
-    [] Text-based widgets
-    [] Image-based widgets
- [] Layouts
+ - [ ] Create OpenGL context
+ - [ ] Application context
+ - [ ] Widgets
+       - [ ] Text-based widgets
+       - [ ] Image-based widgets
+ - [ ] Layouts
 
  Widget and Layout names taken from Android OS
  
