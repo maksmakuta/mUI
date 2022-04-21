@@ -16,8 +16,8 @@
  - [ ] Create OpenGL context
  - [ ] Application context
  - [ ] Widgets
-       - [ ] Text-based widgets
-       - [ ] Image-based widgets
+   - [ ] Text-based widgets
+   - [ ] Image-based widgets
  - [ ] Layouts
 
  Widget and Layout names taken from Android OS
