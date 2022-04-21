@@ -3,7 +3,8 @@ cmake_minimum_required(VERSION 3.10)
 project(mUI VERSION 0.7.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
+set(OpenGL_GL_PREFERENCE GLVND)
 
 ###################################
 find_package(OpenGL REQUIRED)
@@ -31,15 +32,15 @@ endif()
 include_directories(include)
 
 set(INC
-
+    include/app/Application.h
 )
 
 set(SRC
-
+    src/app/Application.cpp
 )
 
-add_library(mUI SHARED ${CODE})
-add_executable(mApp main.cpp)
-target_link_libraries(mApp mUI)
+add_library(mUI SHARED ${INC} ${SRC})
 
-set_target_properties(mUI PROPERTIES LINKER_LANGUAGE CXX)
+install(TARGETS mUI DESTINATION lib)
+install(FILES ${INC} DESTINATION include)
+
