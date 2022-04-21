@@ -10,8 +10,8 @@
 #include "app/Logger.h"
 #include "app/Theme.h"
 
-#include "graphics/Window.h"
 #include "graphics/nanovg.h"
+#include "graphics/Window.h"
 
 #include "view/View.h"
 

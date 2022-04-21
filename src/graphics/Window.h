@@ -2,9 +2,8 @@
 #define WINDOW_H
 
 #include "../types.h"
-#include "nanovg.h"
-#include "nanovg_gl.h"
-#define GLFW_INCLUDE_GLEW
+#include "Canvas.h"
+#define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 #include <app/Activity.h>
 #include <app/Logger.h>
@@ -14,7 +13,7 @@ private:
     i32 width,height;
     str title;
     GLFWwindow* win = null;
-    NVGcontext* c = null;
+    Canvas* c = null;
     Activity *activity = null;
     f64 lastTime = glfwGetTime();
     i32 nbFrames = 0;
@@ -36,12 +35,27 @@ public:
 
         glfwMakeContextCurrent(win);
         glfwSwapInterval(0);   
+
+        glewExperimental = true;
+        if(glewInit() != GLEW_OK){
+            onError("GLEW::init()");
+        }
+
+        this->c = new Canvas(NVG_ANTIALIAS | NVG_STENCIL_STROKES);
     }
 
     void draw(){
         this->initWindow(this->width,this->height,this->title);
         if(nonNull(this->win)){
             while(!glfwWindowShouldClose(this->win)){
+
+                c->beginFrame(this->width,this->height,1.f);
+                if(this->activity != null){
+                    View* v = this->activity->getView();
+                    v->onDraw(c);
+                }
+                c->endFrame();
+
 
 #ifdef FPS
                 nbFrames++;
