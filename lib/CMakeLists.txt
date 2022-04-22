@@ -12,7 +12,6 @@ if (OPENGL_FOUND)
     include_directories(${OPENGL_INCLUDE_DIRS})
     link_libraries(${OPENGL_LIBRARIES})
 endif()
-
 ###################################
 find_package(PkgConfig REQUIRED)
 pkg_search_module(GLFW REQUIRED glfw3)
@@ -20,26 +19,45 @@ include_directories(${GLFW_INCLUDE_DIRS})
 link_libraries(     ${GLFW_LIBRARIES})
 link_libraries(     ${GLFW_STATIC_LIBRARIES})
 ###################################
-
 find_package(GLEW REQUIRED)
 if (GLEW_FOUND)
     include_directories(${GLEW_INCLUDE_DIRS})
     link_libraries(     ${GLEW_LIBRARIES})
 endif()
-
 ###################################
 
 include_directories(include)
 
 set(INC
     include/app/Application.h
+    include/app/Activity.h
+
+    include/graphics/Canvas.h
+    include/graphics/Window.h
+
+    include/utils/Logger.h
+    include/utils/TypeUtils.h
+
+    include/view/View.h
+
+    include/mUI.h
+
 )
 
 set(SRC
     src/app/Application.cpp
+    src/app/Activity.cpp
+
+    src/graphics/Canvas.cpp
+    src/graphics/Window.cpp
+
+    src/utils/Logger.cpp
+
+    src/view/View.cpp
 )
 
 add_library(mUI SHARED ${INC} ${SRC})
+target_include_directories(mUI PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 install(TARGETS mUI DESTINATION lib)
 install(FILES ${INC} DESTINATION include)
