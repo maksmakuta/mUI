@@ -15,6 +15,10 @@ public:
     virtual fun onKey();
     virtual fun onMouse();
 
+    View* getView();
+
+    ~Activity();
+
 };
 
 #endif // ACTIVITY_H

@@ -4,6 +4,8 @@
 class Canvas{
 public:
     Canvas();
+
+
 };
 
 #endif // CANVAS_H

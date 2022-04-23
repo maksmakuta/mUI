@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(mUI VERSION 0.7.0 LANGUAGES CXX)
+project(mUI VERSION 0.7.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
@@ -35,6 +35,13 @@ set(INC
     include/graphics/Canvas.h
     include/graphics/Window.h
 
+    include/graphics/nanovg/fontstash.h
+    include/graphics/nanovg/nanosvg.h
+    include/graphics/nanovg/nanosvgrast.h
+    include/graphics/nanovg/nanovg.h
+    include/graphics/nanovg/nanovg_gl.h
+    include/graphics/nanovg/nanovg_gl_utils.h
+
     include/utils/Logger.h
     include/utils/TypeUtils.h
 
@@ -49,6 +56,12 @@ set(SRC
 
     src/graphics/Canvas.cpp
     src/graphics/Window.cpp
+
+    src/graphics/nanovg/nanosvg.c
+    src/graphics/nanovg/nanosvgrast.c
+    src/graphics/nanovg/nanovg.c
+    src/graphics/nanovg/nanovg_gl.c
+    src/graphics/nanovg/nanovg_gl_utils.c
 
     src/utils/Logger.cpp
 

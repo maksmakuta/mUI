@@ -1,10 +1,18 @@
 #include <app/Activity.h>
 
+Activity::Activity(){/* ... */}
 
-Activity::Activity(){
+fun Activity::setContentView(View* v){
+    this->mView = v;
+}
+fun Activity::onKey(){/* ... */}
+fun Activity::onMouse(){/* ... */}
 
+View* Activity::getView(){
+    return this->mView;
 }
 
-fun Activity::setContentView(View*){}
-fun Activity::onKey(){}
-fun Activity::onMouse(){}
+
+Activity::~Activity(){
+    delete this->mView;
+}
