@@ -33,6 +33,9 @@ fun Window::run(){
         glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT|GL_STENCIL_BUFFER_BIT);
         if(canvas != null){
             glClearColor(0.1,0.1,0.1,1);
+            canvas->beginFrame(winWidth,winHeight,winHeight/fbHeight);
+
+            canvas->endFrame();
         }
         glfwSwapBuffers(this->win);
         glfwPollEvents();
