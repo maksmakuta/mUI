@@ -32,15 +32,15 @@ set(INC
     include/app/Application.h
     include/app/Activity.h
 
-    include/graphics/Canvas.h
-    include/graphics/Window.h
-
     include/graphics/nanovg/fontstash.h
     include/graphics/nanovg/nanosvg.h
     include/graphics/nanovg/nanosvgrast.h
     include/graphics/nanovg/nanovg.h
     include/graphics/nanovg/nanovg_gl.h
     include/graphics/nanovg/nanovg_gl_utils.h
+
+    include/graphics/Canvas.h
+    include/graphics/Window.h
 
     include/utils/Logger.h
     include/utils/TypeUtils.h
@@ -54,14 +54,14 @@ set(SRC
     src/app/Application.cpp
     src/app/Activity.cpp
 
-    src/graphics/Canvas.cpp
-    src/graphics/Window.cpp
-
     src/graphics/nanovg/nanosvg.c
     src/graphics/nanovg/nanosvgrast.c
     src/graphics/nanovg/nanovg.c
     src/graphics/nanovg/nanovg_gl.c
     src/graphics/nanovg/nanovg_gl_utils.c
+
+    src/graphics/Canvas.cpp
+    src/graphics/Window.cpp
 
     src/utils/Logger.cpp
 

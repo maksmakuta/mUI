@@ -1,7 +1,5 @@
-#include <graphics/Canvas.h>
-#include <GL/glew.h>
 #define NANOVG_GL3_IMPLEMENTATION
-#include <graphics/nanovg/nanovg_gl.h>
+#include <graphics/Canvas.h>
 
 Canvas::Canvas(){
     this->ctx = nvgCreateGL3(NVG_ANTIALIAS);

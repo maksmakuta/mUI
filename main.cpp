@@ -21,7 +21,9 @@ public:
         //this->tv = new TextView("Hello, World!");
     }
     fun onCreate() override{
-        //this->setContentView(this->tv);
+        // auto layout = new CenterLayout();
+        // layout->addView(tv);
+        //this->setContentView(layout);
     }
 };
 

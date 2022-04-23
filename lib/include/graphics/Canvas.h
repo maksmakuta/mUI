@@ -2,7 +2,8 @@
 #define CANVAS_H
 
 #include <utils/TypeUtils.h>
-#include <graphics/nanovg/nanovg.h>
+#include <GL/glew.h>
+#include <graphics/nanovg/nanovg_gl.h>
 
 class Canvas{
 private:

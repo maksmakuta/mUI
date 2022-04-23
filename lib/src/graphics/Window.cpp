@@ -1,3 +1,4 @@
+#include <GL/glew.h>
 #include <graphics/Window.h>
 #include <utils/Logger.h>
 
@@ -19,7 +20,7 @@ fun Window::init(int w,int h,const std::string& t){
     if(glewInit() != GLEW_OK) Log::onError("glew");
     glfwSwapInterval(1);
 
-    canvas = new Canvas(/*NVG_STENCIL_STROKES|NVG_ANTIALIAS*/);
+    canvas = new Canvas();
 }
 fun Window::run(){
     while(!glfwWindowShouldClose(win)){
@@ -34,6 +35,12 @@ fun Window::run(){
         if(canvas != null){
             glClearColor(0.1,0.1,0.1,1);
             canvas->beginFrame(winWidth,winHeight,winHeight/fbHeight);
+
+            // test circle
+            canvas->begin();
+            canvas->circle(winWidth, winHeight,50);
+            canvas->fillColor(NVGcolor{1,0,1,1});
+            canvas->fill();
 
             canvas->endFrame();
         }
