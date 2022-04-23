@@ -8,9 +8,10 @@ Window::Window(int w,int h,const std::string& t){
 fun Window::init(int w,int h,const std::string& t){
     if(!glfwInit()) Log::onError("glfw");
 
-    glfwWindowHint(GLFW_VERSION_MAJOR,3);
-    glfwWindowHint(GLFW_VERSION_MINOR,3);
-    glfwWindowHint(GLFW_RESIZABLE,GLFW_FALSE);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     this->win = glfwCreateWindow(w,h,t.c_str(), nullptr, nullptr);
     if(!win) Log::onError("window");
@@ -22,7 +23,6 @@ fun Window::init(int w,int h,const std::string& t){
 }
 fun Window::run(){
     while(!glfwWindowShouldClose(win)){
-        //View* v = a->content();
         i32 winWidth, winHeight;
         i32 fbWidth, fbHeight;
 
@@ -30,15 +30,9 @@ fun Window::run(){
         glfwGetFramebufferSize(this->win, &fbWidth, &fbHeight);
         // Update and render
         glViewport(0, 0, fbWidth, fbHeight);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT|GL_STENCIL_BUFFER_BIT);
         if(canvas != null){
-            glClearColor(0.1,0.1,0.1,1/*bg.r,bg.g,bg.b,bg.a*/);
-            //canvas->beginFrame((f32) winWidth, (f32) winHeight, (f32) fbWidth / (f32) winWidth);
-            //    if(v != null) {
-            //        v->onMeasure((f32)winWidth,(f32)winHeight);
-            //        v->onDraw(canvas);
-            //    }
-            //canvas->endFrame();
+            glClearColor(0.1,0.1,0.1,1);
         }
         glfwSwapBuffers(this->win);
         glfwPollEvents();

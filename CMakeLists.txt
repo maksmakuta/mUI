@@ -10,7 +10,4 @@ include_directories(${INC})
 
 add_executable(mApp main.cpp)
 target_link_libraries(mApp PUBLIC mUI)
-target_include_directories(mApp PUBLIC
-                           "${PROJECT_BINARY_DIR}"
-                           "lib/include"
-                           )
+target_include_directories(mApp PUBLIC "${PROJECT_BINARY_DIR}" "lib/include")

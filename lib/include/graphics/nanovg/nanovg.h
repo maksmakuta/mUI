@@ -16,8 +16,8 @@
 // 3. This notice may not be removed or altered from any source distribution.
 //
 
-#ifndef NANOVG_H_F380EB38_CDA3_11EA_AF53_BBD96082A0CB
-#define NANOVG_H_F380EB38_CDA3_11EA_AF53_BBD96082A0CB
+#ifndef NANOVG_H
+#define NANOVG_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -686,13 +686,6 @@ NVGparams* nvgInternalParams(NVGcontext* ctx);
 // Debug function to dump cached path data.
 void nvgDebugDumpPathCache(NVGcontext* ctx);
 
-#if defined(__ANDROID__)
-#include <stdio.h>
-#include <android/asset_manager.h>
-void nvgSetAndroidAssetManager(AAssetManager * manager);
-FILE * android_fopen(const char* fname, const char* mode);
-#endif
-
 #ifdef _MSC_VER
 #pragma warning(pop)
 #endif
@@ -703,4 +696,4 @@ FILE * android_fopen(const char* fname, const char* mode);
 }
 #endif
 
-#endif // NANOVG_H_F380EB38_CDA3_11EA_AF53_BBD96082A0CB
+#endif // NANOVG_H
