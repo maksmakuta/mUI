@@ -41,7 +41,6 @@ set(INC
     include/view/View.h
 
     include/mUI.h
-
 )
 
 set(SRC

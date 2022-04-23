@@ -5,6 +5,7 @@ public:
     Main(){
 
     }
+
     fun onCreate() override{
 
     }
@@ -12,5 +13,5 @@ public:
 
 int main(){
     App app(640,480,"App",new Main());
-    return 0;
+    return app.exec();
 }

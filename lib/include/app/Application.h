@@ -13,6 +13,8 @@ public:
     App();
     App(int w,int h,const std::string& t);
     App(int w,int h,const std::string& t,Activity*);
+
+    int exec();
 };
 
 #endif // APPLICATION_H

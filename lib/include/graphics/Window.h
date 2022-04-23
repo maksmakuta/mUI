@@ -4,19 +4,29 @@
 #include <utils/TypeUtils.h>
 #include <graphics/Canvas.h>
 #include <app/Activity.h>
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+#include <string>
 
 class Window{
 private:
     Canvas* canvas = null;
     Activity* activity = null;
+    GLFWwindow* win = null;
 
     int size[2];
-    char* title;
+    std::string title;
 public:
     Window();
-    fun init();
+    Window(int,int,const std::string&);
+    fun init(int,int,const std::string&);
     fun run();
     int done();
+
+    int getWidth();
+    int getHeigth();
+
+    ~Window();
 };
 
 #endif // WINDOW_H
