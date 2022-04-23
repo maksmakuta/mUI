@@ -25,13 +25,6 @@
 #include <string.h>
 #include <math.h>
 
-#include "android.h"
-
-#ifdef NANOVG_USE_GLEW
-#  include <GL/glew.h>
-static int glew_initialized = 0;
-#endif
-
 #ifdef NANOVG_GLES2
 #  include <GLES2/gl2.h>
 #  include <GLES2/gl2ext.h>
@@ -45,7 +38,7 @@ static int glew_initialized = 0;
 #include <GL/gl.h>
 #endif
 
-#include "nanovg_gl.h"
+#include <graphics/nanovg/nanovg_gl.h>
 
 #if defined NANOVG_GL2
 #  define NANOVG_GL2 1
@@ -1517,17 +1510,6 @@ NVGcontext* nvgCreateGLES2(int flags)
 NVGcontext* nvgCreateGLES3(int flags)
 #endif
 {
-	#ifdef NANOVG_USE_GLEW
-	if (!glew_initialized) {
-		if (glewInit() == GLEW_OK) {
-			glew_initialized = 1;
-		} else {
-			printf("Failed to initialize GLEW");
-			// GLEW generates GL error because it calls glGetString(GL_EXTENSIONS), we'll consume it here.
-			glGetError();
-		}
-	}
-	#endif
 
 	NVGparams params;
 	NVGcontext* ctx = NULL;

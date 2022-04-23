@@ -21,12 +21,10 @@
 #include <math.h>
 #include <memory.h>
 
-#include "android.h"
-
-#include "nanovg.h"
+#include <graphics/nanovg/nanovg.h>
 
 #define FONTSTASH_IMPLEMENTATION
-#include "fontstash.h"
+#include <graphics/nanovg/fontstash.h>
 
 #ifndef NVG_NO_STB
 #define STB_IMAGE_IMPLEMENTATION

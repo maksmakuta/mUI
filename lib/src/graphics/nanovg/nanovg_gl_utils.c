@@ -25,12 +25,6 @@
 #include <string.h>
 #include <math.h>
 
-#include "android.h"
-
-#ifdef NANOVG_USE_GLEW
-#  include <GL/glew.h>
-#endif
-
 #ifdef NANOVG_GLES2
 #  include <GLES2/gl2.h>
 #  include <GLES2/gl2ext.h>
@@ -44,7 +38,7 @@
 #include <GL/gl.h>
 #endif
 
-#include "nanovg_gl_utils.h"
+#include <graphics/nanovg/nanovg_gl_utils.h>
 
 #if defined(NANOVG_GL3) || defined(NANOVG_GLES2) || defined(NANOVG_GLES3)
 // FBO is core in OpenGL 3>.

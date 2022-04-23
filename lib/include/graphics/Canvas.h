@@ -5,8 +5,11 @@
 #include <graphics/nanovg/nanovg.h>
 
 class Canvas{
+private:
+    NVGcontext* ctx = null;
 public:
     Canvas();
+    ~Canvas();
 
     fun beginFrame(f32 w,f32 h,f32 pRatio);
     fun cancelFrame();
@@ -16,48 +19,48 @@ public:
     fun globalCompositeBlendFunc(int sfactor, int dfactor);
     fun globalCompositeBlendFuncSeparate(int srcRGB, int dstRGB, int srcAlpha, int dstAlpha);
 
-    void save();
-    void restore();
-    void reset();
+    fun save();
+    fun restore();
+    fun reset();
 
-    void shapeAntiAlias(int enabled);
-    void strokeColor(NVGcolor color);
-    void strokePaint(NVGpaint paint);
-    void fillColor(NVGcolor color);
-    void fillPaint(NVGpaint paint);
-    void miterLimit(float limit);
-    void strokeWidth(float size);
-    void lineCap(int cap);
-    void lineJoin(int join);
-    void globalAlpha(float alpha);
+    fun shapeAntiAlias(int enabled);
+    fun strokeColor(NVGcolor color);
+    fun strokePaint(NVGpaint paint);
+    fun fillColor(NVGcolor color);
+    fun fillPaint(NVGpaint paint);
+    fun miterLimit(float limit);
+    fun strokeWidth(float size);
+    fun lineCap(int cap);
+    fun lineJoin(int join);
+    fun globalAlpha(float alpha);
 
-    void resetTransform();
-    void transform(float a, float b, float c, float d, float e, float f);
-    void translate(float x, float y);
-    void rotate(float angle);
-    void skewX(float angle);
-    void skewY(float angle);
-    void scale(float x, float y);
-    void currentTransform(float* xform);
+    fun resetTransform();
+    fun transform(float a, float b, float c, float d, float e, float f);
+    fun translate(float x, float y);
+    fun rotate(float angle);
+    fun skewX(float angle);
+    fun skewY(float angle);
+    fun scale(float x, float y);
+    fun currentTransform(float* xform);
 
-    void transformIdentity(float* dst);
-    void transformTranslate(float* dst, float tx, float ty);
-    void transformScale(float* dst, float sx, float sy);
-    void transformRotate(float* dst, float a);
-    void transformSkewX(float* dst, float a);
-    void transformSkewY(float* dst, float a);
-    void transformMultiply(float* dst, const float* src);
-    void transformPremultiply(float* dst, const float* src);
-    int transformInverse(float* dst, const float* src);
-    void transformPoint(float* dstx, float* dsty, const float* xform, float srcx, float srcy);
+    fun transformIdentity(float* dst);
+    fun transformTranslate(float* dst, float tx, float ty);
+    fun transformScale(float* dst, float sx, float sy);
+    fun transformRotate(float* dst, float a);
+    fun transformSkewX(float* dst, float a);
+    fun transformSkewY(float* dst, float a);
+    fun transformMultiply(float* dst, const float* src);
+    fun transformPremultiply(float* dst, const float* src);
+    i32 transformInverse(float* dst, const float* src);
+    fun transformPoint(float* dstx, float* dsty, const float* xform, float srcx, float srcy);
 
 
-    int createImage(const char* filename, int imageFlags);
-    int createImageMem(int imageFlags, unsigned char* data, int ndata);
-    int createImageRGBA(int w, int h, int imageFlags, const unsigned char* data);
-    void updateImage(int image, const unsigned char* data);
-    void imageSize(int image, int* w, int* h);
-    void deleteImage(int image);
+    i32 createImage(const char* filename, int imageFlags);
+    i32 createImageMem(int imageFlags, unsigned char* data, int ndata);
+    i32 createImageRGBA(int w, int h, int imageFlags, const unsigned char* data);
+    fun updateImage(int image, const unsigned char* data);
+    fun imageSize(int image, int* w, int* h);
+    fun deleteImage(int image);
 
     NVGpaint linearGradient(float sx, float sy, float ex, float ey,
                                NVGcolor icol, NVGcolor ocol);
@@ -68,53 +71,52 @@ public:
     NVGpaint imagePattern(float ox, float oy, float ex, float ey,
                              float angle, int image, float alpha);
 
-    void scissor(float x, float y, float w, float h);
-    void intersectScissor(float x, float y, float w, float h);
-    void resetScissor();
+    fun scissor(float x, float y, float w, float h);
+    fun intersectScissor(float x, float y, float w, float h);
+    fun resetScissor();
 
-    void begin();
-    void moveTo(float x, float y);
-    void lineTo(float x, float y);
-    void bezierTo(float c1x, float c1y, float c2x, float c2y, float x, float y);
-    void quadTo(float cx, float cy, float x, float y);
-    void arcTo(float x1, float y1, float x2, float y2, float radius);
-    void close();
+    fun begin();
+    fun moveTo(float x, float y);
+    fun lineTo(float x, float y);
+    fun bezierTo(float c1x, float c1y, float c2x, float c2y, float x, float y);
+    fun quadTo(float cx, float cy, float x, float y);
+    fun arcTo(float x1, float y1, float x2, float y2, float radius);
+    fun close();
 
-    void pathWinding(int dir);
-    void arc(float cx, float cy, float r, float a0, float a1, int dir);
-    void barc(float cx, float cy, float r, float a0, float a1, int dir, int join);
-    void rect(float x, float y, float w, float h);
-    void rect(float x, float y, float w, float h, float r);
-    void rect(float x, float y, float w, float h, float radTopLeft, float radTopRight, float radBottomRight, float radBottomLeft);
-    void ellipse(float cx, float cy, float rx, float ry);
-    void circle(float cx, float cy, float r);
-    void fill();
-    void stroke();
+    fun pathWinding(int dir);
+    fun arc(float cx, float cy, float r, float a0, float a1, int dir);
+    fun barc(float cx, float cy, float r, float a0, float a1, int dir, int join);
+    fun rect(float x, float y, float w, float h);
+    fun rect(float x, float y, float w, float h, float r);
+    fun rect(float x, float y, float w, float h, float radTopLeft, float radTopRight, float radBottomRight, float radBottomLeft);
+    fun ellipse(float cx, float cy, float rx, float ry);
+    fun circle(float cx, float cy, float r);
+    fun fill();
+    fun stroke();
 
-
-    int nvgCreateFont(const char* name, const char* filename);
-    int nvgCreateFontAtIndex(const char* name, const char* filename, const int fontIndex);
-    int nvgCreateFontMem(const char* name, unsigned char* data, int ndata, int freeData);
-    int nvgCreateFontMemAtIndex(const char* name, unsigned char* data, int ndata, int freeData, const int fontIndex);
-    int nvgFindFont(const char* name);
-    int nvgAddFallbackFontId(int baseFont, int fallbackFont);
-    int nvgAddFallbackFont(const char* baseFont, const char* fallbackFont);
-    void nvgResetFallbackFontsId(int baseFont);
-    void nvgResetFallbackFonts(const char* baseFont);
-    void nvgFontSize(float size);
-    void nvgFontBlur(float blur);
-    void nvgTextLetterSpacing(float spacing);
-    void nvgTextLineHeight(float lineHeight);
-    void nvgTextAlign(int align);
-    void nvgFontFaceId(int font);
-    void nvgFontFace(const char* font);
-    float nvgText(float x, float y, const char* string, const char* end);
-    void nvgTextBox(float x, float y, float breakRowWidth, const char* string, const char* end);
-    float nvgTextBounds(float x, float y, const char* string, const char* end, float* bounds);
-    void nvgTextBoxBounds(float x, float y, float breakRowWidth, const char* string, const char* end, float* bounds);
-    int nvgTextGlyphPositions(float x, float y, const char* string, const char* end, NVGglyphPosition* positions, int maxPositions);
-    void nvgTextMetrics(float* ascender, float* descender, float* lineh);
-    int nvgTextBreakLines(const char* string, const char* end, float breakRowWidth, NVGtextRow* rows, int maxRows);
+    i32 createFont(const char* name, const char* filename);
+    i32 createFontAtIndex(const char* name, const char* filename, const int fontIndex);
+    i32 createFontMem(const char* name, unsigned char* data, int ndata, int freeData);
+    i32 createFontMemAtIndex(const char* name, unsigned char* data, int ndata, int freeData, const int fontIndex);
+    i32 findFont(const char* name);
+    i32 addFallbackFontId(int baseFont, int fallbackFont);
+    i32 addFallbackFont(const char* baseFont, const char* fallbackFont);
+    fun resetFallbackFontsId(int baseFont);
+    fun resetFallbackFonts(const char* baseFont);
+    fun fontSize(float size);
+    fun fontBlur(float blur);
+    fun textLetterSpacing(float spacing);
+    fun textLineHeight(float lineHeight);
+    fun textAlign(int align);
+    fun fontFaceId(int font);
+    fun fontFace(const char* font);
+    f32 text(float x, float y, const char* string, const char* end);
+    fun textBox(float x, float y, float breakRowWidth, const char* string, const char* end);
+    f32 textBounds(float x, float y, const char* string, const char* end, float* bounds);
+    fun textBoxBounds(float x, float y, float breakRowWidth, const char* string, const char* end, float* bounds);
+    i32 textGlyphPositions(float x, float y, const char* string, const char* end, NVGglyphPosition* positions, int maxPositions);
+    fun textMetrics(float* ascender, float* descender, float* lineh);
+    i32 textBreakLines(const char* string, const char* end, float breakRowWidth, NVGtextRow* rows, int maxRows);
 
 };
 

@@ -27,8 +27,9 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "nanosvg.h"
-#include "nanosvgrast.h"
+
+#include <graphics/nanovg/nanosvg.h>
+#include <graphics/nanovg/nanosvgrast.h>
 
 #define NSVG__SUBSAMPLES    5
 #define NSVG__FIXSHIFT      10
