@@ -1,18 +1,22 @@
 #include <app/Application.h>
-
+/*
 class TestView : public View{
   public:
     TestView() : View(){}
 
     fun onDraw(Canvas* c) override{
-
+        c->begin();
+        c->rect(0,0,100,100,20,40,20,40);
+        c->fillColor(nvgRGB(250,200,150));
+        c->fill();
+        c->close();
     }
 
     ~TestView(){
 
     }
 };
-
+*/
 class Main : public Activity{
 private:
     //TextView* tv = null;

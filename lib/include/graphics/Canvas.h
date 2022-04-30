@@ -3,7 +3,7 @@
 
 #include <utils/TypeUtils.h>
 #include <GL/glew.h>
-#include <graphics/nanovg/nanovg_gl.h>
+#include <graphics/nanovg/nanovg.h>
 
 class Canvas{
 private:
@@ -25,9 +25,13 @@ public:
     fun reset();
 
     fun shapeAntiAlias(int enabled);
+
     fun strokeColor(NVGcolor color);
+
     fun strokePaint(NVGpaint paint);
+
     fun fillColor(NVGcolor color);
+
     fun fillPaint(NVGpaint paint);
     fun miterLimit(float limit);
     fun strokeWidth(float size);

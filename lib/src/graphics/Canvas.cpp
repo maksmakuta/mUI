@@ -1,5 +1,6 @@
-#define NANOVG_GL3_IMPLEMENTATION
 #include <graphics/Canvas.h>
+#define NANOVG_GL3
+#include <graphics/nanovg/nanovg_gl.h>
 
 Canvas::Canvas(){
     this->ctx = nvgCreateGL3(NVG_ANTIALIAS);
@@ -8,14 +9,14 @@ Canvas::~Canvas(){
     nvgDeleteGL3(this->ctx);
 }
 fun Canvas::beginFrame(f32 w,f32 h,f32 pRatio){
-    nvgBeginFrame(this->ctx,w,h,pRatio);
+//    nvgBeginFrame(this->ctx,w,h,pRatio);
 }
 fun Canvas::cancelFrame(){
-    nvgCancelFrame(this->ctx);
+//    nvgCancelFrame(this->ctx);
 }
 fun Canvas::endFrame(){
-    nvgEndFrame(this->ctx);
-}
+//    nvgEndFrame(this->ctx);
+}/*
 fun Canvas::globalCompositeOperation(int op){
     nvgGlobalCompositeOperation(this->ctx,op);
 }
@@ -281,3 +282,4 @@ fun Canvas::textMetrics(float* ascender, float* descender, float* lineh){
 i32 Canvas::textBreakLines(const char* string, const char* end, float breakRowWidth, NVGtextRow* rows, int maxRows){
     return nvgTextBreakLines(this->ctx,string,end,breakRowWidth,rows,maxRows);
 }
+*/

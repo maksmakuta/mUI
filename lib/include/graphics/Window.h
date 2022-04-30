@@ -13,17 +13,17 @@ private:
     Activity* activity = null;
     GLFWwindow* win = null;
 
-    int size[2];
+    i32 size[2];
     std::string title;
 public:
     Window();
     Window(int,int,const std::string&);
     fun init(int,int,const std::string&);
     fun run();
-    int done();
+    i32 done();
 
-    int getWidth();
-    int getHeigth();
+    i32 getWidth();
+    i32 getHeigth();
 
     ~Window();
 };

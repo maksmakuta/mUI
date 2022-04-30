@@ -36,12 +36,6 @@ fun Window::run(){
             glClearColor(0.1,0.1,0.1,1);
             canvas->beginFrame(winWidth,winHeight,winHeight/fbHeight);
 
-            // test circle
-            canvas->begin();
-            canvas->circle(winWidth, winHeight,50);
-            canvas->fillColor(NVGcolor{1,0,1,1});
-            canvas->fill();
-
             canvas->endFrame();
         }
         glfwSwapBuffers(this->win);
